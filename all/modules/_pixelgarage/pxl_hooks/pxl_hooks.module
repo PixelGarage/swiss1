@@ -1,0 +1,56 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ralph
+ * Date: 16.02.17
+ * Time: 17:08
+ */
+
+/**
+ * Import field formatters.
+ */
+require_once 'includes/field_formatter.lib.inc';
+
+/**
+ * Import image styles (ImageMagick styles), if imagemagick module is installed
+ */
+if (module_exists('imagemagick')) {
+  require_once 'includes/image_style.lib.inc';
+}
+
+/**
+ * Useful Webform enhancements.
+ */
+if (module_exists('webform')) {
+  require_once 'includes/webform.lib.inc';
+}
+
+/**
+ * Import all social node importers.
+ */
+if (module_exists('twitter') || module_exists('instagram_social_feed')) {
+  require_once 'includes/social_nodes.importer.inc';
+}
+
+
+/* --------------------------------------------------
+ * Hooks implementations
+ * --------------------------------------------------*/
+
+/**
+ * Implements hook_theme().
+ */
+function pxl_hooks_theme() {
+  return array(
+    // The theme function that our formatter uses:
+    'pxl_hooks_date_von_bis_formatter' => array(
+      'variables' => array('element' => NULL),
+      'file' => 'includes/field_formatter.lib.inc',
+    ),
+    'pxl_hooks_date_start_ende_formatter' => array(
+      'variables' => array('element' => NULL),
+      'file' => 'includes/field_formatter.lib.inc',
+    ),
+  );
+}
+

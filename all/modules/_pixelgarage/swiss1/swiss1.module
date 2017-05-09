@@ -1,0 +1,63 @@
+<?php
+/**
+ * Provides all functionality needed to build the Swiss1 TV portal.
+ * User: ralph
+ * Date: 07.05.17
+ * Time: 20:02
+ */
+
+/* -----------------------------------------------------------------
+ *  Hook implementation
+ * ----------------------------------------------------------------- */
+
+/**
+ * Disables all video items, which have been expired by the set catch-up rights.
+ */
+function swiss1_cron() {
+  //
+  // get all video streams with an axpiration date in the past
+  $now = date('Y-m-d H:i:s');
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_expiration_date', 'value', $now, '<');
+  $result = $query->execute();
+
+  if (isset($result['node']) && !empty($result['node'])) {
+    node_delete_multiple(array_keys($result['node']));
+  }
+
+}
+
+
+/**
+ * Returns the expiration timestamp value set on the node of the given video (media id).
+ *
+ * @param int $exp_timestamp
+ *    The UNIX timestamp to be overridden by this function.
+ * @param $media_id
+ *    The media-id of the video to be expired.
+ */
+function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp, $media_id) {
+  //
+  // get expiration date from the node with the given media id
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_media_id', 'value', $media_id)
+    ->range(0,1);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $node = node_load(key($result['node']));
+    if (!empty($node->field_expiration_date)) {
+      $date = $node->field_expiration_date[LANGUAGE_NONE][0]['value'];
+      $timestamp = strtotime($date);
+
+      // if no (valid) timestamp is set on the node, don't show video
+      $exp_timestamp = $timestamp ? $timestamp : time();
+    }
+  }
+}

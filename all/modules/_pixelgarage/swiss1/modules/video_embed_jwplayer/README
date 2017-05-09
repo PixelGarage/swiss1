@@ -1,0 +1,72 @@
+-----------------------------------------------------------------------------
+  JWPlayer Video Embed Field Extension
+-----------------------------------------------------------------------------
+THE IMPLEMENTATION IS BASED ON DELIVERY API V1.
+
+
+This module provides a JWPlayer extension for the video_embed_field module. It implements a highly optimized
+video streaming solution for videos hosted on the JW plattform.
+
+The following features are available:
+1)  Player selection per video embed field
+    Select one of your predefined players on the JW platform for video display.
+
+2)  Best possible video delivery.
+    The implemented fallback/quality toggle scenario is: (mpd) -> m3u8 -> 406p/720p quality toggling
+    (MTML5 DASH .mpd is only available for Premium accounts)
+    This means, first try is to stream the video with DASH HTML5 adaptive streaming format, then with Apples HTML Live Streaming
+    format (HLS) and then falls back to progressive mp4-file loading in two qualities (406p/720p) which can be toggled manually.
+
+3)  Custom skinning of video player.
+    Just put your custom skin css-file into the folder video_embed_jwplayer/css. The name of the file has to be
+    <skin-name>.css. The skin is automatically recognized and made available as selectable option in the JW Player
+    settings of a video embed style (admin/config/media/vef/vef_video_styles/list/jwplayer_adaptive/edit).
+
+4)  URL signing
+    The video streaming can be protected by URL signing. For this you have to set your API credentials in the settings form.
+
+5)  Playlists (RSS/JSON) are not supported yet!
+
+
+-----------------------------------------------------------------------------
+  Install the JWPLAYER MANAGEMENT API  as library
+-----------------------------------------------------------------------------
+To retrieve information about your JWPlayer account and medias, we need to install the Management API (see link below).
+Follow these steps:
+1) Download the PHP API Kit at http://support-static.jwplayer.com/API/php-api-kit-20151013.zip
+2) Extract the zip and rename the botr-folder to "jwplayer_api"
+3) Copy this folder into the libraries folder (sites/all/libraries) of your site installation.
+
+
+
+-----------------------------------------------------------------------------
+  Usage
+-----------------------------------------------------------------------------
+1) Install the video_embed_jwplayer module
+2) Then configure a new style (admin/config/media/vef/vef_video_styles) for the video embed fields using
+    the new available JWPlayer settings
+3) Add a video embed field to a node type.
+4) In the Manage Display tab set the format of the video embed field to the newly created JWPlayer style.
+5) Just copy any link from a media file uploaded to the JW platform into the video link field of the video_embed_field.
+   Best possible video delivery is guaranteed, no matter which file link (quality) you copy to the field. You can also
+   just copy the media-id of a video attached to the jw-URL (http://content.jwplatform.com/), it works!
+
+Working examples for the video URL:
+http://content.jwplatform.com/DeJ0vrIf
+http://content.jwplatform.com/videos/DeJ0vrIf
+http://content.jwplatform.com/videos/DeJ0vrIf.mp4
+http://content.jwplatform.com/videos/DeJ0vrIf-WMO2e8la.mp4
+http://content.jwplatform.com/videos/DeJ0vrIf-WMO2e8la.mp4?sig=8c7ce763ff9f3c6886f0dc1febc667ad&exp=1494335834
+
+
+
+
+-----------------------------------------------------------------------------
+  JWPlayer Links to further information about compatibility, formats and API
+-----------------------------------------------------------------------------
+Media Format Reference:
+  https://support.jwplayer.com/customer/portal/articles/1403635-media-format-reference
+
+Management API:
+  https://developer.jwplayer.com/jw-platform/docs/developer-guide/management-api/
+

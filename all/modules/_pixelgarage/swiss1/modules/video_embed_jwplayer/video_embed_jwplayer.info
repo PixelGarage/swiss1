@@ -1,0 +1,8 @@
+name = Video Embed JWPlayer
+description = "Provides JWPlayer handler for Video Embed Fields."
+core = 7.x
+package = Media
+configure = admin/config/media/vef/vef_video_styles
+
+dependencies[] = video_embed_field
+version = "7.x-1.0"

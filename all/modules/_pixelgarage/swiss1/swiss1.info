@@ -1,0 +1,8 @@
+name = Swiss1 TV
+description = "Provides the functionality for the Swiss1 TV project."
+core = 7.x
+package = Pixelgarage
+
+dependencies[] = video_embed_jwplayer
+
+version = "7.x-1.0"

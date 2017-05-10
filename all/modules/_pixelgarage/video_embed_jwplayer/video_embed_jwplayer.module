@@ -1,0 +1,164 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ralph
+ * Date: 07.05.17
+ * Time: 20:11
+ */
+
+/**
+ * Defines the JWPlayer content base path.
+ */
+define('JWPLAYER_CONTENT_BASE_PATH', '//content.jwplatform.com/');
+
+/**
+ * Defines the JWPlayer cdn base path.
+ */
+define('JWPLAYER_CDN_BASE_PATH', '//cdn.jwplatform.com/');
+
+/**
+ * Defines access to single line embeddable cloud-hosted players with no media.
+ */
+define('JWPLAYER_CLOUD_PLAYER_PATH', 'libraries/');
+
+/**
+ * Defines access to single line embeddable cloud-hosted players with media.
+ */
+define('JWPLAYER_CLOUD_PLAYER_MEDIA_PATH', 'players/');
+
+/**
+ * Defines access to individual video transcodes.
+ */
+define('JWPLAYER_VIDEO_PATH', 'videos/');
+
+/**
+ * Defines access to video poster images.
+ */
+define('JWPLAYER_THUMB_PATH', 'thumbs/');
+
+/**
+ * Defines access to adaptive bitrate streaming manifests for videos.
+ */
+define('JWPLAYER_MANIFEST_PATH', 'manifests/');
+
+/**
+ * Defines access to video timed text track files.
+ */
+define('JWPLAYER_TRACK_PATH', 'tracks/');
+
+
+
+/**
+ * Load the management API methods
+ */
+module_load_include('inc', 'video_embed_jwplayer', 'video_embed_jwplayer.management');
+
+/**
+ * Load the video embed handler
+ */
+module_load_include('inc', 'video_embed_jwplayer', 'video_embed_jwplayer.handler');
+
+
+/* -----------------------------------------------------------------
+ *  Hook implementations
+ * ----------------------------------------------------------------- */
+/**
+ * Implements hook_libraries_info().
+ */
+function video_embed_jwplayer_libraries_info() {
+  $libraries['jwplayer_api'] = array(
+    'name' => 'JWPlayer Management API',
+    'vendor url' => 'https://developer.jwplayer.com/jw-platform/docs/developer-guide/management-api',
+    'download url' => 'http://support-static.jwplayer.com/API/php-api-kit-20151013.zip',
+    'version callback' => 'video_embed_jwplayer_version_callback',
+    'files' => array(
+      'php' => array(
+        'api.php',
+      )
+    ),
+  );
+  return $libraries;
+}
+
+function video_embed_jwplayer_version_callback() {
+  return '1.4';
+}
+
+/**
+ * Implements hook_menu().
+ */
+function video_embed_jwplayer_menu() {
+  $items = array();
+
+  $items['admin/config/media/vef/jwplayer_settings'] = array(
+    'title' => 'JWPlayer Settings',
+    'description' => 'JWPlayer settings for the Video Embed Field.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('video_embed_jwplayer_settings_form'),
+    'access arguments' => array('administer video styles'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * VEF settings page form callback.
+ */
+function video_embed_jwplayer_settings_form($form, &$form_state) {
+  $form['video_embed_jwplayer_api_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('JWPLayer API key'),
+    '#default_value' => variable_get('video_embed_jwplayer_api_key', ''),
+    '#description' => t('Set the API key of your JW platform account. See JW Account->Properties->API Credentials.')
+  );
+  $form['video_embed_jwplayer_api_secret'] = array(
+    '#type' => 'textfield',
+    '#title' => t('JWPLayer API secret'),
+    '#default_value' => variable_get('video_embed_jwplayer_api_secret', ''),
+    '#description' => t('Set the API secret of your JW platform account. See JW Account->Properties->API Credentials.')
+  );
+  if (variable_get('video_embed_jwplayer_api_secret', '')) {
+    $form['video_embed_jwplayer_test'] = array(
+      '#type' => 'button',
+      '#value' => t('Test JW Platform Connection'),
+      '#ajax' => array(
+        'callback' => '_video_embed_jwplayer_management_api_test_connection',
+        'wrapper' => 'jwplayer-connect-results',
+        'method' => 'append',
+      ),
+      '#suffix' => '<div id="jwplayer-connect-results"></div>',
+    );
+  }
+
+  return system_settings_form($form);
+}
+
+/**
+ * AJAX callback to test connection with the JWPlayer Management API.
+ */
+function _video_embed_jwplayer_management_api_test_connection() {
+  //
+  // get the system status as test
+  if ($jwplayer_api = video_embed_jwplayer_get_instance()) {
+    $response = $jwplayer_api->call('/accounts/show');
+
+    if ($response['status'] == 'ok') {
+      $message = t('SUCCESS! Your JWPlayer Edition is "@edition". You streamed @amount bytes this month.', array(
+        '@edition' => $response['account']['jwplayer_edition'],
+        '@amount' => $response['account']['traffic']['used'],
+      ));
+    }
+    else {
+      $message = t('Error "@code": @msg', array('@code' => $response['code'], '@msg' => $response['message']));
+    }
+  }
+  else {
+    $message = t('ERROR "Library not installed": The JWPlayer API library cannot be loaded. Check JWPLayer library installation!');
+  }
+
+  // return test message
+  return $message;
+}
+
+

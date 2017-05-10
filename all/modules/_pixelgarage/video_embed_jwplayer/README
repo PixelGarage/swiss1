@@ -1,0 +1,81 @@
+-----------------------------------------------------------------------------
+  JWPlayer Video Embed Field Extension
+-----------------------------------------------------------------------------
+THE IMPLEMENTATION IS BASED ON DELIVERY API V1 AND MANAGEMENT API V1.
+
+
+This module provides a JWPlayer handler for the video_embed_field module. It implements a bitrate optimized
+video streaming solution for videos hosted on the JW plattform.
+
+The following features are available:
+1)  All defined Players can be selected in the video embed style.
+    Select one of your predefined players on the JW platform for video display.
+
+2)  Best possible video delivery.
+    The implemented fallback/quality toggle scenario is: [DASH] -> [HLS] -> mp4 quality toggling
+    (HTML5 Streaming, e.g. MPEG DASH (.mpd) or Apple's HLS (.m3u8) is only available for Premium accounts)
+    This means, first try is to stream the video with DASH adaptive streaming format, then with Apples HTML Live Streaming
+    format (HLS) and then falls back to progressive mp4-file with selectable video quality (180p/270p/406p/720p/1080p).
+
+3)  Custom skinning of video player.
+    Just put your custom skin css-file into the folder video_embed_jwplayer/css. The name of the file has to be
+    <skin-name>.css. The skin is automatically recognized and made available as selectable option in the JW Player
+    settings of a video embed style (admin/config/media/vef/vef_video_styles/list/jwplayer_adaptive/edit). For more
+    information about JWPlayer skinning see the CSS skinning reference (link below).
+
+4)  URL signing
+    The video streaming can be protected by URL signing. For this you have to set your API credentials in the settings form.
+
+5)  Playlists (RSS/JSON) are not supported yet!
+
+
+-----------------------------------------------------------------------------
+  Install the JWPLAYER MANAGEMENT API SDK as library
+-----------------------------------------------------------------------------
+To retrieve information about your JWPlayer account and uploaded medias, we need to install the Management API
+(see link below).
+
+Follow these steps to install the API SDK:
+1) Download the PHP API SDK at http://support-static.jwplayer.com/API/php-api-kit-20151013.zip
+2) Extract the zip and rename the "botr" folder to "jwplayer_api"
+3) Copy this folder into the libraries folder (sites/all/libraries) of your site installation.
+4) Test the installation with the Test-Button on the JWPlayer Settings form.
+
+
+
+-----------------------------------------------------------------------------
+  Usage and configuration
+-----------------------------------------------------------------------------
+1) Install the video_embed_jwplayer module
+2) Configure a new video style (admin/config/media/vef/vef_video_styles) in the Video Embed Styles form using
+    the new available JWPlayer settings
+3) Add a video embed field to a node type.
+4) In the Manage Display tab set the format of the video embed field to the newly created JWPlayer style.
+5) Just copy any link from a media file uploaded to the JW platform into the video link field.
+   Best possible video delivery is guaranteed, no matter which file link (quality) you copy to the field.
+
+   TIP: You can just copy the media-id of a video prefixed with the JW-content-base-url (http://content.jwplatform.com/),
+   it works!
+
+   Supported video URL formats:
+    http://content.jwplatform.com/DeJ0vrIf
+    http://content.jwplatform.com/videos/DeJ0vrIf
+    http://content.jwplatform.com/videos/DeJ0vrIf.mp4
+    http://content.jwplatform.com/videos/DeJ0vrIf-WMO2e8la.mp4
+    http://content.jwplatform.com/videos/DeJ0vrIf-WMO2e8la.mp4?sig=8c7ce763ff9f3c6886f0dc1febc667ad&exp=1494335834
+
+
+
+
+-----------------------------------------------------------------------------
+  JWPlayer Links to further information about compatibility, formats and API
+-----------------------------------------------------------------------------
+Media Format Reference:
+  https://support.jwplayer.com/customer/portal/articles/1403635-media-format-reference
+
+CSS Skinning Reference:
+  https://developer.jwplayer.com/jw-player/docs/developer-guide/customization/css-skinning/skins_reference/
+
+Management API:
+  https://developer.jwplayer.com/jw-platform/docs/developer-guide/management-api/
+

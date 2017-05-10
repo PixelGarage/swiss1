@@ -1,71 +1,95 @@
+/*
+ * SWISS 1 skin for JWPlayer
+ */
 @import "jwplayer/vars";
 @import "jwplayer/transitions";
 
 .jw-skin-swiss1 {
-    @display-bkgd-color: @controlbar-background;
 
-    .jw-display-icon-container {
-        border-radius: 3.5em;
-
-        & > .jw-icon {
-            color: rgba(255, 255, 255, 0.9);
-        }
-    }
-
-    &.jw-breakpoint-2 {
-        .jw-display .jw-icon {
-            width: @mobile-touch-target * 1.5;
-            height: @mobile-touch-target * 1.5;
-            line-height: @mobile-touch-target * 1.5;
-        }
-    }
-
-    .jw-dock-button {
-        // Seven skin dock buttons do not highlight, they only show the tooltip
-        &:hover {
-            background: @controlbar-background;
-        }
-
-        border-radius: 2.5em;
-    }
-
-    .jw-menu {
-        padding: 0;
-    }
-
+  .jw-controls-right {
     .jw-dock {
-        .jw-overlay {
-            border-radius: @ui-padding;
-        }
+      // buttons overlaid for plugins
     }
 
-    .jw-skip {
-        border-radius: @ui-padding;
+    .jw-logo {
+      // customer logo
+      margin: 20px !important;
+      max-width: 20px;
+    }
+  }
+
+  .jw-display-icon-container {
+    border-radius: 3.5em;
+    background-color: @display-bkgd-color;
+
+    & > .jw-icon {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  &:hover .jw-display-icon-container {
+    background-color: @display-bkgd-color !important;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    & > .jw-icon {
+      color: rgba(255, 255, 255, 1.0);
+    }
+  }
+
+
+  &.jw-breakpoint-2 {
+    .jw-display .jw-icon {
+      width: @mobile-touch-target * 1.5;
+      height: @mobile-touch-target * 1.5;
+      line-height: @mobile-touch-target * 1.5;
+    }
+  }
+
+  .jw-dock-button {
+    // Seven skin dock buttons do not highlight, they only show the tooltip
+    &:hover {
+      background: @controlbar-background;
     }
 
-    .jw-text {
-        text-rendering: optimizeLegibility;
-        /* font-smoothing is a private setting not transformed by PostCSS */
-        -webkit-font-smoothing: antialiased;
-        /* OSX Firefox specific style for improving legibility */
-        -moz-osx-font-smoothing: grayscale;
+    border-radius: 2.5em;
+  }
+
+  .jw-menu {
+    padding: 0;
+  }
+
+  .jw-dock {
+    .jw-overlay {
+      border-radius: @ui-padding;
+    }
+  }
+
+  .jw-skip {
+    border-radius: @ui-padding;
+  }
+
+  .jw-text {
+    text-rendering: optimizeLegibility;
+    /* font-smoothing is a private setting not transformed by PostCSS */
+    -webkit-font-smoothing: antialiased;
+    /* OSX Firefox specific style for improving legibility */
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .jw-slider-container {
+    .jw-knob {
+      opacity: 0;
     }
 
-    .jw-slider-container {
-        .jw-knob {
-            opacity: 0;
-        }
-
-        &:hover {
-            .jw-knob {
-                opacity: 1;
-            }
-        }
+    &:hover {
+      .jw-knob {
+        opacity: 1;
+      }
     }
+  }
 
-    &.jw-flag-touch {
-        .jw-knob {
-            opacity: 1;
-        }
+  &.jw-flag-touch {
+    .jw-knob {
+      opacity: 1;
     }
+  }
 }

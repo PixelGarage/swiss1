@@ -417,8 +417,9 @@ function video_embed_jwplayer_get_skins () {
   //
   // scan css directory for custom skins
   $path = drupal_get_path('module', 'video_embed_jwplayer') . '/css';
-  $files = array_diff(scandir($path), array('.', '..'));
+  $files = scandir($path);
   if ($files) {
+    $files = array_diff($files, array('.', '..'));
     foreach ($files as $file) {
       if (strpos($file, '.css') == (strlen($file) - 4)) {
         $skin = str_replace('.css', '', $file);

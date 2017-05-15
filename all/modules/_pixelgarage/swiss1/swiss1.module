@@ -70,8 +70,8 @@ function swiss1_cron() {
   $last_time = variable_get('swiss1_cron_last_run', 0);
 
   //
-  // delete all video streams with an expiration date in the past
-  $now = date('Y-m-d H:i:s');
+  // delete all video streams with an expiration date in the past (catch-up rights)
+  $now = date('Y-m-d H:i:s'); // format matters for comparison to work
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')

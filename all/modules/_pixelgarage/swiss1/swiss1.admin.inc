@@ -21,7 +21,7 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#weight' => 0,
   );
   $form['swiss1_action_set']['swiss1_last_run'] = array(
-    '#markup' => t('Last media import: @date', array('@date' => date('d.m.Y H:i:s', variable_get('swiss1_cron_last_run', 0)))),
+    '#markup' => t('Last media import: @date', array('@date' => date('d.m.Y H:i:s', variable_get('swiss1_last_media_import', 0)))),
     '#prefix' => '<div>',
     '#suffix' => '</br></br></div>',
   );

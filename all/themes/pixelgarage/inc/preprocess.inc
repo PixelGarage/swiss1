@@ -28,3 +28,29 @@ function pixelgarage_preprocess_page(&$vars) {
 }
 
 
+/**
+ * Implements hook_ds_pre_render_alter().
+ *
+ * @param $layout_render_array
+ *   The render array
+ * @param $context
+ *   An array with the context that is being rendered. Available keys are
+ *   - entity
+ *   - entity_type
+ *   - bundle
+ *   - view_mode
+ * @param array $vars
+ *   All variables available for render. You can use this to add css classes.
+ */
+function pixelgarage_ds_pre_render_alter(&$layout_render_array, $context, &$vars) {
+  // Check node type.
+  if ($context['entity_type'] == 'node' && $context['bundle'] == 'videostream')  {
+    $view_mode = $context['view_mode'];
+    _preprocess_node_videostream($vars, $layout_render_array, $view_mode);
+  }
+}
+
+
+function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode) {
+
+}

@@ -17,14 +17,14 @@ define('PROXIMITY_ITEM_NOT_FOUND', 1);
  * either with a full page request or an ajax callback.
  * Use a 'unique' string to prevent conflicts with automatically generated url's.
  */
-define('PROXIMITY_ITEM_URL_BASE_PATH', 'proximity-container-item/');
+define('PROXIMITY_ITEM_URL_BASE_PATH', 'video-stream/');
 
 /**
  * Holds the base path for an item ajax callback.
  *
  * Use a 'unique' string to prevent conflicts with automatically generated url's.
  */
-define('PROXIMITY_ITEM_AJAX_PATH', 'ajax/pe-container-item/');
+define('PROXIMITY_ITEM_AJAX_PATH', 'ajax/video-stream/');
 
 
 

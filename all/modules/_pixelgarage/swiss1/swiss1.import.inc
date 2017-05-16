@@ -15,6 +15,38 @@
 define('SWISS1_IMPORT_DIRECTORY', '../swiss1_media_import');
 
 
+/* -----------------------------------------------------------------
+ *  Media cleanup
+ * ----------------------------------------------------------------- */
+
+/**
+ * Deletes all expired video streams according to the imported video entry settings.
+ *
+ * A VideoStream can be created for multiple runs. A flag delete_after_expiration
+ * indicates, if the VideoSttream and its linked media files can be deleted after
+ * the validity period or not.
+ */
+function swiss1_delete_expired_media() {
+  //
+  // delete all video streams with an expiration date in the past (catch-up rights)
+  $now = date('Y-m-d H:i:s'); // format matters for comparison to work
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_validity_period', 'value2', $now, '<');
+  $result = $query->execute();
+
+  if (isset($result['node']) && !empty($result['node'])) {
+    node_delete_multiple(array_keys($result['node']));
+  }
+}
+
+
+/* -----------------------------------------------------------------
+ *  Media importer
+ * ----------------------------------------------------------------- */
+
 /**
  * Imports all new XML media files. Processed files are deleted.
  */
@@ -115,19 +147,15 @@ function _import_xml_file($file) {
  */
 function _parse_entry($xml_entry) {
   //
-  // get the schedule id, if available
+  // convert xml entry into associative array
   $new_entry = false;
   $json = json_encode($xml_entry);
   $entry_arr = json_decode($json, true);
-  $schedule_id = isset($entry_arr['ScheduleReference']['AssetReconciliationId']) ? $entry_arr['ScheduleReference']['AssetReconciliationId'] : false;
-
-  //
-  // check if schedule entry has to be imported or updated (cached version differs)
-
 
   //
   // import/update xml entry into existing or new node
   $node = false;
+  $schedule_id = isset($entry_arr['ScheduleReference']['AssetReconciliationId']) ? $entry_arr['ScheduleReference']['AssetReconciliationId'] : false;
   if ($schedule_id) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -156,14 +184,12 @@ function _parse_entry($xml_entry) {
   //
   // update all VideoStream fields
   // schedule reference
-  if ($schedule_id) {
-    $node->field_schedule_id[LANGUAGE_NONE][0]['value'] = $schedule_id;
-  }
+  $node->field_schedule_id[LANGUAGE_NONE][0]['value'] = $schedule_id ? $schedule_id : '';
 
   // Airing information
-  $node->field_is_scheduled[LANGUAGE_NONE][0]['value'] = 0;
   if (isset($entry_arr['AiringInformation'])) {
     $airing_info = $entry_arr['AiringInformation'];
+    $run_type = isset($airing_info['RunType']) ? $airing_info['RunType'] : false; // PRIMARY means catchUp period is set
 
     if (isset($airing_info['ScheduledStartDateTime'])) {
       $start_time = str_replace('.', '-', $airing_info['ScheduledStartDateTime']);
@@ -171,17 +197,14 @@ function _parse_entry($xml_entry) {
       $start_date = date('Y-m-d H:i:s', $start_timestamp);
       $node->field_broadcast_date[LANGUAGE_NONE][0]['value'] = $start_date;
 
-      // set catchup period
+      // set validity period (catchup period)
+      $node->field_validity_period[LANGUAGE_NONE][0]['value'] = $start_date;
       $catchup_period = isset($airing_info['CatchupPeriod']) ? ' +' . strtolower($airing_info['CatchupPeriod']) : false;
       if ($catchup_period) {
         $exp_timestamp = strtotime($start_time . $catchup_period);
         $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
-        $node->field_expiration_date[LANGUAGE_NONE][0]['value'] = $start_date;
-        $node->field_expiration_date[LANGUAGE_NONE][0]['value2'] = $exp_date;
+        $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
       }
-
-      // set scheduled flag
-      $node->field_is_scheduled[LANGUAGE_NONE][0]['value'] = 1;
     }
 
     if (isset($airing_info['ScheduledEndDateTime'])) {
@@ -193,8 +216,6 @@ function _parse_entry($xml_entry) {
     $node->field_duration[LANGUAGE_NONE][0]['value'] = isset($airing_info['Duration']) ? $airing_info['Duration'] : '';
     $featured = (isset($airing_info['Featured']) && $airing_info['Featured'] == 'true') ? 1 : 0;
     $node->field_featured[LANGUAGE_NONE][0]['value'] = $featured;
-
-    //$run_type = isset($airing_info['RunType']) ? $airing_info['RunType'] : ''; // PRIMARY means catchUp period is set
   }
 
   //
@@ -202,13 +223,13 @@ function _parse_entry($xml_entry) {
   if (isset($entry_arr['Description'])) {
     $epg = isset($entry_arr['Description']['Epg']) ? $entry_arr['Description']['Epg'] : false;
     if ($epg) {
-      $node->title = isset($epg['Title']) ? $epg['Title'] : (isset($epg['Headline']) ? $epg['Headline'] : '');
-      $synopsis = isset($epg['Synopsis']) ? $epg['Synopsis'] : '';
+      $node->title = isset($epg['Title']) ? $epg['Title'] : (isset($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
+      $synopsis = isset($epg['Synopsis']) ? $epg['Synopsis'] : t('Keine Information zur Sendung verfügbar');
       $synopsis .= isset($epg['PresentedBy']) ? t('<br><br>Moderator: @moderator', array('@moderator' => $epg['PresentedBy'])) : '';
-      $synopsis .= isset($epg['Interviewee']) ? t('<br><br>Interv:iew @interview', array('@interview' => $epg['Interviewee'])) : '';
+      $synopsis .= isset($epg['Interviewee']) ? t('<br>Gast: @guest', array('@guest' => $epg['Interviewee'])) : '';
       $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
-      $node->field_video_language[LANGUAGE_NONE][0]['value'] = isset($epg['Language']) ? $epg['Language'] : '';
-      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = isset($epg['AgeRestriction']) ? $epg['AgeRestriction'] : '';
+      $node->field_video_language[LANGUAGE_NONE][0]['value'] = isset($epg['Language']) ? $epg['Language'] : t('Deutsch');
+      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = isset($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('Für Kinder geeignet');
       $node->field_series[LANGUAGE_NONE][0]['value'] = isset($epg['Series']) ? $epg['Series'] : '';
       $node->field_season[LANGUAGE_NONE][0]['value'] = isset($epg['Season']) ? $epg['Season'] : '';
       $node->field_episode[LANGUAGE_NONE][0]['value'] = isset($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
@@ -223,6 +244,9 @@ function _parse_entry($xml_entry) {
   // Properties
   if (isset($entry_arr['Properties'])) {
     $properties = $entry_arr['Properties'];
+
+    // set media id
+    //$node->field_media_id[LANGUAGE_NONE][0]['value'] = $properties['MediaId'];
 
     // set thumbnail
     $thumb_path = isset($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : false;
@@ -250,12 +274,12 @@ function _parse_entry($xml_entry) {
     if (isset($publish_info['ValidityDateTimeFrom'])) {
       $valid_from = str_replace('.', '-', $publish_info['ValidityDateTimeFrom']);
       $from_timestamp = strtotime($valid_from);
-      $node->field_expiration_date[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', $from_timestamp);
+      $node->field_validity_period[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', $from_timestamp);
     }
     if (isset($publish_info['ValidityDateTimeTo'])) {
       $valid_to = str_replace('.', '-', $publish_info['ValidityDateTimeTo']);
       $to_timestamp = strtotime($valid_to);
-      $node->field_expiration_date[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $to_timestamp);
+      $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $to_timestamp);
     }
 
   }

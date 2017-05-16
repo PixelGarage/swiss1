@@ -71,17 +71,7 @@ function swiss1_cron() {
 
   //
   // delete all video streams with an expiration date in the past (catch-up rights)
-  $now = date('Y-m-d H:i:s'); // format matters for comparison to work
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'videostream')
-    ->propertyCondition('status', 1)
-    ->fieldCondition('field_expiration_date', 'value', $now, '<');
-  $result = $query->execute();
-
-  if (isset($result['node']) && !empty($result['node'])) {
-    node_delete_multiple(array_keys($result['node']));
-  }
+  swiss1_delete_expired_media();
 
   //
   // import/update the media files and meta data
@@ -92,6 +82,10 @@ function swiss1_cron() {
   variable_set('swiss1_cron_last_run', REQUEST_TIME);
 }
 
+
+/* -----------------------------------------------------------------
+ *  JWPLayer hook implementation
+ * ----------------------------------------------------------------- */
 
 /**
  * Returns the expiration timestamp value set on the node of the given video (media id).
@@ -114,8 +108,8 @@ function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp,
 
   if (isset($result['node'])) {
     $node = node_load(key($result['node']));
-    if (!empty($node->field_expiration_date)) {
-      $date = $node->field_expiration_date[LANGUAGE_NONE][0]['value'];
+    if (!empty($node->field_validity_period)) {
+      $date = $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
       $timestamp = strtotime($date);
 
       // if no (valid) timestamp is set on the node, don't show video

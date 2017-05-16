@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!--
+        ##########################################################
+        ####################VODEntries Root Element###################
+        ##########################################################
+        -->
+    <xs:element name="VODEntries">
+        <xs:annotation>
+            <xs:documentation>The root for all vodSample files.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+
+            <xs:choice>
+                <xs:element name="Show" type="showType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="VODEntry" type="vodEntryType" minOccurs="0" maxOccurs="1"/>
+            </xs:choice>
+
+        </xs:complexType>
+    </xs:element>
+
+    <!--
+       ##########################################################
+       ####################Show Type#######################
+       ##########################################################
+       -->
+    <xs:complexType name="showType">
+
+        <xs:sequence>
+            <xs:element name="Block" type="blockType" minOccurs="0" maxOccurs="unbounded"/>
+
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <!--
+           ##########################################################
+           ####################Block Type#######################
+           ##########################################################
+           -->
+    <xs:complexType name="blockType">
+        <xs:sequence>
+    	<xs:element name="VODEntry" type="vodEntryType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!--
+          ##########################################################
+          ####################VODEntry Type#######################
+          ##########################################################
+          -->
+    <xs:complexType name="vodEntryType">
+        <xs:all>
+            <xs:element name="AiringInformation" type="airingInformationType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Description" type="descriptionType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ScheduleReference" type="ScheduleReferenceType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Properties" type="propertiesType" minOccurs="0" maxOccurs="1"/>
+		    <xs:element name="PublishingInformation" type="publishingInformationType" minOccurs="0" maxOccurs="1"/>
+
+        </xs:all>
+    </xs:complexType>
+
+    <!--
+              ##########################################################
+              ####################AiringInformationType Type#######################
+              ##########################################################
+              -->
+    <xs:complexType name="airingInformationType">
+        <xs:sequence>
+			<xs:element name="RunType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ScheduledStartDateTime" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="RealStartDateTime" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ScheduledEndDateTime" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RealEndDateTime" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Duration" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Title" type="xs:string" minOccurs="0" maxOccurs="1"/> 
+			<xs:element name="CatchupPeriod" type="xs:string" minOccurs="0" maxOccurs="1"/>	
+			<xs:element name="Featured" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+   
+
+    <!--
+           ##########################################################
+           ####################Description Type#######################
+           ##########################################################
+           -->
+    <xs:complexType name="descriptionType">
+
+        <xs:sequence>
+            <xs:element name="Epg" type="epgType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Category" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <!--
+        ##########################################################
+        ####################Epg Type#######################
+        ##########################################################
+        -->
+    <xs:complexType name="epgType">
+
+        <xs:sequence>
+            <xs:element name="Title" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Buzzword" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Headline" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Synopsis" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Keyword" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PresentedBy" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Interviewee" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AgeRestriction" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="EpisodeNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Language" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Genre" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Series" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Season" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <!--
+          ##########################################################
+          ####################ScheduleReference Type#######################
+          ##########################################################
+          -->
+    <xs:complexType name="ScheduleReferenceType">
+        <xs:sequence>
+
+            <xs:element name="AssetReconciliationId" type="xs:string" minOccurs="0" maxOccurs="1"/>
+
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!--
+       ##########################################################
+       ####################Properties Type#######################
+       ##########################################################
+       -->
+    <xs:complexType name="propertiesType">
+
+        <xs:sequence>
+            <xs:element name="ThumbnailFTPPathFilename" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="PosterframeFTPPathFilename" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="StreamingLink" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+
+    </xs:complexType>
+	
+	 <!--
+       ##########################################################
+       ####################PublishingInformation Type#######################
+       ##########################################################
+       -->
+    <xs:complexType name="publishingInformationType">
+        <xs:sequence>
+            <xs:element name="ValidityDateTimeFrom" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ValidityDateTimeTo" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

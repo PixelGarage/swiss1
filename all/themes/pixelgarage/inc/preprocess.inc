@@ -52,5 +52,37 @@ function pixelgarage_ds_pre_render_alter(&$layout_render_array, $context, &$vars
 
 
 function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode) {
+  $node  = $vars['node'];
+  $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
+
+//
+// shariff button definition
+  libraries_load('shariff', 'naked');
+  $vars['shariff_attrs'] = array(
+    'data-services' => '["twitter","facebook","mail"]',
+    'data-orientation' => "horizontal",
+    'data-mail-url' => "mailto:",
+    'data-mail-subject' => variable_get('shariff_mail_subject', t('')),
+    'data-mail-body' => variable_get('shariff_mail_body', t('')),
+    'data-lang' => "de",
+  );
+
+  //
+  // get poster image, if none is set, set default image
+  if (!empty($node->field_poster) && $poster = file_load($node->field_poster[LANGUAGE_NONE][0]['fid'])) {
+    $vars['poster_url'] = file_create_url($poster->uri);
+  }
+  else {
+    $vars['poster_url'] = file_create_url($img_path . 'poster_swiss1.jpg');
+  }
+
+  //
+  // render video if it is playable, otherwise render poster image
+  $validity_period_start = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value']);
+  $validity_period_end = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value2']);
+  $now = time();
+  $vars['show_video'] = ($now >= $validity_period_start) && ($now < $validity_period_end) && isset($vars['content']['field_video_path']);
+
+
 
 }

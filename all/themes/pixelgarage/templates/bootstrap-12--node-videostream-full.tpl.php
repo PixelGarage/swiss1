@@ -12,7 +12,27 @@
   <?php endif; ?>
   <div class="row">
     <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
-      <?php print $central; ?>
+
+    <div class="video-container">
+      <?php if ($show_video): ?>
+        <?php print render($content['field_video_path']); ?>
+      <?php else: ?>
+        <img src="<?php print $poster_url; ?>" class="video-poster">
+      <?php endif; ?>
+    </div>
+    <div class="video-header">
+
+    </div>
+    <div class="video-body">
+      <?php print render($content['field_video_path']); ?>
+      <div class="social-buttons">
+        <div class="shariff" <?php print drupal_attributes($shariff_attrs); ?>></div>
+      </div>
+    </div>
+    <div class="video-similar">
+
+    </div>
+
     </<?php print $central_wrapper; ?>>
   </div>
 </<?php print $layout_wrapper ?>>

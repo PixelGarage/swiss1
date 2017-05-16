@@ -14,6 +14,12 @@
  */
 define('SWISS1_IMPORT_DIRECTORY', '../swiss1_media_import');
 
+/**
+ * Define run types of VODEntry
+ */
+define('SWISS1_RUNTYPE_PRIMARY', 'PRIMARY');
+define('SWISS1_RUNTYPE_RERUN', 'RERUN');
+
 
 /* -----------------------------------------------------------------
  *  Media cleanup
@@ -59,6 +65,7 @@ function swiss1_media_import () {
     //
     // import all xml files in the dedicated directory
     $files = scandir(SWISS1_IMPORT_DIRECTORY);
+    sort($files);
     if ($files) {
       $files = array_diff($files, array('.', '..'));
       foreach ($files as $file) {
@@ -183,36 +190,69 @@ function _parse_entry($xml_entry) {
 
   //
   // update all VideoStream fields
+  //
   // schedule reference
   $node->field_schedule_id[LANGUAGE_NONE][0]['value'] = $schedule_id ? $schedule_id : '';
 
-  // Airing information
+  // Airing information (only for scheduled entries)
   if (isset($entry_arr['AiringInformation'])) {
     $airing_info = $entry_arr['AiringInformation'];
-    $run_type = isset($airing_info['RunType']) ? $airing_info['RunType'] : false; // PRIMARY means catchUp period is set
+    $run_type = isset($airing_info['RunType']) ? strtoupper($airing_info['RunType']) : SWISS1_RUNTYPE_PRIMARY; // PRIMARY means catchUp period is set
+    $playable_on_broadcast_start = variable_get('swiss1_video_playable_start') == 'broadcast_start';
 
+    // get broadcast start time
     if (isset($airing_info['ScheduledStartDateTime'])) {
       $start_time = str_replace('.', '-', $airing_info['ScheduledStartDateTime']);
       $start_timestamp = strtotime($start_time);
       $start_date = date('Y-m-d H:i:s', $start_timestamp);
       $node->field_broadcast_date[LANGUAGE_NONE][0]['value'] = $start_date;
-
-      // set validity period (catchup period)
-      $node->field_validity_period[LANGUAGE_NONE][0]['value'] = $start_date;
-      $catchup_period = isset($airing_info['CatchupPeriod']) ? ' +' . strtolower($airing_info['CatchupPeriod']) : false;
-      if ($catchup_period) {
-        $exp_timestamp = strtotime($start_time . $catchup_period);
-        $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
-        $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
-      }
+    }
+    else {
+      $msg = t('No schedule start date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+      throw new Exception($msg);
     }
 
+    // get broadcast end time
     if (isset($airing_info['ScheduledEndDateTime'])) {
       $end_time = str_replace('.', '-', $airing_info['ScheduledEndDateTime']);
       $end_timestamp = strtotime($end_time);
-      $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $end_timestamp);
+      $end_date = date('Y-m-d H:i:s', $end_timestamp);
+      $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = $end_date;
+    }
+    else {
+      $msg = t('No schedule end date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+      throw new Exception($msg);
     }
 
+    // set validity period start and end date
+    if ($playable_on_broadcast_start) {
+      // set validity period start to broadcast start time
+      $node->field_validity_period[LANGUAGE_NONE][0]['value'] = $start_date;
+      $validity_start_timestamp = $start_timestamp;
+    }
+    else {
+      // set validity period start to broadcast end time
+      $node->field_validity_period[LANGUAGE_NONE][0]['value'] = $end_date;
+      $validity_start_timestamp = $end_timestamp;
+    }
+
+    switch ($run_type) {
+      case SWISS1_RUNTYPE_PRIMARY:
+        $catchup_period = isset($airing_info['CatchupPeriod']) ? ' +' . strtolower($airing_info['CatchupPeriod']) : '+1 second';
+        $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
+        $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
+        break;
+      case SWISS1_RUNTYPE_RERUN:
+        //$primary_schedule_id = ''; // TODO: get primary schedule id from VODEntry
+        //$exp_date = _get_validity_end_date($primary_schedule_id);
+        //break;
+      default:
+      $exp_date = $node->field_validity_period[LANGUAGE_NONE][0]['value'];
+        break;
+    }
+    $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
+
+    // get duration and feature flag
     $node->field_duration[LANGUAGE_NONE][0]['value'] = isset($airing_info['Duration']) ? $airing_info['Duration'] : '';
     $featured = (isset($airing_info['Featured']) && $airing_info['Featured'] == 'true') ? 1 : 0;
     $node->field_featured[LANGUAGE_NONE][0]['value'] = $featured;
@@ -276,10 +316,18 @@ function _parse_entry($xml_entry) {
       $from_timestamp = strtotime($valid_from);
       $node->field_validity_period[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', $from_timestamp);
     }
+    else {
+      // set now as validity period start
+      $node->field_validity_period[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s');
+    }
     if (isset($publish_info['ValidityDateTimeTo'])) {
       $valid_to = str_replace('.', '-', $publish_info['ValidityDateTimeTo']);
       $to_timestamp = strtotime($valid_to);
       $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $to_timestamp);
+    }
+    else {
+      $timestamp = strtotime('+25 years');
+      $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $timestamp);
     }
 
   }
@@ -292,6 +340,26 @@ function _parse_entry($xml_entry) {
   return $new_entry;
 }
 
+/**
+ * Get the validity period end date of the node with
+ * the given schedule id.
+ *
+ * @return bool
+ */
+function _get_validity_end_date($primary_schedule_id) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->fieldCondition('field_schedule_id', 'value', $primary_schedule_id)
+    ->range(0, 1);
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    // Update existing
+    $node = node_load(key($result['node']));
+    return $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
+  }
+  return false;
+}
 
 /**
  * Gets the Category term key of the given term name.

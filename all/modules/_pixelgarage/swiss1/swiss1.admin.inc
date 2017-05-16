@@ -16,8 +16,8 @@ function swiss1_import_settings_form($form, &$form_state) {
   $form['swiss1_action_set'] = array(
     '#type' => 'fieldset',
     '#title' => t('Run media import'),
-    '#collapsible' => FALSE,
-    '#collapsed' => FALSE,
+    '#collapsible' => false,
+    '#collapsed' => false,
     '#weight' => 0,
   );
   $form['swiss1_action_set']['swiss1_last_run'] = array(
@@ -30,6 +30,28 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#value' => t('Run media import'),
     '#submit' => array('swiss1_media_import'),
   );
+
+  //
+  // Swiss1 settings
+  $play_options = array(
+    'broadcast_start' => t('Broadcast start'),
+    'broadcast_end' => t('Broadcast end'),
+ );
+  $form['swiss1_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Configure Swiss1 TV behavior'),
+    '#collapsible' => true,
+    '#collapsed' => false,
+    '#weight' => 10,
+  );
+  $form['swiss1_settings']['swiss1_video_playable_start'] = array(
+    '#type' => 'radios',
+    '#title' => t('At which time should a video be playable?'),
+    '#options' => $play_options,
+    '#default_value' => variable_get('swiss1_video_playable_start') ? variable_get('swiss1_video_playable_start') : 'broadcast_end',
+    '#description' => t('Defines the time when a broadcast video can be played on the Website. Default: at the end of its broadcast period.'),
+  );
+
 
   return system_settings_form($form);
 }

@@ -14,32 +14,19 @@
     <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
 
     <div class="video-container">
-      <?php if ($show_video): ?>
-        <?php print render($content['field_video_path']); ?>
-      <?php else: ?>
-        <img src="<?php print $poster_url; ?>" class="video-poster">
-      <?php endif; ?>
+      <img src="<?php print $poster_url; ?>" class="video-poster">
     </div>
     <div class="video-header">
-      <div class="title-line-1"><?php print render($content['title']); ?></div>
-      <div class="title-line-2">
-        <span class="video-category"><?php print $category; ?></span>
-        <span class="video-time-info"><?php print $time_info; ?></span>
+      <div class="title-line-1">
         <span class="video-duration"><?php print $duration_minutes; ?></span>
       </div>
     </div>
     <div class="video-body">
+      <div class="title-line-2"><?php print render($content['title']); ?></div>
       <div class="title-line-3">
-        <span class="video-season-episode"><?php print $season_episode; ?></span>
-        <span class="video-language-age"><?php print $language_age; ?></span>
+        <span class="video-category"><?php print $category; ?></span>
+        <span class="video-time-info"><?php print $time_info; ?></span>
       </div>
-      <?php print render($content['body']); ?>
-      <div class="social-buttons">
-        <div class="shariff" <?php print drupal_attributes($shariff_attrs); ?>></div>
-      </div>
-    </div>
-    <div class="video-similar">
-
     </div>
 
     </<?php print $central_wrapper; ?>>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<VODEntries>
+    <VODEntry>
+		<Description>
+			<Epg>
+				<Title>Die Tiere der Alpen</Title>
+				<Buzzword>Die Tiere der Alpen</Buzzword>
+				<Headline>Die Tiere der Alpen</Headline>
+				<Synopsis>&lt;p&gt;Andreas Moser liegt für sie Tag und Nacht auf der Lauer, um Ihnen
+				die Tierwelt der Alpen näher zu bringen. &lt;/p&gt;</Synopsis>
+				<Keyword>Die Tiere der Alpen Episode 17</Keyword>
+				<PresentedBy>Andreas Moser</PresentedBy>
+				<Interviewee>Steinbock</Interviewee>
+				<AgeRestriction>12+</AgeRestriction>
+				<EpisodeNumber>17</EpisodeNumber>
+				<Language>Deutsch</Language>
+				<Genre>DOK</Genre>
+				<Series>Die Tiere der Alpen</Series>
+				<Season>Die Tiere der Alpen S05</Season>
+			</Epg>
+			<Category>DOK</Category>
+		</Description>
+
+		<Properties>
+			<MediaID>G48XkLch</MediaID>
+			<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</ThumbnailFTPPathFilename>
+			<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</PosterframeFTPPathFilename>
+			<StreamingLink>https://content.jwplatform.com/videos/G48XkLch</StreamingLink>
+		</Properties>
+        <PublishingInformation>
+            <ValidityDateTimeFrom>19.03.2017 21:00</ValidityDateTimeFrom>
+            <ValidityDateTimeTo>19.05.2017 22:00</ValidityDateTimeTo>
+        </PublishingInformation>
+    </VODEntry>
+</VODEntries>
+

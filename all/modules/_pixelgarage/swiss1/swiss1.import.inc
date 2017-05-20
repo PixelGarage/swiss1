@@ -10,11 +10,6 @@
  */
 
 /**
- * Import directory for XML files
- */
-define('SWISS1_IMPORT_DIRECTORY', '../swiss1_media_import');
-
-/**
  * Define run types of VODEntry
  */
 define('SWISS1_RUNTYPE_PRIMARY', 'PRIMARY');
@@ -59,23 +54,28 @@ function swiss1_delete_expired_media() {
 function swiss1_media_import () {
   //
   // Swiss1 TV media import
-  $result = false;
+  $import_counter = array(
+    '@created' => 0,
+    '@updated' => 0,
+    '@failed' => 0,
+  );
 
   try {
     //
     // import all xml files in the dedicated directory
-    $files = scandir(SWISS1_IMPORT_DIRECTORY);
-    sort($files);
+    $import_dir = variable_get('swiss1_import_directory') ?
+      variable_get('swiss1_import_directory') : SWISS1_IMPORT_DEFAULT_DIRECTORY;
+    $files = scandir($import_dir);
     if ($files) {
-      $files = array_diff($files, array('.', '..'));
+      sort($files);
       foreach ($files as $file) {
-        $file_path = SWISS1_IMPORT_DIRECTORY . '/' . $file;
-        if (is_file($file_path)) {
+        $file_path = $import_dir . '/' . $file;
+        if (is_file($file_path) && mime_content_type($file_path) == 'application/xml') {
           // import file
-          $result = _import_xml_file($file_path);
+          _import_xml_file($file_path, $import_counter);
 
           // delete file
-          //unlink($file);
+          unlink($file_path);
         }
       }
     }
@@ -86,10 +86,17 @@ function swiss1_media_import () {
   }
 
   // display feedback about import, if any
-  if ($result) {
-    $importMessage = 'Swiss1 TV media import - @created video streams created, @updated video streams updated.';
-    drupal_set_message(t($importMessage, $result));
-    watchdog('HSO Importer', $importMessage, $result, WATCHDOG_INFO);
+  if ($import_counter) {
+    $importMessage = t('Swiss1 TV media import - @created video streams created, @updated video streams updated and @failed video streams have failed to be imported.');
+    if($import_counter['@failed']) {
+      drupal_set_message(t($importMessage, $import_counter), 'warning');
+      watchdog('Swiss1 Importer', $importMessage, $import_counter, WATCHDOG_WARNING);
+    }
+    else {
+      drupal_set_message(t($importMessage, $import_counter));
+      watchdog('Swiss1 Importer', $importMessage, $import_counter, WATCHDOG_INFO);
+
+    }
   }
 
   //
@@ -100,17 +107,17 @@ function swiss1_media_import () {
 /**
  * Imports an XML file into the CMS database.
  *
- * @param $file
+ * @param string $filepath
+ *    The filepath of the xml file to be imported.
+ * @param array  $import_counter
+ *    Result array with numbers of created and updated VODEntries.
+ *
+ * @throws \Exception
  */
-function _import_xml_file($file) {
-  $result = array(
-    '@created' => 0,
-    '@updated' => 0,
-  );
-
+function _import_xml_file($filepath, &$import_counter) {
   //
   // read xml file
-  $xml = simplexml_load_file($file);
+  $xml = simplexml_load_file($filepath);
 
   switch($xml->getName()) {
     case 'OnlineCMSSchedule':
@@ -122,47 +129,56 @@ function _import_xml_file($file) {
       $xpath = '//VODEntry';
       break;
     default:
-      // no valid file
-      $xpath = false;
+      // no valid xml file
+      $msg = t('The xml file does not conform to the Swiss1 XML document type (see XSD files for XML definition).');
+      throw new Exception($msg);
   }
 
   //
   // select the video entries in the file and import it
+  $message = '';
   $xml_entries = $xml->xpath($xpath);
   foreach ($xml_entries as $xml_entry) {
-    $new_entry = _parse_entry($xml_entry);
-    if ($new_entry) {
-      $result['@created']++;
-    }
-    else {
-      $result['@updated']++;
+    $success = _parse_entry($xml_entry, $import_counter);
+    if (is_string($success)) {
+      $message .= $success . "\n";
     }
   }
+  if (!empty($message)) {
+    $warning = t('Import of file "@filepath" with warnings: @warn', array(
+      '@filepath' => $filepath,
+      '@warn' => $message,
+    ));
+    watchdog('Swiss1 Importer', $warning, array(), WATCHDOG_WARNING);
+    drupal_set_message($warning, 'warning');
+  }
 
-  // return import result
-  return $result;
 }
 
 
 /**
  * Parses an XML entry and create or update a node of type VideoStream.
  *
- * @param $xml_entry
+ * @param object $xml_entry
+ *    An object of class SimpleXMLElement containing the data of a VODEntry.
  *
- * @return bool
- *  Returns true, if a new node has been created, false otherwise (existing node update)
+ * @param array  $import_counter
+ *    An array holding the result of the xml import of VODEntries.
+ *
+ * @return bool|string   Returns true, if import of entry was successful, or an err_msg in case of missing data.
  */
-function _parse_entry($xml_entry) {
+function _parse_entry($xml_entry, &$import_counter) {
   //
   // convert xml entry into associative array
-  $new_entry = false;
+  $updated = false;
   $json = json_encode($xml_entry);
-  $entry_arr = json_decode($json, true);
+  $arr_entry = json_decode($json, true);
 
   //
   // import/update xml entry into existing or new node
+  // only scheduled VODEntries can be updated, single VODEntries are always created (new)
   $node = false;
-  $schedule_id = isset($entry_arr['ScheduleReference']['AssetReconciliationId']) ? $entry_arr['ScheduleReference']['AssetReconciliationId'] : false;
+  $schedule_id = isset($arr_entry['ScheduleReference']['AssetReconciliationId']) ? $arr_entry['ScheduleReference']['AssetReconciliationId'] : false;
   if ($schedule_id) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -174,10 +190,11 @@ function _parse_entry($xml_entry) {
       // Update existing
       $node = node_load(key($result['node']));
       $node->status = 1;
+      $updated = true;
     }
   }
 
-  // create new node, if it not exists
+  // create new node, if it not already exists
   if (!$node) {
     $node = new stdClass();
     $node->type = 'videostream';
@@ -185,7 +202,6 @@ function _parse_entry($xml_entry) {
     $node->uid = 1;
     $node->status = 1;
     node_object_prepare($node);
-    $new_entry = true;
   }
 
   //
@@ -194,11 +210,10 @@ function _parse_entry($xml_entry) {
   // schedule reference
   $node->field_schedule_id[LANGUAGE_NONE][0]['value'] = $schedule_id ? $schedule_id : '';
 
-  // Airing information (only for scheduled entries)
-  if (isset($entry_arr['AiringInformation'])) {
-    $airing_info = $entry_arr['AiringInformation'];
-    $run_type = isset($airing_info['RunType']) ? strtoupper($airing_info['RunType']) : SWISS1_RUNTYPE_PRIMARY; // PRIMARY means catchUp period is set
-    $playable_on_broadcast_start = variable_get('swiss1_video_playable_start') == 'broadcast_start';
+  // Airing information
+  // Only for scheduled entries in the future
+  if (isset($arr_entry['AiringInformation'])) {
+    $airing_info = $arr_entry['AiringInformation'];
 
     // get broadcast start time
     if (isset($airing_info['ScheduledStartDateTime'])) {
@@ -208,23 +223,39 @@ function _parse_entry($xml_entry) {
       $node->field_broadcast_date[LANGUAGE_NONE][0]['value'] = $start_date;
     }
     else {
-      $msg = t('No schedule start date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
-      throw new Exception($msg);
+      $msg = t('No start date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+      $import_counter['@failed']++;
+      return $msg;
     }
 
-    // get broadcast end time
+    // get broadcast end time (must be > start time)
     if (isset($airing_info['ScheduledEndDateTime'])) {
       $end_time = str_replace('.', '-', $airing_info['ScheduledEndDateTime']);
       $end_timestamp = strtotime($end_time);
-      $end_date = date('Y-m-d H:i:s', $end_timestamp);
-      $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = $end_date;
+      if ($end_timestamp > $start_timestamp) {
+        $end_date = date('Y-m-d H:i:s', $end_timestamp);
+        $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = $end_date;
+      }
+      else {
+        $msg = t('End date time lies before start date time for VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+        $import_counter['@failed']++;
+        return $msg;
+      }
     }
     else {
-      $msg = t('No schedule end date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
-      throw new Exception($msg);
+      $msg = t('No end date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+      $import_counter['@failed']++;
+      return $msg;
     }
 
-    // set validity period start and end date
+    // set validity period
+    // REMARK: VODEntries with a validity end time in the past will be deleted during the next cleanup run
+    // get catchup period
+    $catchup_period = isset($airing_info['CatchupPeriod']) ? ' +' . strtolower($airing_info['CatchupPeriod']) : 'now';
+    $run_type = isset($airing_info['RunType']) ? strtoupper($airing_info['RunType']) : 'UNDEFINED';
+    $playable_on_broadcast_start = variable_get('swiss1_video_playable_start') == 'broadcast_start';
+
+    // validity start date
     if ($playable_on_broadcast_start) {
       // set validity period start to broadcast start time
       $node->field_validity_period[LANGUAGE_NONE][0]['value'] = $start_date;
@@ -236,18 +267,22 @@ function _parse_entry($xml_entry) {
       $validity_start_timestamp = $end_timestamp;
     }
 
+    // validity end date
     switch ($run_type) {
       case SWISS1_RUNTYPE_PRIMARY:
-        $catchup_period = isset($airing_info['CatchupPeriod']) ? ' +' . strtolower($airing_info['CatchupPeriod']) : '+1 second';
+        // set expiration date from catchup period
         $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
         $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
         break;
       case SWISS1_RUNTYPE_RERUN:
-        //$primary_schedule_id = ''; // TODO: get primary schedule id from VODEntry
+        // get catchup period from PRIMARY schedule
+        //$primary_schedule_id = $arr_entry['PrimaryScheduleId']); // TODO: get primary schedule id from VODEntry
         //$exp_date = _get_validity_end_date($primary_schedule_id);
         //break;
       default:
-      $exp_date = $node->field_validity_period[LANGUAGE_NONE][0]['value'];
+        // set catchup period to 25 years, if no run type is given
+        $exp_timestamp = strtotime('+25 years', $validity_start_timestamp);
+        $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
         break;
     }
     $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
@@ -259,57 +294,10 @@ function _parse_entry($xml_entry) {
   }
 
   //
-  // EPG / Category
-  if (isset($entry_arr['Description'])) {
-    $epg = isset($entry_arr['Description']['Epg']) ? $entry_arr['Description']['Epg'] : false;
-    if ($epg) {
-      $node->title = isset($epg['Title']) ? $epg['Title'] : (isset($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
-      $synopsis = isset($epg['Synopsis']) ? $epg['Synopsis'] : t('Keine Information zur Sendung verfügbar');
-      $synopsis .= isset($epg['PresentedBy']) ? t('<br><br>Moderator: @moderator', array('@moderator' => $epg['PresentedBy'])) : '';
-      $synopsis .= isset($epg['Interviewee']) ? t('<br>Gast: @guest', array('@guest' => $epg['Interviewee'])) : '';
-      $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
-      $node->field_video_language[LANGUAGE_NONE][0]['value'] = isset($epg['Language']) ? $epg['Language'] : t('Deutsch');
-      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = isset($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
-      $node->field_series[LANGUAGE_NONE][0]['value'] = isset($epg['Series']) ? $epg['Series'] : '';
-      $node->field_season[LANGUAGE_NONE][0]['value'] = isset($epg['Season']) ? $epg['Season'] : '';
-      $node->field_episode[LANGUAGE_NONE][0]['value'] = isset($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
-      //$buzzword = isset($epg['Buzzword']) ? $epg['Buzzword'] : '';
-      //$keyword = isset($epg['Keyword']) ? $epg['Keyword'] : '';
-    }
-    $node->field_category[LANGUAGE_NONE][0]['tid'] =
-      isset($entry_arr['Description']['Category']) ? _get_category_key($entry_arr['Description']['Category']) : null;
-  }
-
-  //
-  // Properties
-  if (isset($entry_arr['Properties'])) {
-    $properties = $entry_arr['Properties'];
-
-    // set media id
-    //$node->field_media_id[LANGUAGE_NONE][0]['value'] = $properties['MediaId'];
-
-    // set thumbnail
-    $thumb_path = isset($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : false;
-    if ($thumb_path) {
-      $file_obj = system_retrieve_file($thumb_path, 'public://images', true,FILE_EXISTS_REPLACE);
-      $node->field_thumb_path[LANGUAGE_NONE][0] = $file_obj;
-    }
-
-    // set poster
-    $poster = isset($properties['PosterframeFTPPathFilename']) ? $properties['PosterframeFTPPathFilename'] : false;
-    if ($poster) {
-      $file_obj = system_retrieve_file($poster, 'public://images', true,FILE_EXISTS_REPLACE);
-      $node->field_poster[LANGUAGE_NONE][0] = $file_obj;
-    }
-    // set video stream
-    $video_url = isset($properties['StreamingLink']) ? $properties['StreamingLink'] : '';
-    $node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $video_url;
-  }
-
-  //
-  // Publishing Information (only for not scheduled entries)
-  if (isset($entry_arr['PublishingInformation'])) {
-    $publish_info = $entry_arr['PublishingInformation'];
+  // Publishing Information (only for entries not scheduled in program)
+  // Default period is [now, now + 25 years]
+  if (isset($arr_entry['PublishingInformation'])) {
+    $publish_info = $arr_entry['PublishingInformation'];
 
     if (isset($publish_info['ValidityDateTimeFrom'])) {
       $valid_from = str_replace('.', '-', $publish_info['ValidityDateTimeFrom']);
@@ -326,6 +314,7 @@ function _parse_entry($xml_entry) {
       $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $to_timestamp);
     }
     else {
+      // set period to 25 years
       $timestamp = strtotime('+25 years');
       $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = date('Y-m-d H:i:s', $timestamp);
     }
@@ -333,11 +322,72 @@ function _parse_entry($xml_entry) {
   }
 
   //
+  // EPG inofs / Category (can be empty)
+  if (isset($arr_entry['Description'])) {
+    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : false;
+    if ($epg) {
+      $node->title = isset($epg['Title']) ? $epg['Title'] : (isset($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
+      $synopsis = isset($epg['Synopsis']) ? $epg['Synopsis'] : t('Keine Information zur Sendung verfügbar');
+      $synopsis .= isset($epg['PresentedBy']) ? t('<p>Moderator: @moderator</p>', array('@moderator' => $epg['PresentedBy'])) : '';
+      $synopsis .= isset($epg['Interviewee']) ? t('<p>Gast: @guest</p>', array('@guest' => $epg['Interviewee'])) : '';
+      $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
+      $node->field_video_language[LANGUAGE_NONE][0]['value'] = isset($epg['Language']) ? $epg['Language'] : t('Deutsch');
+      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = isset($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
+      $node->field_series[LANGUAGE_NONE][0]['value'] = isset($epg['Series']) ? $epg['Series'] : '';
+      $node->field_season[LANGUAGE_NONE][0]['value'] = isset($epg['Season']) ? $epg['Season'] : '';
+      $node->field_episode[LANGUAGE_NONE][0]['value'] = isset($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
+      //$buzzword = isset($epg['Buzzword']) ? $epg['Buzzword'] : '';
+      //$keyword = isset($epg['Keyword']) ? $epg['Keyword'] : '';
+    }
+    $node->field_category[LANGUAGE_NONE][0]['tid'] =
+      isset($arr_entry['Description']['Category']) ? _get_category_key($arr_entry['Description']['Category']) : null;
+  }
+
+  //
+  // Properties
+  // retrieve path information, if any otherwise try to create path with  media id.
+  if (isset($arr_entry['Properties'])) {
+    $properties = $arr_entry['Properties'];
+
+    // set media id
+    $media_id = isset($properties['MediaId']) ? $properties['MediaId'] : false;
+    //$node->field_media_id[LANGUAGE_NONE][0]['value'] = $media_id;
+
+    // set thumbnails, if any
+    $thumb_path = isset($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : false;
+    if (!$thumb_path && $media_id && module_exists('video_embed_jwplayer')) {
+      $thumb_path = video_embed_jwplayer_get_media_url($media_id, 'jpg', true, '320');
+    }
+    if ($thumb_path && $file_obj = system_retrieve_file($thumb_path, 'public://images', true,FILE_EXISTS_REPLACE)) {
+      $node->field_thumb_path[LANGUAGE_NONE][0] = (array)$file_obj;
+    }
+
+    // set poster, if any
+    $poster = isset($properties['PosterframeFTPPathFilename']) ? $properties['PosterframeFTPPathFilename'] : false;
+    if (!$poster && $media_id && module_exists('video_embed_jwplayer')) {
+      $poster = video_embed_jwplayer_get_media_url($media_id, 'jpg', true, '1280');
+    }
+    if ($poster && $file_obj = system_retrieve_file($poster, 'public://images', true,FILE_EXISTS_REPLACE)) {
+      $node->field_poster[LANGUAGE_NONE][0] = (array)$file_obj;
+    }
+
+    // set video stream, if available
+    $video_url = isset($properties['StreamingLink']) ? $properties['StreamingLink'] : '';
+    $node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $video_url;
+  }
+
+  //
   // save/update node
+  if ($updated) {
+    $import_counter['@updated']++;
+  }
+  else {
+    $import_counter['@created']++;
+  }
+
   $node = node_submit($node);
   node_save($node);
-
-  return $new_entry;
+  return true;
 }
 
 /**
@@ -365,18 +415,7 @@ function _get_validity_end_date($primary_schedule_id) {
  * Gets the Category term key of the given term name.
  */
 function _get_category_key($term_name) {
-  $key = null;
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'taxonomy_term')
-    ->entityCondition('bundle', 'kategorie')
-    ->propertyCondition('name', 'value', $term_name)
-    ->range(0, 1);
-
-  $result = $query->execute();
-  if ($result && $result['taxonomy_term']) {
-    $key = key($result['taxonomy_term']);
-  }
-  // return mapping
-  return $key;
+  $term = taxonomy_get_term_by_name($term_name, 'kategorie');
+  return key($term);
 }
 

@@ -217,7 +217,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
   //
   // get media id
   $output = array();
-  $media_id = _video_embed_jwplayer_get_media_id($url);
+  $media_id = video_embed_jwplayer_get_media_id($url);
   if (!$media_id) {
     // We can't decode the URL - just return the URL as a link.
     $output['#markup'] = l($url, $url);
@@ -309,7 +309,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
  *   The video media ID, or FALSE in case the ID can't be retrieved from the URL.
  */
 
-function _video_embed_jwplayer_get_media_id($url) {
+function video_embed_jwplayer_get_media_id($url) {
   //
   // the url is in the form: http(s)://content.jwplatform.com/[TYPE/]MEDIA_ID[-TEMP_ID].EXT[?parameters]
   //

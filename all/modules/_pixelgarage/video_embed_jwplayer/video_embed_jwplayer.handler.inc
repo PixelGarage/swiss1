@@ -249,11 +249,8 @@ function video_embed_jwplayer_video_callback($url, $settings) {
   $background_color = !empty($skin_settings['jwplayer_skin_background_color']) ? ('", background: "' . $skin_settings['jwplayer_skin_background_color']) : '';
 
   //
-  // get secret, if URL signing is enabled
-  $secret = ($settings['jwplayer_url_signing'] && !empty(variable_get('video_embed_jwplayer_api_secret'))) ? variable_get('video_embed_jwplayer_api_secret') : false;
-
-  //
   // define video embed
+  $do_sign_url = $settings['jwplayer_url_signing'];
   $transcoding_templates = video_embed_jwplayer_get_available_transcoding_templates();
   $autoplay = $settings['jwplayer_autostart'] ? 'true' : 'false';
   $mute = $settings['jwplayer_mute'] ? 'true' : 'false';
@@ -262,13 +259,13 @@ function video_embed_jwplayer_video_callback($url, $settings) {
   $display_title = $settings['jwplayer_displaytitle'] ? 'true' : 'false';
   $display_desc = $settings['jwplayer_displaydescription'] ? 'true' : 'false';
   $playlist = 'playlist: [{' .
-    'image: "' . _video_embed_jwplayer_get_media_url($media_id, 'jpg', $secret) . '", ' .
+    'image: "' . video_embed_jwplayer_get_media_url($media_id, 'jpg', $do_sign_url) . '", ' .
     'mediaid: "' . $media_id . '", ' .
     'sources: [{' .
-    'file: "' . _video_embed_jwplayer_get_media_url($media_id, 'mpd', $secret) . '"}, {' .
-    'file: "' . _video_embed_jwplayer_get_media_url($media_id, 'm3u8', $secret);
+    'file: "' . video_embed_jwplayer_get_media_url($media_id, 'mpd', $do_sign_url) . '"}, {' .
+    'file: "' . video_embed_jwplayer_get_media_url($media_id, 'm3u8', $do_sign_url);
   foreach ($transcoding_templates as $key => $quality) {
-    $playlist .= '"}, {file: "' . _video_embed_jwplayer_get_media_url($media_id, 'mp4', $secret, $key) .
+    $playlist .= '"}, {file: "' . video_embed_jwplayer_get_media_url($media_id, 'mp4', $do_sign_url, $key) .
       '", label: "' . $quality;
   }
   $playlist .= '"}]}],';
@@ -343,10 +340,13 @@ function _video_embed_jwplayer_get_media_id($url) {
  *    The media id of the content for which the URL has to be created.
  * @param string $type
  *    The type (extension) of the media file. Supported are: mdp, m3u8, mp4, jpg
- * @param string $secret
- *    The API secret of your account, e.g. "Jau8Ya71hakdpF0A".
- * @param string $templ_id
- *    The key of a transcoding template. Default is none.
+ * @param bool $do_sign
+ *    Flag indicating if the media url has to be signed, e.g. the media can be
+ *    limited to a given period. Default is false.
+ * @param string $templ_param
+ *    The key of a transcoding template, if type is mp4. Default is none.
+ *    The width of a thumb image, if type is jpg. The following width (px) are available:
+ *    '40', '120', '320', '480', '720', '1280', default is '1280'.
  * @param string $domain
  *    The masked domain name you want to use for signing the content, e.g.
  *    "https://video.mysite.com". Use this if you have setup DNS masking. Defaults to
@@ -355,7 +355,7 @@ function _video_embed_jwplayer_get_media_id($url) {
  * @return string The signed url.
  * The signed url.
  */
-function _video_embed_jwplayer_get_media_url($media_id, $type, $secret, $templ_id = '', $domain = JWPLAYER_CONTENT_BASE_PATH) {
+function video_embed_jwplayer_get_media_url($media_id, $type, $do_sign = false, $templ_param = '', $domain = JWPLAYER_CONTENT_BASE_PATH) {
   //
   // create path according to the input parameters
   switch ($type) {
@@ -365,13 +365,25 @@ function _video_embed_jwplayer_get_media_url($media_id, $type, $secret, $templ_i
       break;
     case 'mp4':
       $path = JWPLAYER_VIDEO_PATH . $media_id;
-      if (!empty($templ_id)) {
-        $path .= '-' . $templ_id;
+      if (!empty($templ_param)) {
+        $path .= '-' . $templ_param;
       }
       break;
     case 'jpg':
     case 'jpeg':
       $path = JWPLAYER_THUMB_PATH . $media_id;
+      switch ($templ_param) {
+        case '40':
+        case '120':
+        case '320':
+        case '480':
+        case '720':
+        case '1280':
+          $path .= '-' . $templ_param;
+          break;
+        default:
+          $path .= '-1280';
+      }
       $type = 'jpg';
       break;
     default:
@@ -382,6 +394,8 @@ function _video_embed_jwplayer_get_media_url($media_id, $type, $secret, $templ_i
 
   //
   // sign the URL, if a secret is available
+  $secret = ($do_sign && !empty(variable_get('video_embed_jwplayer_api_secret'))) ? variable_get('video_embed_jwplayer_api_secret') : false;
+
   if ($secret) {
     //
     // set default expiration date

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CiutadellaBold';
+    src: url('fonts/CiutadellaBold.eot');
+    src: url('fonts/CiutadellaBold.eot') format('embedded-opentype'),
+         url('fonts/CiutadellaBold.woff2') format('woff2'),
+         url('fonts/CiutadellaBold.woff') format('woff'),
+         url('fonts/CiutadellaBold.ttf') format('truetype'),
+         url('fonts/CiutadellaBold.svg#CiutadellaBold') format('svg');
+}

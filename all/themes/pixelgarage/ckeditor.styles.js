@@ -10,7 +10,7 @@
 if (typeof(CKEDITOR) !== 'undefined') {
   CKEDITOR.addStylesSet('drupal',
     [
-      /* Kulturfolger styles */
+      /* Pixelgarage styles */
       {
         name: 'Normal',
         element: 'p',
@@ -30,13 +30,6 @@ if (typeof(CKEDITOR) !== 'undefined') {
         element: 'p',
         attributes: {
           'class': 'pxl-subtitle'
-        }
-      },
-      {
-        name: 'Glow',
-        element: 'p',
-        attributes: {
-          'class': 'pxl-glow'
         }
       },
 

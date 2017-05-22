@@ -4,7 +4,8 @@
 
 // Variables
 // -------------------------
-@pxl-modal-background-color: rgba(0,0,0,1.0);
+@pxl-modal-color: white;
+@pxl-modal-background-color: rgba(64,64,64,1.0);
 @pxl-modal-max-width: 800px;
 @pxl-fading-height: 0px;
 
@@ -87,10 +88,9 @@
       .modal-content {
         position: relative;
         padding: 0;
-        background: none;
-
         #pxl-mixins.border-radius(0);
         border: none;
+        background: none;
         #pxl-mixins.box-shadow(none);
 
         .modal-header {
@@ -100,6 +100,7 @@
 
           h2.modal-title {
             #pxl-mixins.title();
+            color: @pxl-modal-color;
           }
 
           button.close {
@@ -116,7 +117,7 @@
               font-family: @pxl-text-font-light;
               font-size: 60px;
               font-weight: normal;
-              color: @text-color;
+              color: @pxl-modal-color;
             }
           }
 

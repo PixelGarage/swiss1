@@ -12,7 +12,7 @@
 					<Duration>3000</Duration>
 					<Title>Die Tiere der Alpen</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
-					<CatchupPeriod>7 Days</CatchupPeriod>
+					<CatchupPeriod>360 Days</CatchupPeriod>
 					<Featured>false</Featured>
 				</AiringInformation>
 
@@ -21,8 +21,7 @@
 						<Title>Die Tiere der Alpen</Title>
 						<Buzzword>Die Tiere der Alpen</Buzzword>
 						<Headline>Die Tiere der Alpen</Headline>
-						<Synopsis>&lt;p&gt;Andreas Moser liegt für sie Tag und Nacht auf der Lauer, um Ihnen
-						die Tierwelt der Alpen näher zu bringen. &lt;/p&gt;</Synopsis>
+						<Synopsis>&lt;p&gt;Andreas Moser liegt für sie Tag und Nacht auf der Lauer, um Ihnen die Tierwelt der Alpen näher zu bringen. &lt;/p&gt;</Synopsis>
 						<Keyword>Die Tiere der Alpen Episode 17</Keyword>
 						<PresentedBy>Andreas Moser</PresentedBy>
 						<Interviewee>Steinbock</Interviewee>
@@ -41,10 +40,10 @@
 				</ScheduleReference>
 
 				<Properties>
-					<MediaId>G48XkLch</MediaId>
-					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</ThumbnailFTPPathFilename>
-					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</PosterframeFTPPathFilename>
-					<StreamingLink>https://content.jwplatform.com/videos/G48XkLch</StreamingLink>
+					<MediaId>DeJ0vrIf</MediaId>
+					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</ThumbnailFTPPathFilename>
+					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</PosterframeFTPPathFilename>
+					<StreamingLink>https://content.jwplatform.com/videos/DeJ0vrIf</StreamingLink>
 				</Properties>
 
 			</VODEntry>
@@ -58,7 +57,7 @@
 					<Duration>3000</Duration>
 					<Title>Sport events Swiss1</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
-					<CatchupPeriod>7 Days</CatchupPeriod>
+					<CatchupPeriod>360 Days</CatchupPeriod>
 					<Featured>false</Featured>
 				</AiringInformation>
 
@@ -67,8 +66,7 @@
 						<Title>Sport Events</Title>
 						<Buzzword>Sport Events</Buzzword>
 						<Headline>Hopp Switzerland</Headline>
-						<Synopsis>&lt;p&gt;Moderator Matthias Hüppi führt durch die Sportereignisse des Tages
-						und interviewt John Mc Enroe.&lt;/p&gt;</Synopsis>
+						<Synopsis>&lt;p&gt;Moderator Matthias Hüppi führt durch die Sportereignisse des Tages und interviewt John Mc Enroe.&lt;/p&gt;</Synopsis>
 						<Keyword>Sport events Episode 120</Keyword>
 						<PresentedBy>Matthias Hüppi</PresentedBy>
 						<Interviewee>John Mc Enroe</Interviewee>
@@ -87,10 +85,10 @@
 				</ScheduleReference>
 
 				<Properties>
-					<MediaId>DeJ0vrIf</MediaId>
-					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</ThumbnailFTPPathFilename>
-					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</PosterframeFTPPathFilename>
-					<StreamingLink>https://content.jwplatform.com/videos/DeJ0vrIf</StreamingLink>
+					<MediaId>IE13C28s</MediaId>
+					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/IE13C28s.jpg</ThumbnailFTPPathFilename>
+					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/IE13C28s.jpg</PosterframeFTPPathFilename>
+					<StreamingLink>https://content.jwplatform.com/videos/IE13C28s</StreamingLink>
 				</Properties>
 			</VODEntry>
 
@@ -111,8 +109,7 @@
 						<Title>News des Tages</Title>
 						<Buzzword>News des Tages</Buzzword>
 						<Headline>Switzerland </Headline>
-						<Synopsis>&lt;p&gt;Newsreporter Andres Hugentobler berichtet über die aktuellen Ereignisse
-						in der Schweiz und im Ausland. &lt;/p&gt;</Synopsis>
+						<Synopsis>&lt;p&gt;Newsreporter Andres Hugentobler berichtet über die aktuellen Ereignisse in der Schweiz und im Ausland. &lt;/p&gt;</Synopsis>
 						<Keyword>News des Tages Episode 128</Keyword>
 						<PresentedBy>Andres Hugentobler</PresentedBy>
 						<Interviewee>Donald Trump</Interviewee>
@@ -130,10 +127,10 @@
 					<AssetReconciliationId>xy-1002</AssetReconciliationId>
 				</ScheduleReference>
 				<Properties>
-					<MediaId>DeJ0vrIf</MediaId>
-					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</ThumbnailFTPPathFilename>
-					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</PosterframeFTPPathFilename>
-					<StreamingLink>https://content.jwplatform.com/videos/DeJ0vrIf</StreamingLink>
+					<MediaId>G48XkLch</MediaId>
+					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</ThumbnailFTPPathFilename>
+					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</PosterframeFTPPathFilename>
+					<StreamingLink>https://content.jwplatform.com/videos/G48XkLch</StreamingLink>
 				</Properties>
 			</VODEntry>
 
@@ -146,7 +143,7 @@
 					<Duration>3000</Duration>
 					<Title>Portrait des Tages</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
-					<CatchupPeriod>5 Days</CatchupPeriod>
+					<CatchupPeriod>180 Days</CatchupPeriod>
 					<Featured>false</Featured>
 				</AiringInformation>
 
@@ -155,8 +152,7 @@
 						<Title>Jeden Tag ein interessantes Portrait</Title>
 						<Buzzword>Portrait des Tages</Buzzword>
 						<Headline>Jeden Tag ein interessantes Portrait</Headline>
-						<Synopsis>&lt;p&gt;Moderator Andres Hugentobler führt nach der Ausstrahlung eines
-						Portraits eine Diskussionsrunde über die vorgestellte Persönlichkeit. &lt;/p&gt;</Synopsis>
+						<Synopsis>&lt;p&gt;Moderator Andres Hugentobler führt nach der Ausstrahlung eines Portraits eine Diskussionsrunde über die vorgestellte Persönlichkeit. &lt;/p&gt;</Synopsis>
 						<Keyword>Portraits Episode 40</Keyword>
 						<PresentedBy>Andres Hugentobler</PresentedBy>
 						<Interviewee>Steve Jobs</Interviewee>
@@ -175,10 +171,10 @@
 				</ScheduleReference>
 
 				<Properties>
-					<MediaId>G48XkLch</MediaId>
-					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</ThumbnailFTPPathFilename>
-					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</PosterframeFTPPathFilename>
-					<StreamingLink>https://content.jwplatform.com/videos/G48XkLch</StreamingLink>
+					<MediaId>bcQDATjF</MediaId>
+					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/bcQDATjF.jpg</ThumbnailFTPPathFilename>
+					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/bcQDATjF.jpg</PosterframeFTPPathFilename>
+					<StreamingLink>https://content.jwplatform.com/videos/bcQDATjF</StreamingLink>
 				</Properties>
 			</VODEntry>
 
@@ -191,7 +187,7 @@
 					<Duration>3000</Duration>
 					<Title>Kulinarikreisen</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
-					<CatchupPeriod>10 Days</CatchupPeriod>
+					<CatchupPeriod>180 Days</CatchupPeriod>
 					<Featured>false</Featured>
 				</AiringInformation>
 
@@ -200,8 +196,7 @@
 						<Title>Kulinarikreisen</Title>
 						<Buzzword>Kulinarikreisen</Buzzword>
 						<Headline>Kulinarikreisen</Headline>
-						<Synopsis>&lt;p&gt;Moderatorin Andrea Spargel nimmt uns auf interessante Reisen in
-						 die Kulinarik vieler Länder in und um Europa mit. &lt;/p&gt;</Synopsis>
+						<Synopsis>&lt;p&gt;Moderatorin Andrea Spargel nimmt uns auf interessante Reisen in die Kulinarik vieler Länder in und um Europa mit. &lt;/p&gt;</Synopsis>
 						<Keyword>Kulinarikreisen Episode 325</Keyword>
 						<PresentedBy>Andrea Spargel</PresentedBy>
 						<Interviewee>Jamie Oliver</Interviewee>
@@ -220,10 +215,10 @@
 				</ScheduleReference>
 
 				<Properties>
-					<MediaId>G48XkLch</MediaId>
-					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</ThumbnailFTPPathFilename>
-					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/G48XkLch.jpg</PosterframeFTPPathFilename>
-					<StreamingLink>https://content.jwplatform.com/videos/G48XkLch</StreamingLink>
+					<MediaId>GXHSyDpz</MediaId>
+					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/GXHSyDpz.jpg</ThumbnailFTPPathFilename>
+					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/GXHSyDpz.jpg</PosterframeFTPPathFilename>
+					<StreamingLink>https://content.jwplatform.com/videos/GXHSyDpz</StreamingLink>
 				</Properties>
 			</VODEntry>
 
@@ -236,7 +231,7 @@
 					<Duration>5700</Duration>
 					<Title>Schwingen, die Bösen</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
-					<CatchupPeriod>7 Days</CatchupPeriod>
+					<CatchupPeriod>180 Days</CatchupPeriod>
 					<Featured>true</Featured>
 				</AiringInformation>
 
@@ -245,8 +240,7 @@
 						<Title>Schwingen, die Bösen</Title>
 						<Buzzword>Schwingen, die Bösen</Buzzword>
 						<Headline>Schwingen, die Bösen</Headline>
-						<Synopsis>&lt;p&gt;Moderator Sepp Trütsch nimmt uns mit in die verschworene Gemeinschaft
-						 der Schwinger. Hoselupf puur!&lt;/p&gt;</Synopsis>
+						<Synopsis>&lt;p&gt;Moderator Sepp Trütsch nimmt uns mit in die verschworene Gemeinschaft der Schwinger. Hoselupf puur!&lt;/p&gt;</Synopsis>
 						<Keyword>Schwingen Episode 35</Keyword>
 						<PresentedBy>Sepp Trütsch</PresentedBy>
 						<Interviewee>Kilian Wenger</Interviewee>
@@ -265,10 +259,10 @@
 				</ScheduleReference>
 
 				<Properties>
-					<MediaId>DeJ0vrIf</MediaId>
-					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</ThumbnailFTPPathFilename>
-					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/DeJ0vrIf.jpg</PosterframeFTPPathFilename>
-					<StreamingLink>https://content.jwplatform.com/videos/DeJ0vrIf</StreamingLink>
+					<MediaId>NK05axkk</MediaId>
+					<ThumbnailFTPPathFilename>https://content.jwplatform.com/thumbs/NK05axkk.jpg</ThumbnailFTPPathFilename>
+					<PosterframeFTPPathFilename>https://content.jwplatform.com/thumbs/NK05axkk.jpg</PosterframeFTPPathFilename>
+					<StreamingLink>https://content.jwplatform.com/videos/NK05axkk</StreamingLink>
 				</Properties>
 			</VODEntry>
 

@@ -1072,7 +1072,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 16px;
   line-height: 1.42857143;
   color: #222;
@@ -1441,7 +1441,7 @@ dt {
 dd {
   margin-left: 0;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .dl-horizontal dt {
     float: left;
     width: 160px;
@@ -3619,7 +3619,7 @@ tbody.collapse.in {
   bottom: 100%;
   margin-bottom: 2px;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-right .dropdown-menu {
     left: auto;
     right: 0;
@@ -4156,12 +4156,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 22px;
   border: 1px solid transparent;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar {
     border-radius: 4px;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-header {
     float: left;
   }
@@ -4177,7 +4177,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-collapse.in {
   overflow-y: auto;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -4216,7 +4216,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-right: -15px;
   margin-left: -15px;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .container > .navbar-header,
   .container-fluid > .navbar-header,
   .container > .navbar-collapse,
@@ -4229,7 +4229,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   z-index: 1000;
   border-width: 0 0 1px;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-static-top {
     border-radius: 0;
   }
@@ -4241,7 +4241,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   left: 0;
   z-index: 1030;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     border-radius: 0;
@@ -4270,7 +4270,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand > img {
   display: block;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
@@ -4300,7 +4300,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-toggle {
     display: none;
   }
@@ -4313,7 +4313,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-bottom: 10px;
   line-height: 22px;
 }
-@media (max-width: 47em) {
+@media (max-width: 9999px) {
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
@@ -4335,7 +4335,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     background-image: none;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-nav {
     float: left;
     margin: 0;
@@ -4409,7 +4409,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     top: 0;
   }
 }
-@media (max-width: 47em) {
+@media (max-width: 9999px) {
   .navbar-form .form-group {
     margin-bottom: 5px;
   }
@@ -4417,7 +4417,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-bottom: 0;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-form {
     width: auto;
     border: 0;
@@ -4457,14 +4457,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-top: 14px;
   margin-bottom: 14px;
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-text {
     float: left;
     margin-left: 15px;
     margin-right: 15px;
   }
 }
-@media (min-width: 48em) {
+@media (min-width: 10000px) {
   .navbar-left {
     float: left !important;
     float: left;
@@ -4533,7 +4533,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #e7e7e7;
   color: #555;
 }
-@media (max-width: 47em) {
+@media (max-width: 9999px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #777;
   }
@@ -4629,7 +4629,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   background-color: #080808;
   color: #fff;
 }
-@media (max-width: 47em) {
+@media (max-width: 9999px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
     border-color: #080808;
   }
@@ -5967,7 +5967,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6085,7 +6085,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -9848,19 +9848,44 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   clip: auto;
 }
 @font-face {
-  font-family: 'SohoGothicProRegular';
-  src: url('../fonts/SohoGothicProRegular/SohoGothicProRegular.eot');
-  src: url('../fonts/SohoGothicProRegular/SohoGothicProRegular.eot') format('embedded-opentype'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.woff2') format('woff2'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.woff') format('woff'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.ttf') format('truetype'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.svg#SohoGothicProRegular') format('svg');
+  font-family: 'CiutadellaLight';
+  src: url('../fonts/CiutadellaLight/CiutadellaLight.eot');
+  src: url('../fonts/CiutadellaLight/CiutadellaLight.eot') format('embedded-opentype'), url('../fonts/CiutadellaLight/CiutadellaLight.woff2') format('woff2'), url('../fonts/CiutadellaLight/CiutadellaLight.woff') format('woff'), url('../fonts/CiutadellaLight/CiutadellaLight.ttf') format('truetype'), url('../fonts/CiutadellaLight/CiutadellaLight.svg#CiutadellaLight') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProLight';
-  src: url('../fonts/SohoGothicProLight/SohoGothicProLight.eot');
-  src: url('../fonts/SohoGothicProLight/SohoGothicProLight.eot') format('embedded-opentype'), url('../fonts/SohoGothicProLight/SohoGothicProLight.woff2') format('woff2'), url('../fonts/SohoGothicProLight/SohoGothicProLight.woff') format('woff'), url('../fonts/SohoGothicProLight/SohoGothicProLight.ttf') format('truetype'), url('../fonts/SohoGothicProLight/SohoGothicProLight.svg#SohoGothicProLight') format('svg');
+  font-family: 'CiutadellaLightItalic';
+  src: url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.eot');
+  src: url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.woff2') format('woff2'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.woff') format('woff'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.ttf') format('truetype'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.svg#CiutadellaLightItalic') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProBold';
-  src: url('../fonts/SohoGothicProBold/SohoGothicProBold.eot');
-  src: url('../fonts/SohoGothicProBold/SohoGothicProBold.eot') format('embedded-opentype'), url('../fonts/SohoGothicProBold/SohoGothicProBold.woff2') format('woff2'), url('../fonts/SohoGothicProBold/SohoGothicProBold.woff') format('woff'), url('../fonts/SohoGothicProBold/SohoGothicProBold.ttf') format('truetype'), url('../fonts/SohoGothicProBold/SohoGothicProBold.svg#SohoGothicProBold') format('svg');
+  font-family: 'CiutadellaRegular';
+  src: url('../fonts/CiutadellaRegular/CiutadellaRegular.eot');
+  src: url('../fonts/CiutadellaRegular/CiutadellaRegular.eot') format('embedded-opentype'), url('../fonts/CiutadellaRegular/CiutadellaRegular.woff2') format('woff2'), url('../fonts/CiutadellaRegular/CiutadellaRegular.woff') format('woff'), url('../fonts/CiutadellaRegular/CiutadellaRegular.ttf') format('truetype'), url('../fonts/CiutadellaRegular/CiutadellaRegular.svg#CiutadellaRegular') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaRegularItalic';
+  src: url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.eot');
+  src: url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.woff2') format('woff2'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.woff') format('woff'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.ttf') format('truetype'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.svg#CiutadellaRegularItalic') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaMedium';
+  src: url('../fonts/CiutadellaMedium/CiutadellaMedium.eot');
+  src: url('../fonts/CiutadellaMedium/CiutadellaMedium.eot') format('embedded-opentype'), url('../fonts/CiutadellaMedium/CiutadellaMedium.woff2') format('woff2'), url('../fonts/CiutadellaMedium/CiutadellaMedium.woff') format('woff'), url('../fonts/CiutadellaMedium/CiutadellaMedium.ttf') format('truetype'), url('../fonts/CiutadellaMedium/CiutadellaMedium.svg#CiutadellaMedium') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaMediumItalic';
+  src: url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.eot');
+  src: url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.woff2') format('woff2'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.woff') format('woff'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.ttf') format('truetype'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.svg#CiutadellaMediumItalic') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaBold';
+  src: url('../fonts/CiutadellaBold/CiutadellaBold.eot');
+  src: url('../fonts/CiutadellaBold/CiutadellaBold.eot') format('embedded-opentype'), url('../fonts/CiutadellaBold/CiutadellaBold.woff2') format('woff2'), url('../fonts/CiutadellaBold/CiutadellaBold.woff') format('woff'), url('../fonts/CiutadellaBold/CiutadellaBold.ttf') format('truetype'), url('../fonts/CiutadellaBold/CiutadellaBold.svg#CiutadellaBold') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaBoldItalic';
+  src: url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.eot');
+  src: url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.woff2') format('woff2'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.woff') format('woff'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.ttf') format('truetype'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.svg#CiutadellaBoldItalic') format('svg');
 }
 /* --------------------------------------------------
  * Pixelgarage Mixins library
@@ -9906,73 +9931,6 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 /*
  *  Shariff social-buttons component
  * --------------------------------------------------*/
-body.front .shariff {
-  text-align: center;
-}
-body.front .shariff ul {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding: 10px;
-}
-body.front .shariff ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  min-width: 40px;
-}
-body.front .shariff ul li a {
-  display: block;
-  width: auto;
-  text-decoration: none;
-  color: #222;
-  border: none;
-  background: none;
-}
-body.front .shariff ul li a:hover,
-body.front .shariff ul li a:focus {
-  color: #BC2929;
-}
-body.front .shariff ul li a span.fa {
-  display: inline-block;
-  font-size: 30px;
-  line-height: 30px;
-  text-align: center;
-  vertical-align: middle;
-}
-body.front .shariff ul li a span.share_text {
-  display: none;
-}
-body.front .shariff ul {
-  z-index: 1050;
-}
-body.front .shariff ul.orientation-vertical {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: -10px;
-}
-body.front .shariff ul.orientation-vertical li.shariff-button {
-  display: block;
-  width: auto;
-  height: 60px;
-}
-body.front .shariff ul.orientation-horizontal {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 0;
-}
-body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child) {
-  width: 60px;
-  height: auto;
-}
 /*
  *  Language block component
  * --------------------------------------------------*/
@@ -9991,7 +9949,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   display: inline-block;
   margin: 0 -0.25em 0 0;
   padding: 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 16px;
   color: #222;
   line-height: 1;
@@ -10092,12 +10050,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-title h2 {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-title h2,
@@ -10120,6 +10077,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body {
   margin: 0 0 80px;
+  color: #222;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h1,
@@ -10130,12 +10088,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-title,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-title {
   margin: 10px auto 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
@@ -10182,14 +10139,13 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
   margin: 10px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h4,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h5,
@@ -10198,7 +10154,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h6,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10210,7 +10166,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h6,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10222,18 +10178,17 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h6,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-subtitle,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body p {
   margin: 0 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10259,66 +10214,9 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
     font-size: 17px;
   }
 }
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-glow,
-.node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-glow,
-  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-glow,
-  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-glow,
-  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-quote,
-.node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-}
-@media screen and (min-width: 35.2em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-quote,
-  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-quote,
-  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .pxl-quote,
-  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -10359,12 +10257,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body i,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body em,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body em {
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegularItalic', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
@@ -10406,13 +10304,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body strong,
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body b,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body b {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong,
@@ -10440,7 +10337,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body u,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body u {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -10473,12 +10370,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body mark,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body mark {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   background-color: #ff0;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -10552,12 +10448,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-webform .row .col-sm-12 .field-name-title h2,
 .node.node-webform .row .col-sm-6 .field-name-title h2 {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .node.node-webform .row .col-sm-12 .field-name-title h2,
@@ -10590,6 +10485,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-webform .row .col-sm-12 .field-name-body,
 .node.node-webform .row .col-sm-6 .field-name-body {
   margin: 0 0 20px;
+  color: #222;
 }
 .node.node-webform .row .col-sm-12 .field-name-body h1,
 .node.node-webform .row .col-sm-6 .field-name-body h1,
@@ -10600,12 +10496,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-webform .row .col-sm-12 .field-name-body .pxl-title,
 .node.node-webform .row .col-sm-6 .field-name-body .pxl-title {
   margin: 10px auto 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .node.node-webform .row .col-sm-12 .field-name-body h1,
@@ -10652,14 +10547,13 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
 .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
   margin: 10px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .node.node-webform .row .col-sm-12 .field-name-body h4,
   .node.node-webform .row .col-sm-6 .field-name-body h4,
   .node.node-webform .row .col-sm-12 .field-name-body h5,
@@ -10668,7 +10562,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-webform .row .col-sm-6 .field-name-body h6,
   .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -10680,7 +10574,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-webform .row .col-sm-6 .field-name-body h6,
   .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -10692,18 +10586,17 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-webform .row .col-sm-6 .field-name-body h6,
   .node.node-webform .row .col-sm-12 .field-name-body .pxl-subtitle,
   .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .node.node-webform .row .col-sm-12 .field-name-body p,
 .node.node-webform .row .col-sm-6 .field-name-body p {
   margin: 0 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -10729,66 +10622,9 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
     font-size: 17px;
   }
 }
-.node.node-webform .row .col-sm-12 .field-name-body .pxl-glow,
-.node.node-webform .row .col-sm-6 .field-name-body .pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .node.node-webform .row .col-sm-12 .field-name-body .pxl-glow,
-  .node.node-webform .row .col-sm-6 .field-name-body .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-webform .row .col-sm-12 .field-name-body .pxl-glow,
-  .node.node-webform .row .col-sm-6 .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-webform .row .col-sm-12 .field-name-body .pxl-glow,
-  .node.node-webform .row .col-sm-6 .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-.node.node-webform .row .col-sm-12 .field-name-body .pxl-quote,
-.node.node-webform .row .col-sm-6 .field-name-body .pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-}
-@media screen and (min-width: 35.2em) {
-  .node.node-webform .row .col-sm-12 .field-name-body .pxl-quote,
-  .node.node-webform .row .col-sm-6 .field-name-body .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-webform .row .col-sm-12 .field-name-body .pxl-quote,
-  .node.node-webform .row .col-sm-6 .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-webform .row .col-sm-12 .field-name-body .pxl-quote,
-  .node.node-webform .row .col-sm-6 .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
 .node.node-webform .row .col-sm-12 .field-name-body a,
 .node.node-webform .row .col-sm-6 .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -10829,12 +10665,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-webform .row .col-sm-6 .field-name-body i,
 .node.node-webform .row .col-sm-12 .field-name-body em,
 .node.node-webform .row .col-sm-6 .field-name-body em {
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegularItalic', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-webform .row .col-sm-12 .field-name-body pre,
@@ -10876,13 +10712,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-webform .row .col-sm-6 .field-name-body strong,
 .node.node-webform .row .col-sm-12 .field-name-body b,
 .node.node-webform .row .col-sm-6 .field-name-body b {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-webform .row .col-sm-12 .field-name-body strong,
@@ -10910,7 +10745,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-webform .row .col-sm-12 .field-name-body u,
 .node.node-webform .row .col-sm-6 .field-name-body u {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -10943,12 +10778,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-webform .row .col-sm-12 .field-name-body mark,
 .node.node-webform .row .col-sm-6 .field-name-body mark {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   background-color: #ff0;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -11004,71 +10838,110 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 /*
  *  Node videostream component
  * --------------------------------------------------*/
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header {
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container {
   position: relative;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container img.video-poster,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container img.video-poster {
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container video,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container video {
+  display: block;
+  width: 100%;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
-  margin: -75px 0 0;
+  margin: 0;
   padding: 0 10px;
   height: 75px;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6) 80%);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6) 80%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6) 80%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#99000000', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc000000', endColorstr='#00000000', GradientType=0);
+  opacity: 1.0;
+  -webkit-transition: opacity 0.6s ease;
+  -o-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header.video-playing,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header.video-playing {
+  opacity: 0.0;
 }
 @media screen and (min-width: 30em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header {
-    margin: -85px 0 0;
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header {
     padding: 0 30px;
     height: 85px;
   }
 }
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
-  font-family: 'SohoGothicProBold';
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2 {
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
   margin: 0;
-  padding: 10px 0;
+  padding: 25px 0 0;
   line-height: 1;
   color: #fff;
 }
 @media screen and (min-width: 35.2em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2 {
     font-size: 3.90625vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2 {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header .title-line-1 .field-name-title h2 {
     font-size: 30px;
   }
 }
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header .title-line-2,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header .title-line-2 {
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header .title-line-2,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header .title-line-2 {
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0 0 10px;
   color: #fff;
 }
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-header .title-line-2 > .video-duration:before,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-header .title-line-2 > .video-duration:before {
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container > .video-header .title-line-2 > .video-duration:before,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container > .video-header .title-line-2 > .video-duration:before {
   content: '\f017';
   font-family: 'fontawesome';
   padding-right: 3px;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body {
+  width: 100%;
+  opacity: 1.0;
+  -webkit-transition: opacity 0.6s ease;
+  -o-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body.video-playing,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body.video-playing {
+  opacity: 0.0;
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-3,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-3 {
@@ -11078,7 +10951,8 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body {
-  margin: 0 0 80px;
+  margin: 0 0 50px;
+  color: #222;
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body h1,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body h1,
@@ -11089,12 +10963,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
   margin: 10px auto 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body h1,
@@ -11141,14 +11014,13 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
   margin: 10px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body h4,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body h4,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body h5,
@@ -11157,7 +11029,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body h6,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11169,7 +11041,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body h6,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11181,18 +11053,17 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body h6,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body p,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body p {
   margin: 0 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -11218,66 +11089,9 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
     font-size: 17px;
   }
 }
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-}
-@media screen and (min-width: 35.2em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote,
-  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body a,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -11318,12 +11132,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body i,
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body em,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body em {
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegularItalic', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body pre,
@@ -11365,13 +11179,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body strong,
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body b,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body b {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body strong,
@@ -11399,7 +11212,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body u,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body u {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -11432,12 +11245,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body mark,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body mark {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   background-color: #ff0;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -11537,6 +11349,30 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .social-buttons > .shariff ul li a span.share_text {
   display: none;
 }
+.modal .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-3,
+.modal .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-3 {
+  color: #fff;
+}
+.modal .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body,
+.modal .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body {
+  color: #fff;
+}
+.modal .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .social-buttons > .shariff ul li a,
+.modal .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .social-buttons > .shariff ul li a {
+  color: #fff;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-similar,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-similar {
+  width: 100%;
+  opacity: 1.0;
+  -webkit-transition: opacity 0.6s ease;
+  -o-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-similar.video-playing,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-similar.video-playing {
+  opacity: 0.0;
+}
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container img.video-poster {
   display: block;
   overflow: hidden;
@@ -11550,6 +11386,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   z-index: 10;
   margin: -35px 0 0;
   padding: 10px;
+  width: 100%;
   height: 35px;
   background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6) 80%);
   background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.6) 80%);
@@ -11566,35 +11403,40 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   padding-right: 5px;
 }
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
+  width: 100%;
   background-color: #fff;
 }
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body .title-line-2 {
+  width: 100%;
   padding: 10px 0;
 }
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body .title-line-2 .field-name-title h2 {
-  font-family: 'SohoGothicProBold';
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
-  margin: 0;
-  padding: 0;
   line-height: 1;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body .title-line-2 .field-name-title h2 {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body .title-line-2 .field-name-title h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body .title-line-2 .field-name-title h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body .title-line-3 {
@@ -11608,7 +11450,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   position: relative;
   vertical-align: top;
   margin: 0 -2px;
-  width: 35%;
+  width: 100%;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container img.video-poster {
   display: block;
@@ -11620,8 +11462,9 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container > .video-duration {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
+  bottom: 0;
+  left: 0;
+  padding: 0 5px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -11635,59 +11478,61 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   position: relative;
   vertical-align: top;
   margin: 0 -2px;
-  padding: 10px;
-  width: 65%;
+  padding: 10px 0;
+  width: 100%;
   background-color: #fff;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 {
-  display: flex;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title {
   display: inline-block;
+  width: 100%;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
-  font-family: 'SohoGothicProBold';
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
-  margin: 0;
-  padding: 0;
   line-height: 1;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body {
   padding: 5px 0;
+  color: #222;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h2,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h3,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
   margin: 10px auto 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
@@ -11718,19 +11563,18 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
   margin: 10px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h4,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -11738,7 +11582,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -11746,17 +11590,16 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body p {
   margin: 0 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -11779,57 +11622,8 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
     font-size: 17px;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-glow {
-    font-size: 100px;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-}
-@media screen and (min-width: 35.2em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-quote {
-    font-size: 30px;
-  }
-}
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -11861,12 +11655,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body address,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body i,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body em {
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegularItalic', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body pre,
@@ -11894,13 +11688,12 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body b {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
@@ -11921,7 +11714,7 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   }
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -11948,12 +11741,11 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   color: #000000;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body mark {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   background-color: #ff0;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -12003,6 +11795,22 @@ body.front .shariff ul.orientation-horizontal li.shariff-button:not(:last-child)
   margin: 0;
   padding: 0;
 }
+@media screen and (min-width: 30em) {
+  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container {
+    width: 40%;
+  }
+  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body {
+    padding: 0 10px;
+    width: 60%;
+  }
+}
+/*
+ *  Node Footer section
+ * --------------------------------------------------*/
+.node.node-footer {
+  padding: 20px 0;
+  border-top: 1px solid #5f5e5e;
+}
 /*
  *  Login form component
  *  (see inc/login.inc for login form alteration)
@@ -12044,7 +11852,7 @@ form#user-login {
 }
 #user_login_form .form-item label.control-label {
   display: block;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -12071,7 +11879,7 @@ form#user-login {
 #user_login_form .form-item input.form-control {
   margin: 0;
   height: 36px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -12118,14 +11926,14 @@ form#user-login {
   border: 1px solid #222;
 }
 #user_login_form .form-item .help-block {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
   color: #222;
   font-size: 11px;
-  color: #808080;
+  color: #404040;
 }
 @media screen and (min-width: 42.35294117647059em) {
   #user_login_form .form-item .help-block {
@@ -12180,13 +11988,13 @@ form#user-login {
 #user_login_form .form-item .form-radios .checkbox > .control-label,
 #user_login_form .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
   color: #222;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -12271,7 +12079,7 @@ form#user-login {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -12324,7 +12132,7 @@ form#user-login {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -12457,7 +12265,7 @@ form#user-login {
 #user-register-form .form-item label.control-label,
 #user-pass .form-item label.control-label {
   display: block;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -12488,7 +12296,7 @@ form#user-login {
 #user-pass .form-item input.form-control {
   margin: 0;
   height: 36px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -12543,14 +12351,14 @@ form#user-login {
 }
 #user-register-form .form-item .help-block,
 #user-pass .form-item .help-block {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
   color: #222;
   font-size: 11px;
-  color: #808080;
+  color: #404040;
 }
 @media screen and (min-width: 42.35294117647059em) {
   #user-register-form .form-item .help-block,
@@ -12620,13 +12428,13 @@ form#user-login {
 #user-register-form .form-item .form-checkboxes .checkbox > .control-label,
 #user-pass .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
   color: #222;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -12735,7 +12543,7 @@ form#user-login {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -12798,7 +12606,7 @@ form#user-login {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -12896,7 +12704,7 @@ form#user-login {
 .user-profile .row .col-sm-4,
 .user-profile .row .col-sm-8,
 .user-profile .row .col-sm-12 {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   color: #fff;
 }
 .user-profile .row .col-sm-4 .field-name-field-area-of-expertise,
@@ -12936,6 +12744,11 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-image {
   margin-bottom: 30px;
 }
+.user-profile .row .col-sm-4 .field-name-field-short-description .field-item,
+.user-profile .row .col-sm-8 .field-name-field-short-description .field-item,
+.user-profile .row .col-sm-12 .field-name-field-short-description .field-item {
+  color: #222;
+}
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h1,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h1,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h1,
@@ -12949,12 +12762,11 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-title,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-title {
   margin: 10px auto 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h1,
@@ -13017,14 +12829,13 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
   margin: 10px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h4,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h4,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h4,
@@ -13037,7 +12848,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13053,7 +12864,7 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -13069,19 +12880,18 @@ form#user-login {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-subtitle,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item p,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item p {
   margin: 0 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -13110,75 +12920,10 @@ form#user-login {
     font-size: 17px;
   }
 }
-.user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-glow,
-.user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-glow,
-.user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-glow,
-  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-glow,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-glow,
-  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-glow,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-glow,
-  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-glow,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-glow {
-    font-size: 100px;
-  }
-}
-.user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-quote,
-.user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-quote,
-.user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-}
-@media screen and (min-width: 35.2em) {
-  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-quote,
-  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-quote,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-quote,
-  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-quote,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .pxl-quote,
-  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .pxl-quote,
-  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-quote {
-    font-size: 30px;
-  }
-}
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -13228,12 +12973,12 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item em,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item em,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item em {
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegularItalic', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item pre,
@@ -13289,13 +13034,12 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item b,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item b,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item b {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
@@ -13330,7 +13074,7 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item u,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item u,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item u {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -13369,12 +13113,11 @@ form#user-login {
 .user-profile .row .col-sm-4 .field-name-field-short-description .field-item mark,
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item mark,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item mark {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   background-color: #ff0;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -13471,12 +13214,11 @@ form#user-profile-form div #edit-account .panel-heading {
 }
 form#user-profile-form div fieldset.panel .panel-heading .panel-title,
 form#user-profile-form div #edit-account .panel-heading .panel-title {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   form#user-profile-form div fieldset.panel .panel-heading .panel-title,
@@ -13506,7 +13248,7 @@ form#user-profile-form div .form-wrapper {
 }
 form#user-profile-form div .form-wrapper .form-item label.control-label {
   display: block;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -13533,7 +13275,7 @@ form#user-profile-form div .form-wrapper .form-item label.control-label {
 form#user-profile-form div .form-wrapper .form-item input.form-control {
   margin: 0;
   height: 36px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -13580,14 +13322,14 @@ form#user-profile-form div .form-wrapper .form-item input.form-control:focus {
   border: 1px solid #222;
 }
 form#user-profile-form div .form-wrapper .form-item .help-block {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
   color: #222;
   font-size: 11px;
-  color: #808080;
+  color: #404040;
 }
 @media screen and (min-width: 42.35294117647059em) {
   form#user-profile-form div .form-wrapper .form-item .help-block {
@@ -13642,13 +13384,13 @@ form#user-profile-form div .form-wrapper .form-item .form-checkboxes .radio > .c
 form#user-profile-form div .form-wrapper .form-item .form-radios .checkbox > .control-label,
 form#user-profile-form div .form-wrapper .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
   color: #222;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -13733,7 +13475,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -13786,7 +13528,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -13829,7 +13571,7 @@ form#user-profile-form div .form-actions .form-submit {
   display: inline-block;
   margin: 0;
   padding: 10px 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 24px;
   letter-spacing: normal;
   line-height: 1;
@@ -13869,12 +13611,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Text paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-title .field-item {
@@ -13892,6 +13633,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item {
+  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -13904,12 +13646,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h3,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-title {
   margin: 10px auto 20px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h1,
@@ -13940,19 +13681,18 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h6,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-subtitle {
   margin: 10px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h4,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h5,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h6,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
@@ -13960,7 +13700,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h5,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h6,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
@@ -13968,17 +13708,16 @@ form#user-profile-form div .form-actions .form-submit .icon {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h5,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h6,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item p {
   margin: 0 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   word-break: break-word;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
@@ -14001,57 +13740,8 @@ form#user-profile-form div .form-actions .form-submit .icon {
     font-size: 17px;
   }
 }
-.entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-glow {
-    font-size: 100px;
-  }
-}
-.entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-}
-@media screen and (min-width: 35.2em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-quote {
-    font-size: 30px;
-  }
-}
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item a {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -14083,12 +13773,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item address,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item i,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item em {
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegularItalic', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item pre,
@@ -14116,13 +13806,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item strong,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item b {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
 }
 @media screen and (min-width: 42.35294117647059em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item strong,
@@ -14143,7 +13832,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   }
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item u {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
@@ -14170,12 +13859,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
   color: #000000;
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item mark {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   background-color: #ff0;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -14233,12 +13921,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Block paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-block-paragraph .row .col-sm-12 .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .entity-paragraphs-item.paragraphs-item-block-paragraph .row .col-sm-12 .field-name-field-title .field-item {
@@ -14259,12 +13946,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  Image paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-image-paragraph .row .col-sm-12 .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .entity-paragraphs-item.paragraphs-item-image-paragraph .row .col-sm-12 .field-name-field-title .field-item {
@@ -14289,12 +13975,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
  *  BS carousel paragraph component
  * --------------------------------------------------*/
 .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .row .col-sm-12 .field-name-field-title .field-item {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   .entity-paragraphs-item.paragraphs-item-bs-carousel-paragraph .row .col-sm-12 .field-name-field-title .field-item {
@@ -14500,7 +14185,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   cursor: pointer;
 }
 .view.view-proximity .view-content > .pe-container .modal {
-  background-color: #000000;
+  background-color: #404040;
 }
 .view.view-proximity .view-content > .pe-container .modal.modal-fixed-height {
   height: 100%;
@@ -14574,11 +14259,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content {
   position: relative;
   padding: 0;
-  background: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   border: none;
+  background: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -14589,12 +14274,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
   border: none;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header h2.modal-title {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
+  color: white;
 }
 @media screen and (min-width: 35.2em) {
   .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header h2.modal-title {
@@ -14622,10 +14307,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close span {
   padding: 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: white;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -14646,7 +14331,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   color: #fff;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -14681,7 +14366,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-proximity ul.pagination li a,
 .view.view-proximity ul.pagination li span {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 18px;
   text-decoration: none;
   color: #222;
@@ -14700,7 +14385,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-proximity .pager.pager--infinite-scroll .pager__item a {
   display: inline-block;
   padding: 8px 20px 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 16px;
   line-height: 1;
   color: #222;
@@ -14769,7 +14454,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   cursor: pointer;
 }
 .view.view-video-masonry .view-content > .pe-container .modal {
-  background-color: #000000;
+  background-color: #404040;
 }
 .view.view-video-masonry .view-content > .pe-container .modal.modal-fixed-height {
   height: 100%;
@@ -14843,11 +14528,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content {
   position: relative;
   padding: 0;
-  background: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   border: none;
+  background: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -14858,12 +14543,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
   border: none;
 }
 .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header h2.modal-title {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
+  color: white;
 }
 @media screen and (min-width: 35.2em) {
   .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header h2.modal-title {
@@ -14891,10 +14576,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close span {
   padding: 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: white;
 }
 .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -14915,7 +14600,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   color: #fff;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -14946,7 +14631,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-video-masonry .pager.pager--infinite-scroll .pager__item a {
   display: inline-block;
   padding: 8px 20px 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 16px;
   line-height: 1;
   color: #222;
@@ -14966,31 +14651,36 @@ form#user-profile-form div .form-actions .form-submit .icon {
  * --------------------------------------------------*/
 .view.view-program {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
+}
+@media screen and (min-width: 48em) {
+  .view.view-program {
+    width: 70%;
+  }
 }
 .view.view-program .view-content {
   padding: 0;
 }
-.view.view-program .view-content > .pe-container {
-  width: 100%;
-}
 .view.view-program .view-content > .pe-container .grid-sizer,
 .view.view-program .view-content > .pe-container .pe-item {
   width: 100%;
-  height: 240px;
 }
 .view.view-program .view-content > .pe-container .gutter-sizer {
   width: 0;
 }
 .view.view-program .view-content > .pe-container .pe-item {
   display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  margin: 0 !important;
+  overflow: visible;
+  margin: 0 0 7.5% !important;
   opacity: 1.0;
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
+}
+@media screen and (min-width: 30em) {
+  .view.view-program .view-content > .pe-container .pe-item {
+    margin: 0 0 7.5% !important;
+  }
 }
 .view.view-program .view-content > .pe-container .pe-item.shown {
   opacity: 1.0;
@@ -15001,7 +14691,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   cursor: pointer;
 }
 .view.view-program .view-content > .pe-container .modal {
-  background-color: #000000;
+  background-color: #404040;
 }
 .view.view-program .view-content > .pe-container .modal.modal-fixed-height {
   height: 100%;
@@ -15075,11 +14765,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content {
   position: relative;
   padding: 0;
-  background: none;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   border: none;
+  background: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -15090,12 +14780,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
   border: none;
 }
 .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header h2.modal-title {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
+  color: white;
 }
 @media screen and (min-width: 35.2em) {
   .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header h2.modal-title {
@@ -15123,10 +14813,10 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header button.close span {
   padding: 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   font-size: 60px;
   font-weight: normal;
-  color: #222;
+  color: white;
 }
 .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-header .body-fading {
   display: none;
@@ -15147,7 +14837,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-footer .btn {
   display: inline-block;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   color: #fff;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -15176,6 +14866,16 @@ form#user-profile-form div .form-actions .form-submit .icon {
   max-height: 15px;
 }
 /*
+ *  View live-tv component
+ * --------------------------------------------------*/
+.view.view-live-tv .view-content .views-row a img {
+  display: block;
+  margin: 10px auto;
+  padding: 0;
+  width: 50%;
+  height: auto;
+}
+/*
  *  Webform Addons component
  * --------------------------------------------------*/
 form.webform-client-form {
@@ -15194,7 +14894,7 @@ form.webform-client-form fieldset.panel .panel-heading {
 }
 form.webform-client-form fieldset.panel .panel-heading .panel-title {
   display: block;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 15px;
   color: #222;
   text-align: left;
@@ -15220,7 +14920,7 @@ form.webform-client-form fieldset.panel .panel-body {
 form.webform-client-form fieldset.panel .panel-body .help-block {
   display: block;
   margin: 10px 0 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   color: #222;
   font-size: 13px;
   line-height: 17px;
@@ -15256,7 +14956,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   vertical-align: middle;
   margin: 0;
   padding: 0 20px 0 0;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   text-align: left;
@@ -15333,7 +15033,7 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
@@ -15389,7 +15089,7 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
@@ -15443,7 +15143,7 @@ form.webform-client-form .webform-component[class*="-city"] {
 }
 form.webform-client-form .webform-component label {
   width: auto;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   font-weight: normal;
   letter-spacing: normal;
@@ -15473,14 +15173,14 @@ form.webform-client-form .webform-component div.description,
 form.webform-client-form .webform-component div.help-block {
   display: block;
   margin: 10px 0 0;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   color: #222;
   font-size: 13px;
   line-height: 17px;
 }
 form.webform-client-form .webform-component div.description strong,
 form.webform-client-form .webform-component div.help-block strong {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
 }
 form.webform-client-form .webform-component .form-control,
 form.webform-client-form .webform-component .form-managed-file {
@@ -15489,7 +15189,7 @@ form.webform-client-form .webform-component .form-managed-file {
 form.webform-client-form .webform-component input.form-text,
 form.webform-client-form .webform-component textarea {
   padding: 0 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   color: #222;
   line-height: 1.2;
@@ -15563,7 +15263,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   max-width: 65%;
   width: auto;
   height: auto;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   font-size: 15px;
   color: #222;
   line-height: 1.2;
@@ -15619,7 +15319,7 @@ form.webform-client-form .webform-component .form-checkboxes .radio > label,
 form.webform-client-form .webform-component .form-radios .checkbox > label,
 form.webform-client-form .webform-component .form-checkboxes .checkbox > label {
   padding-left: 20px;
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   font-size: 13px;
   text-align: left;
   vertical-align: top;
@@ -15688,7 +15388,7 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -15744,7 +15444,7 @@ form.webform-client-form .webform-component.webform-component-markup {
 }
 form.webform-client-form .webform-component.webform-component-markup h2,
 form.webform-client-form .webform-component.webform-component-markup strong {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-weight: normal;
   color: #222;
   font-size: 13px;
@@ -15752,7 +15452,7 @@ form.webform-client-form .webform-component.webform-component-markup strong {
   text-align: left;
 }
 form.webform-client-form .webform-component.webform-component-markup p {
-  font-family: 'SohoGothicProLight';
+  font-family: 'CiutadellaLight', sans-serif;
   font-size: 13px;
   color: #222;
   line-height: 17px;
@@ -15808,7 +15508,7 @@ form.webform-client-form div.form-actions button.webform-submit {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
@@ -15846,7 +15546,7 @@ form.webform-client-form div.form-actions a.back-link {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -15903,7 +15603,7 @@ form.webform-client-form div.form-actions a.done-link {
   vertical-align: middle;
   margin: 0;
   padding: 7px 27px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -15974,7 +15674,7 @@ form.webform-client-form div.form-actions a.done-link:hover {
   background-color: #BC2929;
 }
 .webform-confirmation .confirmation-title {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold', sans-serif;
   font-size: 15px;
   line-height: 30px;
   text-align: center;
@@ -15995,7 +15695,7 @@ form.webform-client-form div.form-actions a.done-link:hover {
   }
 }
 .webform-confirmation .confirmation-message {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   line-height: 20px;
   text-align: center;
@@ -16067,7 +15767,7 @@ form.webform-client-form div.form-actions a.done-link:hover {
 }
 .submission-actions > ul.webform-submission-actions li a {
   padding: 5px 10px;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 16px;
   color: #BC2929;
   text-decoration: none;
@@ -16086,10 +15786,10 @@ form.webform-client-form div.form-actions a.done-link:hover {
  *  Header section (navigation)
  * --------------------------------------------------*/
 body.navbar-is-fixed-top {
-  padding-top: 110px !important;
+  padding-top: 100px !important;
 }
 body.navbar-is-fixed-top.admin-menu {
-  padding-top: 110px !important;
+  padding-top: 100px !important;
 }
 header#navbar {
   border-bottom: none;
@@ -16097,18 +15797,31 @@ header#navbar {
 }
 header#navbar .container,
 header#navbar .container-fluid {
+  position: relative;
   padding: 20px 15px;
+}
+header#navbar .container .navbar-header,
+header#navbar .container-fluid .navbar-header {
+  height: 60px;
 }
 header#navbar .container .navbar-header a.logo,
 header#navbar .container-fluid .navbar-header a.logo {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 15px;
   float: none;
+  margin: 0;
+  padding: 0;
 }
 header#navbar .container .navbar-header a.logo img,
 header#navbar .container-fluid .navbar-header a.logo img {
   display: inline-block;
   vertical-align: middle;
-  max-height: 80px;
-  width: auto;
+  width: 100px;
+  height: auto;
 }
 header#navbar .container .navbar-header a.navbar-brand,
 header#navbar .container-fluid .navbar-header a.navbar-brand {
@@ -16117,14 +15830,131 @@ header#navbar .container-fluid .navbar-header a.navbar-brand {
   float: none;
   margin-left: 15px;
   padding: 0;
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaMedium', sans-serif;
   font-size: 41px;
   color: #222222;
   line-height: 1;
 }
 header#navbar .container .navbar-header .navbar-toggle,
 header#navbar .container-fluid .navbar-header .navbar-toggle {
-  padding: 5px 10px;
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  float: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 15px;
+  border: none;
+  background: none;
+}
+header#navbar .container .navbar-header .navbar-toggle:focus,
+header#navbar .container-fluid .navbar-header .navbar-toggle:focus {
+  outline: 0;
+}
+header#navbar .container .navbar-header .navbar-toggle .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+header#navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+@media (min-width: 10000px) {
+  header#navbar .container .navbar-header .navbar-toggle,
+  header#navbar .container-fluid .navbar-header .navbar-toggle {
+    display: none;
+  }
+}
+header#navbar .container .navbar-header .navbar-toggle .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
+  display: block;
+  height: 3px;
+  width: 30px;
+  background-color: #222;
+  opacity: 1.0;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transition: -webkit-transform 0.5s ease, opacity 0.3s ease;
+  -moz-transition: -moz-transform 0.5s ease;
+  -o-transition: -o-transform 0.5s ease, opacity 0.3s ease;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+header#navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 7px;
+}
+header#navbar .container .navbar-header .navbar-toggle:hover,
+header#navbar .container-fluid .navbar-header .navbar-toggle:hover {
+  background: none;
+}
+header#navbar .container .navbar-header .navbar-toggle:hover .icon-bar + .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle:hover .icon-bar + .icon-bar {
+  margin-top: 10px;
+}
+header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar {
+  width: 29px;
+}
+header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.first,
+header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.first {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.second,
+header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.second {
+  opacity: 0.0;
+}
+header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.third,
+header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.third {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"]:hover .icon-bar + .icon-bar,
+header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"]:hover .icon-bar + .icon-bar {
+  margin-top: 7px;
+}
+header#navbar .container .navbar-collapse,
+header#navbar .container-fluid .navbar-collapse {
+  position: absolute;
+  top: 100px;
+  right: 15px;
+  width: auto;
+  height: auto;
+  min-height: 400px;
+  text-align: center;
+  border: none;
+  background-color: #404040;
+}
+@media screen and (min-width: 48em) {
+  header#navbar .container .navbar-collapse,
+  header#navbar .container-fluid .navbar-collapse {
+    width: 70%;
+  }
+}
+header#navbar .container .navbar-collapse nav,
+header#navbar .container-fluid .navbar-collapse nav {
+  display: inline-block;
 }
 header#navbar .container .navbar-collapse nav ul.navbar-nav,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav {
@@ -16137,8 +15967,8 @@ header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li {
 header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
   padding: 7px 15px;
-  font-family: 'SohoGothicProRegular';
-  font-size: 16px;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 30px;
   color: #222;
   line-height: 1;
 }
@@ -16189,18 +16019,17 @@ body {
   min-height: 100%;
 }
 body .main-container {
-  padding-bottom: 100px;
+  padding-bottom: 200px;
   height: 100%;
 }
 body .main-container .container #page-header .region-header h2.block-title,
 body .main-container .container-fluid #page-header .region-header h2.block-title {
   margin: 20px 0 10px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   body .main-container .container #page-header .region-header h2.block-title,
@@ -16223,12 +16052,11 @@ body .main-container .container-fluid #page-header .region-header h2.block-title
 body .main-container .container .row section h1.page-header,
 body .main-container .container-fluid .row section h1.page-header {
   margin: 20px 0 10px;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 35.2em) {
   body .main-container .container .row section h1.page-header,
@@ -16316,8 +16144,8 @@ body footer.footer {
   right: 0;
   margin: 0;
   padding: 0;
-  height: 100px;
-  border-top: 1px solid #000;
+  height: 200px;
+  border: none;
 }
 /*
  *  Footer section

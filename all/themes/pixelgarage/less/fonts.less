@@ -22,18 +22,19 @@
 @pxl-icon-font: 'fontawesome';
 
 // title font
-@pxl-title-font: 'SohoGothicProBold';
-@pxl-subtitle-font: 'SohoGothicProBold';
+@pxl-title-font: 'CiutadellaBold';
+@pxl-subtitle-font: 'CiutadellaRegular';
 
 // text fonts
-@pxl-text-font: 'SohoGothicProRegular';
-@pxl-text-font-light: 'SohoGothicProLight';
-@pxl-text-font-medium: @pxl-text-font;
-@pxl-text-font-bold: 'SohoGothicProBold';
-@pxl-text-font-italic: 'SohoGothicProRegular';
-@pxl-text-font-light-italic: 'SohoGothicProLight';
-@pxl-text-font-medium-italic: @pxl-text-font;
-@pxl-text-font-bold-italic: 'SohoGothicProBold';
+@pxl-text-font: 'CiutadellaRegular', sans-serif;
+@pxl-text-font-light: 'CiutadellaLight', sans-serif;
+@pxl-text-font-medium: 'CiutadellaMedium', sans-serif;
+@pxl-text-font-bold: 'CiutadellaBold', sans-serif;
+
+@pxl-text-font-italic: 'CiutadellaRegularItalic', sans-serif;
+@pxl-text-font-light-italic: 'CiutadellaLightItalic', sans-serif;
+@pxl-text-font-medium-italic: 'CiutadellaMediumItalic', sans-serif;
+@pxl-text-font-bold-italic: 'CiutadellaBoldItalic', sans-serif;
 
 // form font
 @pxl-form-font: @pxl-text-font;
@@ -49,29 +50,74 @@
 // font faces
 //
 @font-face {
-  font-family: 'SohoGothicProRegular';
-  src: url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.eot');
-  src: url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.eot') format('embedded-opentype'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.woff2') format('woff2'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.woff') format('woff'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.ttf') format('truetype'),
-  url('@{pxl-font-path}/SohoGothicProRegular/SohoGothicProRegular.svg#SohoGothicProRegular') format('svg');
+  font-family: 'CiutadellaLight';
+  src: url('@{pxl-font-path}/CiutadellaLight/CiutadellaLight.eot');
+  src: url('@{pxl-font-path}/CiutadellaLight/CiutadellaLight.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaLight/CiutadellaLight.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaLight/CiutadellaLight.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaLight/CiutadellaLight.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaLight/CiutadellaLight.svg#CiutadellaLight') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProLight';
-  src: url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.eot');
-  src: url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.eot') format('embedded-opentype'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.woff2') format('woff2'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.woff') format('woff'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.ttf') format('truetype'),
-  url('@{pxl-font-path}/SohoGothicProLight/SohoGothicProLight.svg#SohoGothicProLight') format('svg');
+  font-family: 'CiutadellaLightItalic';
+  src: url('@{pxl-font-path}/CiutadellaLightItalic/CiutadellaLightItalic.eot');
+  src: url('@{pxl-font-path}/CiutadellaLightItalic/CiutadellaLightItalic.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaLightItalic/CiutadellaLightItalic.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaLightItalic/CiutadellaLightItalic.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaLightItalic/CiutadellaLightItalic.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaLightItalic/CiutadellaLightItalic.svg#CiutadellaLightItalic') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProBold';
-  src: url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.eot');
-  src: url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.eot') format('embedded-opentype'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.woff2') format('woff2'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.woff') format('woff'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.ttf') format('truetype'),
-  url('@{pxl-font-path}/SohoGothicProBold/SohoGothicProBold.svg#SohoGothicProBold') format('svg');
+  font-family: 'CiutadellaRegular';
+  src: url('@{pxl-font-path}/CiutadellaRegular/CiutadellaRegular.eot');
+  src: url('@{pxl-font-path}/CiutadellaRegular/CiutadellaRegular.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaRegular/CiutadellaRegular.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaRegular/CiutadellaRegular.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaRegular/CiutadellaRegular.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaRegular/CiutadellaRegular.svg#CiutadellaRegular') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaRegularItalic';
+  src: url('@{pxl-font-path}/CiutadellaRegularItalic/CiutadellaRegularItalic.eot');
+  src: url('@{pxl-font-path}/CiutadellaRegularItalic/CiutadellaRegularItalic.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaRegularItalic/CiutadellaRegularItalic.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaRegularItalic/CiutadellaRegularItalic.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaRegularItalic/CiutadellaRegularItalic.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaRegularItalic/CiutadellaRegularItalic.svg#CiutadellaRegularItalic') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaMedium';
+  src: url('@{pxl-font-path}/CiutadellaMedium/CiutadellaMedium.eot');
+  src: url('@{pxl-font-path}/CiutadellaMedium/CiutadellaMedium.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaMedium/CiutadellaMedium.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaMedium/CiutadellaMedium.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaMedium/CiutadellaMedium.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaMedium/CiutadellaMedium.svg#CiutadellaMedium') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaMediumItalic';
+  src: url('@{pxl-font-path}/CiutadellaMediumItalic/CiutadellaMediumItalic.eot');
+  src: url('@{pxl-font-path}/CiutadellaMediumItalic/CiutadellaMediumItalic.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaMediumItalic/CiutadellaMediumItalic.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaMediumItalic/CiutadellaMediumItalic.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaMediumItalic/CiutadellaMediumItalic.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaMediumItalic/CiutadellaMediumItalic.svg#CiutadellaMediumItalic') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaBold';
+  src: url('@{pxl-font-path}/CiutadellaBold/CiutadellaBold.eot');
+  src: url('@{pxl-font-path}/CiutadellaBold/CiutadellaBold.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaBold/CiutadellaBold.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaBold/CiutadellaBold.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaBold/CiutadellaBold.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaBold/CiutadellaBold.svg#CiutadellaBold') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaBoldItalic';
+  src: url('@{pxl-font-path}/CiutadellaBoldItalic/CiutadellaBoldItalic.eot');
+  src: url('@{pxl-font-path}/CiutadellaBoldItalic/CiutadellaBoldItalic.eot') format('embedded-opentype'),
+  url('@{pxl-font-path}/CiutadellaBoldItalic/CiutadellaBoldItalic.woff2') format('woff2'),
+  url('@{pxl-font-path}/CiutadellaBoldItalic/CiutadellaBoldItalic.woff') format('woff'),
+  url('@{pxl-font-path}/CiutadellaBoldItalic/CiutadellaBoldItalic.ttf') format('truetype'),
+  url('@{pxl-font-path}/CiutadellaBoldItalic/CiutadellaBoldItalic.svg#CiutadellaBoldItalic') format('svg');
 }

@@ -15,11 +15,15 @@
 // -------------------------
 .view.view-program {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
+
+  @media @tablet {
+    width: 70%;
+  }
 
   .view-content {
     padding: 0;
-    .horizontal-grid();
+    .masonry-100();
   }
 }
 

@@ -2,10 +2,10 @@
 <OnlineCMSSchedule>
     <Entry>
         <AiringInformation>
-            <ScheduledStartDateTime>20.05.2017 08:00</ScheduledStartDateTime>
-            <RealStartDateTime>20.05.2017 08:02</RealStartDateTime>
-            <ScheduledEndDateTime>20.05.2017 08:50</ScheduledEndDateTime>
-            <RealEndDateTime>20.05.2017 08:52</RealEndDateTime>
+            <ScheduledStartDateTime>22.05.2017 08:00</ScheduledStartDateTime>
+            <RealStartDateTime>22.05.2017 08:02</RealStartDateTime>
+            <ScheduledEndDateTime>22.05.2017 08:50</ScheduledEndDateTime>
+            <RealEndDateTime>22.05.2017 08:52</RealEndDateTime>
             <Duration>3000</Duration>
             <Title>Die Tiere der Alpen</Title> <!-- Show Title -->
             <RunType>PRIMARY</RunType>
@@ -33,16 +33,16 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1000</AssetReconciliationId>
+            <AssetReconciliationId>xy-2000</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
     <Entry>
         <AiringInformation>
-            <ScheduledStartDateTime>20.05.2017 10:00</ScheduledStartDateTime>
-            <RealStartDateTime>20.05.2017 10:02</RealStartDateTime>
-            <ScheduledEndDateTime>20.05.2017 10:50</ScheduledEndDateTime>
-            <RealEndDateTime>20.05.2017 10:52</RealEndDateTime>
+            <ScheduledStartDateTime>22.05.2017 10:00</ScheduledStartDateTime>
+            <RealStartDateTime>22.05.2017 10:02</RealStartDateTime>
+            <ScheduledEndDateTime>22.05.2017 10:50</ScheduledEndDateTime>
+            <RealEndDateTime>22.05.2017 10:52</RealEndDateTime>
             <Duration>3000</Duration>
             <Title>Sport events Swiss1</Title> <!-- Show Title -->
             <RunType>PRIMARY</RunType>
@@ -70,16 +70,16 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1001</AssetReconciliationId>
+            <AssetReconciliationId>xy-2001</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
     <Entry>
         <AiringInformation>
-            <ScheduledStartDateTime>20.05.2017 14:00</ScheduledStartDateTime>
-            <RealStartDateTime>20.05.2017 14:02</RealStartDateTime>
-            <ScheduledEndDateTime>20.05.2017 14:50</ScheduledEndDateTime>
-            <RealEndDateTime>20.05.2017 14:52</RealEndDateTime>
+            <ScheduledStartDateTime>22.05.2017 14:00</ScheduledStartDateTime>
+            <RealStartDateTime>22.05.2017 14:02</RealStartDateTime>
+            <ScheduledEndDateTime>22.05.2017 14:50</ScheduledEndDateTime>
+            <RealEndDateTime>22.05.2017 14:52</RealEndDateTime>
             <Duration>3000</Duration>
             <Title>News des Tages</Title> <!-- Show Title -->
             <RunType>PRIMARY</RunType>
@@ -107,16 +107,16 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1002</AssetReconciliationId>
+            <AssetReconciliationId>xy-2002</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
     <Entry>
         <AiringInformation>
-            <ScheduledStartDateTime>20.05.2017 18:00</ScheduledStartDateTime>
-            <RealStartDateTime>20.05.2017 18:02</RealStartDateTime>
-            <ScheduledEndDateTime>20.05.2017 18:50</ScheduledEndDateTime>
-            <RealEndDateTime>20.05.2017 18:52</RealEndDateTime>
+            <ScheduledStartDateTime>22.05.2017 18:00</ScheduledStartDateTime>
+            <RealStartDateTime>22.05.2017 18:02</RealStartDateTime>
+            <ScheduledEndDateTime>22.05.2017 18:50</ScheduledEndDateTime>
+            <RealEndDateTime>22.05.2017 18:52</RealEndDateTime>
             <Duration>3000</Duration>
             <Title>Portrait des Tages</Title> <!-- Show Title -->
             <RunType>PRIMARY</RunType>
@@ -144,16 +144,16 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1003</AssetReconciliationId>
+            <AssetReconciliationId>xy-2003</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
     <Entry>
         <AiringInformation>
-            <ScheduledStartDateTime>20.05.2017 20:00</ScheduledStartDateTime>
-            <RealStartDateTime>20.05.2017 20:02</RealStartDateTime>
-            <ScheduledEndDateTime>20.05.2017 20:50</ScheduledEndDateTime>
-            <RealEndDateTime>20.05.2017 20:52</RealEndDateTime>
+            <ScheduledStartDateTime>22.05.2017 20:00</ScheduledStartDateTime>
+            <RealStartDateTime>22.05.2017 20:02</RealStartDateTime>
+            <ScheduledEndDateTime>22.05.2017 20:50</ScheduledEndDateTime>
+            <RealEndDateTime>22.05.2017 20:52</RealEndDateTime>
             <Duration>3000</Duration>
             <Title>Kulinarikreisen</Title> <!-- Show Title -->
             <RunType>PRIMARY</RunType>
@@ -181,16 +181,16 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1004</AssetReconciliationId>
+            <AssetReconciliationId>xy-2004</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
     <Entry>
         <AiringInformation>
-            <ScheduledStartDateTime>20.05.2017 23:15</ScheduledStartDateTime>
-            <RealStartDateTime>20.05.2017 23:17</RealStartDateTime>
-            <ScheduledEndDateTime>21.05.2017 00:50</ScheduledEndDateTime>
-            <RealEndDateTime>21.05.2017 00:52</RealEndDateTime>
+            <ScheduledStartDateTime>22.05.2017 23:15</ScheduledStartDateTime>
+            <RealStartDateTime>22.05.2017 23:17</RealStartDateTime>
+            <ScheduledEndDateTime>23.05.2017 00:50</ScheduledEndDateTime>
+            <RealEndDateTime>23.05.2017 00:52</RealEndDateTime>
             <Duration>5700</Duration>
             <Title>Schwingen, die Bösen</Title> <!-- Show Title -->
             <RunType>PRIMARY</RunType>
@@ -218,7 +218,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1005</AssetReconciliationId>
+            <AssetReconciliationId>xy-2005</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 </OnlineCMSSchedule>

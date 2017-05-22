@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CiutadellaLightItalic';
+    src: url('fonts/CiutadellaLightItalic.eot');
+    src: url('fonts/CiutadellaLightItalic.eot') format('embedded-opentype'),
+         url('fonts/CiutadellaLightItalic.woff2') format('woff2'),
+         url('fonts/CiutadellaLightItalic.woff') format('woff'),
+         url('fonts/CiutadellaLightItalic.ttf') format('truetype'),
+         url('fonts/CiutadellaLightItalic.svg#CiutadellaLightItalic') format('svg');
+}

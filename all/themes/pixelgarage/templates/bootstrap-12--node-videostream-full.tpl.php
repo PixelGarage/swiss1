@@ -19,13 +19,13 @@
       <?php else: ?>
         <img src="<?php print $poster_url; ?>" class="video-poster">
       <?php endif; ?>
-    </div>
-    <div class="video-header">
-      <div class="title-line-1"><?php print render($content['title']); ?></div>
-      <div class="title-line-2">
-        <span class="video-category"><?php print $category; ?></span>
-        <span class="video-time-info"><?php print $time_info; ?></span>
-        <span class="video-duration"><?php print $duration_minutes; ?></span>
+      <div class="video-header">
+        <div class="title-line-1"><?php print render($content['title']); ?></div>
+        <div class="title-line-2">
+          <span class="video-category"><?php print $category; ?></span>
+          <span class="video-time-info"><?php print $time_info; ?></span>
+          <span class="video-duration"><?php print $duration_minutes; ?></span>
+        </div>
       </div>
     </div>
     <div class="video-body">

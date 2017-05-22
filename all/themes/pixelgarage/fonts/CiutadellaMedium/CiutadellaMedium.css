@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CiutadellaMedium';
+    src: url('fonts/CiutadellaMedium.eot');
+    src: url('fonts/CiutadellaMedium.eot') format('embedded-opentype'),
+         url('fonts/CiutadellaMedium.woff2') format('woff2'),
+         url('fonts/CiutadellaMedium.woff') format('woff'),
+         url('fonts/CiutadellaMedium.ttf') format('truetype'),
+         url('fonts/CiutadellaMedium.svg#CiutadellaMedium') format('svg');
+}

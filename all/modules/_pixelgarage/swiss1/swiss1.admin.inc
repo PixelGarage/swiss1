@@ -58,18 +58,20 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#collapsed' => false,
     '#weight' => 10,
   );
+  $form['swiss1_settings']['swiss1_import_directory'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Import Directory'),
+    '#default_value' => variable_get('swiss1_import_directory') ? variable_get('swiss1_import_directory') : SWISS1_IMPORT_DEFAULT_DIRECTORY,
+    '#description' => t('Defines the XML import directory relative to the Drupal root directory. All XML files in this directory are imported, if possible. Default: ../swiss1_media_import'),
+    '#weight' => 0,
+  );
   $form['swiss1_settings']['swiss1_video_playable_start'] = array(
     '#type' => 'radios',
     '#title' => t('At which time should a video be playable?'),
     '#options' => $play_options,
     '#default_value' => variable_get('swiss1_video_playable_start') ? variable_get('swiss1_video_playable_start') : 'broadcast_end',
     '#description' => t('Defines the time when a broadcast video can be played on the Website. Default: at the end of its broadcast period.'),
-  );
-  $form['swiss1_settings']['swiss1_import_directory'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Import Directory'),
-    '#default_value' => variable_get('swiss1_import_directory') ? variable_get('swiss1_import_directory') : SWISS1_IMPORT_DEFAULT_DIRECTORY,
-    '#description' => t('Defines the XML import directory relative to the Drupal root directory. All XML files in this directory are imported, if possible. Default: ../swiss1_media_import'),
+    '#weight' => 5,
   );
 
 

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CiutadellaRegular';
+    src: url('fonts/CiutadellaRegular.eot');
+    src: url('fonts/CiutadellaRegular.eot') format('embedded-opentype'),
+         url('fonts/CiutadellaRegular.woff2') format('woff2'),
+         url('fonts/CiutadellaRegular.woff') format('woff'),
+         url('fonts/CiutadellaRegular.ttf') format('truetype'),
+         url('fonts/CiutadellaRegular.svg#CiutadellaRegular') format('svg');
+}

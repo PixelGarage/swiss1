@@ -33,7 +33,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1000</AssetReconciliationId>
+            <AssetReconciliationId>xy-4000</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
@@ -70,7 +70,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1001</AssetReconciliationId>
+            <AssetReconciliationId>xy-4001</AssetReconciliationId>
         </ScheduleReference>
     </Entry>
 
@@ -107,7 +107,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1002</AssetReconciliationId>
+            <AssetReconciliationId>xy-4002</AssetReconciliationId>
         </ScheduleReference>
     </Entry>    
     
@@ -144,7 +144,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1003</AssetReconciliationId>
+            <AssetReconciliationId>xy-4003</AssetReconciliationId>
         </ScheduleReference>
     </Entry>    
     
@@ -181,7 +181,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1004</AssetReconciliationId>
+            <AssetReconciliationId>xy-4004</AssetReconciliationId>
         </ScheduleReference>
     </Entry>    
     
@@ -218,7 +218,7 @@
         </Description>
 
         <ScheduleReference>
-            <AssetReconciliationId>xy-1005</AssetReconciliationId>
+            <AssetReconciliationId>xy-4005</AssetReconciliationId>
         </ScheduleReference>
     </Entry>    
 </OnlineCMSSchedule>

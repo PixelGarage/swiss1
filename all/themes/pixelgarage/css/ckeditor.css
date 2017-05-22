@@ -2348,31 +2348,55 @@
   clip: auto;
 }
 @font-face {
-  font-family: 'SohoGothicProRegular';
-  src: url('../fonts/SohoGothicProRegular/SohoGothicProRegular.eot');
-  src: url('../fonts/SohoGothicProRegular/SohoGothicProRegular.eot') format('embedded-opentype'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.woff2') format('woff2'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.woff') format('woff'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.ttf') format('truetype'), url('../fonts/SohoGothicProRegular/SohoGothicProRegular.svg#SohoGothicProRegular') format('svg');
+  font-family: 'CiutadellaLight';
+  src: url('../fonts/CiutadellaLight/CiutadellaLight.eot');
+  src: url('../fonts/CiutadellaLight/CiutadellaLight.eot') format('embedded-opentype'), url('../fonts/CiutadellaLight/CiutadellaLight.woff2') format('woff2'), url('../fonts/CiutadellaLight/CiutadellaLight.woff') format('woff'), url('../fonts/CiutadellaLight/CiutadellaLight.ttf') format('truetype'), url('../fonts/CiutadellaLight/CiutadellaLight.svg#CiutadellaLight') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProLight';
-  src: url('../fonts/SohoGothicProLight/SohoGothicProLight.eot');
-  src: url('../fonts/SohoGothicProLight/SohoGothicProLight.eot') format('embedded-opentype'), url('../fonts/SohoGothicProLight/SohoGothicProLight.woff2') format('woff2'), url('../fonts/SohoGothicProLight/SohoGothicProLight.woff') format('woff'), url('../fonts/SohoGothicProLight/SohoGothicProLight.ttf') format('truetype'), url('../fonts/SohoGothicProLight/SohoGothicProLight.svg#SohoGothicProLight') format('svg');
+  font-family: 'CiutadellaLightItalic';
+  src: url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.eot');
+  src: url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.woff2') format('woff2'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.woff') format('woff'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.ttf') format('truetype'), url('../fonts/CiutadellaLightItalic/CiutadellaLightItalic.svg#CiutadellaLightItalic') format('svg');
 }
 @font-face {
-  font-family: 'SohoGothicProBold';
-  src: url('../fonts/SohoGothicProBold/SohoGothicProBold.eot');
-  src: url('../fonts/SohoGothicProBold/SohoGothicProBold.eot') format('embedded-opentype'), url('../fonts/SohoGothicProBold/SohoGothicProBold.woff2') format('woff2'), url('../fonts/SohoGothicProBold/SohoGothicProBold.woff') format('woff'), url('../fonts/SohoGothicProBold/SohoGothicProBold.ttf') format('truetype'), url('../fonts/SohoGothicProBold/SohoGothicProBold.svg#SohoGothicProBold') format('svg');
+  font-family: 'CiutadellaRegular';
+  src: url('../fonts/CiutadellaRegular/CiutadellaRegular.eot');
+  src: url('../fonts/CiutadellaRegular/CiutadellaRegular.eot') format('embedded-opentype'), url('../fonts/CiutadellaRegular/CiutadellaRegular.woff2') format('woff2'), url('../fonts/CiutadellaRegular/CiutadellaRegular.woff') format('woff'), url('../fonts/CiutadellaRegular/CiutadellaRegular.ttf') format('truetype'), url('../fonts/CiutadellaRegular/CiutadellaRegular.svg#CiutadellaRegular') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaRegularItalic';
+  src: url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.eot');
+  src: url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.woff2') format('woff2'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.woff') format('woff'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.ttf') format('truetype'), url('../fonts/CiutadellaRegularItalic/CiutadellaRegularItalic.svg#CiutadellaRegularItalic') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaMedium';
+  src: url('../fonts/CiutadellaMedium/CiutadellaMedium.eot');
+  src: url('../fonts/CiutadellaMedium/CiutadellaMedium.eot') format('embedded-opentype'), url('../fonts/CiutadellaMedium/CiutadellaMedium.woff2') format('woff2'), url('../fonts/CiutadellaMedium/CiutadellaMedium.woff') format('woff'), url('../fonts/CiutadellaMedium/CiutadellaMedium.ttf') format('truetype'), url('../fonts/CiutadellaMedium/CiutadellaMedium.svg#CiutadellaMedium') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaMediumItalic';
+  src: url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.eot');
+  src: url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.woff2') format('woff2'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.woff') format('woff'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.ttf') format('truetype'), url('../fonts/CiutadellaMediumItalic/CiutadellaMediumItalic.svg#CiutadellaMediumItalic') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaBold';
+  src: url('../fonts/CiutadellaBold/CiutadellaBold.eot');
+  src: url('../fonts/CiutadellaBold/CiutadellaBold.eot') format('embedded-opentype'), url('../fonts/CiutadellaBold/CiutadellaBold.woff2') format('woff2'), url('../fonts/CiutadellaBold/CiutadellaBold.woff') format('woff'), url('../fonts/CiutadellaBold/CiutadellaBold.ttf') format('truetype'), url('../fonts/CiutadellaBold/CiutadellaBold.svg#CiutadellaBold') format('svg');
+}
+@font-face {
+  font-family: 'CiutadellaBoldItalic';
+  src: url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.eot');
+  src: url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.eot') format('embedded-opentype'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.woff2') format('woff2'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.woff') format('woff'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.ttf') format('truetype'), url('../fonts/CiutadellaBoldItalic/CiutadellaBoldItalic.svg#CiutadellaBoldItalic') format('svg');
 }
 /*
  *  Text mixins
  * --------------------------------------------------*/
 .pxl-title {
   margin: 20px auto;
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaBold';
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
   text-align: left;
-  color: #222;
   color: #000;
 }
 @media screen and (min-width: 35.2em) {
@@ -2391,36 +2415,34 @@
   }
 }
 .pxl-subtitle {
-  font-family: 'SohoGothicProBold';
+  font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
   text-align: left;
-  color: #222;
   color: #000;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 39.27272727272727em) {
   .pxl-subtitle {
-    font-size: 3.125vw;
+    font-size: 2.86458333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media screen and (min-width: 64em) {
   .pxl-subtitle {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .pxl-normal {
-  font-family: 'SohoGothicProRegular';
+  font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
   text-align: left;
-  color: #222;
   color: #000;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -2436,55 +2458,5 @@
 @media screen and (min-width: 64em) {
   .pxl-normal {
     font-size: 17px;
-  }
-}
-.pxl-glow {
-  font-family: 'SohoGothicProLight';
-  font-size: 50px;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-align: center;
-  text-transform: uppercase;
-  color: #222;
-  text-shadow: 0 0 10px #40856D, 0 0 10px #40856D, 0 0 10px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 20px #40856D, 0 0 30px #40856D;
-}
-@media screen and (min-width: 24em) {
-  .pxl-glow {
-    font-size: 13.02083333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .pxl-glow {
-    font-size: 100px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .pxl-glow {
-    font-size: 100px;
-  }
-}
-.pxl-quote {
-  font-family: 'SohoGothicProBold';
-  font-size: 22px;
-  letter-spacing: 0.02em;
-  line-height: 1.4em;
-  text-align: left;
-  color: #222;
-  text-align: center;
-  color: #000;
-}
-@media screen and (min-width: 35.2em) {
-  .pxl-quote {
-    font-size: 3.90625vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .pxl-quote {
-    font-size: 30px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .pxl-quote {
-    font-size: 30px;
   }
 }

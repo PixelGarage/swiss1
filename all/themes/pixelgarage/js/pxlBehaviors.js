@@ -38,8 +38,55 @@
   };
 
   /**
-   * Anchor menus: Scrolls smoothly to anchor due to menu click.
+   * Defines behavior of a video stream in full view mode.
    */
+  Drupal.behaviors.VideoStreamBehavior = {
+    attach: function (context) {
+      var $node = $('.modal .node-videostream'),
+          $videoContainer = $node.find('.video-container');
+
+      // if video exists, catch click events
+      $videoContainer.once('click', function() {
+        $(this).on('click', function() {
+          //
+          // hide all elements of node, if the video is playing
+          // otherwise show all node elements
+          var $video = $videoContainer.find('video'),
+              video = $video[0],
+              $header = $node.find('.video-header'),
+              $body = $node.find('.video-body'),
+              $similar = $node.find('.video-similar');
+
+          if (video.paused || video.ended) {
+            // video is going to stop, hide all node elements
+          }
+          else {
+            // video is going to play, hide all node elements
+          }
+
+          // show video controls when video ends
+          $video.once('events', function() {
+            $(this).on('play', function () {
+              // video is playing, hide all node elements
+              $header.addClass('video-playing');
+              $body.addClass('video-playing');
+              $similar.addClass('video-playing');
+            });
+            $(this).on('pause ended', function () {
+              // video is paused or ended, hide all node elements
+              $header.removeClass('video-playing');
+              $body.removeClass('video-playing');
+              $similar.removeClass('video-playing');
+            });
+          });
+
+        });
+      });
+    }
+  };
+
+  /**
+   * Anchor menus: Scrolls smoothly to anchor due to menu click.
   Drupal.behaviors.smoothScrolltoAnchors = {
     attach: function(context, settings) {
       $(function() {
@@ -62,6 +109,7 @@
       });
     }
   };
+   */
 
   /**
    * Allows full size clickable items.

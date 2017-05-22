@@ -20,62 +20,88 @@
   >.row {
     >div.col-sm-12 {
       >.video-container {
-        img.video-poster {
+        position: relative;
 
+        img.video-poster {
+          display: block;
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: auto;
         }
         video {
-        }
-      }
-
-      >.video-header {
-        position: relative;
-        z-index: 10;
-        margin: -@video-header-height 0 0;
-        padding: 0 10px;
-        height: @video-header-height;
-        #gradient.vertical(rgba(0,0,0,0), rgba(0,0,0,0.6), 20%, 80%);
-
-        @media @narrow {
-          margin: -@video-header-height-large 0 0;
-          padding: 0 30px;
-          height: @video-header-height-large;
+          display: block;
+          width: 100%;
         }
 
-        .title-line-1 {
-          .field-name-title {
-            h2 {
-              #pxl-mixins.title();
-              margin: 0;
-              padding: 10px 0;
-              line-height: 1;
-              color: @pxl-color-white;
+        >.video-header {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 10;
+          margin: 0;
+          padding: 0 10px;
+          height: @video-header-height;
+          #gradient.vertical(rgba(0,0,0,0.8), rgba(0,0,0,0.0), 0%, 100%);
+          opacity: 1.0;
+          #pxl-mixins.transition(opacity 0.6s ease);
+
+          &.video-playing {
+            opacity: 0.0;
+          }
+
+          @media @narrow {
+            padding: 0 30px;
+            height: @video-header-height-large;
+          }
+
+          .title-line-1 {
+            .field-name-title {
+              h2 {
+                #pxl-mixins.title();
+                margin: 0;
+                padding: 25px 0 0;
+                line-height: 1;
+                color: @pxl-color-white;
+              }
             }
           }
-        }
-        .title-line-2 {
-          display: flex;
-          justify-content: space-between;
-          margin: 0;
-          padding: 0 0 10px;
-          color: @pxl-color-white;
+          .title-line-2 {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0 0 10px;
+            color: @pxl-color-white;
 
-          >.video-category {
+            >.video-category {
 
-          }
-          >.video-time-info {
+            }
+            >.video-time-info {
 
-          }
-          >.video-duration {
-            &:before {
-              content: '\f017';
-              font-family: @pxl-icon-font;
-              padding-right: 3px;
+            }
+            >.video-duration {
+              &:before {
+                content: '\f017';
+                font-family: @pxl-icon-font;
+                padding-right: 3px;
+              }
             }
           }
         }
       }
 
       >.video-body {
+        width: 100%;
+        opacity: 1.0;
+        #pxl-mixins.transition(opacity 0.6s ease);
+
+        &.video-playing {
+          opacity: 0.0;
+        }
+
+
         .title-line-3 {
           display: flex;
           justify-content: space-between;
@@ -89,15 +115,42 @@
           }
         }
         .field-name-body {
-          margin: 0 0 80px;
+          margin: 0 0 50px;
           #pxl-mixins.wysiwyg-body();
         }
-        .social-buttons > .shariff{
+        .social-buttons > .shariff {
           .social-shariff();
+        }
+
+        .modal & {
+          .title-line-3 {
+            color: @pxl-color-white;
+          }
+          .field-name-body {
+            color: @pxl-color-white;
+          }
+          .social-buttons > .shariff{
+            ul {
+              li {
+                a {
+                  color: @pxl-color-white;
+                }
+              }
+            }
+          }
         }
       }
 
       >.video-similar {
+        width: 100%;
+        opacity: 1.0;
+        #pxl-mixins.transition(opacity 0.6s ease);
+
+        &.video-playing {
+          opacity: 0.0;
+        }
+
+
         // see views-similar.less
       }
 
@@ -126,6 +179,7 @@
         z-index: 10;
         margin: -@video-header-height-teaser 0 0;
         padding: 10px;
+        width: 100%;
         height: @video-header-height-teaser;
         #gradient.vertical(rgba(0,0,0,0), rgba(0,0,0,0.6), 20%, 80%);
 
@@ -143,16 +197,22 @@
       }
 
       >.video-body {
+        width: 100%;
         background-color: @pxl-color-white;
 
         .title-line-2 {
+          width: 100%;
           padding: 10px 0;
 
           .field-name-title {
             h2 {
-              #pxl-mixins.subtitle();
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              width: 100%;
               margin: 0;
               padding: 0;
+              #pxl-mixins.subtitle();
               line-height: 1;
             }
           }
@@ -186,7 +246,7 @@
         position: relative;
         vertical-align: top;
         margin: 0 -2px;
-        width: 35%;
+        width: 100%;
 
         img.video-poster {
           display: block;
@@ -199,8 +259,9 @@
 
         >.video-duration {
           position: absolute;
-          bottom: 15px;
-          left: 15px;
+          bottom: 0;
+          left: 0;
+          padding: 0 5px;
           color: @pxl-color-white;
           background-color: rgba(0,0,0,0.4);
 
@@ -217,29 +278,28 @@
         position: relative;
         vertical-align: top;
         margin: 0 -2px;
-        padding: 10px;
-        width: 65%;
+        padding: 10px 0;
+        width: 100%;
         background-color: @pxl-color-white;
 
         .title-line-1 {
-          display: flex;
-          justify-content: space-between;
           margin: 0;
           padding: 0;
 
           .field-name-title {
             display: inline-block;
+            width: 100%;
 
             h2 {
-              #pxl-mixins.subtitle();
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
               margin: 0;
               padding: 0;
+              width: 100%;
+              #pxl-mixins.subtitle();
               line-height: 1;
             }
-          }
-
-          >.video-time-info {
-
           }
         }
 
@@ -257,6 +317,20 @@
           >.video-category {
 
           }
+
+          >.video-time-info {
+
+          }
+        }
+      }
+
+      @media @narrow {
+        >.video-container {
+          width: 40%;
+        }
+        >.video-body {
+          padding: 0 10px;
+          width: 60%;
         }
       }
     }

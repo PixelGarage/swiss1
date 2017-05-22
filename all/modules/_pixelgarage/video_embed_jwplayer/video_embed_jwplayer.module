@@ -9,12 +9,12 @@
 /**
  * Defines the JWPlayer content base path.
  */
-define('JWPLAYER_CONTENT_BASE_PATH', '//content.jwplatform.com/');
+define('JWPLAYER_CONTENT_BASE_PATH', 'https://content.jwplatform.com/');
 
 /**
  * Defines the JWPlayer cdn base path.
  */
-define('JWPLAYER_CDN_BASE_PATH', '//cdn.jwplatform.com/');
+define('JWPLAYER_CDN_BASE_PATH', 'https://cdn.jwplatform.com/');
 
 /**
  * Defines access to single line embeddable cloud-hosted players with no media.

@@ -20,11 +20,11 @@
     <div class="video-body">
       <div class="title-line-1">
         <?php print render($content['title']); ?>
-        <span class="video-time-info"><?php print $time_info; ?></span>
       </div>
       <?php print render($content['body']); ?>
       <div class="title-line-2">
         <span class="video-category"><?php print $category; ?></span>
+        <span class="video-time-info"><?php print $time_info; ?></span>
       </div>
     </div>
 

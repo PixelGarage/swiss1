@@ -55,6 +55,7 @@ function swiss1_media_import () {
   //
   // Swiss1 TV media import
   $import_counter = array(
+    '@files' => 0,
     '@created' => 0,
     '@updated' => 0,
     '@failed' => 0,
@@ -73,6 +74,7 @@ function swiss1_media_import () {
         if (is_file($file_path) && mime_content_type($file_path) == 'application/xml') {
           // import file
           _import_xml_file($file_path, $import_counter);
+          $import_counter['@files']++;
 
           // delete file
           unlink($file_path);
@@ -87,7 +89,7 @@ function swiss1_media_import () {
 
   // display feedback about import, if any
   if ($import_counter) {
-    $importMessage = t('Swiss1 TV media import - @created video streams created, @updated video streams updated and @failed video streams have failed to be imported.');
+    $importMessage = t('Swiss1 TV media import - @files files imported: @created videos created, @updated videos updated, @failed videos failed.');
     if($import_counter['@failed']) {
       drupal_set_message(t($importMessage, $import_counter), 'warning');
       watchdog('Swiss1 Importer', $importMessage, $import_counter, WATCHDOG_WARNING);
@@ -133,6 +135,9 @@ function _import_xml_file($filepath, &$import_counter) {
       $msg = t('The xml file does not conform to the Swiss1 XML document type (see XSD files for XML definition).');
       throw new Exception($msg);
   }
+
+  //
+  // TODO: Delete all entries of a day schedule, if schedule already exists (day id?)
 
   //
   // select the video entries in the file and import it
@@ -237,7 +242,7 @@ function _parse_entry($xml_entry, &$import_counter) {
         $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = $end_date;
       }
       else {
-        $msg = t('End date time lies before start date time for VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+        $msg = t('End date time set before start date time for VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
         $import_counter['@failed']++;
         return $msg;
       }
@@ -251,7 +256,7 @@ function _parse_entry($xml_entry, &$import_counter) {
     // set validity period
     // REMARK: VODEntries with a validity end time in the past will be deleted during the next cleanup run
     // get catchup period
-    $catchup_period = isset($airing_info['CatchupPeriod']) ? ' +' . strtolower($airing_info['CatchupPeriod']) : 'now';
+    $catchup_period = isset($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : 'now';
     $run_type = isset($airing_info['RunType']) ? strtoupper($airing_info['RunType']) : 'UNDEFINED';
     $playable_on_broadcast_start = variable_get('swiss1_video_playable_start') == 'broadcast_start';
 
@@ -322,15 +327,16 @@ function _parse_entry($xml_entry, &$import_counter) {
   }
 
   //
-  // EPG inofs / Category (can be empty)
+  // EPG infos / Category (can be empty)
   if (isset($arr_entry['Description'])) {
     $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : false;
     if ($epg) {
       $node->title = isset($epg['Title']) ? $epg['Title'] : (isset($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
-      $synopsis = isset($epg['Synopsis']) ? $epg['Synopsis'] : t('Keine Information zur Sendung verfügbar');
+      $synopsis = isset($epg['Synopsis']) ? $epg['Synopsis'] : t('<p>Keine Information zur Sendung verfügbar.</p>');
       $synopsis .= isset($epg['PresentedBy']) ? t('<p>Moderator: @moderator</p>', array('@moderator' => $epg['PresentedBy'])) : '';
       $synopsis .= isset($epg['Interviewee']) ? t('<p>Gast: @guest</p>', array('@guest' => $epg['Interviewee'])) : '';
       $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
+      $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
       $node->field_video_language[LANGUAGE_NONE][0]['value'] = isset($epg['Language']) ? $epg['Language'] : t('Deutsch');
       $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = isset($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
       $node->field_series[LANGUAGE_NONE][0]['value'] = isset($epg['Series']) ? $epg['Series'] : '';
@@ -390,6 +396,11 @@ function _parse_entry($xml_entry, &$import_counter) {
   return true;
 }
 
+
+/* -----------------------------------------------------------------
+ *  Helper functions
+ * ----------------------------------------------------------------- */
+
 /**
  * Get the validity period end date of the node with
  * the given schedule id.
@@ -409,6 +420,34 @@ function _get_validity_end_date($primary_schedule_id) {
     return $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
   }
   return false;
+}
+
+/**
+ * Transforms the given catchup period into a relative time format.
+ *
+ * @param $catchup_period
+ */
+function _get_catchup_period($catchup_period) {
+  $catchup_period = strtolower($catchup_period);
+  if (strpos($catchup_period, 'tage') !== false) {
+    $catchup_period = str_replace('tage', 'days', $catchup_period);
+  }
+  else if (strpos($catchup_period, 'tag') !== false) {
+    $catchup_period = str_replace('tag', 'day', $catchup_period);
+  }
+  else if (strpos($catchup_period, 'stunden') !== false) {
+    $catchup_period = str_replace('stunden', 'hours', $catchup_period);
+  }
+  else if (strpos($catchup_period, 'stunde') !== false) {
+    $catchup_period = str_replace('stunde', 'hour', $catchup_period);
+  }
+
+  // check prefix
+  if (strpos($catchup_period, '+') === false) {
+    $catchup_period = '+' . $catchup_period;
+  }
+
+  return $catchup_period;
 }
 
 /**

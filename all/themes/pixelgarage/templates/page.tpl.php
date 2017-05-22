@@ -90,7 +90,9 @@
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
-          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          <span class="icon-bar first" aria-hidden="true"></span>
+          <span class="icon-bar second" aria-hidden="true"></span>
+          <span class="icon-bar third" aria-hidden="true"></span>
         </button>
       <?php endif; ?>
     </div>

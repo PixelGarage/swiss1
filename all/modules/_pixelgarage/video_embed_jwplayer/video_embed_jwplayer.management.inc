@@ -73,24 +73,32 @@ function video_embed_jwplayer_get_available_transcoding_templates() {
  * template name.
  */
 function video_embed_jwplayer_get_available_video_conversions($media_id) {
-  $video_conversions = &drupal_static($media_id);
+  $video_conversions = &drupal_static('video_embed_jwplayer_' . $media_id);
   if (!isset($video_conversions)) {
-    //
-    // get the video conversions via JWPlayer management api
-    $video_conversions = array();
-    if ($jwplayer_api = video_embed_jwplayer_get_instance()) {
-      $response = $jwplayer_api->call('/videos/conversions/list', array('video_key' => $media_id));
-      if ($response['status'] != 'ok') return $video_conversions;
+    if ($cache = cache_get('video_embed_jwplayer_' . $media_id)) {
+      $video_conversions = $cache->data;
+    }
+    else {
+      //
+      // get the video conversions via JWPlayer management api
+      $video_conversions = array();
+      if ($jwplayer_api = video_embed_jwplayer_get_instance()) {
+        $response = $jwplayer_api->call('/videos/conversions/list', array('video_key' => $media_id));
+        if ($response['status'] != 'ok') return $video_conversions;
 
-      foreach ($response['conversions'] as $conversion) {
-        if ($conversion['mediatype'] == 'video' && $conversion['width'] && $conversion['template']['name'] != 'Original') {
-          $template = $conversion['template'];
-          $video_conversions[$template['key']] = array(
-            'name' => $template['name'],
-            'format' => $template['format']['key'],
-          );
+        foreach ($response['conversions'] as $conversion) {
+          if ($conversion['mediatype'] == 'video' && $conversion['width'] && $conversion['template']['name'] != 'Original') {
+            $template = $conversion['template'];
+            $video_conversions[$template['key']] = array(
+              'name' => $template['name'],
+              'format' => $template['format']['key'],
+            );
+          }
         }
       }
+
+      // add data to cache
+      cache_set('video_embed_jwplayer_' . $media_id, $video_conversions, 'cache');
     }
   }
   return $video_conversions;

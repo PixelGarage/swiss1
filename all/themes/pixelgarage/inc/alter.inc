@@ -61,3 +61,66 @@ function pixelgarage_proximity_render_item_alter($container_index, $param, &$ren
 }
 
 
+/* =============================================================================
+ *    Alteration of program views exposed filter
+ * ========================================================================== */
+
+function pixelgarage_form_alter(&$form, &$form_state, $form_id) {
+  //
+  // manage custom filter of program view
+  if($form_id == 'views_exposed_form' && $form_state['view']->name == 'program') {
+    //
+    // alter form
+    $options = _get_date_select_options();
+    hide($form['field_broadcast_date_value']);
+    $form['field_broadcast_date_select'] = array(
+      '#type' => 'select',
+      '#options' => $options,
+      '#default_value' => '0 days',
+    );
+
+    //
+    //execute manage_custom_filters submit function in first step on $form['#submit'] array
+    array_unshift($form['#submit'], 'manage_custom_filters');
+  }
+}
+
+function manage_custom_filters($form, &$form_state) {
+  $now = strtotime('today');
+  $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $now);
+  $end_timestamp = strtotime('+1 day', $start_timestamp);
+  $selected_start_date = date('Y-m-d H:i:s', $start_timestamp);
+  $selected_end_date = date('Y-m-d H:i:s', $end_timestamp);
+
+  // set filter values in hidden field
+  $form_state['values']['field_broadcast_date_value']['min'] = $selected_start_date;
+  $form_state['values']['field_broadcast_date_value']['max'] = $selected_end_date;
+}
+
+
+function _get_date_select_options() {
+  $options = array();
+  $now = strtotime('today');
+
+  // add past days
+  for ($i = -7; $i <= 10; $i++) {
+    $rel_time = $i . ' days';
+    $timestamp = strtotime($rel_time, $now);
+    switch ($i) {
+      case -1:
+        $options[$rel_time] = date('\G\e\s\t\e\r\n\,   d.m.Y', $timestamp);
+        break;
+      case 0:
+        $options[$rel_time] = date('\H\e\u\t\e,   d.m.Y', $timestamp);
+        break;
+      case 1:
+        $options[$rel_time] = date('\M\o\r\g\e\n,   d.m.Y', $timestamp);
+        break;
+      default:
+        $date = date('D,   d.m.Y', $timestamp);
+        $date = str_replace(array('Mon','Tue', 'Wed', 'Thu','Fri','Sat','Sun'), array('Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'), $date);
+        $options[$rel_time] = $date;
+    }
+  }
+  return $options;
+}

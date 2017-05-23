@@ -79,6 +79,51 @@
   };
 
   /**
+   * Handles the next / previous buttons in exposed form of program view.
+   */
+  Drupal.behaviors.viewsProgramExposedButtons = {
+    attach: function (context) {
+      var $exposedForm = $('#views-exposed-form-program-block-masonry'),
+          $previous = $exposedForm.find('.views-previous-day-button'),
+          $next = $exposedForm.find('.views-next-day-button'),
+          $select = $exposedForm.find('#edit-field-broadcast-date-select');
+
+      $previous.once('click', function() {
+        $(this).on('click', function() {
+          var $select_option = $select.find('>option:selected'),
+            $prev_option = $select_option.prev('option');
+
+          if ($prev_option.length > 0) {
+            var prev_val = $prev_option.val();
+
+            $select_option.removeAttr('selected');
+            $prev_option.attr('selected', 'selected');
+            $select.val(prev_val);
+            $select.change();
+          }
+        });
+      });
+
+      $next.once('click', function() {
+        $(this).on('click', function() {
+          var $select_option = $select.find('>option:selected'),
+              $next_option = $select_option.next('option');
+
+          if ($next_option.length > 0) {
+            var next_val = $next_option.val();
+
+            $select_option.removeAttr('selected');
+            $next_option.attr('selected', 'selected');
+            $select.val(next_val);
+            $select.change();
+          }
+        });
+      });
+
+    }
+  };
+
+  /**
    * Anchor menus: Scrolls smoothly to anchor due to menu click.
   Drupal.behaviors.smoothScrolltoAnchors = {
     attach: function(context, settings) {

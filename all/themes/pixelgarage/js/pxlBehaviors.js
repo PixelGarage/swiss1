@@ -57,13 +57,6 @@
               $body = $node.find('.video-body'),
               $similar = $node.find('.video-similar');
 
-          if (video.paused || video.ended) {
-            // video is going to stop, hide all node elements
-          }
-          else {
-            // video is going to play, hide all node elements
-          }
-
           // show video controls when video ends
           $video.once('events', function() {
             $(this).on('play', function () {

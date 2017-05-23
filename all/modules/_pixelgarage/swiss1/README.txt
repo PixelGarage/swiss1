@@ -20,6 +20,7 @@ It contains two integral parts:
    c) See the structures/xsd/vodSample.xsd and the structures/xsd/linearRundownEPGSample.xsd for the schema definition
       of the XML files to be imported.
 
+
 -----------------------------------------------------------------------------
   SWISS1 TV Video Import
 -----------------------------------------------------------------------------
@@ -33,11 +34,28 @@ available data about a video.
 
 
 -----------------------------------------------------------------------------
-  Video Validity Period
+  Video Validity Period (Catch-up period versus license period)
 -----------------------------------------------------------------------------
-Each VODEntry has a validity period, which is the period, in which the video can be played. This period is calculated
-during the import and is controlled by the JW video player, that prevents a video to be played after its expiration date.
-Additionally a cron job periodically deletes all video streams with an expired validity.
+Each VODEntry has a validity period, which is the period, in which the video can be played.
+
+A contract for a video looks like this:
+Portrait Michael Jackson
+Lizenzdauer: 18 Monate
+Catch-Up Rights: 7 Tage
+Runs: 6
+
+This means, during 18 month the video can be played 6 times, each with a catchup period of 7 days.
+The CMS handles each run as a seperate video with its own catchup period, so the validity period for each video is 7 days,
+after that the video is deleted by a cron job.
+
+This validity period is calculated during the import and is controlled with several methods:
+
+1) The video url is signed (JW Platform), which prevents a video to be played after its expiration date. This allows
+    to distribute the video url by social media without loosing control over legal issues.
+
+2) The CMS loads the video only, if the request occurs in the validity period. Otherwise only a thumbnail is displayed.
+    Thid procedure guarantees, that a video is only available during its validity period.
+
 
 Scheduled video:        The validity period is defined by the broadcast start time and the catchup period.
 Single video on demand: The validity period is defined by the <PublishingInformation> element.

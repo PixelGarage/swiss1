@@ -61,6 +61,43 @@ function video_embed_jwplayer_get_available_transcoding_templates() {
 
 
 /**
+ * Returns an array containing all available video conversions for a specific
+ * video uploaded to the JW Platform account.
+ *
+ * @param string $media_id
+ *    The video key.
+ *
+ * @return array Returns an associative array of all defined video conversions,
+ * Returns an associative array of all defined video conversions,
+ * where the key is the template id of the conversion and the value is the
+ * template name.
+ */
+function video_embed_jwplayer_get_available_video_conversions($media_id) {
+  $video_conversions = &drupal_static($media_id);
+  if (!isset($video_conversions)) {
+    //
+    // get the video conversions via JWPlayer management api
+    $video_conversions = array();
+    if ($jwplayer_api = video_embed_jwplayer_get_instance()) {
+      $response = $jwplayer_api->call('/videos/conversions/list', array('video_key' => $media_id));
+      if ($response['status'] != 'ok') return $video_conversions;
+
+      foreach ($response['conversions'] as $conversion) {
+        if ($conversion['mediatype'] == 'video' && $conversion['width'] && $conversion['template']['name'] != 'Original') {
+          $template = $conversion['template'];
+          $video_conversions[$template['key']] = array(
+            'name' => $template['name'],
+            'format' => $template['format']['key'],
+          );
+        }
+      }
+    }
+  }
+  return $video_conversions;
+}
+
+
+/**
  * Gets all defined players in the given JW platform account.
  *
  * @return array

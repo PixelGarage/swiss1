@@ -95,13 +95,19 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value']) : 0;
   $broadcast_endtime = !empty($node->field_broadcast_date) && $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] ?
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) : 0;
-  if ($date_str = _get_date_string($broadcast_starttime, $broadcast_endtime)) {
+  if ($date_str = _get_broadcast_date_string($broadcast_starttime, $broadcast_endtime)) {
     $vars['time_info'] = $date_str;
   }
   else if ($vars['show_video']) {
     // calculate validity duration in days
     $valid_period = ($validity_period_end - $now) / 86400;
-    if ($valid_period > 1.0) {
+    if ($valid_period > 365.0) {
+      $vars['time_info'] = t('Mehr als ein Jahr');
+    }
+    else if ($valid_period > 30.0) {
+      $vars['time_info'] = t('Mehr als ein Monat');
+    }
+    else if ($valid_period > 1.0) {
       $days = round($valid_period);
       $vars['time_info'] = ($days > 1) ? t('Noch @valid Tage', array('@valid' => $days)) : t('Noch @valid Tag', array('@valid' => $days));
     }
@@ -147,9 +153,9 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
 }
 
 /**
- * Helper function to format a date.
+ * Helper function to format a broadcast date of a video.
  */
-function _get_date_string($starttime, $endtime = 0) {
+function _get_broadcast_date_string($starttime, $endtime = 0) {
   $now = time();
   $date = date('Y-m-d');
   $today_starttime = strtotime($date . '00:00:00');
@@ -158,24 +164,29 @@ function _get_date_string($starttime, $endtime = 0) {
   $tomorrow_endtime = strtotime('+1 day', $today_endtime);
 
   if ($starttime > $tomorrow_endtime) {
-    // after tomorrow: display Mo, 12.10 12:45 - 13:30
+    //
+    // AFTER TOMORROW: display Mo, 12.10 12:45 - 13:30
     $str_date = date('D, d.m H:i', $starttime);
   }
   else if ($starttime >= $tomorrow_starttime && $starttime <= $tomorrow_endtime) {
-    // tomorrow: display Morgen, 12:45 - 13:30
+    //
+    // TOMORROW: display Morgen, 12:45 - 13:30
     $str_date = 'Morgen, ' . date('H:i', $starttime);
   }
   else if ($starttime > $now && $starttime <= $today_endtime) {
-    // today future: display Heute, 12:45 - 13:30
+    //
+    // TODOAY FUTURE: display Heute, 12:45 - 13:30
     $str_date = 'Heute, ' . date('H:i', $starttime);
   }
   else if ($starttime <= $now && $endtime > $now) {
-    // today live: display Endet um 13:30
+    //
+    // TODAY LIVE: display Endet um 13:30
     $end_time = date('H:i', $endtime);
     return t('Endet um @end', array('@end' => $end_time));
   }
   else {
-    // broadcast in past, show validity duration
+    //
+    // BROADCAST IN PAST: show validity duration
     return false;
   }
 

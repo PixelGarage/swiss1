@@ -17,7 +17,7 @@
       <?php if ($show_video): ?>
         <?php print render($content['field_video_path']); ?>
       <?php else: ?>
-        <img src="<?php print $poster_url; ?>" class="video-poster">
+        <div class="video-poster"><img src="<?php print $poster_url; ?>"></div>
       <?php endif; ?>
       <div class="video-header">
         <div class="title-line-1"><?php print render($content['title']); ?></div>

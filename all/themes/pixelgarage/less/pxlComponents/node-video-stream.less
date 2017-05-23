@@ -22,14 +22,21 @@
       >.video-container {
         position: relative;
 
-        img.video-poster {
-          display: block;
+        .video-poster {
           overflow: hidden;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          height: auto;
+          height: 0;
+          padding-bottom: 56.25%; // 16:9
+
+          img {
+            display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
         }
+
         video {
           display: block;
           width: 100%;
@@ -164,9 +171,12 @@
   >.row {
     >div.col-sm-12 {
       >.video-container {
+        overflow: hidden;
+        height: 0;
+        padding-bottom: 56.25%; // 16:9
+
         img.video-poster {
           display: block;
-          overflow: hidden;
           margin: 0;
           padding: 0;
           width: 100%;
@@ -248,12 +258,26 @@
         margin: 0 -2px;
         width: 100%;
 
-        img.video-poster {
-          display: block;
+        .video-poster {
           overflow: hidden;
+          height: 0;
+          padding-bottom: 56.25%;
+
+          img {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        img.video-play-button {
+          display: block;
+          #pxl-mixins.center-xy(absolute);
           margin: 0;
           padding: 0;
-          width: 100%;
+          width: 30%;
           height: auto;
         }
 

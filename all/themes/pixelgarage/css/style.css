@@ -10842,8 +10842,14 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container {
   position: relative;
 }
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container img.video-poster,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container img.video-poster {
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container .video-poster,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container .video-poster {
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container .video-poster img,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container .video-poster img {
   display: block;
   overflow: hidden;
   margin: 0;
@@ -11373,9 +11379,13 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-similar.video-playing {
   opacity: 0.0;
 }
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container {
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container img.video-poster {
   display: block;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -11452,12 +11462,29 @@ body.navbar-tray-open.navbar-vertical.navbar-fixed {
   margin: 0 -2px;
   width: 100%;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container img.video-poster {
-  display: block;
+.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container .video-poster {
   overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container .video-poster img {
+  display: block;
   margin: 0;
   padding: 0;
   width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container img.video-play-button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 30%;
   height: auto;
 }
 .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container > .video-duration {

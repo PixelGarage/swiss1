@@ -28,6 +28,19 @@ function pixelgarage_preprocess_page(&$vars) {
 }
 
 
+/* =============================================================================
+ *    Preprocessing of views
+ * ========================================================================== */
+
+function pixelgarage_preprocess_views_exposed_form(&$vars) {
+  $test = $vars;
+}
+
+
+/* =============================================================================
+ *    Preprocessing of video streams
+ * ========================================================================== */
+
 /**
  * Implements hook_ds_pre_render_alter().
  *
@@ -70,8 +83,9 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
   //
   // VIDEO DISPLAY
   // get poster image, if none is set, set default image
+  $is_teaser = $view_mode == 'teaser' || $view_mode == 'teaser_program';
   $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
-  if ($view_mode == 'teaser' && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
+  if ($is_teaser && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
     $vars['poster_url'] = file_create_url($thumb->uri);
   }
   else if (!empty($node->field_poster) && $poster = file_load($node->field_poster[LANGUAGE_NONE][0]['fid'])) {
@@ -118,14 +132,19 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
   }
   else {
     // validity period in the past
-    $vars['time_info'] = t('Lizenz abgelaufen');
+    $vars['time_info'] = t('Nicht verfügbar');
   }
 
+  //
   // format duration
   $duration = !empty($node->field_duration) && $node->field_duration[LANGUAGE_NONE][0]['value'] ?
     $node->field_duration[LANGUAGE_NONE][0]['value'] : 0;
   $minutes = abs($duration / 60);
   $vars['duration_minutes'] = t('@mins Min.', array('@mins' => $minutes));
+
+  //
+  // add video indicator image, if video is playable
+  $vars['video_play_indicator'] = $vars['show_video'] ? file_create_url($img_path . 'icon-play.svg') : false;
 
   //
   // EPG INFORMATION

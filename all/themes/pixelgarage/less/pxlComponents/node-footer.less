@@ -18,8 +18,64 @@
   border-top: 1px solid @pxl-color-border;
 
   .row {
-    .col-sm-3, .col-sm-3 {
+    .col-sm-4 {
+      .block-title {
+        display: block;
+        margin: 0 0 10px;
+        font-family: @pxl-text-font;
+        font-size: @font-size-base;
+        color: @text-color;
+      }
 
+      .field-name-field-left {
+        .block-title {
+          text-align: left;
+        }
+
+        // see node-block.less
+      }
+
+      .field-name-field-middle-left {
+        .block-title {
+          text-align: center;
+        }
+
+        // see view-live-tv.less
+      }
+
+      .field-name-field-right {
+        text-align: center;
+
+        @media @tablet {
+          text-align: right;
+        }
+
+        .block-title {
+          text-align: right;
+        }
+
+        .follow-buttons {
+          margin: 0 0 20px;
+          width: 100%;
+          text-align: right;
+
+          a {
+            display: inline-block;
+            margin: 0 10px;
+            color: @link-color;
+
+            &:hover {
+              color: @link-color-hover;
+            }
+
+            .fa {
+              font-size: 20px;
+            }
+          }
+        }
+
+        // see webform-newsletter.less
+      }
     }
   }
 }

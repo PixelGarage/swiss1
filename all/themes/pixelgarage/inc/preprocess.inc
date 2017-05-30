@@ -12,7 +12,7 @@
 function pixelgarage_preprocess_html(&$vars) {
   // make sure jQuery UI and effects is loaded for anonymous users
   drupal_add_library('system', 'ui');
-  //drupal_add_library('system', 'effects');
+  drupal_add_library('system', 'effects');
 
 }
 
@@ -24,6 +24,47 @@ function pixelgarage_preprocess_page(&$vars) {
   pg_login_preprocess_page($vars);
 
   //$vars['logo'] = str_replace(array('.jpg', '.png'), '.svg', $vars['logo']);
+
+  // add search icon
+  $path = drupal_get_path('theme', 'pixelgarage') . '/images/';
+  $vars['search_icon'] = file_create_url($path . 'icon_search.svg');
+
+}
+
+
+/* =============================================================================
+ *      Exposed search form
+ * ========================================================================== */
+/**
+ * Adapts the exposed search form to show placeholders in search fields.
+ *
+ */
+function pixelgarage_preprocess_views_exposed_form(&$vars) {
+  //
+  // add placeholders to search exposed form items
+  $form = &$vars['form'];
+  if ($form['#id'] != 'views-exposed-form-search-videos-search-page') return;
+
+  foreach ($form['#info'] as $id => $info) {
+    // add the description as placeholder to the widget
+    if ($id != 'filter-combine') continue;
+
+    // set placeholder
+    $form[$info['value']]['#attributes']['placeholder'] = $info['description'];
+    $form[$info['value']]['#printed'] = false;
+
+    // render widget again
+    $field = $form[$info['value']];
+    $vars['widgets'][$id]->widget = drupal_render($field);
+    $vars['widgets'][$id]->description = '';
+  }
+
+  //
+  // define modal dialog trigger button
+  $vars['button_text'] = t('Welcher Lehrgang, wann, wo?');
+  $vars['button_search'] = t('Suchen');
+  $vars['button_modal_id'] = 'modal-exposed-search-form';
+  $_SESSION['hso'] = array('exposed_search_form_modal_id' => $vars['button_modal_id']);
 
 }
 

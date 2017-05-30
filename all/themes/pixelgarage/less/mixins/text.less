@@ -85,7 +85,11 @@
     .font-size-responsive(@resp-title-size-max, @resp-title-size-med, @resp-title-size-min);
     letter-spacing: @title-letter-spacing;
     line-height: @title-line-height;
-    text-align: @title-text-align;
+    text-align: @title-text-align-small;
+
+    @media @tablet {
+      text-align: @title-text-align;
+    }
   }
 
   .subtitle() {
@@ -93,7 +97,11 @@
     .font-size-responsive(@resp-subtitle-size-max, @resp-subtitle-size-med, @resp-subtitle-size-min);
     letter-spacing: @subtitle-letter-spacing;
     line-height: @subtitle-line-height;
-    text-align: @subtitle-text-align;
+    text-align: @subtitle-text-align-small;
+
+    @media @tablet {
+      text-align: @subtitle-text-align;
+    }
   }
 
   .text() {
@@ -101,7 +109,11 @@
     .font-size-responsive();
     letter-spacing: @text-letter-spacing;
     line-height: @text-line-height;
-    text-align: @text-text-align;
+    text-align: @text-text-align-small;
+
+    @media @tablet {
+      text-align: @text-text-align;
+    }
   }
 
   .paragraph-first-letter() {

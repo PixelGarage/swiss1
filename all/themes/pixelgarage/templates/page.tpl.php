@@ -85,9 +85,20 @@
       <?php if (!empty($site_name)): ?>
         <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
+      <?php if (!empty($site_slogan)): ?>
+        <a class="lead" href="<?php print $front_page; ?>"><?php print $site_slogan; ?></a>
+      <?php endif; ?>
+
+      <?php if (!empty($page['navigation'])): ?>
+        <div id="navbar-search-container">
+          <div class="navbar-search-form"><?php print render($page['navigation']); ?></div>
+          <div class="navbar-search-button"><img src="<?php print $search_icon; ?>" width="30px" height="30px"></div>
+        </div>
+      <?php endif; ?>
+
 
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+      <?php if (!empty($primary_nav) || !empty($secondary_nav)): ?>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar first" aria-hidden="true"></span>
@@ -97,7 +108,7 @@
       <?php endif; ?>
     </div>
 
-    <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+    <?php if (!empty($primary_nav) || !empty($secondary_nav)): ?>
       <div class="navbar-collapse collapse" id="navbar-collapse">
         <nav role="navigation">
           <?php if (!empty($primary_nav)): ?>
@@ -105,9 +116,6 @@
           <?php endif; ?>
           <?php if (!empty($secondary_nav)): ?>
             <?php print render($secondary_nav); ?>
-          <?php endif; ?>
-          <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
           <?php endif; ?>
         </nav>
       </div>
@@ -120,10 +128,6 @@
   <div class="fading fading-bottom"></div>
   <div class="<?php print $container_class; ?>">
     <header role="banner" id="page-header">
-      <?php if (!empty($site_slogan)): ?>
-        <p class="lead"><?php print $site_slogan; ?></p>
-      <?php endif; ?>
-
       <?php print render($page['header']); ?>
     </header> <!-- /#page-header -->
 

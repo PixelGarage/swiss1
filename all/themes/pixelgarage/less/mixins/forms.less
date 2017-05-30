@@ -4,7 +4,7 @@
 
 // Variables
 // -------------------------
-@form-control-height: 36px;
+@form-control-height: 30px;
 
 
 // form fieldsets
@@ -73,7 +73,7 @@
 
   //
   // form items
-  .form-items(@border-color: @text-color; @border-thickness: 1px; @border-radius: 0) {
+  .form-items(@control-height: @form-control-height; @border-color: @text-color; @border-thickness: 1px; @border-radius: 0) {
     label.control-label {
       display: block;
       .form-text();
@@ -81,19 +81,19 @@
       font-weight: normal;
     }
 
-    input.form-control {
+    .form-control {
       margin: 0;
       height: @form-control-height;
       .form-text();
-      border: @border-thickness solid @text-color;
+      border: @border-thickness solid @border-color;
       #pxl-mixins.border-radius(@border-radius);
       #pxl-mixins.box-shadow(none);
       background-color: @form-fieldset-bg-color;
       .placeholder(@text-color-placeholder);
 
       &:focus {
-        #pxl-mixins.box-shadow(0 0 2px rgba(100, 100, 100, 0.75) inset);
-        border: @border-thickness solid @text-color;
+        //#pxl-mixins.box-shadow(0 0 2px rgba(100, 100, 100, 0.75) inset);
+        //border: @border-thickness solid @text-color;
       }
     }
 
@@ -105,7 +105,7 @@
 
     .form-textarea-wrapper {
       textarea {
-        border: @border-thickness solid @text-color;
+        border: @border-thickness solid @border-color;
         #pxl-mixins.border-radius(@border-radius);
         #pxl-mixins.box-shadow(none);
         background-color: @form-fieldset-bg-color;
@@ -123,7 +123,9 @@
     }
 
     .form-select {
-      // see chosen.less
+      // see also chosen.less
+      #pxl-mixins.no-appearance;
+      padding: 4px 20px 5px 10px;
     }
 
     .form-radios, .form-checkboxes {

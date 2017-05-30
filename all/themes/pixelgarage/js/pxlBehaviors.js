@@ -123,6 +123,27 @@
     }
   };
 
+  Drupal.behaviors.animExposedSearchForm = {
+    attach: function(context) {
+      var $searchContainer = $('#navbar-search-container'),
+          $searchForm = $searchContainer.find('.navbar-search-form'),
+          $searchButton = $searchContainer.find('.navbar-search-button');
+
+      $searchButton.once('click', function() {
+        $(this).on('click', function() {
+          var isExpanded = $searchForm.hasClass('form-expanded');
+
+          if (isExpanded) {
+            $searchForm.removeClass('form-expanded');
+          }
+          else {
+            $searchForm.addClass('form-expanded');
+          }
+        });
+      });
+    }
+  };
+
   /**
    * Anchor menus: Scrolls smoothly to anchor due to menu click.
   Drupal.behaviors.smoothScrolltoAnchors = {

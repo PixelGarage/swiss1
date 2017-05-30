@@ -4,6 +4,7 @@
 
 // Variables
 // -------------------------
+@navbar-search-form-width: 280px;
 
 
 // Mixins
@@ -109,6 +110,20 @@ header#navbar {
         }
       }
 
+      a.lead {
+        display: none;
+        position: absolute;
+        margin: 0;
+        left: 150px;
+        top: 55%;
+        transform: translateY(-50%);
+        #pxl-mixins.subtitle();
+
+        @media @tablet {
+          display: inline-block;
+        }
+      }
+
       a.navbar-brand {
         display: inline-block;
         vertical-align: middle;
@@ -119,6 +134,77 @@ header#navbar {
         font-size: @font-size-h1;
         color: @gray-darker;
         line-height: 1;
+      }
+
+      #navbar-search-container {
+        display: inline-block;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 60px;
+
+        .navbar-search-form {
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: top;
+
+          .views-exposed-form {
+            .views-exposed-widgets {
+              margin-bottom: 0;
+              width: 0;
+              #pxl-mixins.transition(width 0.6s ease);
+              text-align: right;
+
+              .views-exposed-widget {
+                display: inline-block;
+                padding: 0;
+                width: 0;
+
+                .form-item {
+                  #pxl-mixins.form-items();
+
+                  .form-control {
+                    border: none;
+                  }
+
+                  .form-text {
+                    border-bottom: 1px solid @pxl-color-border;
+                  }
+                }
+              }
+            }
+          }
+
+          &.form-expanded {
+            .views-exposed-form {
+              .views-exposed-widgets {
+                width: @navbar-search-form-width;
+
+                .views-exposed-widget {
+                  width: 40%;
+
+                  &.views-widget-filter-combine {
+                    width: 60%;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .navbar-search-button {
+          display: inline-block;
+          vertical-align: top;
+
+          img {
+            display: block;
+            width: @form-control-height;
+            max-width: 30px;
+            height: auto;
+          }
+        }
+
       }
 
       .navbar-toggle {

@@ -346,7 +346,7 @@ function _parse_entry($xml_entry, &$import_counter) {
       //$keyword = isset($epg['Keyword']) ? $epg['Keyword'] : '';
     }
     $node->field_category[LANGUAGE_NONE][0]['tid'] =
-      isset($arr_entry['Description']['Category']) ? _get_category_key($arr_entry['Description']['Category']) : null;
+      isset($arr_entry['Description']['Category']) ? _get_category_key($arr_entry['Description']['Category']) : _get_category_key();
   }
 
   //
@@ -453,8 +453,10 @@ function _get_catchup_period($catchup_period) {
 /**
  * Gets the Category term key of the given term name.
  */
-function _get_category_key($term_name) {
-  $term = taxonomy_get_term_by_name($term_name, 'kategorie');
-  return key($term);
+function _get_category_key($term_name = '') {
+  $term = !empty($term_name) ? taxonomy_get_term_by_name($term_name, 'kategorie') : array();
+  $default = taxonomy_get_term_by_name('Allgemein', 'kategorie');
+
+  return key($term) ? key($term) : key($default);
 }
 

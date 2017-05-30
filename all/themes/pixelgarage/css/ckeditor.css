@@ -2396,7 +2396,7 @@
   font-size: 22px;
   letter-spacing: 0.02em;
   line-height: 1.4em;
-  text-align: left;
+  text-align: center;
   color: #000;
 }
 @media screen and (min-width: 35.2em) {
@@ -2414,12 +2414,17 @@
     font-size: 30px;
   }
 }
+@media screen and (min-width: 48em) {
+  .pxl-title {
+    text-align: left;
+  }
+}
 .pxl-subtitle {
   font-family: 'CiutadellaRegular';
   font-size: 18px;
   letter-spacing: 0.02em;
   line-height: 1.2em;
-  text-align: left;
+  text-align: center;
   color: #000;
 }
 @media screen and (min-width: 39.27272727272727em) {
@@ -2437,12 +2442,17 @@
     font-size: 22px;
   }
 }
+@media screen and (min-width: 48em) {
+  .pxl-subtitle {
+    text-align: left;
+  }
+}
 .pxl-normal {
   font-family: 'CiutadellaRegular', sans-serif;
   font-size: 15px;
   letter-spacing: normal;
   line-height: 1.15em;
-  text-align: left;
+  text-align: center;
   color: #000;
 }
 @media screen and (min-width: 42.35294117647059em) {
@@ -2458,5 +2468,10 @@
 @media screen and (min-width: 64em) {
   .pxl-normal {
     font-size: 17px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .pxl-normal {
+    text-align: left;
   }
 }

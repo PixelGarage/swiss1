@@ -1,0 +1,95 @@
+/*
+ *  Webform Email component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+@webform-color-submit: #fff;
+@webform-bg-color-submit: @pxl-color-main;
+
+@newsletter-height: 30px;
+
+
+
+// Mixins
+// -------------------------
+.resp-submit-button(@size: @font-size-large; @color: @webform-color-submit; @bg-color: @webform-bg-color-submit; @radius: @border-radius-large) {
+  display: inline-block;
+  margin: 0;
+  padding: 0.6em 1.5em;
+  font-family: @pxl-text-font-bold;
+  font-size: @size;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  color: @color;
+  outline: none;
+  opacity: 1.0;
+  #pxl-mixins.border-radius(@radius);
+  border: 2px solid @bg-color;
+  background-color: @bg-color;
+
+  &:hover, &:focus {
+    opacity: 0.7;
+  }
+}
+
+
+
+
+// Webform settings
+// -------------------------
+.block-webform {
+  display: inline-block;
+  white-space: nowrap;
+
+  form.webform-client-form {
+    margin: 0;
+
+    .webform-component {
+      display: inline-block;
+      margin: 0 -0.3em 0 0;
+      vertical-align: top;
+
+      input {
+        padding: 5px;
+        font-family: @pxl-text-font;
+        font-size: @font-size-small;
+        text-align: left;
+        color: @text-color;
+        letter-spacing: normal;
+        line-height: 1;
+        height: @newsletter-height;
+        border: 1px solid @pxl-color-border;
+        #pxl-mixins.placeholder();
+      }
+      input:hover, input:focus {
+        border: 1px solid @pxl-color-main;
+        .box-shadow(0 0 3px @pxl-color-main inset);
+      }
+
+      &.webform-component--e-mail {
+        width: 65%;
+
+        input {
+          .border-left-radius(0);
+          .border-right-radius(0);
+        }
+      }
+    }
+
+    div.form-actions {
+      display: inline-block;
+      vertical-align: top;
+
+      button.webform-submit {
+        padding: 5px;
+        height: @newsletter-height;
+        vertical-align: top;
+        font-size: @font-size-small;
+        .border-left-radius(0);
+        .border-right-radius(0);
+      }
+    }
+  }
+}

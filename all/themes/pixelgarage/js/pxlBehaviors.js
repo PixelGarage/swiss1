@@ -127,18 +127,35 @@
     attach: function(context) {
       var $searchContainer = $('#navbar-search-container'),
           $searchForm = $searchContainer.find('.navbar-search-form'),
-          $searchButton = $searchContainer.find('.navbar-search-button');
+          $searchButton = $searchContainer.find('.navbar-search-button'),
+          $submitButton = $searchForm.find('#edit-submit-search-videos');
 
       $searchButton.once('click', function() {
         $(this).on('click', function() {
-          var isExpanded = $searchForm.hasClass('form-expanded');
-
-          if (isExpanded) {
-            $searchForm.removeClass('form-expanded');
+          if ($(window).width() < 640) {
+            // activate search button as modal toggle
+            $searchButton.attr('data-toggle', 'modal');
           }
           else {
-            $searchForm.addClass('form-expanded');
+            // de-activate search button as modal toggle
+            $searchButton.removeAttr('data-toggle');
+
+            // expand/submit behavior
+            if ($searchForm.hasClass('form-expanded')) {
+              // submit search
+              //$searchForm.removeClass('form-expanded');
+              $submitButton.click();
+            }
+            else if ($(window).width() >= 640) {
+              // expand search form, if bigger than tablet size
+              $searchForm.addClass('form-expanded');
+            }
           }
+        });
+
+        // reset form-expanded on resize
+        $(window).on('resize', function() {
+          $searchForm.removeClass('form-expanded');
         });
       });
     }

@@ -161,6 +161,11 @@ header#navbar {
                 padding: 0;
                 width: 0;
 
+                &.views-submit-button,
+                &.views-reset-button {
+                  display: none;
+                }
+
                 .form-item {
                   #pxl-mixins.form-items();
 
@@ -182,10 +187,34 @@ header#navbar {
                 width: @navbar-search-form-width;
 
                 .views-exposed-widget {
-                  width: 40%;
+                  &.views-widget-filter-field_category_tid {
+                    width: 40%;
+                  }
 
                   &.views-widget-filter-combine {
-                    width: 60%;
+                    width: 50%;
+                  }
+
+                  &.views-submit-button {
+                    display: none;
+                  }
+
+                  &.views-reset-button {
+                    display: inline-block;
+                    padding: 4px 5px 4px 0;
+                    width: 10%;
+                    height: @form-control-height;
+
+                    button {
+                      overflow: hidden;
+                      margin: 0;
+                      padding: 0;
+                      text-indent: 100%;
+                      width: 16px;
+                      height: 16px;
+                      border: none;
+                      background: url(../images/popup_close.svg) no-repeat center / contain;
+                    }
                   }
                 }
               }

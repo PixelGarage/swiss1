@@ -92,7 +92,9 @@
       <?php if (!empty($page['navigation'])): ?>
         <div id="navbar-search-container">
           <div class="navbar-search-form"><?php print render($page['navigation']); ?></div>
-          <div class="navbar-search-button"><img src="<?php print $search_icon; ?>" width="30px" height="30px"></div>
+          <div class="navbar-search-button" data-target="#<?php print $exposed_search_form_modal_id; ?>">
+            <img src="<?php print $search_icon; ?>" width="30px" height="30px">
+          </div>
         </div>
       <?php endif; ?>
 
@@ -189,3 +191,27 @@
     </div>
   </footer>
 <?php endif; ?>
+
+<!--
+Modal dialog displaying the exposed search form for mobile screens
+-->
+<?php if ($exposed_search_form_modal_id): ?>
+  <div id="<?php print $exposed_search_form_modal_id; ?>" class="modal" tabindex="-1" role="dialog" aria-labelledby="pe-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="modal-close" aria-hidden="true"></span></button>
+          <?php if ($exposed_search_form_modal_title): ?>
+            <h2 class="modal-title"><?php print $exposed_search_form_modal_title; ?></h2>
+          <?php endif; ?>
+        </div>
+        <!-- Body -->
+        <div class="modal-body">
+          <?php print render($exposed_search_form); ?>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endif; ?>
+

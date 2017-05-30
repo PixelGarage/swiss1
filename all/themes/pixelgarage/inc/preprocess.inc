@@ -29,6 +29,17 @@ function pixelgarage_preprocess_page(&$vars) {
   $path = drupal_get_path('theme', 'pixelgarage') . '/images/';
   $vars['search_icon'] = file_create_url($path . 'icon_search.svg');
 
+  //
+  // get exposed search form, if available (to render it in modal dialog)
+  $exposed_search_form_section = 'views_-exp-search_videos-search_page';
+  $vars['exposed_search_form_modal_id'] = null;
+
+  if (isset($vars['page']['navigation'][$exposed_search_form_section]) &&
+    ($exposed_search_form = $vars['page']['navigation'][$exposed_search_form_section])) {
+    $vars['exposed_search_form'] = $exposed_search_form;
+    $vars['exposed_search_form_modal_id'] = $_SESSION['hso']['exposed_search_form_modal_id'];
+    $vars['exposed_search_form_modal_title'] = t('Sendungen Suche');
+  }
 }
 
 
@@ -58,14 +69,6 @@ function pixelgarage_preprocess_views_exposed_form(&$vars) {
     $vars['widgets'][$id]->widget = drupal_render($field);
     $vars['widgets'][$id]->description = '';
   }
-
-  //
-  // define modal dialog trigger button
-  $vars['button_text'] = t('Welcher Lehrgang, wann, wo?');
-  $vars['button_search'] = t('Suchen');
-  $vars['button_modal_id'] = 'modal-exposed-search-form';
-  $_SESSION['hso'] = array('exposed_search_form_modal_id' => $vars['button_modal_id']);
-
 }
 
 

@@ -23,7 +23,7 @@
 ?>
 
 <div class="follow-buttons">
-  <div class="block-title">Folge uns</div>
+  <!--div class="block-title">Folge uns</div-->
   <a href="https://facebook.com"><span class="fa fa-facebook"></span></a>
   <a href="https://twitter.com"><span class="fa fa-twitter"></span></a>
   <a href="https://instagram.com"><span class="fa fa-instagram"></span></a>

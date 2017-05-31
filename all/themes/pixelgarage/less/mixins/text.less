@@ -86,6 +86,7 @@
     letter-spacing: @title-letter-spacing;
     line-height: @title-line-height;
     text-align: @title-text-align-small;
+    text-transform: uppercase;
 
     @media @tablet {
       text-align: @title-text-align;
@@ -116,6 +117,43 @@
     }
   }
 
+  .subtext() {
+    font-family: @pxl-text-font;
+    .font-size-responsive(@resp-subtext-size-max,@resp-subtext-size-med,@resp-subtext-size-min);
+    letter-spacing: @subtext-letter-spacing;
+    line-height: @subtext-line-height;
+    text-align: @subtext-text-align-small;
+
+    @media @tablet {
+      text-align: @subtext-text-align;
+    }
+  }
+
+  .teaser-title() {
+    font-family: @pxl-teaser-title-font;
+    .font-size-responsive(@resp-teaser-title-size-max, @resp-teaser-title-size-med, @resp-teaser-title-size-min);
+    letter-spacing: @teaser-title-letter-spacing;
+    line-height: @teaser-title-line-height;
+    text-align: @teaser-title-text-align-small;
+
+    @media @tablet {
+      text-align: @teaser-title-text-align;
+    }
+  }
+
+  .group-title() {
+    font-family: @pxl-title-font;
+    .font-size-responsive(@resp-teaser-title-size-max, @resp-teaser-title-size-med, @resp-teaser-title-size-min);
+    letter-spacing: @teaser-title-letter-spacing;
+    line-height: @teaser-title-line-height;
+    text-align: @teaser-title-text-align-small;
+    text-transform: uppercase;
+
+    @media @tablet {
+      text-align: @teaser-title-text-align;
+    }
+  }
+
   .paragraph-first-letter() {
     p::first-letter {
       .title();
@@ -142,7 +180,12 @@
     p {
       margin: 0 0 10px;
       .text();
-      .hyphenate;
+      //.hyphenate;
+    }
+
+
+    small, .pxl-subtext {
+      .subtext();
     }
 
     a {

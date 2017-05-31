@@ -201,7 +201,9 @@ Modal dialog displaying the exposed search form for mobile screens
       <div class="modal-content">
         <!-- Header -->
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="modal-close" aria-hidden="true"></span></button>
+          <button type="button" class="icon-close" data-dismiss="modal" aria-label="Close">
+            <img src="<?php print $close_icon; ?>"></span>
+          </button>
           <?php if ($exposed_search_form_modal_title): ?>
             <h2 class="modal-title"><?php print $exposed_search_form_modal_title; ?></h2>
           <?php endif; ?>

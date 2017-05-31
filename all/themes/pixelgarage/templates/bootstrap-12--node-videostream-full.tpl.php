@@ -39,7 +39,6 @@
       </div>
     </div>
     <div class="video-similar">
-
     </div>
 
     </<?php print $central_wrapper; ?>>

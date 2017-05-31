@@ -11,13 +11,13 @@
 @pxl-color-dark: #2a2a2a;
 @pxl-color-white: #fff;
 @pxl-color-gray: rgba(64,64,64,1.0);
-@pxl-color-black: #000;
+@pxl-color-black: #222;
 
 @pxl-color-main: @pxl-color-swiss1;
 @pxl-color-active: @pxl-color-swiss1;
 
 // borders
-@pxl-color-border: #5f5e5e;
+@pxl-color-border: #fff;
 @pxl-color-border-active: @pxl-color-main;
 
 // buttons
@@ -26,8 +26,8 @@
 
 
   // backgrounds
-@pxl-color-body-bg: #fff;
-@pxl-color-box-bg: @pxl-color-main;
+@pxl-color-body-bg: rgba(64,64,64,1.0);
+@pxl-color-box-bg: #fff;
 
 // gray tones
 @gray-base:              #000;
@@ -48,25 +48,36 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-@text-color:            #222;
+@text-color:            white;
 @text-color-disabled:   @gray-lighter;
 @text-color-form:      @text-color;
 @text-color-placeholder: @gray-light;
 
+
+@subtext-letter-spacing: normal;
+@subtext-line-height: 1.1667em;
+@subtext-text-align: left;
+@subtext-text-align-small: center;
+
 @text-letter-spacing: normal;
-@text-line-height: 1.15em;
+@text-line-height: 1.14em;
 @text-text-align: left;
 @text-text-align-small: center;
 
-@subtitle-letter-spacing: 0.02em;
-@subtitle-line-height: 1.2em;
+@subtitle-letter-spacing: normal;
+@subtitle-line-height: 1.14em;
 @subtitle-text-align: left;
 @subtitle-text-align-small: center;
 
-@title-letter-spacing: 0.02em;
-@title-line-height: 1.4em;
+@title-letter-spacing: normal;
+@title-line-height: 1;
 @title-text-align: left;
 @title-text-align-small: center;
+
+@teaser-title-letter-spacing: normal;
+@teaser-title-line-height: 1;
+@teaser-title-text-align: left;
+@teaser-title-text-align-small: center;
 
 @form-letter-spacing: normal;
 @form-line-height: 1.15em;
@@ -78,17 +89,25 @@
 
 //
 // responsive font sizes
-@resp-font-size-min:      15px;
-@resp-font-size-med:      17px;
-@resp-font-size-max:      17px;
+@resp-subtext-size-min:      10px;
+@resp-subtext-size-med:      12px;
+@resp-subtext-size-max:      12px;
 
-@resp-subtitle-size-min:  18px;
-@resp-subtitle-size-med:  22px;
-@resp-subtitle-size-max:  22px;
+@resp-font-size-min:      12px;
+@resp-font-size-med:      14px;
+@resp-font-size-max:      14px;
 
-@resp-title-size-min:     22px;
-@resp-title-size-med:     30px;
-@resp-title-size-max:     30px;
+@resp-subtitle-size-min:  12px;
+@resp-subtitle-size-med:  14px;
+@resp-subtitle-size-max:  14px;
+
+@resp-title-size-min:     18px;
+@resp-title-size-med:     24px;
+@resp-title-size-max:     24px;
+
+@resp-teaser-title-size-min:     14px;
+@resp-teaser-title-size-med:     16px;
+@resp-teaser-title-size-max:     16px;
 
 @resp-button-size-min:    24px;
 @resp-button-size-med:    28px;
@@ -117,7 +136,7 @@
 //** Link hover color set via `darken()` function.
 @link-color-hover:      @pxl-color-active;
 //** Link hover decoration.
-@link-decoration-hover: underline;
+@link-decoration-hover: none;
 
 // shadows
 @pxl-box-shadow: 0 0 4px rgba(100,100,100, 0.4);
@@ -175,8 +194,9 @@
 //** Number of columns in the grid.
 @grid-columns:              12;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
-@grid-gutter-width-tablet:  110px;
+@grid-gutter-width:         2%;
+@grid-gutter-width-const:  30px;
+
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     10000px;

@@ -28,23 +28,23 @@ function pixelgarage_preprocess_page(&$vars) {
   // add search icon
   $path = drupal_get_path('theme', 'pixelgarage') . '/images/';
   $vars['search_icon'] = file_create_url($path . 'icon_search.svg');
+  $vars['close_icon'] = file_create_url($path . 'popup_close.svg');
 
   //
   // get exposed search form, if available (to render it in modal dialog)
   $exposed_search_form_section = 'views_-exp-search_videos-search_page';
-  $vars['exposed_search_form_modal_id'] = null;
 
   if (isset($vars['page']['navigation'][$exposed_search_form_section]) &&
     ($exposed_search_form = $vars['page']['navigation'][$exposed_search_form_section])) {
     $vars['exposed_search_form'] = $exposed_search_form;
-    $vars['exposed_search_form_modal_id'] = $_SESSION['hso']['exposed_search_form_modal_id'];
+    $vars['exposed_search_form_modal_id'] = 'modal-exposed-search-form';
     $vars['exposed_search_form_modal_title'] = t('Sendungen Suche');
   }
 }
 
 
 /* =============================================================================
- *      Exposed search form
+ *      Preprocess Exposed search form
  * ========================================================================== */
 /**
  * Adapts the exposed search form to show placeholders in search fields.
@@ -69,6 +69,30 @@ function pixelgarage_preprocess_views_exposed_form(&$vars) {
     $vars['widgets'][$id]->widget = drupal_render($field);
     $vars['widgets'][$id]->description = '';
   }
+}
+
+
+/* =============================================================================
+ *      Preprocess category groups view (grouped by terms)
+ * ========================================================================== */
+/**
+ * Adapts the category view.
+ *
+ */
+function pixelgarage_preprocess_views_view_unformatted(&$vars) {
+  $view = $vars['view'];
+  if ($view->name != 'category_groups') return;
+
+  $subviews = array();
+  foreach ($view->result as $id => $term_obj) {
+    $subview = views_embed_view('video_masonry', 'block', $term_obj->tid);
+    $row_count = substr_count($subview, 'node-videostream');
+    $subviews[$id] = array(
+      'show' => $row_count > 0,
+      'subview' => $subview,
+    );
+  }
+  $vars['subviews'] = $subviews;
 }
 
 
@@ -189,8 +213,12 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
   $vars['season_episode'] = '';
   if (!empty($node->field_category) && $tid = $node->field_category[LANGUAGE_NONE][0]['tid']) {
     $term = taxonomy_term_load($tid);
-    $vars['category'] = $term->name;
   }
+  else {
+    $term = taxonomy_get_term_by_name('Allgemein', 'kategorie');
+  }
+  $vars['category'] = $term->name;
+
   if (!empty($node->field_video_language) && $lang = $node->field_video_language[LANGUAGE_NONE][0]['value']) {
     $vars['language_age'] = $lang;
   }

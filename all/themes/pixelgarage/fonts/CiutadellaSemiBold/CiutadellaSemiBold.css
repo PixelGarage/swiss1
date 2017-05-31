@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CiutadellaSemiBold';
+    src: url('fonts/CiutadellaSemiBold.eot');
+    src: url('fonts/CiutadellaSemiBold.eot') format('embedded-opentype'),
+         url('fonts/CiutadellaSemiBold.woff2') format('woff2'),
+         url('fonts/CiutadellaSemiBold.woff') format('woff'),
+         url('fonts/CiutadellaSemiBold.ttf') format('truetype'),
+         url('fonts/CiutadellaSemiBold.svg#CiutadellaSemiBold') format('svg');
+}

@@ -20,7 +20,7 @@ if (typeof(CKEDITOR) !== 'undefined') {
       },
       {
         name: 'Title',
-        element: 'p',
+        element: 'h2',
         attributes: {
           'class': 'pxl-title'
         }
@@ -30,6 +30,13 @@ if (typeof(CKEDITOR) !== 'undefined') {
         element: 'p',
         attributes: {
           'class': 'pxl-subtitle'
+        }
+      },
+      {
+        name: 'Subtext',
+        element: 'p',
+        attributes: {
+          'class': 'pxl-subtext'
         }
       },
 

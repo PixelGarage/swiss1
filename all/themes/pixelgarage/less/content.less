@@ -5,7 +5,7 @@
 // Variables
 // -------------------------
 @pxl-content-fading-height: 20px;
-@pxl-footer-height: 200px;
+@pxl-footer-height: 192px;
 
 
 // Mixins
@@ -17,7 +17,7 @@
 // -------------------------
 .container, .container-fluid {
   // all container with background
-  background-color: #fff;
+  background: none;
 
   // sharper fonts
   #pxl-mixins.sharp-fonts;
@@ -30,9 +30,11 @@
 
   a {
     outline: none;
+    text-decoration: @link-decoration;
 
     &.active, &:hover, &:focus {
       outline: none;
+      text-decoration: @link-decoration;
     }
   }
 
@@ -45,12 +47,16 @@ html {
 body {
   position: relative;
   min-height: 100%;
+  background: @pxl-color-body-bg none;
 
   .main-container {
     padding-bottom: @pxl-footer-height;
     height: 100%;
 
     .container, .container-fluid {
+      padding-left: @grid-gutter-width-const/2;
+      padding-right: @grid-gutter-width-const/2;
+
       //
       // Page header
       #page-header {
@@ -148,6 +154,12 @@ body {
     padding: 0;
     height: @pxl-footer-height;
     border: none;
+    background-color: white;
+
+    .container, .container-fluid {
+      padding-left: @grid-gutter-width-const/2;
+      padding-right: @grid-gutter-width-const/2;
+    }
   }
 
 }

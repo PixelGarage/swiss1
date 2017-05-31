@@ -1,0 +1,250 @@
+/*
+ *  Views exposed form search videos component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+.hidden-exp-search-videos-form() {
+  .views-exposed-widgets {
+    margin-bottom: 0;
+    width: 0;
+    #pxl-mixins.transition(width 0.6s ease);
+    text-align: right;
+
+    .views-exposed-widget {
+      display: inline-block;
+      padding: 0;
+      width: 0;
+      #pxl-mixins.transition(width 0.1s ease 0.05s);
+
+      &.views-widget-filter-field_category_tid {
+      }
+
+      &.views-widget-filter-combine {
+      }
+
+      &.views-reset-button {
+        padding: 4px 5px 4px 0;
+        width: 10%;
+        height: @form-control-height;
+
+        button {
+          overflow: hidden;
+          margin: 0;
+          padding: 0;
+          text-indent: 100%;
+          width: 16px;
+          height: 16px;
+          border: none;
+          background: url(../images/popup_close.svg) no-repeat center / contain;
+        }
+      }
+
+      &.views-submit-button,
+      &.views-reset-button {
+        display: none;
+      }
+
+      .form-item {
+        #pxl-mixins.form-items();
+
+        .form-control {
+          border: none;
+          color: @pxl-color-black;
+        }
+
+        .form-text {
+          border-bottom: 1px solid @pxl-color-black;
+        }
+      }
+    }
+  }
+}
+
+.visible-exp-search-videos-form() {
+  .views-exposed-widgets {
+    width: @navbar-search-form-width;
+
+    .views-exposed-widget {
+      &.views-widget-filter-field_category_tid {
+        width: 40%;
+      }
+
+      &.views-widget-filter-combine {
+        width: 50%;
+      }
+
+      &.views-submit-button {
+        display: none;
+      }
+
+      &.views-reset-button {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.modal-exp-search-videos-form() {
+  .views-exposed-widgets {
+    margin-bottom: 0;
+
+    .views-exposed-widget {
+      display: block;
+      margin-bottom: 30px;
+      padding: 0;
+      width: 100%;
+
+      &.views-widget-filter-combine {
+      }
+
+      &.views-widget-filter-field_category_tid {
+        .views-widget {
+          // add a dropdown icon to the select box
+          position: relative;
+
+          .form-type-select:after {
+            pointer-events: none;
+            content: '\f0d7';
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            bottom: 0;
+            font-family: @pxl-icon-font;
+            color: @text-color;
+            line-height: @form-control-height;
+          }
+        }
+      }
+
+      &.views-submit-button,
+      &.views-reset-button {
+        display: inline-block;
+        float: right;
+        margin-left: 20px;
+        padding: 0;
+        width: auto;
+
+        button {
+          #pxl-mixins.form-button(#fff, @pxl-color-main, 0);
+        }
+      }
+
+      .form-item {
+        #pxl-mixins.form-items();
+
+        .form-control {
+          border: none;
+          color: @pxl-color-black;
+          border-bottom: 1px solid @pxl-color-black;
+        }
+      }
+    }
+  }
+}
+
+//
+// modal search form
+.modal-search-form() {
+  // full size modal on small screen, body is scrolling
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+
+  .modal-dialog {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+
+    .admin-menu & {
+      margin: 29px auto 0;
+    }
+
+    @media @narrow {
+      min-width: 480px;
+      max-width: 690px;
+      width: 90%;
+    }
+    @media @tablet {
+      max-width: @pxl-modal-max-width;
+    }
+    @media @normal {
+      width: @pxl-modal-max-width;
+    }
+
+    .modal-content {
+      position: relative;
+      padding: 20px (@grid-gutter-width / 2) 30px;
+      height: 100%;
+      #pxl-mixins.border-radius(0);
+      border: none;
+      background: none;
+      #pxl-mixins.box-shadow(none);
+
+      @media @narrow {
+        padding-bottom: 50px;
+      }
+
+      .modal-header {
+        position: relative;
+        padding: 20px 0;
+        border: none;
+
+        h2.modal-title {
+          #pxl-mixins.title();
+          color: @pxl-color-black;
+        }
+
+        button.icon-close {
+          display: block;
+          position: absolute;
+          top: 20px;
+          right: 0;
+          opacity: 1.0;
+          text-shadow: none;
+          z-index: 1; // has to be above body
+          border: none;
+          background: none;
+
+          img {
+            width: 15px;
+            height: auto;
+          }
+        }
+      }
+
+      .modal-body {
+        // content styled separately
+        overflow-y: auto;
+        padding: 0;
+
+        form#views-exposed-form-search-videos-search-page {
+          .modal-exp-search-videos-form();
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// General settings
+// -------------------------
+//
+// modal search dialog
+body.modal-open {
+  overflow: hidden;
+  // prevent background from scrolling on mobile devices
+  //position: fixed; // causes to jump on top of page, which is not wished for masonry view
+  -webkit-overflow-scrolling: touch;
+
+  #modal-exposed-search-form {
+    .modal-search-form();
+  }
+}

@@ -4,9 +4,12 @@
 
 // Variables
 // -------------------------
+@video-padding-dist: 10px;
 @video-header-height: 75px;
 @video-header-height-large: 85px;
-@video-header-height-teaser: 35px;
+@video-header-height-teaser: @resp-teaser-title-size-med + 8px;
+
+
 
 // Mixins
 // -------------------------
@@ -188,57 +191,55 @@
         position: relative;
         z-index: 10;
         margin: -@video-header-height-teaser 0 0;
-        padding: 10px;
+        padding: 0;
         width: 100%;
         height: @video-header-height-teaser;
-        #gradient.vertical(rgba(0,0,0,0), rgba(0,0,0,0.6), 20%, 80%);
 
         .title-line-1 {
-          >.video-duration {
-            color: @pxl-color-white;
+          width: 90%;
 
-            &:before {
-              content: '\f017';
-              font-family: @pxl-icon-font;
-              padding-right: 5px;
+          .field-name-title {
+            h2 {
+              display: inline-block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              margin: 0;
+              padding: @video-padding-dist 2*@video-padding-dist 0 0;
+              #pxl-mixins.teaser-title();
+              line-height: 1;
+              border-top-right-radius: 10px;
+              background-color: @pxl-color-body-bg;
             }
           }
         }
       }
 
       >.video-body {
+        position: relative;
+        padding: 5px 0;
         width: 100%;
-        background-color: @pxl-color-white;
+        #pxl-mixins.subtext();
 
-        .title-line-2 {
-          width: 100%;
-          padding: 10px 0;
+        >.video-duration-category {
+          color: @pxl-color-white;
 
-          .field-name-title {
-            h2 {
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              width: 100%;
-              margin: 0;
-              padding: 0;
-              #pxl-mixins.subtitle();
-              line-height: 1;
-            }
+          &:before {
+            content: '\f017';
+            font-family: @pxl-icon-font;
+            padding-right: 5px;
           }
         }
+        >.video-time-info {
+          position: absolute;
+          right: 0;
 
-        .title-line-3 {
-          display: flex;
-          justify-content: space-between;
-          margin: 0;
-          padding: 0;
-
-          >.video-category {
-
-          }
-          >.video-time-info {
-
+          .day-highlight {
+            display: inline-block;
+            padding: 1px 2px 0;
+            line-height: 1;
+            #pxl-mixins.border-radius(2px);
+            background-color: @pxl-color-main;
           }
         }
       }
@@ -381,64 +382,58 @@
         }
       }
 
-      >.video-header {
+      >.video-title {
         position: relative;
         z-index: 10;
-        margin: -@video-header-height-teaser 0 0;
-        padding: 10px;
+        margin: 0;
+        padding: @video-padding-dist 0;
         width: 100%;
-        height: @video-header-height-teaser;
-        #gradient.vertical(rgba(0,0,0,0), rgba(0,0,0,0.6), 20%, 80%);
+        border-bottom: 1px solid @pxl-color-border;
 
-        .title-line-1 {
-          >.video-duration {
-            color: @pxl-color-white;
+        @media @tablet {
+          padding: 0 0 @video-padding-dist;
+        }
 
-            &:before {
-              content: '\f017';
-              font-family: @pxl-icon-font;
-              padding-right: 5px;
-            }
+        .field-name-title {
+          h2 {
+            overflow: hidden;
+            //white-space: nowrap;
+            //text-overflow: ellipsis;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            #pxl-mixins.title();
+            line-height: 1;
           }
         }
       }
 
       >.video-body {
         width: 100%;
-        background-color: @pxl-color-white;
+        padding: @video-padding-dist 0;
 
-        .title-line-2 {
-          width: 100%;
-          padding: 10px 0;
-
-          .field-name-title {
-            h2 {
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              width: 100%;
-              margin: 0;
-              padding: 0;
-              #pxl-mixins.subtitle();
-              line-height: 1;
-            }
-          }
+        >.field-name-body {
+          padding: 0;
+          #pxl-mixins.wysiwyg-body();
         }
 
-        .title-line-3 {
-          display: flex;
-          justify-content: space-between;
-          margin: 0;
-          padding: 0;
+        >.video-duration-category {
+          padding: @video-padding-dist 0 0;
+          color: @pxl-color-white;
 
-          >.video-category {
-
-          }
-          >.video-time-info {
-
+          &:before {
+            content: '\f017';
+            font-family: @pxl-icon-font;
+            padding-right: 5px;
           }
         }
       }
+
+      >.social-buttons > .shariff {
+        .social-shariff(20px);
+        border-top: 1px solid @pxl-color-border;
+      }
+
     }
   }
 }

@@ -15,7 +15,7 @@
 
     <div class="video-container">
       <div class="video-poster"><img src="<?php print $poster_url; ?>"></div>
-      <span class="video-duration"><?php print $duration_minutes; ?></span>
+      <span class="video-duration-category"><?php print $duration_category; ?></span>
       <?php if ($video_play_indicator): ?>
         <img src="<?php print $video_play_indicator; ?>" class="video-play-button">
       <?php endif; ?>
@@ -26,7 +26,6 @@
       </div>
       <?php print render($content['body']); ?>
       <div class="title-line-2">
-        <span class="video-category"><?php print $category; ?></span>
         <span class="video-time-info"><?php print $time_info; ?></span>
       </div>
     </div>

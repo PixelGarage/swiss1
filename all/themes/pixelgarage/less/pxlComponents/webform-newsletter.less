@@ -7,7 +7,7 @@
 @webform-color-submit: #fff;
 @webform-bg-color-submit: @pxl-color-main;
 
-@newsletter-height: 30px;
+@newsletter-height: 22px;
 
 
 
@@ -16,7 +16,7 @@
 .webform-submit-button(@size: @font-size-small; @color: @webform-color-submit; @bg-color: @webform-bg-color-submit; @radius: 3px) {
   display: inline-block;
   margin: 0;
-  padding: 5px;
+  padding: 2px;
   height: @newsletter-height;
   vertical-align: top;
   font-family: @pxl-text-font-bold;
@@ -29,7 +29,7 @@
   opacity: 1.0;
   .border-left-radius(@radius);
   .border-right-radius(@radius);
-  border: 2px solid @bg-color;
+  border: none;
   background-color: @bg-color;
 
   &:hover, &:focus {
@@ -44,24 +44,24 @@
 // -------------------------
 .block-webform {
   display: inline-block;
-  white-space: nowrap;
 
   form.webform-client-form {
     margin: 0;
+    width: 100%;
+
+    @media @narrow {
+      white-space: nowrap;
+    }
 
     .webform-component {
       display: inline-block;
-      margin: 0 0.3em 0 0;
+      margin: 0;
       vertical-align: top;
 
       input {
-        padding: 5px;
-        font-family: @pxl-text-font;
-        font-size: @font-size-small;
-        text-align: left;
+        padding: 0 5px;
+        #pxl-mixins.subtext();
         color: @pxl-color-black;
-        letter-spacing: normal;
-        line-height: 1;
         height: @newsletter-height;
         border-bottom: 1px solid @pxl-color-black;
         #pxl-mixins.placeholder();
@@ -72,7 +72,12 @@
       }
 
       &.webform-component--e-mail {
-        width: 65%;
+        width: 100%;
+        padding-right: 10px;
+
+        @media @narrow {
+          width: 65%;
+        }
 
         input {
           .border-left-radius(0);
@@ -83,10 +88,17 @@
 
     div.form-actions {
       display: inline-block;
+      padding-top: 10px;
+      width: 100%;
       vertical-align: top;
 
+      @media @narrow {
+        padding-top: 0;
+        width: 35%;
+      }
+
       button.webform-submit {
-        .webform-submit-button();
+        .webform-submit-button(14px);
       }
     }
   }

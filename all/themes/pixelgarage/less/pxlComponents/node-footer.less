@@ -19,64 +19,70 @@
 
   .row {
     .col-sm-4 {
-      .block-title {
-        display: block;
-        margin: 0 0 10px;
-        font-family: @pxl-text-font;
-        font-size: @font-size-base;
-        color: @text-color;
-      }
-
       .field-name-field-left {
-        .block-title {
-          text-align: left;
-        }
-
-        // see node-block.less
-      }
-
-      .field-name-field-middle-left {
-        .block-title {
-          text-align: center;
-        }
-
         // see view-live-tv.less
       }
 
-      .field-name-field-right {
-        text-align: center;
+      .field-name-field-middle-left {
+        display: block;
 
-        @media @tablet {
-          text-align: right;
+        @media @narrow {
+          display: block;
         }
 
         .block-title {
-          text-align: right;
+          #pxl-mixins.teaser-title();
           color: @pxl-color-black;
         }
 
         .follow-buttons {
           margin: 0 0 20px;
           width: 100%;
-          text-align: right;
+          text-align: left;
 
           a {
             display: inline-block;
-            margin: 0 10px;
+            margin: 0 10px 0 0;
+            padding: 0;
             color: @pxl-color-black;
+            vertical-align: middle;
 
             &:hover {
               color: @link-color-hover;
             }
 
             .fa {
-              font-size: 20px;
+              font-size: 24px;
+
+              &.fa-instagram {
+                margin: 0;
+                padding: 1px 2px;
+                font-size: 19px;
+                color: @pxl-color-white;
+                line-height: 1;
+                #pxl-mixins.border-radius(5px);
+                background-color: @pxl-color-black;
+
+                &:hover {
+                  background-color: @link-color-hover;
+                }
+              }
             }
           }
         }
 
         // see webform-newsletter.less
       }
+
+      .field-name-field-right {
+        display: none;
+
+        @media @tablet {
+          display: block;
+        }
+        // see node-block.less
+      }
+
     }
   }
 }

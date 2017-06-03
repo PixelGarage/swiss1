@@ -2398,14 +2398,14 @@
 .pxl-title {
   margin: 20px auto;
   font-family: 'CiutadellaMedium';
-  font-size: 18px;
-  letter-spacing: normal;
+  font-size: 20px;
+  letter-spacing: 0;
   line-height: 1;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   color: #222;
 }
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 40em) {
   .pxl-title {
     font-size: 3.125vw;
   }
@@ -2427,25 +2427,25 @@
 }
 .pxl-subtitle {
   font-family: 'CiutadellaSemiBold';
-  font-size: 12px;
-  letter-spacing: normal;
+  font-size: 13px;
+  letter-spacing: 0;
   line-height: 1.14em;
-  text-align: center;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 41.142857142857146em) {
+@media screen and (min-width: 39em) {
   .pxl-subtitle {
-    font-size: 1.82291667vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .pxl-subtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .pxl-subtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
@@ -2455,25 +2455,25 @@
 }
 .pxl-normal {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 12px;
-  letter-spacing: normal;
+  font-size: 13px;
+  letter-spacing: 0;
   line-height: 1.14em;
-  text-align: center;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 41.142857142857146em) {
+@media screen and (min-width: 39em) {
   .pxl-normal {
-    font-size: 1.82291667vw;
+    font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
   .pxl-normal {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
   .pxl-normal {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
@@ -2483,25 +2483,25 @@
 }
 .pxl-subtext {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 10px;
-  letter-spacing: normal;
+  font-size: 12px;
+  letter-spacing: 0;
   line-height: 1.1667em;
-  text-align: center;
+  text-align: left;
   color: #222;
 }
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 41.142857142857146em) {
   .pxl-subtext {
-    font-size: 1.5625vw;
+    font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
   .pxl-subtext {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 64em) {
   .pxl-subtext {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 48em) {

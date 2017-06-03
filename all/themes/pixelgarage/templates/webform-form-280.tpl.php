@@ -24,10 +24,10 @@
 
 <div class="follow-buttons">
   <!--div class="block-title">Folge uns</div-->
-  <a href="https://facebook.com"><span class="fa fa-facebook"></span></a>
-  <a href="https://twitter.com"><span class="fa fa-twitter"></span></a>
+  <a href="https://facebook.com"><span class="fa fa-facebook-square"></span></a>
+  <a href="https://twitter.com"><span class="fa fa-twitter-square"></span></a>
   <a href="https://instagram.com"><span class="fa fa-instagram"></span></a>
-  <a href="mailto:"><span class="fa fa-envelope-o"></span></a>
+  <a href="mailto:"><span class="fa fa-envelope-square"></span></a>
 </div>
 
 <div class="block-title">Newsletter</div>

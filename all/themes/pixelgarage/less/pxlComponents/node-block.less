@@ -18,7 +18,10 @@
     .col-sm-12 {
       .field-name-body {
         #pxl-mixins.wysiwyg-body();
-        color: @pxl-color-black;
+        p, a {
+          #pxl-mixins.teaser-title();
+          color: @pxl-color-black;
+        }
       }
     }
   }

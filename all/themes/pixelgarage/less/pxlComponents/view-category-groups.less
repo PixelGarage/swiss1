@@ -1,0 +1,43 @@
+/*
+ *  View category groups component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+
+
+// General settings
+// -------------------------
+.view.view-category-groups {
+  .view-content {
+    .views-row {
+      >.group-header {
+        border-top: 2px solid @pxl-color-border;
+
+        .field-content {
+          display: block;
+          padding: @video-padding-dist 0;
+          #pxl-mixins.group-title();
+        }
+      }
+
+      >.group-body {
+        margin: 0 auto;
+        padding: 0;
+
+        @media @normal {
+          margin-top: -28px;
+          padding: 0 @grid-gutter-width-const/2;
+          max-width: @container-inner-max-width;
+        }
+
+        // see view-video-masonry
+      }
+    }
+  }
+}

@@ -22,9 +22,8 @@
       <div class="video-header">
         <div class="title-line-1"><?php print render($content['title']); ?></div>
         <div class="title-line-2">
-          <span class="video-category"><?php print $category; ?></span>
           <span class="video-time-info"><?php print $time_info; ?></span>
-          <span class="video-duration"><?php print $duration_minutes; ?></span>
+          <span class="video-duration-category"><?php print $duration_category; ?></span>
         </div>
       </div>
     </div>

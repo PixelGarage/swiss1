@@ -27,8 +27,8 @@ function pixelgarage_preprocess_page(&$vars) {
 
   // add search icon
   $path = drupal_get_path('theme', 'pixelgarage') . '/images/';
-  $vars['search_icon'] = file_create_url($path . 'icon_search.svg');
-  $vars['close_icon'] = file_create_url($path . 'popup_close.svg');
+  $vars['search_icon'] = file_create_url($path . 'icon-search.svg');
+  $vars['close_icon'] = file_create_url($path . 'icon-close.svg');
 
   //
   // get exposed search form, if available (to render it in modal dialog)
@@ -81,18 +81,21 @@ function pixelgarage_preprocess_views_exposed_form(&$vars) {
  */
 function pixelgarage_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
-  if ($view->name != 'category_groups') return;
-
-  $subviews = array();
-  foreach ($view->result as $id => $term_obj) {
-    $subview = views_embed_view('video_masonry', 'block', $term_obj->tid);
-    $row_count = substr_count($subview, 'node-videostream');
-    $subviews[$id] = array(
-      'show' => $row_count > 0,
-      'subview' => $subview,
-    );
+  if ($view->name == 'category_groups') {
+    //
+    // render subview masonry, only show subview if videostreams are available
+    $subviews = array();
+    foreach ($view->result as $id => $term_obj) {
+      $subview = views_embed_view('video_masonry', 'block', $term_obj->tid);
+      $row_count = substr_count($subview, 'node-videostream');
+      $subviews[$id] = array(
+        'show' => $row_count > 0,
+        'subview' => $subview,
+      );
+    }
+    $vars['subviews'] = $subviews;
   }
-  $vars['subviews'] = $subviews;
+
 }
 
 
@@ -118,19 +121,19 @@ function pixelgarage_ds_pre_render_alter(&$layout_render_array, $context, &$vars
   // Check node type.
   if ($context['entity_type'] == 'node' && $context['bundle'] == 'videostream')  {
     $view_mode = $context['view_mode'];
-    _preprocess_node_videostream($vars, $layout_render_array, $view_mode);
+    _preprocess_node_videostream($vars, $view_mode);
   }
 }
 
 
-function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode) {
+function _preprocess_node_videostream(&$vars, $view_mode) {
   $node  = $vars['node'];
 
 //
-// shariff button definition
+// SHARIFF BUTTON DEFINITION
   libraries_load('shariff', 'naked');
   $vars['shariff_attrs'] = array(
-    'data-services' => '["twitter","facebook","mail"]',
+    'data-services' => '["facebook","twitter","whatsapp","mail"]',
     'data-orientation' => "horizontal",
     'data-mail-url' => "mailto:",
     'data-mail-subject' => variable_get('shariff_mail_subject', t('')),
@@ -140,11 +143,11 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
 
 
   //
-  // VIDEO DISPLAY
-  // get poster image, if none is set, set default image
-  $is_teaser = $view_mode == 'teaser' || $view_mode == 'teaser_program';
+  // VIDEO / IMAGE DISPLAY
+  // get poster image. if none is set, set default image
+  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_program';
   $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
-  if ($is_teaser && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
+  if ($use_thumb && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
     $vars['poster_url'] = file_create_url($thumb->uri);
   }
   else if (!empty($node->field_poster) && $poster = file_load($node->field_poster[LANGUAGE_NONE][0]['fid'])) {
@@ -162,11 +165,17 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
   $vars['show_video'] = ($now >= $validity_period_start) && ($now < $validity_period_end) && isset($vars['content']['field_video_path']);
 
   //
+  // add video indicator image, if video is playable
+  $vars['video_play_indicator'] = $vars['show_video'] ? file_create_url($img_path . 'icon-play-empty.svg') : false;
+
+
+
+  //
   // TIME INFORMATION
   // format time information
-  $broadcast_starttime = !empty($node->field_broadcast_date) && $node->field_broadcast_date[LANGUAGE_NONE][0]['value'] ?
+  $broadcast_starttime = !empty($node->field_broadcast_date) && isset($node->field_broadcast_date[LANGUAGE_NONE][0]['value']) ?
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value']) : 0;
-  $broadcast_endtime = !empty($node->field_broadcast_date) && $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] ?
+  $broadcast_endtime = !empty($node->field_broadcast_date) && isset($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) ?
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) : 0;
   if ($date_str = _get_broadcast_date_string($broadcast_starttime, $broadcast_endtime)) {
     $vars['time_info'] = $date_str;
@@ -177,12 +186,17 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
     if ($valid_period > 365.0) {
       $vars['time_info'] = t('Mehr als ein Jahr');
     }
-    else if ($valid_period > 30.0) {
+    else if ($valid_period > 31.0) {
       $vars['time_info'] = t('Mehr als ein Monat');
+    }
+    else if ($valid_period > 7.0) {
+      $weeks = round($valid_period / 7.0);
+      $vars['time_info'] = ($weeks > 1) ? t('Mehr als @weeks Wochen', array('@weeks' => $weeks)) : t('Mehr als eine Woche');
     }
     else if ($valid_period > 1.0) {
       $days = round($valid_period);
-      $vars['time_info'] = ($days > 1) ? t('Noch @valid Tage', array('@valid' => $days)) : t('Noch @valid Tag', array('@valid' => $days));
+      $vars['time_info'] = ($days > 3) ? t('Noch @valid Tage', array('@valid' => $days)) :
+        ($days > 1 ? t('Noch <span class="day-highlight">@valid</span> Tage', array('@valid' => $days)) : t('Noch ein Tag'));
     }
     else {
       $hours = round(($validity_period_end - $validity_period_start) / 3600);
@@ -195,29 +209,24 @@ function _preprocess_node_videostream(&$vars, &$layout_render_array, $view_mode)
   }
 
   //
-  // format duration
-  $duration = !empty($node->field_duration) && $node->field_duration[LANGUAGE_NONE][0]['value'] ?
-    $node->field_duration[LANGUAGE_NONE][0]['value'] : 0;
-  $minutes = abs($duration / 60);
-  $vars['duration_minutes'] = t('@mins Min.', array('@mins' => $minutes));
-
-  //
-  // add video indicator image, if video is playable
-  $vars['video_play_indicator'] = $vars['show_video'] ? file_create_url($img_path . 'icon-play.svg') : false;
-
-  //
-  // EPG INFORMATION
-  // format category, language, age restriction and series
-  $vars['category'] = '';
-  $vars['language_age'] = '';
-  $vars['season_episode'] = '';
+  // format duration / category
   if (!empty($node->field_category) && $tid = $node->field_category[LANGUAGE_NONE][0]['tid']) {
     $term = taxonomy_term_load($tid);
   }
   else {
     $term = taxonomy_get_term_by_name('Allgemein', 'kategorie');
   }
-  $vars['category'] = $term->name;
+  $duration = !empty($node->field_duration) && $node->field_duration[LANGUAGE_NONE][0]['value'] ?
+    $node->field_duration[LANGUAGE_NONE][0]['value'] : 0;
+  $minutes = abs($duration / 60);
+  $vars['duration_category'] = t('@mins min / @category', array('@mins' => $minutes, '@category' => $term->name));
+
+
+  //
+  // EPG INFORMATION
+  // format category, language, age restriction and series
+  $vars['language_age'] = '';
+  $vars['season_episode'] = '';
 
   if (!empty($node->field_video_language) && $lang = $node->field_video_language[LANGUAGE_NONE][0]['value']) {
     $vars['language_age'] = $lang;

@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Bootstrap 8-4 template for Display Suite.
+ * Bootstrap 4-4-4 template for Display Suite.
  */
 ?>
 
@@ -11,20 +11,14 @@
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
   <div class="row">
-    <<?php print $left_wrapper; ?> class="col-sm-8 <?php print $left_classes; ?>">
-      <div class="video-container">
-        <img src="<?php print $poster_url; ?>" class="video-poster">
-      </div>
+    <<?php print $left_wrapper; ?> class="col-6 col-xs-6 col-sm-4 <?php print $left_classes; ?>">
+      <?php print $left; ?>
     </<?php print $left_wrapper; ?>>
+    <<?php print $central_wrapper; ?> class="col-6 col-xs-6 col-sm-4 <?php print $central_classes; ?>">
+      <?php print $central; ?>
+    </<?php print $central_wrapper; ?>>
     <<?php print $right_wrapper; ?> class="col-sm-4 <?php print $right_classes; ?>">
-      <div class="video-title"><?php print render($content['title']); ?></div>
-      <div class="video-body">
-        <?php print render($content['body']); ?>
-        <span class="video-duration-category"><?php print $duration_category; ?></span>
-      </div>
-      <div class="social-buttons">
-        <div class="shariff" <?php print drupal_attributes($shariff_attrs); ?>></div>
-      </div>
+      <?php print $right; ?>
     </<?php print $right_wrapper; ?>>
   </div>
 </<?php print $layout_wrapper ?>>

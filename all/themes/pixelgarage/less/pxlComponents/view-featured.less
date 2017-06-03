@@ -1,0 +1,55 @@
+/*
+ *  View featured component
+ * --------------------------------------------------*/
+
+// Variables
+// -------------------------
+
+
+// Mixins
+// -------------------------
+
+
+
+// General settings
+// -------------------------
+.view.view-featured {
+  margin: 0 auto;
+  padding: 0;
+
+  @media @normal {
+    padding: @grid-gutter-width-const/2;
+    max-width: @container-inner-max-width;
+  }
+
+  .view-content {
+    .carousel {
+      .carousel-indicators {
+        #pxl-mixins.center-horizontally();
+        bottom: 0;
+        margin: 0;
+        padding: 0 0 10px;
+
+        li {
+          display: inline-block;
+          overflow: hidden;
+          width: 10px;
+          height: 10px;
+          margin: 1px;
+          text-indent: 100%;
+          border: 1px solid #fff;
+          border-radius: 10px;
+          cursor: pointer;
+          background-color: rgba(0, 0, 0, 0);
+
+          &.active, &:hover {
+            margin: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

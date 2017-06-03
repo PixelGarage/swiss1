@@ -14,6 +14,7 @@
   <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
   <?php if ($subviews[$id]['show']): ?>
     <div class="group-header">
+      <div class="group-header-line"></div>
       <?php print $row; ?>
     </div>
     <div class="group-body">

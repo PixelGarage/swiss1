@@ -5,7 +5,8 @@
 // Variables
 // -------------------------
 @navbar-search-form-width: 280px;
-@navbar-header-height: 100px;
+@navbar-header-height: 67px;
+@navbar-header-padding-tb: 17px;
 
 
 // Mixins
@@ -29,6 +30,7 @@
     .transform-origin(left center);
     #pxl-mixins.transition-transform(0.5s ease);
     #pxl-mixins.transition(opacity 0.3s ease);
+    #pxl-mixins.transition(background-color 0.5s ease);
 
     & + .icon-bar {
       margin-top: 7px;
@@ -36,11 +38,8 @@
   }
 
   &:hover {
-    background: none;
     .icon-bar {
-      & + .icon-bar {
-        margin-top: 10px;
-      }
+      background-color: @pxl-color-main;
     }
   }
 
@@ -49,13 +48,15 @@
       width: 29px;
 
       &.first {
-        .rotate(45deg)
+        .rotate(45deg);
+        background-color: @pxl-color-main;
       }
       &.second {
         opacity: 0.0;
       }
       &.third {
-        .rotate(-45deg)
+        .rotate(-45deg);
+        background-color: @pxl-color-main;
       }
     }
 
@@ -75,10 +76,10 @@
 // Main settings
 // -------------------------
 body.navbar-is-fixed-top {
-  padding-top: 100px !important;
+  padding-top: @navbar-header-height !important;
 
   &.admin-menu {
-    padding-top: 100px !important;
+    padding-top: @navbar-header-height !important;
   }
 
 }
@@ -90,12 +91,12 @@ header#navbar {
 
   .container, .container-fluid {
     position: relative;
-    padding: 20px @grid-gutter-width-const/2;
+    padding: @navbar-header-padding-tb @grid-gutter-width-const/2;
     max-width: @container-inner-max-width;
 
     .navbar-header {
       // header (branding)
-      height: @navbar-header-height - 40px;
+      height: @navbar-header-height - 2*@navbar-header-padding-tb;
 
       a.logo {
         #pxl-mixins.center-vertically(absolute);
@@ -107,7 +108,7 @@ header#navbar {
         img {
           display: inline-block;
           vertical-align: middle;
-          width: 100px;
+          width: 75px;
           height: auto;
         }
       }
@@ -116,7 +117,7 @@ header#navbar {
         display: none;
         position: absolute;
         margin: 0;
-        left: 150px;
+        left: 100px;
         top: 55%;
         transform: translateY(-50%);
         #pxl-mixins.subtitle();
@@ -188,7 +189,7 @@ header#navbar {
       position: absolute;
       top: @navbar-header-height;
       right:  @grid-gutter-width / 2;
-      padding: 30px;
+      padding: 15px;
       width: auto;
       text-align: left;
       border: none;
@@ -207,11 +208,9 @@ header#navbar {
             padding: 0;
 
             a {
-              padding: 7px 15px;
-              font-family: @pxl-text-font-bold;
-              font-size: 40px;
+              padding: 0;
+              #pxl-mixins.title();
               color: @pxl-color-black;
-              line-height: 1;
 
               &:hover,
               &.active {

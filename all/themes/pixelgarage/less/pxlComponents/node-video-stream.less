@@ -4,10 +4,10 @@
 
 // Variables
 // -------------------------
-@video-padding-dist: 10px;
+@video-padding-dist: 6px;
 @video-header-height: 75px;
 @video-header-height-large: 85px;
-@video-header-height-teaser: @resp-teaser-title-size-med + 8px;
+@video-header-height-teaser: @resp-teaser-title-size-min + @video-padding-dist;
 
 
 
@@ -195,6 +195,10 @@
         width: 100%;
         height: @video-header-height-teaser;
 
+        @media @tablet {
+          margin: -(@video-header-height-teaser+1px) 0 0;
+        }
+
         .title-line-1 {
           width: 90%;
 
@@ -205,7 +209,8 @@
               white-space: nowrap;
               text-overflow: ellipsis;
               margin: 0;
-              padding: @video-padding-dist 2*@video-padding-dist 0 0;
+              padding: 6px 12px 0 0;
+              max-width: 100%;
               #pxl-mixins.teaser-title();
               line-height: 1;
               border-top-right-radius: 10px;
@@ -234,12 +239,16 @@
           position: absolute;
           right: 0;
 
-          .day-highlight {
+          .day-highlight,
+          .day-one-highlight {
             display: inline-block;
-            padding: 1px 2px 0;
+            padding: 1px 3px 0;
             line-height: 1;
             #pxl-mixins.border-radius(2px);
             background-color: @pxl-color-main;
+          }
+          .day-one-highlight {
+            padding: 1px 4px 0;
           }
         }
       }
@@ -389,6 +398,7 @@
         padding: @video-padding-dist 0;
         width: 100%;
         border-bottom: 1px solid @pxl-color-border;
+        border-bottom: 0.5px solid @pxl-color-border;
 
         @media @tablet {
           padding: 0 0 @video-padding-dist;
@@ -410,15 +420,19 @@
 
       >.video-body {
         width: 100%;
-        padding: @video-padding-dist 0;
+        padding: 0;
 
         >.field-name-body {
-          padding: 0;
+          overflow: hidden;
+          padding: 14px 0;
+          height: 190px;
+          max-height: 190px;
           #pxl-mixins.wysiwyg-body();
         }
 
         >.video-duration-category {
-          padding: @video-padding-dist 0 0;
+          padding: 0 0 8px;
+          #pxl-mixins.subtext();
           color: @pxl-color-white;
 
           &:before {
@@ -432,6 +446,7 @@
       >.social-buttons > .shariff {
         .social-shariff(20px);
         border-top: 1px solid @pxl-color-border;
+        border-top: 0.5px solid @pxl-color-border;
       }
 
     }

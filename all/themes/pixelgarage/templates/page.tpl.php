@@ -126,9 +126,13 @@
 </header>
 
 <div class="main-container">
+  <div class="background-gradient"></div>
   <div class="fading fading-top"></div>
   <div class="fading fading-bottom"></div>
+
   <div class="<?php print $container_class; ?>">
+    <img class="background-logo" src="<?php print $background_logo; ?>"/>
+
     <header role="banner" id="page-header">
       <?php print render($page['header']); ?>
     </header> <!-- /#page-header -->

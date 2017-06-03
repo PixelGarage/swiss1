@@ -4,6 +4,7 @@
 
 // Variables
 // -------------------------
+@pxl-group-header-padding-tb: 13px;
 
 
 // Mixins
@@ -17,11 +18,14 @@
   .view-content {
     .views-row {
       >.group-header {
-        border-top: 2px solid @pxl-color-border;
+        .group-header-line {
+          margin-right: -100%;
+          border-top: 2px solid @pxl-color-border;
+        }
 
         .field-content {
           display: block;
-          padding: @video-padding-dist 0;
+          padding: @pxl-group-header-padding-tb 0;
           #pxl-mixins.group-title();
         }
       }
@@ -31,7 +35,7 @@
         padding: 0;
 
         @media @normal {
-          margin-top: -28px;
+          margin-top: -(@pxl-group-header-padding-tb + @resp-teaser-title-size-max);
           padding: 0 @grid-gutter-width-const/2;
           max-width: @container-inner-max-width;
         }

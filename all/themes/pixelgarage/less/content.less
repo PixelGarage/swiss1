@@ -47,15 +47,35 @@ html {
 body {
   position: relative;
   min-height: 100%;
-  background: @pxl-color-body-bg none;
+  background-color: @pxl-color-body-bg;
 
   .main-container {
+    overflow: hidden;
     padding-bottom: @pxl-footer-height;
     height: 100%;
 
+    .background-gradient {
+      display: none;
+      #pxl-mixins.center-xy(absolute);
+      width: 100%;
+      height: 100%;
+      #gradient.horizontal(rgb(50,50,50), rgb(40,40,40), 0%, 30%);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
     .container, .container-fluid {
+      position: relative;
       padding-left: @grid-gutter-width-const/2;
       padding-right: @grid-gutter-width-const/2;
+
+      .background-logo {
+        position: absolute;
+        top: 30px;
+        right: -24px;
+        width: 37%;
+        height: auto;
+      }
 
       //
       // Page header
@@ -151,7 +171,7 @@ body {
     left: 0;
     right: 0;
     margin: 0;
-    padding: 0;
+    padding: 47px 0 0;
     height: @pxl-footer-height;
     border: none;
     background-color: white;

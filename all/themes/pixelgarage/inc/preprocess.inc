@@ -25,11 +25,13 @@ function pixelgarage_preprocess_page(&$vars) {
 
   //$vars['logo'] = str_replace(array('.jpg', '.png'), '.svg', $vars['logo']);
 
-  // add search icon
+  // add search,close icon
   $path = drupal_get_path('theme', 'pixelgarage') . '/images/';
   $vars['search_icon'] = file_create_url($path . 'icon-search.svg');
   $vars['close_icon'] = file_create_url($path . 'icon-close.svg');
 
+  // add background logo
+  $vars['background_logo'] = file_create_url($path . 'swiss1_background_logo.png');
   //
   // get exposed search form, if available (to render it in modal dialog)
   $exposed_search_form_section = 'views_-exp-search_videos-search_page';
@@ -83,10 +85,11 @@ function pixelgarage_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
   if ($view->name == 'category_groups') {
     //
-    // render subview masonry, only show subview if videostreams are available
+    // render subview masonry, only show subview if videostreams with given category are available
     $subviews = array();
+    $display_id = $vars['is_front'] ? 'block_valid_broadcasts' : 'block_future_broadcasts';
     foreach ($view->result as $id => $term_obj) {
-      $subview = views_embed_view('video_masonry', 'block', $term_obj->tid);
+      $subview = views_embed_view('video_masonry', $display_id, $term_obj->tid);
       $row_count = substr_count($subview, 'node-videostream');
       $subviews[$id] = array(
         'show' => $row_count > 0,
@@ -196,7 +199,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     else if ($valid_period > 1.0) {
       $days = round($valid_period);
       $vars['time_info'] = ($days > 3) ? t('Noch @valid Tage', array('@valid' => $days)) :
-        ($days > 1 ? t('Noch <span class="day-highlight">@valid</span> Tage', array('@valid' => $days)) : t('Noch ein Tag'));
+        ($days > 1 ? t('Noch <span class="day-highlight">@valid</span> Tage', array('@valid' => $days)) : t('Noch <span class="day-one-highlight">1</span> Tag'));
     }
     else {
       $hours = round(($validity_period_end - $validity_period_start) / 3600);

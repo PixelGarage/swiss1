@@ -83,7 +83,7 @@
    */
   Drupal.behaviors.viewsProgramExposedButtons = {
     attach: function (context) {
-      var $exposedForm = $('#views-exposed-form-program-block-masonry'),
+      var $exposedForm = $('#views-exposed-form-program-block-program'),
           $previous = $exposedForm.find('.views-previous-day-button'),
           $next = $exposedForm.find('.views-next-day-button'),
           $select = $exposedForm.find('#edit-field-broadcast-date-select');

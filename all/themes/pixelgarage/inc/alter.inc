@@ -85,16 +85,34 @@ function pixelgarage_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-function manage_custom_filters($form, &$form_state) {
+function manage_custom_filters(&$form, &$form_state) {
   $now = strtotime('today');
   $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $now);
   $end_timestamp = strtotime('+1 day', $start_timestamp);
   $selected_start_date = date('Y-m-d H:i:s', $start_timestamp);
   $selected_end_date = date('Y-m-d H:i:s', $end_timestamp);
 
-  // set filter values in hidden field
+  // set filter values in exposed hidden field
   $form_state['values']['field_broadcast_date_value']['min'] = $selected_start_date;
   $form_state['values']['field_broadcast_date_value']['max'] = $selected_end_date;
+
+  // calc prev / next day and store them in form (hidden)
+  $prev_day = strtotime('-1 day', $start_timestamp);
+  $prev_date = date('D, d.m.Y', $prev_day);
+  $prev_date = str_replace(array('Mon','Tue', 'Wed', 'Thu','Fri','Sat','Sun'), array('Mo','Di','Mi','Do','Fr','Sa','So'), $prev_date);
+  $form['prev_day'] = array (
+    '#type' => 'hidden',
+    '#value' => $prev_date,
+  );
+
+  $next_day = strtotime('+1 day', $start_timestamp);
+  $next_date = date('D, d.m.Y', $next_day);
+  $next_date = str_replace(array('Mon','Tue', 'Wed', 'Thu','Fri','Sat','Sun'), array('Mo','Di','Mi','Do','Fr','Sa','So'), $next_date);
+  $form['next_day'] = array (
+    '#type' => 'hidden',
+    '#value' => $next_date,
+  );
+
 }
 
 
@@ -102,7 +120,7 @@ function _get_date_select_options() {
   $options = array();
   $now = strtotime('today');
 
-  // add past days
+  // create select options
   for ($i = -7; $i <= 10; $i++) {
     $rel_time = $i . ' days';
     $timestamp = strtotime($rel_time, $now);
@@ -118,7 +136,7 @@ function _get_date_select_options() {
         break;
       default:
         $date = date('D,   d.m.Y', $timestamp);
-        $date = str_replace(array('Mon','Tue', 'Wed', 'Thu','Fri','Sat','Sun'), array('Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'), $date);
+        $date = str_replace(array('Mon','Tue', 'Wed', 'Thu','Fri','Sat','Sun'), array('Mo','Di','Mi','Do','Fr','Sa','So'), $date);
         $options[$rel_time] = $date;
     }
   }

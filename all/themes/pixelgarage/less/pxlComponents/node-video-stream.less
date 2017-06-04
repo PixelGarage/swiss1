@@ -259,13 +259,43 @@
 //
 // teaser program
 .node.node-videostream.view-mode-teaser_program {
-  >.row {
-    >div.col-sm-12 {
+  >.group-header {
+    .group-header-line {
+      margin-right: -100%;
+      border-top: 2px solid @pxl-color-border;
+    }
+
+    .broadcast-time {
+      display: block;
+      padding: @pxl-group-header-padding-tb 0;
+      #pxl-mixins.group-title();
+    }
+  }
+
+  >.row.group-body {
+    margin: 0 auto;
+    padding: 0;
+
+    @media @mobile {
+      >div.col-12 {
+        width: 100%;
+      }
+    }
+
+    @media @normal {
+      margin-top: -(@pxl-group-header-padding-tb + @resp-teaser-title-size-max);
+      padding: 0 @grid-gutter-width-const/2;
+      max-width: @container-inner-max-width;
+    }
+
+    >div.col-sm-4 {
+      padding-left: 0;
+
       >.video-container {
         display: inline-block;
         position: relative;
         vertical-align: top;
-        margin: 0 -2px;
+        margin: 0;
         width: 100%;
 
         .video-poster {
@@ -290,14 +320,49 @@
           width: 30%;
           height: auto;
         }
+      }
 
-        >.video-duration {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          padding: 0 5px;
+      >.video-header {
+        position: relative;
+        z-index: 10;
+        margin: -@video-header-height-teaser 0 0;
+        padding: 0;
+        width: 100%;
+        height: @video-header-height-teaser;
+
+        @media @tablet {
+          margin: -(@video-header-height-teaser+1px) 0 0;
+        }
+
+        .title-line-1 {
+          width: 90%;
+
+          .field-name-title {
+            h2 {
+              display: inline-block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              margin: 0;
+              padding: 6px 12px 0 0;
+              max-width: 100%;
+              #pxl-mixins.teaser-title();
+              line-height: 1;
+              border-top-right-radius: 10px;
+              background-color: @pxl-color-body-bg;
+            }
+          }
+        }
+      }
+
+      >.video-info {
+        position: relative;
+        padding: 5px 0;
+        width: 100%;
+        #pxl-mixins.subtext();
+
+        >.video-duration-category {
           color: @pxl-color-white;
-          background-color: rgba(0,0,0,0.4);
 
           &:before {
             content: '\f017';
@@ -305,67 +370,51 @@
             padding-right: 5px;
           }
         }
+        >.video-time-info {
+          position: absolute;
+          right: 0;
+
+          .day-highlight,
+          .day-one-highlight {
+            display: inline-block;
+            padding: 1px 3px 0;
+            line-height: 1;
+            #pxl-mixins.border-radius(2px);
+            background-color: @pxl-color-main;
+          }
+          .day-one-highlight {
+            padding: 1px 4px 0;
+          }
+        }
       }
+    }
+
+    >div.col-sm-8 {
+      padding-right: 0;
 
       >.video-body {
         display: inline-block;
         position: relative;
         vertical-align: top;
-        margin: 0 -2px;
-        padding: 10px 0;
+        margin: 0;
+        padding: 14px 0 0;
         width: 100%;
-        background-color: @pxl-color-white;
-
-        .title-line-1 {
-          margin: 0;
-          padding: 0;
-
-          .field-name-title {
-            display: inline-block;
-            width: 100%;
-
-            h2 {
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis;
-              margin: 0;
-              padding: 0;
-              width: 100%;
-              #pxl-mixins.subtitle();
-              line-height: 1;
-            }
-          }
-        }
 
         .field-name-body {
           padding: 5px 0;
           #pxl-mixins.wysiwyg-body();
         }
 
-        .title-line-2 {
-          display: flex;
-          justify-content: space-between;
-          margin: 0;
+        @media @narrow {
           padding: 0;
+        }
 
-          >.video-category {
-
-          }
-
-          >.video-time-info {
-
+        @media @tablet {
+          .field-name-body {
+            .content-columns(2, 2%);
           }
         }
-      }
 
-      @media @narrow {
-        >.video-container {
-          width: 40%;
-        }
-        >.video-body {
-          padding: 0 10px;
-          width: 60%;
-        }
       }
     }
   }

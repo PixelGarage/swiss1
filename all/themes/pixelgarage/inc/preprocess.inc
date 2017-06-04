@@ -56,21 +56,34 @@ function pixelgarage_preprocess_views_exposed_form(&$vars) {
   //
   // add placeholders to search exposed form items
   $form = &$vars['form'];
-  if ($form['#id'] != 'views-exposed-form-search-videos-search-page') return;
 
-  foreach ($form['#info'] as $id => $info) {
-    // add the description as placeholder to the widget
-    if ($id != 'filter-combine') continue;
+  if ($form['#id'] == 'views-exposed-form-search-videos-search-page') {
+    //
+    // exposed form of video search view
+    // set placeholder from description field
+    foreach ($form['#info'] as $id => $info) {
+      // add the description as placeholder to the widget
+      if ($id != 'filter-combine') continue;
 
-    // set placeholder
-    $form[$info['value']]['#attributes']['placeholder'] = $info['description'];
-    $form[$info['value']]['#printed'] = false;
+      // set placeholder
+      $form[$info['value']]['#attributes']['placeholder'] = $info['description'];
+      $form[$info['value']]['#printed'] = false;
 
-    // render widget again
-    $field = $form[$info['value']];
-    $vars['widgets'][$id]->widget = drupal_render($field);
-    $vars['widgets'][$id]->description = '';
+      // render widget again
+      $field = $form[$info['value']];
+      $vars['widgets'][$id]->widget = drupal_render($field);
+      $vars['widgets'][$id]->description = '';
+    }
+
   }
+  else if ($form['#id'] == 'views-exposed-form-program-block-program') {
+    //
+    // exposed form of program view
+    // set prev / next date
+    $vars['prev_date'] = $form['prev_day']['#value'];
+    $vars['next_date'] = $form['next_day']['#value'];
+  }
+
 }
 
 
@@ -209,6 +222,12 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   else {
     // validity period in the past
     $vars['time_info'] = t('Nicht verfügbar');
+  }
+
+  //
+  // format broadcast start time
+  if ($broadcast_starttime > 0) {
+    $vars['broadcast_time'] = date('H:i', $broadcast_starttime);
   }
 
   //

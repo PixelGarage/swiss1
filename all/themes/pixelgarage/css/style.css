@@ -10170,15 +10170,15 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item label.control-label {
   display: block;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   font-weight: normal;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item label.control-label {
     font-size: 2.08333333vw;
   }
@@ -10197,9 +10197,9 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   margin: 0;
   height: 30px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   border: 1px solid white;
@@ -10211,7 +10211,7 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   box-shadow: none;
   background-color: #fff;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-control {
     font-size: 2.08333333vw;
   }
@@ -10238,15 +10238,15 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 }
 body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .help-block {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   color: #404040;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .help-block {
     font-size: 2.08333333vw;
   }
@@ -10306,15 +10306,15 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
@@ -10540,12 +10540,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-block .row .col-sm-12 .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body h3,
   .node.node-block .row .col-sm-12 .field-name-body h4,
   .node.node-block .row .col-sm-12 .field-name-body h5,
@@ -10584,12 +10584,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-block .row .col-sm-12 .field-name-body p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body p {
     font-size: 2.08333333vw;
   }
@@ -10643,13 +10643,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 }
 .node.node-block .row .col-sm-12 .field-name-body a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body a {
     font-size: 2.08333333vw;
   }
@@ -10680,13 +10680,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-block .row .col-sm-12 .field-name-body i,
 .node.node-block .row .col-sm-12 .field-name-body em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body pre,
   .node.node-block .row .col-sm-12 .field-name-body address,
   .node.node-block .row .col-sm-12 .field-name-body i,
@@ -10721,13 +10721,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-block .row .col-sm-12 .field-name-body strong,
 .node.node-block .row .col-sm-12 .field-name-body b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body strong,
   .node.node-block .row .col-sm-12 .field-name-body b {
     font-size: 2.08333333vw;
@@ -10753,13 +10753,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 }
 .node.node-block .row .col-sm-12 .field-name-body u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body u {
     font-size: 2.08333333vw;
   }
@@ -10785,13 +10785,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 }
 .node.node-block .row .col-sm-12 .field-name-body mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-block .row .col-sm-12 .field-name-body mark {
     font-size: 2.08333333vw;
   }
@@ -10981,12 +10981,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h3,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h3,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h4,
@@ -11046,12 +11046,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body p,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body p {
     font-size: 2.08333333vw;
@@ -11120,13 +11120,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body a,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body a {
     font-size: 2.08333333vw;
@@ -11167,13 +11167,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body em,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body pre,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body pre,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body address,
@@ -11226,13 +11226,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body b,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body strong,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body strong,
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body b,
@@ -11267,13 +11267,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body u,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body u,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body u {
     font-size: 2.08333333vw;
@@ -11306,13 +11306,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body mark,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body mark,
   .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body mark {
     font-size: 2.08333333vw;
@@ -11501,12 +11501,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-6 .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body h3,
   .node.node-webform .row .col-sm-6 .field-name-body h3,
   .node.node-webform .row .col-sm-12 .field-name-body h4,
@@ -11566,12 +11566,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-6 .field-name-body p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body p,
   .node.node-webform .row .col-sm-6 .field-name-body p {
     font-size: 2.08333333vw;
@@ -11640,13 +11640,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-12 .field-name-body a,
 .node.node-webform .row .col-sm-6 .field-name-body a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body a,
   .node.node-webform .row .col-sm-6 .field-name-body a {
     font-size: 2.08333333vw;
@@ -11687,13 +11687,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-12 .field-name-body em,
 .node.node-webform .row .col-sm-6 .field-name-body em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body pre,
   .node.node-webform .row .col-sm-6 .field-name-body pre,
   .node.node-webform .row .col-sm-12 .field-name-body address,
@@ -11746,13 +11746,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-12 .field-name-body b,
 .node.node-webform .row .col-sm-6 .field-name-body b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body strong,
   .node.node-webform .row .col-sm-6 .field-name-body strong,
   .node.node-webform .row .col-sm-12 .field-name-body b,
@@ -11787,13 +11787,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-12 .field-name-body u,
 .node.node-webform .row .col-sm-6 .field-name-body u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body u,
   .node.node-webform .row .col-sm-6 .field-name-body u {
     font-size: 2.08333333vw;
@@ -11826,13 +11826,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-webform .row .col-sm-12 .field-name-body mark,
 .node.node-webform .row .col-sm-6 .field-name-body mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-webform .row .col-sm-12 .field-name-body mark,
   .node.node-webform .row .col-sm-6 .field-name-body mark {
     font-size: 2.08333333vw;
@@ -12085,12 +12085,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body h3,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body h3,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body h4,
@@ -12150,12 +12150,12 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body p,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body p {
     font-size: 2.08333333vw;
@@ -12224,13 +12224,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body a,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body a,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body a {
     font-size: 2.08333333vw;
@@ -12271,13 +12271,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body em,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body pre,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body pre,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body address,
@@ -12330,13 +12330,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body b,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body strong,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body strong,
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body b,
@@ -12371,13 +12371,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body u,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body u,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body u {
     font-size: 2.08333333vw;
@@ -12410,13 +12410,13 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body mark,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body mark,
   .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body mark {
     font-size: 2.08333333vw;
@@ -12689,26 +12689,79 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-one-highlight {
   padding: 1px 4px 0;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container {
+.node.node-videostream.view-mode-teaser_program > .group-header .group-header-line {
+  margin-right: -100%;
+  border-top: 2px solid #fff;
+}
+.node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+  display: block;
+  padding: 13px 0;
+  font-family: 'CiutadellaMedium';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body {
+  margin: 0 auto;
+  padding: 0;
+}
+@media screen and (max-width: 29.9375em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body {
+    margin-top: -29px;
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 {
+  padding-left: 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container {
   display: inline-block;
   position: relative;
   vertical-align: top;
-  margin: 0 -2px;
+  margin: 0;
   width: 100%;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container .video-poster {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-poster {
   overflow: hidden;
   height: 0;
   padding-bottom: 56.25%;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container .video-poster img {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-poster img {
   display: block;
   margin: 0;
   padding: 0;
   width: 100%;
   height: auto;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container img.video-play-button {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container img.video-play-button {
   display: block;
   position: absolute;
   top: 50%;
@@ -12721,77 +12774,131 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   width: 30%;
   height: auto;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container > .video-duration {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0 5px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container > .video-duration:before {
-  content: '\f017';
-  font-family: 'fontawesome';
-  padding-right: 5px;
-}
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body {
-  display: inline-block;
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header {
   position: relative;
-  vertical-align: top;
-  margin: 0 -2px;
-  padding: 10px 0;
-  width: 100%;
-  background-color: #fff;
-}
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 {
-  margin: 0;
+  z-index: 10;
+  margin: -21px 0 0;
   padding: 0;
-}
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title {
-  display: inline-block;
   width: 100%;
+  height: 21px;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header {
+    margin: -22px 0 0;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 {
+  width: 90%;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0;
-  padding: 0;
-  width: 100%;
+  padding: 6px 12px 0 0;
+  max-width: 100%;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
-  line-height: 1.14em;
   text-align: left;
   line-height: 1;
+  border-top-right-radius: 10px;
+  background-color: #282828;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-1 .field-name-title h2 {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+  position: relative;
+  padding: 5px 0;
+  width: 100%;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+}
+@media screen and (min-width: 41.142857142857146em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    font-size: 1.82291667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-duration-category {
+  color: #fff;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-duration-category:before {
+  content: '\f017';
+  font-family: 'fontawesome';
+  padding-right: 5px;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info {
+  position: absolute;
+  right: 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-highlight,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-one-highlight {
+  display: inline-block;
+  padding: 1px 3px 0;
+  line-height: 1;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #BC2929;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-one-highlight {
+  padding: 1px 4px 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 {
+  padding-right: 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0;
+  padding: 14px 0 0;
+  width: 100%;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body {
   padding: 5px 0;
   color: white;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h2,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
   margin: 10px auto 20px;
   font-family: 'CiutadellaMedium';
   font-size: 20px;
@@ -12801,111 +12908,111 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   text-transform: uppercase;
 }
 @media screen and (min-width: 40em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-title {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h3,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h4,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtitle {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body p {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body p {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body p {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body p {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body p {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body small,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtext {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
   font-family: 'CiutadellaRegular', sans-serif;
   font-size: 12px;
   letter-spacing: 0;
@@ -12913,205 +13020,205 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   text-align: left;
 }
 @media screen and (min-width: 41.142857142857146em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtext {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
     font-size: 1.82291667vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtext {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
     font-size: 14px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtext {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
     font-size: 14px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body .pxl-subtext {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a:hover,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body a:focus {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a:hover,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a:focus {
   color: #BC2929;
   text-decoration: none;
   background: none;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body pre,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body address,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body i,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body em {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body em {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body em {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body em {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body em {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body b {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body b {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body b {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body b {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body b {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u:hover,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body u:focus {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u:hover,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u:focus {
   color: #d9d9d9;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body mark {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body mark {
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body mark {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body mark {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body mark {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
     text-align: left;
   }
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body hr {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body hr {
   border: 0;
   border-bottom: 2px solid #BC2929;
   background: none;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body img {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body img {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -13119,10 +13226,10 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   max-width: 100%;
   height: auto;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body embed,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body video,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body audio,
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .field-name-body iframe {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body embed,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body video,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body audio,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body iframe {
   display: block;
   overflow: hidden;
   margin: 20px auto;
@@ -13132,19 +13239,19 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   height: auto;
   min-height: 350px;
 }
-.node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body .title-line-2 {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
-}
 @media screen and (min-width: 30em) {
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-container {
-    width: 40%;
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body {
+    padding: 0;
   }
-  .node.node-videostream.view-mode-teaser_program > .row > div.col-sm-12 > .video-body {
-    padding: 0 10px;
-    width: 60%;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 2%;
+    -moz-column-gap: 2%;
+    column-gap: 2%;
   }
 }
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-container,
@@ -13293,12 +13400,12 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body h3,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body h3,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body h4,
@@ -13358,12 +13465,12 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body p,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body p {
     font-size: 2.08333333vw;
@@ -13432,13 +13539,13 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body a,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body a,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body a {
     font-size: 2.08333333vw;
@@ -13479,13 +13586,13 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body em,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body pre,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body pre,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body address,
@@ -13538,13 +13645,13 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body b,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body strong,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body strong,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body b,
@@ -13579,13 +13686,13 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body u,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body u,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body u {
     font-size: 2.08333333vw;
@@ -13618,13 +13725,13 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body mark,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body mark,
   .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body mark {
     font-size: 2.08333333vw;
@@ -13924,15 +14031,15 @@ form#user-login {
 #user_login_form .form-item label.control-label {
   display: block;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   font-weight: normal;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user_login_form .form-item label.control-label {
     font-size: 2.08333333vw;
   }
@@ -13951,9 +14058,9 @@ form#user-login {
   margin: 0;
   height: 30px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   border: 1px solid 1px;
@@ -13965,7 +14072,7 @@ form#user-login {
   box-shadow: none;
   background-color: #fff;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user_login_form .form-item .form-control {
     font-size: 2.08333333vw;
   }
@@ -13992,15 +14099,15 @@ form#user-login {
 }
 #user_login_form .form-item .help-block {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   color: #404040;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user_login_form .form-item .help-block {
     font-size: 2.08333333vw;
   }
@@ -14060,15 +14167,15 @@ form#user-login {
 #user_login_form .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user_login_form .form-item .form-radios .radio > .control-label,
   #user_login_form .form-item .form-checkboxes .radio > .control-label,
   #user_login_form .form-item .form-radios .checkbox > .control-label,
@@ -14337,15 +14444,15 @@ form#user-login {
 #user-pass .form-item label.control-label {
   display: block;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   font-weight: normal;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user-register-form .form-item label.control-label,
   #user-pass .form-item label.control-label {
     font-size: 2.08333333vw;
@@ -14368,9 +14475,9 @@ form#user-login {
   margin: 0;
   height: 30px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   border: 1px solid 1px;
@@ -14382,7 +14489,7 @@ form#user-login {
   box-shadow: none;
   background-color: #fff;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user-register-form .form-item .form-control,
   #user-pass .form-item .form-control {
     font-size: 2.08333333vw;
@@ -14416,15 +14523,15 @@ form#user-login {
 #user-register-form .form-item .help-block,
 #user-pass .form-item .help-block {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   color: #404040;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user-register-form .form-item .help-block,
   #user-pass .form-item .help-block {
     font-size: 2.08333333vw;
@@ -14500,15 +14607,15 @@ form#user-login {
 #user-pass .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   #user-register-form .form-item .form-radios .radio > .control-label,
   #user-pass .form-item .form-radios .radio > .control-label,
   #user-register-form .form-item .form-checkboxes .radio > .control-label,
@@ -14906,12 +15013,12 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item h3,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item h3,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item h3,
@@ -14992,12 +15099,12 @@ form#user-login {
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item p,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item p {
@@ -15081,13 +15188,13 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item a,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item a {
@@ -15138,13 +15245,13 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item em,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item pre,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item pre,
@@ -15215,13 +15322,13 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item b,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item strong,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item strong,
@@ -15265,13 +15372,13 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item u,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item u,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item u,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item u {
@@ -15311,13 +15418,13 @@ form#user-login {
 .user-profile .row .col-sm-8 .field-name-field-short-description .field-item mark,
 .user-profile .row .col-sm-12 .field-name-field-short-description .field-item mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .user-profile .row .col-sm-4 .field-name-field-short-description .field-item mark,
   .user-profile .row .col-sm-8 .field-name-field-short-description .field-item mark,
   .user-profile .row .col-sm-12 .field-name-field-short-description .field-item mark {
@@ -15460,15 +15567,15 @@ form#user-profile-form div .form-wrapper {
 form#user-profile-form div .form-wrapper .form-item label.control-label {
   display: block;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   font-weight: normal;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   form#user-profile-form div .form-wrapper .form-item label.control-label {
     font-size: 2.08333333vw;
   }
@@ -15487,9 +15594,9 @@ form#user-profile-form div .form-wrapper .form-item .form-control {
   margin: 0;
   height: 30px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   border: 1px solid white;
@@ -15501,7 +15608,7 @@ form#user-profile-form div .form-wrapper .form-item .form-control {
   box-shadow: none;
   background-color: #fff;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   form#user-profile-form div .form-wrapper .form-item .form-control {
     font-size: 2.08333333vw;
   }
@@ -15528,15 +15635,15 @@ form#user-profile-form div .form-wrapper .form-item .form-control::-webkit-input
 }
 form#user-profile-form div .form-wrapper .form-item .help-block {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   color: #404040;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   form#user-profile-form div .form-wrapper .form-item .help-block {
     font-size: 2.08333333vw;
   }
@@ -15596,15 +15703,15 @@ form#user-profile-form div .form-wrapper .form-item .form-radios .checkbox > .co
 form#user-profile-form div .form-wrapper .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   form#user-profile-form div .form-wrapper .form-item .form-radios .radio > .control-label,
   form#user-profile-form div .form-wrapper .form-item .form-checkboxes .radio > .control-label,
   form#user-profile-form div .form-wrapper .form-item .form-radios .checkbox > .control-label,
@@ -15904,12 +16011,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .pxl-subtitle {
   margin: 10px auto;
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h3,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h4,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item h5,
@@ -15948,12 +16055,12 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item p {
   margin: 0 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item p {
     font-size: 2.08333333vw;
   }
@@ -16007,13 +16114,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item a {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item a {
     font-size: 2.08333333vw;
   }
@@ -16044,13 +16151,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item i,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item em {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaRegularItalic', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item pre,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item address,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item i,
@@ -16085,13 +16192,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item strong,
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item b {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   font-family: 'CiutadellaBold', sans-serif;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item strong,
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item b {
     font-size: 2.08333333vw;
@@ -16117,13 +16224,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item u {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: white;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item u {
     font-size: 2.08333333vw;
   }
@@ -16149,13 +16256,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item mark {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   background-color: #ff0;
 }
-@media screen and (min-width: 39em) {
+@media screen and (min-width: 45em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item mark {
     font-size: 2.08333333vw;
   }
@@ -17107,16 +17214,172 @@ form#user-profile-form div .form-actions .form-submit .icon {
 /*
  *  View program component
  * --------------------------------------------------*/
-.view.view-program {
+.view.view-program .view-filters {
   margin: 0 auto;
-  width: 100%;
+  padding: 0;
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-filters {
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget {
+  display: block;
+  float: none;
+  vertical-align: bottom;
+  padding: 0;
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  vertical-align: middle;
+  padding: 0;
+  font-family: 'CiutadellaMedium';
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 40em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+    font-size: 3.125vw;
+  }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program {
-    width: 70%;
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+    text-align: left;
+  }
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button,
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button {
+  cursor: pointer;
+  width: 130px;
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  opacity: 0.7;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+    text-align: left;
+  }
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .fa,
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .fa {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 5px;
+  color: white;
+  font-size: 20px;
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_broadcast_date_value label {
+  display: none;
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
+  width: 150px;
+  text-align: left;
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+  margin: 0;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  height: 24px;
+  padding: 4px 0;
+  color: white;
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: none;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+    text-align: left;
+  }
+}
+.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+}
+@media screen and (min-width: 30em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget {
+    display: inline-block;
+    padding: 0 5px;
+  }
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+    display: block;
+  }
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+    display: inline-block;
   }
 }
 .view.view-program .view-content {
+  margin: 40px 0 0;
   padding: 0;
 }
 .view.view-program .view-content > .pe-container .grid-sizer,
@@ -17129,7 +17392,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 .view.view-program .view-content > .pe-container .pe-item {
   display: inline-block;
   overflow: visible;
-  margin: 0 0 8% !important;
+  margin: 0 0 30px !important;
   opacity: 1.0;
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
@@ -17137,7 +17400,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 }
 @media screen and (min-width: 30em) {
   .view.view-program .view-content > .pe-container .pe-item {
-    margin: 0 0 8% !important;
+    margin: 0 0 30px !important;
   }
 }
 .view.view-program .view-content > .pe-container .pe-item.shown {
@@ -17329,6 +17592,360 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: inline-block;
   max-height: 15px;
 }
+.view.view-program .view-empty {
+  margin: 40px auto 0;
+  padding: 0;
+  color: white;
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty {
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+.view.view-program .view-empty h1,
+.view.view-program .view-empty h2,
+.view.view-program .view-empty .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'CiutadellaMedium';
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 40em) {
+  .view.view-program .view-empty h1,
+  .view.view-program .view-empty h2,
+  .view.view-program .view-empty .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty h1,
+  .view.view-program .view-empty h2,
+  .view.view-program .view-empty .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty h1,
+  .view.view-program .view-empty h2,
+  .view.view-program .view-empty .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty h1,
+  .view.view-program .view-empty h2,
+  .view.view-program .view-empty .pxl-title {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty h3,
+.view.view-program .view-empty h4,
+.view.view-program .view-empty h5,
+.view.view-program .view-empty h6,
+.view.view-program .view-empty .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty h3,
+  .view.view-program .view-empty h4,
+  .view.view-program .view-empty h5,
+  .view.view-program .view-empty h6,
+  .view.view-program .view-empty .pxl-subtitle {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty h3,
+  .view.view-program .view-empty h4,
+  .view.view-program .view-empty h5,
+  .view.view-program .view-empty h6,
+  .view.view-program .view-empty .pxl-subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty h3,
+  .view.view-program .view-empty h4,
+  .view.view-program .view-empty h5,
+  .view.view-program .view-empty h6,
+  .view.view-program .view-empty .pxl-subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty h3,
+  .view.view-program .view-empty h4,
+  .view.view-program .view-empty h5,
+  .view.view-program .view-empty h6,
+  .view.view-program .view-empty .pxl-subtitle {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty p {
+  margin: 0 0 10px;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty p {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty p {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty small,
+.view.view-program .view-empty .pxl-subtext {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+}
+@media screen and (min-width: 41.142857142857146em) {
+  .view.view-program .view-empty small,
+  .view.view-program .view-empty .pxl-subtext {
+    font-size: 1.82291667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty small,
+  .view.view-program .view-empty .pxl-subtext {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty small,
+  .view.view-program .view-empty .pxl-subtext {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty small,
+  .view.view-program .view-empty .pxl-subtext {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty a {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  color: white;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty a {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty a:hover,
+.view.view-program .view-empty a:focus {
+  color: #BC2929;
+  text-decoration: none;
+  background: none;
+}
+.view.view-program .view-empty pre,
+.view.view-program .view-empty address,
+.view.view-program .view-empty i,
+.view.view-program .view-empty em {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  font-family: 'CiutadellaRegularItalic', sans-serif;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty pre,
+  .view.view-program .view-empty address,
+  .view.view-program .view-empty i,
+  .view.view-program .view-empty em {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty pre,
+  .view.view-program .view-empty address,
+  .view.view-program .view-empty i,
+  .view.view-program .view-empty em {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty pre,
+  .view.view-program .view-empty address,
+  .view.view-program .view-empty i,
+  .view.view-program .view-empty em {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty pre,
+  .view.view-program .view-empty address,
+  .view.view-program .view-empty i,
+  .view.view-program .view-empty em {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty strong,
+.view.view-program .view-empty b {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  font-family: 'CiutadellaBold', sans-serif;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty strong,
+  .view.view-program .view-empty b {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty strong,
+  .view.view-program .view-empty b {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty strong,
+  .view.view-program .view-empty b {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty strong,
+  .view.view-program .view-empty b {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty u {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  color: white;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty u {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty u {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty u {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty u {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty u:hover,
+.view.view-program .view-empty u:focus {
+  color: #d9d9d9;
+}
+.view.view-program .view-empty mark {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  background-color: #ff0;
+}
+@media screen and (min-width: 45em) {
+  .view.view-program .view-empty mark {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty mark {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .view.view-program .view-empty mark {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty mark {
+    text-align: left;
+  }
+}
+.view.view-program .view-empty hr {
+  border: 0;
+  border-bottom: 2px solid #BC2929;
+  background: none;
+}
+.view.view-program .view-empty img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.view.view-program .view-empty embed,
+.view.view-program .view-empty video,
+.view.view-program .view-empty audio,
+.view.view-program .view-empty iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 1%;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
+}
 /*
  *  View live-tv component
  * --------------------------------------------------*/
@@ -17370,11 +17987,11 @@ form.webform-client-form fieldset.panel .panel-heading {
 form.webform-client-form fieldset.panel .panel-heading .panel-title {
   display: block;
   font-family: 'CiutadellaBold', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
   text-align: left;
 }
-@media screen and (min-width: 28.363636363636363em) {
+@media screen and (min-width: 32.72727272727273em) {
   form.webform-client-form fieldset.panel .panel-heading .panel-title {
     font-size: 2.86458333vw;
   }
@@ -17432,7 +18049,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   margin: 0;
   padding: 0 20px 0 0;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: normal;
   text-align: left;
   text-transform: none;
@@ -17440,7 +18057,7 @@ form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
   border: none;
   background: none;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form fieldset.panel .panel-body .btn.btn-default {
     font-size: 1.82291667vw;
   }
@@ -17509,7 +18126,7 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   margin: 0;
   padding: 7px 27px;
   font-family: 'CiutadellaBold', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -17522,7 +18139,7 @@ form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.dra
   background-color: #BC2929;
   font-size: 14px;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form [id$=ajax-wrapper] .table-responsive table tbody tr.draggable td button {
     font-size: 2.60416667vw;
   }
@@ -17565,7 +18182,7 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   margin: 0;
   padding: 7px 27px;
   font-family: 'CiutadellaBold', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -17579,7 +18196,7 @@ form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .fo
   font-size: 16px;
   z-index: 10;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form [id$=ajax-wrapper] .webform-component-multiple-file .form-managed-file .input-group-btn button {
     font-size: 2.60416667vw;
   }
@@ -17619,14 +18236,14 @@ form.webform-client-form .webform-component[class*="-city"] {
 form.webform-client-form .webform-component label {
   width: auto;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: normal;
   letter-spacing: normal;
   text-align: left;
   text-transform: none;
   color: white;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component label {
     font-size: 1.82291667vw;
   }
@@ -17665,7 +18282,7 @@ form.webform-client-form .webform-component input.form-text,
 form.webform-client-form .webform-component textarea {
   padding: 0 10px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
   line-height: 1.2;
   letter-spacing: normal;
@@ -17679,7 +18296,7 @@ form.webform-client-form .webform-component textarea {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component input.form-text,
   form.webform-client-form .webform-component textarea {
     font-size: 1.82291667vw;
@@ -17739,7 +18356,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   width: auto;
   height: auto;
   font-family: 'CiutadellaLight', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
   line-height: 1.2;
   letter-spacing: normal;
@@ -17753,7 +18370,7 @@ form.webform-client-form .webform-component.webform-component-select select {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component.webform-component-select select {
     font-size: 1.82291667vw;
   }
@@ -17821,7 +18438,7 @@ form.webform-client-form .webform-component .form-managed-file input {
   float: none;
   padding: 0;
   width: 75%;
-  font-size: 13px;
+  font-size: 15px;
   color: white;
   text-align: left;
   border: none;
@@ -17829,7 +18446,7 @@ form.webform-client-form .webform-component .form-managed-file input {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component .form-managed-file input {
     font-size: 1.82291667vw;
   }
@@ -17875,10 +18492,10 @@ form.webform-client-form .webform-component .form-managed-file button.btn {
   border: 1px solid #BC2929;
   background-color: #BC2929;
   padding: 0 12px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.2;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form .webform-component .form-managed-file button.btn {
     font-size: 2.60416667vw;
   }
@@ -17898,7 +18515,7 @@ form.webform-client-form .webform-component .form-managed-file button.btn:focus 
   color: #BC2929;
   background: none;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   form.webform-client-form .webform-component .form-managed-file button.btn {
     font-size: 1.82291667vw;
   }
@@ -17984,7 +18601,7 @@ form.webform-client-form div.form-actions button.webform-submit {
   margin: 0;
   padding: 7px 27px;
   font-family: 'CiutadellaBold', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 27px;
   letter-spacing: 1.5px;
   text-transform: capitalize;
@@ -17996,7 +18613,7 @@ form.webform-client-form div.form-actions button.webform-submit {
   border: 1px solid #BC2929;
   background-color: #BC2929;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions button.webform-submit {
     font-size: 2.60416667vw;
   }
@@ -18032,13 +18649,13 @@ form.webform-client-form div.form-actions a.back-link {
   border-radius: 0;
   border: 1px solid #BC2929;
   background-color: #BC2929;
-  font-size: 13px;
+  font-size: 15px;
   padding-left: 0;
   border: none;
   background: none;
   text-decoration: none;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions a.back-link {
     font-size: 2.60416667vw;
   }
@@ -18058,7 +18675,7 @@ form.webform-client-form div.form-actions a.back-link:focus {
   color: #BC2929;
   background: none;
 }
-@media screen and (min-width: 34.666666666666664em) {
+@media screen and (min-width: 40em) {
   form.webform-client-form div.form-actions a.back-link {
     font-size: 2.34375vw;
   }
@@ -18089,14 +18706,14 @@ form.webform-client-form div.form-actions a.done-link {
   border-radius: 0;
   border: 1px solid #BC2929;
   background-color: #BC2929;
-  font-size: 13px;
+  font-size: 15px;
   color: #BC2929;
   padding-left: 0;
   border: none;
   background: none;
   text-decoration: none;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   form.webform-client-form div.form-actions a.done-link {
     font-size: 2.60416667vw;
   }
@@ -18116,7 +18733,7 @@ form.webform-client-form div.form-actions a.done-link:focus {
   color: #BC2929;
   background: none;
 }
-@media screen and (min-width: 34.666666666666664em) {
+@media screen and (min-width: 40em) {
   form.webform-client-form div.form-actions a.done-link {
     font-size: 2.34375vw;
   }
@@ -18150,11 +18767,11 @@ form.webform-client-form div.form-actions a.done-link:hover {
 }
 .webform-confirmation .confirmation-title {
   font-family: 'CiutadellaBold', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 30px;
   text-align: center;
 }
-@media screen and (min-width: 31.2em) {
+@media screen and (min-width: 36em) {
   .webform-confirmation .confirmation-title {
     font-size: 2.60416667vw;
   }
@@ -18171,11 +18788,11 @@ form.webform-client-form div.form-actions a.done-link:hover {
 }
 .webform-confirmation .confirmation-message {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 20px;
   text-align: center;
 }
-@media screen and (min-width: 44.57142857142857em) {
+@media screen and (min-width: 51.42857142857143em) {
   .webform-confirmation .confirmation-message {
     font-size: 1.82291667vw;
   }
@@ -18392,17 +19009,17 @@ header#navbar {
   border-bottom: none;
   background: white none;
 }
-header#navbar .container,
+header#navbar > .container,
 header#navbar .container-fluid {
   position: relative;
   padding: 17px 15px;
   max-width: 766px;
 }
-header#navbar .container .navbar-header,
+header#navbar > .container .navbar-header,
 header#navbar .container-fluid .navbar-header {
   height: 33px;
 }
-header#navbar .container .navbar-header a.logo,
+header#navbar > .container .navbar-header a.logo,
 header#navbar .container-fluid .navbar-header a.logo {
   position: absolute;
   top: 50%;
@@ -18414,14 +19031,14 @@ header#navbar .container-fluid .navbar-header a.logo {
   margin: 0;
   padding: 0;
 }
-header#navbar .container .navbar-header a.logo img,
+header#navbar > .container .navbar-header a.logo img,
 header#navbar .container-fluid .navbar-header a.logo img {
   display: inline-block;
   vertical-align: middle;
   width: 75px;
   height: auto;
 }
-header#navbar .container .navbar-header a.lead,
+header#navbar > .container .navbar-header a.lead,
 header#navbar .container-fluid .navbar-header a.lead {
   display: none;
   position: absolute;
@@ -18430,43 +19047,43 @@ header#navbar .container-fluid .navbar-header a.lead {
   top: 55%;
   transform: translateY(-50%);
   font-family: 'CiutadellaSemiBold';
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
   color: #222;
 }
-@media screen and (min-width: 39em) {
-  header#navbar .container .navbar-header a.lead,
+@media screen and (min-width: 45em) {
+  header#navbar > .container .navbar-header a.lead,
   header#navbar .container-fluid .navbar-header a.lead {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header a.lead,
+  header#navbar > .container .navbar-header a.lead,
   header#navbar .container-fluid .navbar-header a.lead {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header a.lead,
+  header#navbar > .container .navbar-header a.lead,
   header#navbar .container-fluid .navbar-header a.lead {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header a.lead,
+  header#navbar > .container .navbar-header a.lead,
   header#navbar .container-fluid .navbar-header a.lead {
     text-align: left;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header a.lead,
+  header#navbar > .container .navbar-header a.lead,
   header#navbar .container-fluid .navbar-header a.lead {
     display: inline-block;
   }
 }
-header#navbar .container .navbar-header a.navbar-brand,
+header#navbar > .container .navbar-header a.navbar-brand,
 header#navbar .container-fluid .navbar-header a.navbar-brand {
   display: inline-block;
   vertical-align: middle;
@@ -18478,7 +19095,7 @@ header#navbar .container-fluid .navbar-header a.navbar-brand {
   color: #222;
   line-height: 1;
 }
-header#navbar .container .navbar-header #navbar-search-container,
+header#navbar > .container .navbar-header #navbar-search-container,
 header#navbar .container-fluid .navbar-header #navbar-search-container {
   display: inline-block;
   position: absolute;
@@ -18487,13 +19104,13 @@ header#navbar .container-fluid .navbar-header #navbar-search-container {
   transform: translateY(-50%);
   right: 60px;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets {
   margin-bottom: 0;
   width: 0;
@@ -18502,7 +19119,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   transition: width 0.6s ease;
   text-align: right;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget {
   display: inline-block;
   padding: 0;
@@ -18511,13 +19128,13 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   -o-transition: width 0.1s ease 0.05s;
   transition: width 0.1s ease 0.05s;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button {
   padding: 4px 5px 4px 0;
   width: 10%;
   height: 30px;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button button {
   overflow: hidden;
   margin: 0;
@@ -18528,50 +19145,50 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   border: none;
   background: url(../images/icon-close.svg) no-repeat center / contain;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button {
   display: none;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label {
   display: block;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   font-weight: normal;
 }
-@media screen and (min-width: 39em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
+@media screen and (min-width: 45em) {
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.control-label {
     font-size: 16px;
   }
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control {
   margin: 0;
   height: 30px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   border: 1px solid white;
@@ -18583,67 +19200,67 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   box-shadow: none;
   background-color: #fff;
 }
-@media screen and (min-width: 39em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
+@media screen and (min-width: 45em) {
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control {
     font-size: 16px;
   }
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control::-moz-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control::-moz-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control::-moz-placeholder {
   color: #777777;
   opacity: 1;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control:-ms-input-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control:-ms-input-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control:-ms-input-placeholder {
   color: #777777;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control::-webkit-input-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control::-webkit-input-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control::-webkit-input-placeholder {
   color: #777777;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block {
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-size: 11px;
   color: #404040;
 }
-@media screen and (min-width: 39em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
+@media screen and (min-width: 45em) {
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .help-block {
     font-size: 16px;
   }
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea {
   border: 1px solid white;
   -moz-border-radius: 0;
@@ -18654,109 +19271,109 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   box-shadow: none;
   background-color: #fff;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-moz-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-moz-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-moz-placeholder {
   color: #777777;
   opacity: 1;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea:-ms-input-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea:-ms-input-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea:-ms-input-placeholder {
   color: #777777;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-webkit-input-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-webkit-input-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-webkit-input-placeholder {
   color: #777777;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea:focus,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea:focus,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea:focus {
   -webkit-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   -moz-box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   box-shadow: 0 0 2px rgba(100, 100, 100, 0.75) inset;
   border: 1px solid white;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper .grippie,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper .grippie,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper .grippie {
   display: none;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-select,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-select,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   padding: 4px 20px 5px 10px;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes {
   vertical-align: top;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label {
   padding-left: 20px;
   font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 13px;
-  letter-spacing: normal;
-  line-height: 1.15em;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
   text-align: left;
   color: white;
   font-family: 'CiutadellaLight', sans-serif;
   vertical-align: middle;
 }
-@media screen and (min-width: 39em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
+@media screen and (min-width: 45em) {
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label,
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label {
     font-size: 16px;
   }
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label > input,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label > input,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .radio > .control-label > input,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label > input,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label > input,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .radio > .control-label > input,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label > input,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label > input,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-radios .checkbox > .control-label > input,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label > input,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label > input,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-checkboxes .checkbox > .control-label > input {
   margin: 5px 7px 0 -20px;
   vertical-align: top;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file {
   display: block;
   position: relative;
@@ -18765,12 +19382,12 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   border-radius: 0;
   background-color: #fff;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group {
   display: block;
   position: relative;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input {
   display: inline-block;
   float: none;
@@ -18786,20 +19403,20 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   border: 1px solid white;
   background-color: #fff;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
   color: #777777;
   opacity: 1;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input:-ms-input-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input:-ms-input-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input:-ms-input-placeholder {
   color: #777777;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-webkit-input-placeholder,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-webkit-input-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-webkit-input-placeholder {
   color: #777777;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn {
   display: inline-block;
   position: absolute;
@@ -18810,7 +19427,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   width: auto;
   z-index: 10;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
   display: inline-block;
   margin: 0;
@@ -18830,50 +19447,50 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   opacity: 1.0;
 }
 @media screen and (min-width: 41.142857142857146em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
     font-size: 3.64583333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
     font-size: 28px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit {
     font-size: 28px;
   }
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:hover,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:hover,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:hover,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:focus,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:focus,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group .input-group-btn button.form-submit:focus {
   opacity: 0.7;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group {
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file {
   display: inline-block;
   vertical-align: middle;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file > img,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file > img,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file > img {
   display: none;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file a,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file a,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .form-group span.file a {
   vertical-align: middle;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit {
   display: inline-block;
   margin: 0;
@@ -18894,71 +19511,71 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   display: block;
 }
 @media screen and (min-width: 41.142857142857146em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit {
     font-size: 3.64583333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit {
     font-size: 28px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
+  header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit,
   header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit {
     font-size: 28px;
   }
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit:hover,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit:hover,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit:hover,
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit:focus,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit:focus,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data button.form-submit:focus {
   opacity: 0.7;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control {
   border: none;
   color: #222;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-text,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-text,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-text {
   border-bottom: 1px solid #222;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets {
   width: 280px;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid {
   width: 40%;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-combine,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-combine,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-combine {
   width: 50%;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
   display: none;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-reset-button {
   display: inline-block;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-button,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-button {
   display: inline-block;
   vertical-align: top;
 }
-header#navbar .container .navbar-header #navbar-search-container .navbar-search-button img,
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-button img,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-button img {
   display: block;
   width: 30px;
   max-width: 30px;
   height: auto;
 }
-header#navbar .container .navbar-header .navbar-toggle,
+header#navbar > .container .navbar-header .navbar-toggle,
 header#navbar .container-fluid .navbar-header .navbar-toggle {
   position: relative;
   float: right;
@@ -18982,28 +19599,28 @@ header#navbar .container-fluid .navbar-header .navbar-toggle {
   border: none;
   background: none;
 }
-header#navbar .container .navbar-header .navbar-toggle:focus,
+header#navbar > .container .navbar-header .navbar-toggle:focus,
 header#navbar .container-fluid .navbar-header .navbar-toggle:focus {
   outline: 0;
 }
-header#navbar .container .navbar-header .navbar-toggle .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
   height: 2px;
   border-radius: 1px;
 }
-header#navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
 @media (min-width: 10000px) {
-  header#navbar .container .navbar-header .navbar-toggle,
+  header#navbar > .container .navbar-header .navbar-toggle,
   header#navbar .container-fluid .navbar-header .navbar-toggle {
     display: none;
   }
 }
-header#navbar .container .navbar-header .navbar-toggle .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
   display: block;
   height: 3px;
@@ -19019,19 +19636,19 @@ header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
   -o-transition: -o-transform 0.5s ease, opacity 0.3s ease, background-color 0.5s ease;
   transition: transform 0.5s ease, opacity 0.3s ease, background-color 0.5s ease;
 }
-header#navbar .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle .icon-bar + .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 7px;
 }
-header#navbar .container .navbar-header .navbar-toggle:hover .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle:hover .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle:hover .icon-bar {
   background-color: #BC2929;
 }
-header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar {
   width: 29px;
 }
-header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.first,
+header#navbar > .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.first,
 header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.first {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -19039,11 +19656,11 @@ header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true
   transform: rotate(45deg);
   background-color: #BC2929;
 }
-header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.second,
+header#navbar > .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.second,
 header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.second {
   opacity: 0.0;
 }
-header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.third,
+header#navbar > .container .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.third,
 header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"] .icon-bar.third {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -19051,11 +19668,11 @@ header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true
   transform: rotate(-45deg);
   background-color: #BC2929;
 }
-header#navbar .container .navbar-header .navbar-toggle[aria-expanded="true"]:hover .icon-bar + .icon-bar,
+header#navbar > .container .navbar-header .navbar-toggle[aria-expanded="true"]:hover .icon-bar + .icon-bar,
 header#navbar .container-fluid .navbar-header .navbar-toggle[aria-expanded="true"]:hover .icon-bar + .icon-bar {
   margin-top: 7px;
 }
-header#navbar .container .navbar-collapse,
+header#navbar > .container .navbar-collapse,
 header#navbar .container-fluid .navbar-collapse {
   position: absolute;
   top: 67px;
@@ -19066,20 +19683,20 @@ header#navbar .container-fluid .navbar-collapse {
   border: none;
   background-color: #fff;
 }
-header#navbar .container .navbar-collapse nav,
+header#navbar > .container .navbar-collapse nav,
 header#navbar .container-fluid .navbar-collapse nav {
   display: inline-block;
 }
-header#navbar .container .navbar-collapse nav ul.navbar-nav,
+header#navbar > .container .navbar-collapse nav ul.navbar-nav,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav {
   margin: 0;
 }
-header#navbar .container .navbar-collapse nav ul.navbar-nav li,
+header#navbar > .container .navbar-collapse nav ul.navbar-nav li,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li {
   display: block;
   padding: 0;
 }
-header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
+header#navbar > .container .navbar-collapse nav ul.navbar-nav li a,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
   padding: 0;
   font-family: 'CiutadellaMedium';
@@ -19091,32 +19708,32 @@ header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
   color: #222;
 }
 @media screen and (min-width: 40em) {
-  header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
+  header#navbar > .container .navbar-collapse nav ul.navbar-nav li a,
   header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
+  header#navbar > .container .navbar-collapse nav ul.navbar-nav li a,
   header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
+  header#navbar > .container .navbar-collapse nav ul.navbar-nav li a,
   header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 48em) {
-  header#navbar .container .navbar-collapse nav ul.navbar-nav li a,
+  header#navbar > .container .navbar-collapse nav ul.navbar-nav li a,
   header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a {
     text-align: left;
   }
 }
-header#navbar .container .navbar-collapse nav ul.navbar-nav li a:hover,
+header#navbar > .container .navbar-collapse nav ul.navbar-nav li a:hover,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a:hover,
-header#navbar .container .navbar-collapse nav ul.navbar-nav li a.active,
+header#navbar > .container .navbar-collapse nav ul.navbar-nav li a.active,
 header#navbar .container-fluid .navbar-collapse nav ul.navbar-nav li a.active {
   color: #BC2929;
   text-decoration: none;
@@ -19186,13 +19803,13 @@ body .main-container .background-gradient {
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .main-container .container,
+body .main-container > .container,
 body .main-container .container-fluid {
   position: relative;
   padding-left: 15px;
   padding-right: 15px;
 }
-body .main-container .container .background-logo,
+body .main-container > .container .background-logo,
 body .main-container .container-fluid .background-logo {
   position: absolute;
   top: 30px;
@@ -19200,7 +19817,7 @@ body .main-container .container-fluid .background-logo {
   width: 37%;
   height: auto;
 }
-body .main-container .container #page-header .region-header h2.block-title,
+body .main-container > .container #page-header .region-header h2.block-title,
 body .main-container .container-fluid #page-header .region-header h2.block-title {
   margin: 20px 0 10px;
   font-family: 'CiutadellaMedium';
@@ -19211,30 +19828,30 @@ body .main-container .container-fluid #page-header .region-header h2.block-title
   text-transform: uppercase;
 }
 @media screen and (min-width: 40em) {
-  body .main-container .container #page-header .region-header h2.block-title,
+  body .main-container > .container #page-header .region-header h2.block-title,
   body .main-container .container-fluid #page-header .region-header h2.block-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  body .main-container .container #page-header .region-header h2.block-title,
+  body .main-container > .container #page-header .region-header h2.block-title,
   body .main-container .container-fluid #page-header .region-header h2.block-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  body .main-container .container #page-header .region-header h2.block-title,
+  body .main-container > .container #page-header .region-header h2.block-title,
   body .main-container .container-fluid #page-header .region-header h2.block-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 48em) {
-  body .main-container .container #page-header .region-header h2.block-title,
+  body .main-container > .container #page-header .region-header h2.block-title,
   body .main-container .container-fluid #page-header .region-header h2.block-title {
     text-align: left;
   }
 }
-body .main-container .container .row section h1.page-header,
+body .main-container > .container .row section h1.page-header,
 body .main-container .container-fluid .row section h1.page-header {
   margin: 20px 0 10px;
   font-family: 'CiutadellaMedium';
@@ -19245,63 +19862,63 @@ body .main-container .container-fluid .row section h1.page-header {
   text-transform: uppercase;
 }
 @media screen and (min-width: 40em) {
-  body .main-container .container .row section h1.page-header,
+  body .main-container > .container .row section h1.page-header,
   body .main-container .container-fluid .row section h1.page-header {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  body .main-container .container .row section h1.page-header,
+  body .main-container > .container .row section h1.page-header,
   body .main-container .container-fluid .row section h1.page-header {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 64em) {
-  body .main-container .container .row section h1.page-header,
+  body .main-container > .container .row section h1.page-header,
   body .main-container .container-fluid .row section h1.page-header {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 48em) {
-  body .main-container .container .row section h1.page-header,
+  body .main-container > .container .row section h1.page-header,
   body .main-container .container-fluid .row section h1.page-header {
     text-align: left;
   }
 }
-body .main-container .container .row section .messages,
+body .main-container > .container .row section .messages,
 body .main-container .container-fluid .row section .messages {
   margin-top: 20px;
 }
-body .main-container .container .row section ul.nav-tabs,
+body .main-container > .container .row section ul.nav-tabs,
 body .main-container .container-fluid .row section ul.nav-tabs {
   margin: 20px 0 5px;
 }
-body .main-container .container .row section ul.nav-tabs li,
+body .main-container > .container .row section ul.nav-tabs li,
 body .main-container .container-fluid .row section ul.nav-tabs li {
   float: right;
 }
-body .main-container .container .row section ul.nav-tabs li a,
+body .main-container > .container .row section ul.nav-tabs li a,
 body .main-container .container-fluid .row section ul.nav-tabs li a {
   padding: 5px 10px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 14px;
   border-radius: 0;
 }
-body .main-container .container .row section ul.action-links,
+body .main-container > .container .row section ul.action-links,
 body .main-container .container-fluid .row section ul.action-links {
   margin: 20px 0;
   text-align: right;
 }
-body .main-container .container .row section ul.action-links li,
+body .main-container > .container .row section ul.action-links li,
 body .main-container .container-fluid .row section ul.action-links li {
   display: inline-block;
 }
-body .main-container .container .row section ul.action-links li a,
+body .main-container > .container .row section ul.action-links li a,
 body .main-container .container-fluid .row section ul.action-links li a {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   font-size: 14px;
 }
-body .main-container .container .row .region-content,
+body .main-container > .container .row .region-content,
 body .main-container .container-fluid .row .region-content {
   margin: 44px 0;
 }
@@ -19340,7 +19957,7 @@ body footer.footer {
   border: none;
   background-color: white;
 }
-body footer.footer .container,
+body footer.footer > .container,
 body footer.footer .container-fluid {
   padding-left: 15px;
   padding-right: 15px;

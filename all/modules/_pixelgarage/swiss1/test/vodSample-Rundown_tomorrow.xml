@@ -5,10 +5,10 @@
 		<Block>
 			<VODEntry>
 				<AiringInformation>
-					<ScheduledStartDateTime>31.05.2017 08:00</ScheduledStartDateTime>
-					<RealStartDateTime>31.05.2017 08:02</RealStartDateTime>
-					<ScheduledEndDateTime>31.05.2017 08:50</ScheduledEndDateTime>
-					<RealEndDateTime>31.05.2017 08:52</RealEndDateTime>
+					<ScheduledStartDateTime>05.06.2017 08:00</ScheduledStartDateTime>
+					<RealStartDateTime>05.06.2017 08:02</RealStartDateTime>
+					<ScheduledEndDateTime>05.06.2017 08:50</ScheduledEndDateTime>
+					<RealEndDateTime>05.06.2017 08:52</RealEndDateTime>
 					<Duration>3000</Duration>
 					<Title>Die Tiere der Alpen</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
@@ -50,10 +50,10 @@
 
 			<VODEntry>
 				<AiringInformation>
-					<ScheduledStartDateTime>31.05.2017 10:00</ScheduledStartDateTime>
-					<RealStartDateTime>31.05.2017 10:02</RealStartDateTime>
-					<ScheduledEndDateTime>31.05.2017 10:50</ScheduledEndDateTime>
-					<RealEndDateTime>31.05.2017 10:52</RealEndDateTime>
+					<ScheduledStartDateTime>05.06.2017 10:00</ScheduledStartDateTime>
+					<RealStartDateTime>05.06.2017 10:02</RealStartDateTime>
+					<ScheduledEndDateTime>05.06.2017 10:50</ScheduledEndDateTime>
+					<RealEndDateTime>05.06.2017 10:52</RealEndDateTime>
 					<Duration>3000</Duration>
 					<Title>Sport events Swiss1</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
@@ -94,10 +94,10 @@
 
 			<VODEntry>
 				<AiringInformation>
-					<ScheduledStartDateTime>31.05.2017 14:00</ScheduledStartDateTime>
-					<RealStartDateTime>31.05.2017 14:02</RealStartDateTime>
-					<ScheduledEndDateTime>31.05.2017 14:50</ScheduledEndDateTime>
-					<RealEndDateTime>31.05.2017 14:52</RealEndDateTime>
+					<ScheduledStartDateTime>05.06.2017 14:00</ScheduledStartDateTime>
+					<RealStartDateTime>05.06.2017 14:02</RealStartDateTime>
+					<ScheduledEndDateTime>05.06.2017 14:50</ScheduledEndDateTime>
+					<RealEndDateTime>05.06.2017 14:52</RealEndDateTime>
 					<Duration>3000</Duration>
 					<Title>News des Tages</Title> <!-- Show Title -->
 					<RunType>RERUN</RunType>
@@ -136,10 +136,10 @@
 
 			<VODEntry>
 				<AiringInformation>
-					<ScheduledStartDateTime>31.05.2017 18:00</ScheduledStartDateTime>
-					<RealStartDateTime>31.05.2017 18:02</RealStartDateTime>
-					<ScheduledEndDateTime>31.05.2017 18:50</ScheduledEndDateTime>
-					<RealEndDateTime>31.05.2017 18:52</RealEndDateTime>
+					<ScheduledStartDateTime>05.06.2017 18:00</ScheduledStartDateTime>
+					<RealStartDateTime>05.06.2017 18:02</RealStartDateTime>
+					<ScheduledEndDateTime>05.06.2017 18:50</ScheduledEndDateTime>
+					<RealEndDateTime>05.06.2017 18:52</RealEndDateTime>
 					<Duration>3000</Duration>
 					<Title>Portrait des Tages</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
@@ -180,10 +180,10 @@
 
 			<VODEntry>
 				<AiringInformation>
-					<ScheduledStartDateTime>31.05.2017 20:00</ScheduledStartDateTime>
-					<RealStartDateTime>31.05.2017 20:02</RealStartDateTime>
-					<ScheduledEndDateTime>31.05.2017 20:50</ScheduledEndDateTime>
-					<RealEndDateTime>31.05.2017 20:52</RealEndDateTime>
+					<ScheduledStartDateTime>05.06.2017 20:00</ScheduledStartDateTime>
+					<RealStartDateTime>05.06.2017 20:02</RealStartDateTime>
+					<ScheduledEndDateTime>05.06.2017 20:50</ScheduledEndDateTime>
+					<RealEndDateTime>05.06.2017 20:52</RealEndDateTime>
 					<Duration>3000</Duration>
 					<Title>Kulinarikreisen</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>
@@ -224,10 +224,10 @@
 
 			<VODEntry>
 				<AiringInformation>
-					<ScheduledStartDateTime>31.05.2017 23:15</ScheduledStartDateTime>
-					<RealStartDateTime>31.05.2017 23:17</RealStartDateTime>
-					<ScheduledEndDateTime>01.06.2017 00:50</ScheduledEndDateTime>
-					<RealEndDateTime>01.06.2017 00:52</RealEndDateTime>
+					<ScheduledStartDateTime>05.06.2017 23:15</ScheduledStartDateTime>
+					<RealStartDateTime>05.06.2017 23:17</RealStartDateTime>
+					<ScheduledEndDateTime>06.06.2017 00:50</ScheduledEndDateTime>
+					<RealEndDateTime>06.06.2017 00:52</RealEndDateTime>
 					<Duration>5700</Duration>
 					<Title>Schwingen, die Bösen</Title> <!-- Show Title -->
 					<RunType>PRIMARY</RunType>

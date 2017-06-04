@@ -10,27 +10,32 @@
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>
-  <div class="row">
-    <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
-
-    <div class="video-container">
-      <div class="video-poster"><img src="<?php print $poster_url; ?>"></div>
-      <span class="video-duration-category"><?php print $duration_category; ?></span>
-      <?php if ($video_play_indicator): ?>
-        <img src="<?php print $video_play_indicator; ?>" class="video-play-button">
-      <?php endif; ?>
-    </div>
-    <div class="video-body">
-      <div class="title-line-1">
-        <?php print render($content['title']); ?>
+  <div class="group-header">
+    <div class="group-header-line"></div>
+    <div class="broadcast-time"><?php print $broadcast_time; ?></div>
+  </div>
+  <div class="row group-body">
+    <div class="col-12 col-xs-6 col-sm-4">
+      <div class="video-container">
+        <div class="video-poster"><img src="<?php print $poster_url; ?>"></div>
+        <?php if ($video_play_indicator): ?>
+          <img src="<?php print $video_play_indicator; ?>" class="video-play-button">
+        <?php endif; ?>
       </div>
-      <?php print render($content['body']); ?>
-      <div class="title-line-2">
+      <div class="video-header">
+        <div class="title-line-1"><?php print render($content['title']); ?></div>
+      </div>
+      <div class="video-info">
+        <span class="video-duration-category"><?php print $duration_category; ?></span>
         <span class="video-time-info"><?php print $time_info; ?></span>
       </div>
     </div>
 
-    </<?php print $central_wrapper; ?>>
+    <div class="col-12 col-xs-6 col-sm-8">
+      <div class="video-body">
+        <?php print render($content['body']); ?>
+      </div>
+    </div>
   </div>
 </<?php print $layout_wrapper ?>>
 

@@ -14,16 +14,121 @@
 // General settings
 // -------------------------
 .view.view-program {
-  margin: 0 auto;
-  width: 100%;
+  .view-filters {
+    margin: 0 auto;
+    padding: 0;
 
-  @media @tablet {
-    width: 70%;
+    @media @normal {
+      padding: 0 @grid-gutter-width-const/2;
+      max-width: @container-inner-max-width;
+    }
+
+    #views-exposed-form-program-block-program {
+      .views-exposed-form {
+        .views-exposed-widgets {
+          .views-exposed-widget {
+            display: block;
+            float: none;
+            vertical-align: bottom;
+            padding: 0;
+
+            &.views-title {
+              vertical-align: middle;
+              padding: 0;
+              #pxl-mixins.title();
+            }
+
+            &.views-previous-day-button,
+            &.views-next-day-button {
+              cursor: pointer;
+              width: 130px;
+
+              .date {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0;
+                #pxl-mixins.teaser-title();
+                opacity: 0.7;
+              }
+
+              .fa {
+                display: inline-block;
+                vertical-align: top;
+                padding: 0 5px;
+                color: white;
+                font-size: 20px;
+              }
+            }
+
+            &.views-widget-filter-field_broadcast_date_value {
+              label {
+                display: none;
+              }
+            }
+
+            &.views-submit-button {
+              width: 150px;
+              text-align: left;
+
+              .form-item {
+                .form-control {
+                  margin: 0;
+                  #pxl-mixins.teaser-title();
+                  height: 24px;
+                  padding: 4px 0;
+                  color: white;
+                  border: none;
+                  #pxl-mixins.border-radius(0);
+                  #pxl-mixins.box-shadow(none);
+                  background: none;
+                }
+
+                .form-select {
+                  #pxl-mixins.no-appearance;
+                  padding: 0;
+                }
+              }
+            }
+
+            @media @narrow {
+              display: inline-block;
+              padding: 0 5px;
+
+              &.views-title {
+                display: block;
+              }
+              &.views-submit-button {
+                text-align: center;
+              }
+            }
+
+            @media @tablet {
+              &.views-title {
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .view-content {
+    margin: 40px 0 0;
     padding: 0;
     .masonry-100();
+  }
+
+  .view-empty {
+    margin: 40px auto 0;
+    padding: 0;
+
+    @media @normal {
+      padding: 0 @grid-gutter-width-const/2;
+      max-width: @container-inner-max-width;
+    }
+
+    #pxl-mixins.wysiwyg-body();
   }
 }
 

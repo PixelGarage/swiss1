@@ -21,13 +21,13 @@
       <?php endif; ?>
       <div class="video-header">
         <div class="title-line-1"><?php print render($content['title']); ?></div>
-        <div class="title-line-2">
-          <span class="video-time-info"><?php print $time_info; ?></span>
-          <span class="video-duration-category"><?php print $duration_category; ?></span>
-        </div>
       </div>
     </div>
     <div class="video-body">
+      <div class="title-line-2">
+        <span class="video-duration-category"><?php print $duration_category; ?></span>
+        <span class="video-time-info"><?php print $time_info; ?></span>
+      </div>
       <div class="title-line-3">
         <span class="video-season-episode"><?php print $season_episode; ?></span>
         <span class="video-language-age"><?php print $language_age; ?></span>

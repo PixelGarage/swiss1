@@ -182,7 +182,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 
   //
   // add video indicator image, if video is playable
-  $vars['video_play_indicator'] = $vars['show_video'] ? file_create_url($img_path . 'icon-play-empty.svg') : false;
+  $vars['video_play_indicator'] = $vars['show_video'] ? file_create_url($img_path . 'icon-play.svg') : false;
 
 
 

@@ -202,6 +202,8 @@ function &proximity_session_data() {
   return $_SESSION['proximity'];
 }
 
+$container_counter = 0;
+
 /**
  * Pre-process function for theme hook views_view_proximity (implemented as views_view_proximity.tpl.php).
  * This function prepares all necessary variables to create the markup for the proximity layout.
@@ -227,9 +229,11 @@ function template_preprocess_views_view_proximity(&$vars) {
   // The container index has to be unique AND idempotent, meaning the exact same index
   // has to be created for a specific proximity view, each time this method is called
   // (e.g. Ajax Pager or Exposed form calls etc.).
-  // Therefore the index is taken from the dom_id of the view, which never changes.
-  // The first sixteen numbers of the dom_id are unique enough for our purpose.
-  $pe_container_index = substr($view->dom_id, 0, 16);
+  // Therefore the index is created with a global counter, that is hashed.
+  // The first sixteen numbers of the md5 hash are unique enough for our purpose.
+  global $container_counter;
+  $pe_container_index = md5('container-index-' . $container_counter++);
+  $pe_container_index = substr($pe_container_index, 0, 16);
 
   // parameters for modal dialog
   $load_new_page = $options['proximity_action_container'] == 'page_new';

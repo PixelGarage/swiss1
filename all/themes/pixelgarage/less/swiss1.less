@@ -4,6 +4,9 @@
 @import "jwplayer/vars";
 @import "jwplayer/transitions";
 
+@pxl-color-main: #BC2929;
+@pxl-text-font: 'CiutadellaRegular', sans-serif;
+
 .jw-skin-swiss1 {
 
   .jw-controls-right {
@@ -13,28 +16,76 @@
 
     .jw-logo {
       // customer logo
-      margin: 20px !important;
-      max-width: 20px;
+      margin: 15px !important;
+      max-width: 15px;
     }
   }
 
   .jw-display-icon-container {
-    border-radius: 3.5em;
     background-color: @display-bkgd-color;
 
     & > .jw-icon {
-      color: rgba(255, 255, 255, 0.5);
+      background: url(images/icon-play.svg) no-repeat center / 80%;
+      opacity: 0.5;
+
+      &:before {
+        display: none;
+      }
     }
   }
   &:hover .jw-display-icon-container {
     background-color: @display-bkgd-color !important;
-    border: 2px solid rgba(255, 255, 255, 0.9);
 
     & > .jw-icon {
-      color: rgba(255, 255, 255, 1.0);
+      opacity: 1.0;
     }
   }
 
+  .jw-text {
+    font-family: @pxl-text-font;
+  }
+
+  .jw-slider-horizontal {
+    .jw-rail,.jw-buffer, .jw-progress {
+      height: 0.2em;
+    }
+    .jw-progress {
+      background-color: @pxl-color-main;
+    }
+    .jw-knob {
+      background-color: @pxl-color-main;
+    }
+  }
+
+  .jw-icon-playback {
+    &:before {
+      display: none;
+    }
+  }
+  &.jw-state-paused .jw-icon-playback {
+    background: url(images/icon-play.svg) no-repeat center / 80%;
+  }
+
+  &.jw-state-playing .jw-icon-playback {
+    background: url(images/icon-pause.svg) no-repeat center / 80%;
+  }
+
+
+  .jw-icon-volume {
+    background: url(images/icon-volume.svg) no-repeat center / 60%;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .jw-icon-fullscreen {
+    background: url(images/icon-widescreen.svg) no-repeat center / 60%;
+
+    &:before {
+      display: none;
+    }
+  }
 
   &.jw-breakpoint-2 {
     .jw-display .jw-icon {

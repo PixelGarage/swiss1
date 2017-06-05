@@ -193,6 +193,8 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value']) : 0;
   $broadcast_endtime = !empty($node->field_broadcast_date) && isset($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) ?
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) : 0;
+  // show full time info only for full view mode
+  $broadcast_endtime = ($view_mode == 'full' || $view_mode == 'teaser_search') ? $broadcast_endtime : false;
   if ($date_str = _get_broadcast_date_string($broadcast_starttime, $broadcast_endtime)) {
     $vars['time_info'] = $date_str;
   }
@@ -220,15 +222,13 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     }
   }
   else {
-    // validity period in the past
+    // validity period in the past or future
     $vars['time_info'] = t('Nicht verfügbar');
   }
 
   //
   // format broadcast start time
-  if ($broadcast_starttime > 0) {
-    $vars['broadcast_time'] = date('H:i', $broadcast_starttime);
-  }
+  $vars['broadcast_time'] = ($broadcast_starttime > 0) ? date('H:i', $broadcast_starttime): '';
 
   //
   // format duration / category

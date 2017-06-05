@@ -14,11 +14,27 @@
 // General settings
 // -------------------------
 .view.view-search-videos {
-  width: 100%;
-
   .view-content {
+    margin: 0;
     padding: 0;
+    .masonry-100();
   }
+
+  .view-empty {
+    margin: 0 auto;
+    padding: 0;
+
+    @media @normal {
+      padding: 0 @grid-gutter-width-const/2;
+      max-width: @container-inner-max-width;
+    }
+
+    #pxl-mixins.wysiwyg-body();
+  }
+
+  //
+  // view pager
+  #pxl-mixins.view-pager(18px, @text-color, @text-color);
 
 }
 

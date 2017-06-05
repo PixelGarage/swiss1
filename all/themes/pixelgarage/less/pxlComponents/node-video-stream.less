@@ -388,7 +388,7 @@
         width: 100%;
 
         .field-name-body {
-          padding: 5px 0;
+          padding: 0;
           #pxl-mixins.wysiwyg-body();
         }
 
@@ -403,6 +403,168 @@
         }
 
       }
+    }
+  }
+}
+
+//
+// teaser search
+.node.node-videostream.view-mode-teaser_search {
+  >.group-header {
+    .group-header-line {
+      margin-right: -100%;
+      border-top: 2px solid @pxl-color-border;
+    }
+  }
+
+  >.row.group-body {
+    margin: @pxl-group-header-padding-tb auto;
+    padding: 0;
+
+    @media @mobile {
+      >div.col-12 {
+        width: 100%;
+      }
+    }
+
+    @media @normal {
+      margin-top: @pxl-group-header-padding-tb;
+      padding: 0 @grid-gutter-width-const/2;
+      max-width: @container-inner-max-width;
+    }
+
+    >div.col-sm-4 {
+      &.col-first {
+        padding-left: 0;
+      }
+      &.col-last {
+        padding-right: 0;
+      }
+
+      >.video-container {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        margin: 0;
+        width: 100%;
+
+        .video-poster {
+          overflow: hidden;
+          height: 0;
+          padding-bottom: 56.25%;
+
+          img {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        img.video-play-button {
+          display: block;
+          #pxl-mixins.center-xy(absolute);
+          margin: 0;
+          padding: 0;
+          width: 30%;
+          height: auto;
+        }
+      }
+
+      >.video-header {
+        position: relative;
+        z-index: 10;
+        margin: -@video-header-height-teaser 0 0;
+        padding: 0;
+        width: 100%;
+        height: @video-header-height-teaser;
+
+        @media @tablet {
+          margin: -(@video-header-height-teaser+1px) 0 0;
+        }
+
+        .title-line-1 {
+          width: 90%;
+
+          .field-name-title {
+            h2 {
+              display: inline-block;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              margin: 0;
+              padding: 6px 12px 0 0;
+              max-width: 100%;
+              #pxl-mixins.teaser-title();
+              line-height: 1;
+              border-top-right-radius: 10px;
+              background-color: @pxl-color-body-bg;
+            }
+          }
+        }
+      }
+
+      >.video-body {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 14px 0 0;
+        width: 100%;
+
+        .field-name-body {
+          padding: 0;
+          #pxl-mixins.wysiwyg-body();
+        }
+
+        @media @narrow {
+          padding: 0;
+        }
+      }
+
+      >.video-details {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 14px 0 0;
+        width: 100%;
+        #pxl-mixins.text();
+
+        @media @tablet {
+          padding: 0;
+        }
+
+        >.video-time-info {
+          .day-highlight,
+          .day-one-highlight {
+            display: inline-block;
+            padding: 1px 3px 0;
+            line-height: 1;
+            #pxl-mixins.border-radius(2px);
+            background-color: @pxl-color-main;
+          }
+          .day-one-highlight {
+            padding: 1px 4px 0;
+          }
+        }
+
+        >.video-duration-category {
+          &:before {
+            content: '\f017';
+            font-family: @pxl-icon-font;
+            padding-right: 5px;
+          }
+        }
+
+        >.video-season-episode {
+
+        }
+
+        >.video-language-age {
+
+        }
+      }
+
     }
   }
 }

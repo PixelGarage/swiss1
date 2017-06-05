@@ -156,6 +156,88 @@
 }
 
 //
+// teaser featured
+.node.node-videostream.view-mode-teaser_featured {
+  >.row {
+    >div.col-sm-8,
+    >div.col-sm-4 {
+      >.video-container {
+        overflow: hidden;
+        height: 0;
+        padding-bottom: 56.25%; // 16:9
+
+        img.video-poster {
+          display: block;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      >.video-title {
+        position: relative;
+        z-index: 10;
+        margin: 0;
+        padding: @video-padding-dist 0;
+        width: 100%;
+        border-bottom: 1px solid @pxl-color-border;
+        border-bottom: 0.5px solid @pxl-color-border;
+
+        @media @tablet {
+          padding: 0 0 @video-padding-dist;
+        }
+
+        .field-name-title {
+          h2 {
+            overflow: hidden;
+            //white-space: nowrap;
+            //text-overflow: ellipsis;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            #pxl-mixins.title();
+            line-height: 1;
+          }
+        }
+      }
+
+      >.video-body {
+        width: 100%;
+        padding: 0;
+
+        >.field-name-body {
+          overflow: hidden;
+          padding: 14px 0;
+          height: 190px;
+          max-height: 190px;
+          #pxl-mixins.wysiwyg-body();
+        }
+
+        >.video-duration-category {
+          padding: 0 0 8px;
+          #pxl-mixins.subtext();
+          color: @pxl-color-white;
+
+          &:before {
+            content: '\f017';
+            font-family: @pxl-icon-font;
+            padding-right: 5px;
+          }
+        }
+      }
+
+      >.social-buttons > .shariff {
+        .social-shariff(20px);
+        border-top: 1px solid @pxl-color-border;
+        border-top: 0.5px solid @pxl-color-border;
+      }
+
+    }
+  }
+}
+
+//
 // teaser front
 .node.node-videostream.view-mode-teaser {
   >.row {
@@ -165,7 +247,7 @@
         height: 0;
         padding-bottom: 56.25%; // 16:9
 
-        img.video-poster {
+        img.video-thumb {
           display: block;
           margin: 0;
           padding: 0;
@@ -285,7 +367,7 @@
         margin: 0;
         width: 100%;
 
-        .video-poster {
+        .video-thumb {
           overflow: hidden;
           height: 0;
           padding-bottom: 56.25%;
@@ -448,7 +530,7 @@
         margin: 0;
         width: 100%;
 
-        .video-poster {
+        .video-thumb {
           overflow: hidden;
           height: 0;
           padding-bottom: 56.25%;
@@ -563,88 +645,6 @@
         >.video-language-age {
 
         }
-      }
-
-    }
-  }
-}
-
-//
-// teaser featured
-.node.node-videostream.view-mode-teaser_featured {
-  >.row {
-    >div.col-sm-8,
-    >div.col-sm-4 {
-      >.video-container {
-        overflow: hidden;
-        height: 0;
-        padding-bottom: 56.25%; // 16:9
-
-        img.video-poster {
-          display: block;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          height: auto;
-        }
-      }
-
-      >.video-title {
-        position: relative;
-        z-index: 10;
-        margin: 0;
-        padding: @video-padding-dist 0;
-        width: 100%;
-        border-bottom: 1px solid @pxl-color-border;
-        border-bottom: 0.5px solid @pxl-color-border;
-
-        @media @tablet {
-          padding: 0 0 @video-padding-dist;
-        }
-
-        .field-name-title {
-          h2 {
-            overflow: hidden;
-            //white-space: nowrap;
-            //text-overflow: ellipsis;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            #pxl-mixins.title();
-            line-height: 1;
-          }
-        }
-      }
-
-      >.video-body {
-        width: 100%;
-        padding: 0;
-
-        >.field-name-body {
-          overflow: hidden;
-          padding: 14px 0;
-          height: 190px;
-          max-height: 190px;
-          #pxl-mixins.wysiwyg-body();
-        }
-
-        >.video-duration-category {
-          padding: 0 0 8px;
-          #pxl-mixins.subtext();
-          color: @pxl-color-white;
-
-          &:before {
-            content: '\f017';
-            font-family: @pxl-icon-font;
-            padding-right: 5px;
-          }
-        }
-      }
-
-      >.social-buttons > .shariff {
-        .social-shariff(20px);
-        border-top: 1px solid @pxl-color-border;
-        border-top: 0.5px solid @pxl-color-border;
       }
 
     }

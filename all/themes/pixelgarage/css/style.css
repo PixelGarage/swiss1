@@ -12562,1214 +12562,6 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-similar.video-playing {
   opacity: 0.0;
 }
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container {
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 56.25%;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container img.video-poster {
-  display: block;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header {
-  position: relative;
-  z-index: 10;
-  margin: -21px 0 0;
-  padding: 0;
-  width: 100%;
-  height: 21px;
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header {
-    margin: -22px 0 0;
-  }
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 {
-  width: 90%;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 6px 12px 0 0;
-  max-width: 100%;
-  font-family: 'CiutadellaSemiBold';
-  font-size: 15px;
-  letter-spacing: 0;
-  text-align: left;
-  line-height: 1;
-  border-top-right-radius: 10px;
-  background-color: #282828;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
-  position: relative;
-  padding: 5px 0;
-  width: 100%;
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 1.1667em;
-  text-align: left;
-}
-@media screen and (min-width: 41.142857142857146em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
-    font-size: 1.82291667vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-duration-category {
-  color: #fff;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-duration-category:before {
-  content: '\f017';
-  font-family: 'fontawesome';
-  padding-right: 5px;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info {
-  position: absolute;
-  right: 0;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-highlight,
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-one-highlight {
-  display: inline-block;
-  padding: 1px 3px 0;
-  line-height: 1;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  background-color: #BC2929;
-}
-.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-one-highlight {
-  padding: 1px 4px 0;
-}
-.node.node-videostream.view-mode-teaser_program > .group-header .group-header-line {
-  margin-right: -100%;
-  border-top: 2px solid #fff;
-}
-.node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
-  display: block;
-  padding: 13px 0;
-  font-family: 'CiutadellaMedium';
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1;
-  text-align: left;
-  text-transform: uppercase;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body {
-  margin: 0 auto;
-  padding: 0;
-}
-@media screen and (max-width: 29.9375em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-12 {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body {
-    margin-top: -29px;
-    padding: 0 15px;
-    max-width: 766px;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 {
-  padding-left: 0;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  margin: 0;
-  width: 100%;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-poster {
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 56.25%;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-poster img {
-  display: block;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container img.video-play-button {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  width: 30%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header {
-  position: relative;
-  z-index: 10;
-  margin: -21px 0 0;
-  padding: 0;
-  width: 100%;
-  height: 21px;
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header {
-    margin: -22px 0 0;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 {
-  width: 90%;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 6px 12px 0 0;
-  max-width: 100%;
-  font-family: 'CiutadellaSemiBold';
-  font-size: 15px;
-  letter-spacing: 0;
-  text-align: left;
-  line-height: 1;
-  border-top-right-radius: 10px;
-  background-color: #282828;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
-  position: relative;
-  padding: 5px 0;
-  width: 100%;
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 1.1667em;
-  text-align: left;
-}
-@media screen and (min-width: 41.142857142857146em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
-    font-size: 1.82291667vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-duration-category {
-  color: #fff;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-duration-category:before {
-  content: '\f017';
-  font-family: 'fontawesome';
-  padding-right: 5px;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info {
-  position: absolute;
-  right: 0;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-highlight,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-one-highlight {
-  display: inline-block;
-  padding: 1px 3px 0;
-  line-height: 1;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  background-color: #BC2929;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-one-highlight {
-  padding: 1px 4px 0;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 {
-  padding-right: 0;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  margin: 0;
-  padding: 14px 0 0;
-  width: 100%;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body {
-  padding: 0;
-  color: white;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
-  margin: 10px auto 20px;
-  font-family: 'CiutadellaMedium';
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: 1;
-  text-align: left;
-  text-transform: uppercase;
-}
-@media screen and (min-width: 40em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
-    font-size: 3.125vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
-  margin: 10px auto;
-  font-family: 'CiutadellaSemiBold';
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
-  margin: 0 0 10px;
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 1.1667em;
-  text-align: left;
-}
-@media screen and (min-width: 41.142857142857146em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
-    font-size: 1.82291667vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  color: white;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a:hover,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a:focus {
-  color: #BC2929;
-  text-decoration: none;
-  background: none;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  font-family: 'CiutadellaRegularItalic', sans-serif;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  font-family: 'CiutadellaBold', sans-serif;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  color: white;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u:hover,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u:focus {
-  color: #d9d9d9;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  background-color: #ff0;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body hr {
-  border: 0;
-  border-bottom: 2px solid #BC2929;
-  background: none;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body img {
-  display: block;
-  overflow: hidden;
-  margin: 20px auto;
-  padding: 0;
-  max-width: 100%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body embed,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body video,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body audio,
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body iframe {
-  display: block;
-  overflow: hidden;
-  margin: 20px auto;
-  padding: 1%;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  min-height: 350px;
-}
-@media screen and (min-width: 30em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body {
-    padding: 0;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-gap: 2%;
-    -moz-column-gap: 2%;
-    column-gap: 2%;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .group-header .group-header-line {
-  margin-right: -100%;
-  border-top: 2px solid #fff;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body {
-  margin: 13px auto;
-  padding: 0;
-}
-@media screen and (max-width: 29.9375em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-12 {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body {
-    margin-top: 13px;
-    padding: 0 15px;
-    max-width: 766px;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4.col-first {
-  padding-left: 0;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4.col-last {
-  padding-right: 0;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  margin: 0;
-  width: 100%;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container .video-poster {
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 56.25%;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container .video-poster img {
-  display: block;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container img.video-play-button {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  width: 30%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header {
-  position: relative;
-  z-index: 10;
-  margin: -21px 0 0;
-  padding: 0;
-  width: 100%;
-  height: 21px;
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header {
-    margin: -22px 0 0;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 {
-  width: 90%;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 6px 12px 0 0;
-  max-width: 100%;
-  font-family: 'CiutadellaSemiBold';
-  font-size: 15px;
-  letter-spacing: 0;
-  text-align: left;
-  line-height: 1;
-  border-top-right-radius: 10px;
-  background-color: #282828;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-  padding: 14px 0 0;
-  width: 100%;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body {
-  padding: 0;
-  color: white;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
-  margin: 10px auto 20px;
-  font-family: 'CiutadellaMedium';
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: 1;
-  text-align: left;
-  text-transform: uppercase;
-}
-@media screen and (min-width: 40em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
-    font-size: 3.125vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
-  margin: 10px auto;
-  font-family: 'CiutadellaSemiBold';
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
-  margin: 0 0 10px;
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: 1.1667em;
-  text-align: left;
-}
-@media screen and (min-width: 41.142857142857146em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
-    font-size: 1.82291667vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  color: white;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a:hover,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a:focus {
-  color: #BC2929;
-  text-decoration: none;
-  background: none;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  font-family: 'CiutadellaRegularItalic', sans-serif;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  font-family: 'CiutadellaBold', sans-serif;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  color: white;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u:hover,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u:focus {
-  color: #d9d9d9;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-  background-color: #ff0;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
-    text-align: left;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body hr {
-  border: 0;
-  border-bottom: 2px solid #BC2929;
-  background: none;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body img {
-  display: block;
-  overflow: hidden;
-  margin: 20px auto;
-  padding: 0;
-  max-width: 100%;
-  height: auto;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body embed,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body video,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body audio,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body iframe {
-  display: block;
-  overflow: hidden;
-  margin: 20px auto;
-  padding: 1%;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  min-height: 350px;
-}
-@media screen and (min-width: 30em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body {
-    padding: 0;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
-  padding: 14px 0 0;
-  width: 100%;
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0;
-  line-height: 1.14em;
-  text-align: left;
-}
-@media screen and (min-width: 45em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
-    font-size: 2.08333333vw;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 64em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
-    text-align: left;
-  }
-}
-@media screen and (min-width: 48em) {
-  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
-    padding: 0;
-  }
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-time-info .day-highlight,
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-time-info .day-one-highlight {
-  display: inline-block;
-  padding: 1px 3px 0;
-  line-height: 1;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  background-color: #BC2929;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-time-info .day-one-highlight {
-  padding: 1px 4px 0;
-}
-.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-duration-category:before {
-  content: '\f017';
-  font-family: 'fontawesome';
-  padding-right: 5px;
-}
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-container,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-container {
   overflow: hidden;
@@ -14421,6 +13213,1214 @@ body.desktop .node.node-videostream.view-mode-teaser_featured > .row > div.col-s
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.share_text,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.share_text {
   display: none;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container {
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container img.video-thumb {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header {
+  position: relative;
+  z-index: 10;
+  margin: -21px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 21px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header {
+    margin: -22px 0 0;
+  }
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 {
+  width: 90%;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 6px 12px 0 0;
+  max-width: 100%;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 1;
+  border-top-right-radius: 10px;
+  background-color: #282828;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-header .title-line-1 .field-name-title h2 {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
+  position: relative;
+  padding: 5px 0;
+  width: 100%;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+}
+@media screen and (min-width: 41.142857142857146em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
+    font-size: 1.82291667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-duration-category {
+  color: #fff;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-duration-category:before {
+  content: '\f017';
+  font-family: 'fontawesome';
+  padding-right: 5px;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info {
+  position: absolute;
+  right: 0;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-highlight,
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-one-highlight {
+  display: inline-block;
+  padding: 1px 3px 0;
+  line-height: 1;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #BC2929;
+}
+.node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-body > .video-time-info .day-one-highlight {
+  padding: 1px 4px 0;
+}
+.node.node-videostream.view-mode-teaser_program > .group-header .group-header-line {
+  margin-right: -100%;
+  border-top: 2px solid #fff;
+}
+.node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+  display: block;
+  padding: 13px 0;
+  font-family: 'CiutadellaMedium';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .group-header .broadcast-time {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body {
+  margin: 0 auto;
+  padding: 0;
+}
+@media screen and (max-width: 29.9375em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body {
+    margin-top: -29px;
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 {
+  padding-left: 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0;
+  width: 100%;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-thumb {
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-thumb img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container img.video-play-button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 30%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header {
+  position: relative;
+  z-index: 10;
+  margin: -21px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 21px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header {
+    margin: -22px 0 0;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 {
+  width: 90%;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 6px 12px 0 0;
+  max-width: 100%;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 1;
+  border-top-right-radius: 10px;
+  background-color: #282828;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+  position: relative;
+  padding: 5px 0;
+  width: 100%;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+}
+@media screen and (min-width: 41.142857142857146em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    font-size: 1.82291667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-duration-category {
+  color: #fff;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-duration-category:before {
+  content: '\f017';
+  font-family: 'fontawesome';
+  padding-right: 5px;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info {
+  position: absolute;
+  right: 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-highlight,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-one-highlight {
+  display: inline-block;
+  padding: 1px 3px 0;
+  line-height: 1;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #BC2929;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-info > .video-time-info .day-one-highlight {
+  padding: 1px 4px 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 {
+  padding-right: 0;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0;
+  padding: 14px 0 0;
+  width: 100%;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body {
+  padding: 0;
+  color: white;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'CiutadellaMedium';
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 40em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-title {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtitle {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
+  margin: 0 0 10px;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body p {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+}
+@media screen and (min-width: 41.142857142857146em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
+    font-size: 1.82291667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body .pxl-subtext {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  color: white;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a:hover,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body a:focus {
+  color: #BC2929;
+  text-decoration: none;
+  background: none;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  font-family: 'CiutadellaRegularItalic', sans-serif;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body em {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  font-family: 'CiutadellaBold', sans-serif;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body b {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  color: white;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u:hover,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body u:focus {
+  color: #d9d9d9;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  background-color: #ff0;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body mark {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body hr {
+  border: 0;
+  border-bottom: 2px solid #BC2929;
+  background: none;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body embed,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body video,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body audio,
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 1%;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
+}
+@media screen and (min-width: 30em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-8 > .video-body .field-name-body {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 2%;
+    -moz-column-gap: 2%;
+    column-gap: 2%;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .group-header .group-header-line {
+  margin-right: -100%;
+  border-top: 2px solid #fff;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body {
+  margin: 13px auto;
+  padding: 0;
+}
+@media screen and (max-width: 29.9375em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-12 {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body {
+    margin-top: 13px;
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4.col-first {
+  padding-left: 0;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4.col-last {
+  padding-right: 0;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 0;
+  width: 100%;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container .video-thumb {
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container .video-thumb img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-container img.video-play-button {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 30%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header {
+  position: relative;
+  z-index: 10;
+  margin: -21px 0 0;
+  padding: 0;
+  width: 100%;
+  height: 21px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header {
+    margin: -22px 0 0;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 {
+  width: 90%;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 6px 12px 0 0;
+  max-width: 100%;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 1;
+  border-top-right-radius: 10px;
+  background-color: #282828;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-header .title-line-1 .field-name-title h2 {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 14px 0 0;
+  width: 100%;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body {
+  padding: 0;
+  color: white;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
+  margin: 10px auto 20px;
+  font-family: 'CiutadellaMedium';
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 40em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
+    font-size: 3.125vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h1,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h2,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-title {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
+  margin: 10px auto;
+  font-family: 'CiutadellaSemiBold';
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h3,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h4,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h5,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body h6,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtitle {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
+  margin: 0 0 10px;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body p {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+}
+@media screen and (min-width: 41.142857142857146em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
+    font-size: 1.82291667vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body small,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body .pxl-subtext {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  color: white;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a:hover,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body a:focus {
+  color: #BC2929;
+  text-decoration: none;
+  background: none;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  font-family: 'CiutadellaRegularItalic', sans-serif;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body pre,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body address,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body i,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body em {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  font-family: 'CiutadellaBold', sans-serif;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body strong,
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body b {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  color: white;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u:hover,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body u:focus {
+  color: #d9d9d9;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+  background-color: #ff0;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body mark {
+    text-align: left;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body hr {
+  border: 0;
+  border-bottom: 2px solid #BC2929;
+  background: none;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body img {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body embed,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body video,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body audio,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body .field-name-body iframe {
+  display: block;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 1%;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 350px;
+}
+@media screen and (min-width: 30em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-body {
+    padding: 0;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 14px 0 0;
+  width: 100%;
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1.14em;
+  text-align: left;
+}
+@media screen and (min-width: 45em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
+    font-size: 2.08333333vw;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 64em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details {
+    padding: 0;
+  }
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-time-info .day-highlight,
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-time-info .day-one-highlight {
+  display: inline-block;
+  padding: 1px 3px 0;
+  line-height: 1;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #BC2929;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-time-info .day-one-highlight {
+  padding: 1px 4px 0;
+}
+.node.node-videostream.view-mode-teaser_search > .row.group-body > div.col-sm-4 > .video-details > .video-duration-category:before {
+  content: '\f017';
+  font-family: 'fontawesome';
+  padding-right: 5px;
 }
 /*
  *  Node Footer section

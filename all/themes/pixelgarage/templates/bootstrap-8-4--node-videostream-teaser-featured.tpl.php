@@ -13,7 +13,7 @@
   <div class="row">
     <<?php print $left_wrapper; ?> class="col-sm-8 <?php print $left_classes; ?>">
       <div class="video-container">
-        <img src="<?php print $poster_url; ?>" class="video-poster">
+        <img src="<?php print $image_url; ?>" class="video-poster">
       </div>
     </<?php print $left_wrapper; ?>>
     <<?php print $right_wrapper; ?> class="col-sm-4 <?php print $right_classes; ?>">

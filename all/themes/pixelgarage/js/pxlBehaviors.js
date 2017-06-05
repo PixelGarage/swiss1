@@ -79,6 +79,30 @@
   };
 
   /**
+   * Swaps images from desaturated to colored on mouse hover.
+   */
+  Drupal.behaviors.hoverImageSwap = {
+    attach: function () {
+      $('.pe-container > .pe-item').hover(
+        function () {
+          // mouse enter
+          var $thumb = $(this).find('.node-videostream .video-thumb'),
+              thumb_uri = $thumb.attr('src');
+
+          $thumb.attr('src', thumb_uri.replace('styles/desaturate_25/public/images', 'images'));
+        },
+        function () {
+          // mouse leave
+          var $thumb = $(this).find('.node-videostream .video-thumb'),
+            thumb_uri = $thumb.attr('src');
+
+          $thumb.attr('src', thumb_uri.replace('images', 'styles/desaturate_25/public/images'));
+        }
+      );
+    }
+  }
+
+  /**
    * Handles the next / previous buttons in exposed form of program view.
    */
   Drupal.behaviors.viewsProgramExposedButtons = {

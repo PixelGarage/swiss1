@@ -17,7 +17,7 @@
   <div class="row group-body">
     <div class="col-12 col-xs-6 col-sm-4">
       <div class="video-container">
-        <div class="video-poster"><img src="<?php print $poster_url; ?>"></div>
+        <div class="video-thumb"><img src="<?php print $image_url; ?>"></div>
         <?php if ($video_play_indicator): ?>
           <img src="<?php print $video_play_indicator; ?>" class="video-play-button">
         <?php endif; ?>

@@ -35,6 +35,7 @@ function pixelgarage_preprocess_page(&$vars) {
   //
   // get exposed search form, if available (to render it in modal dialog)
   $exposed_search_form_section = 'views_-exp-search_videos-search_page';
+  $vars['exposed_search_form_modal_id'] = false;
 
   if (isset($vars['page']['navigation'][$exposed_search_form_section]) &&
     ($exposed_search_form = $vars['page']['navigation'][$exposed_search_form_section])) {
@@ -161,16 +162,19 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   //
   // VIDEO / IMAGE DISPLAY
   // get poster image. if none is set, set default image
-  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_program';
+  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_program' || $view_mode == 'teaser_search';
   $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
   if ($use_thumb && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
-    $vars['poster_url'] = file_create_url($thumb->uri);
+    $thumb_uri = create_desaturated_image($thumb->uri);
+    $vars['image_url'] = file_create_url($thumb_uri);
   }
   else if (!empty($node->field_poster) && $poster = file_load($node->field_poster[LANGUAGE_NONE][0]['fid'])) {
-    $vars['poster_url'] = file_create_url($poster->uri);
+    $vars['image_url'] = file_create_url($poster->uri);
   }
   else {
-    $vars['poster_url'] = file_create_url($img_path . 'poster_swiss1.jpg');
+    $default_img_path = $img_path . 'poster_swiss1.jpg';
+    $default_uri = create_desaturated_image($default_img_path);
+    $vars['image_url'] = file_create_url($default_uri);
   }
 
   //
@@ -308,4 +312,21 @@ function _get_broadcast_date_string($starttime, $endtime = 0) {
   }
 
   return $str_date;
+}
+
+/**
+ * Helper function to create a desaturated image for the hover effect.
+ */
+function create_desaturated_image($image_uri) {
+  $style_name = 'desaturate_25';
+  $dest = image_style_path($style_name, $image_uri);
+  if (!file_exists($dest)) {
+    $style = image_style_load($style_name);
+    if (isset($style['effects'])) {
+      $success = image_style_create_derivative($style, $image_uri, $dest);
+      return $success ? $dest : $image_uri;
+    }
+  }
+
+  return $dest;
 }

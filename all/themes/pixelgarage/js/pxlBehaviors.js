@@ -89,14 +89,14 @@
           var $thumb = $(this).find('.node-videostream .video-thumb'),
               thumb_uri = $thumb.attr('src');
 
-          $thumb.attr('src', thumb_uri.replace('styles/desaturate_25/public/images', 'images'));
+          $thumb.attr('src', thumb_uri.replace('files/styles/desaturate_25/public/images', 'files/images'));
         },
         function () {
           // mouse leave
           var $thumb = $(this).find('.node-videostream .video-thumb'),
             thumb_uri = $thumb.attr('src');
 
-          $thumb.attr('src', thumb_uri.replace('images', 'styles/desaturate_25/public/images'));
+          $thumb.attr('src', thumb_uri.replace('files/images', 'files/styles/desaturate_25/public/images'));
         }
       );
     }

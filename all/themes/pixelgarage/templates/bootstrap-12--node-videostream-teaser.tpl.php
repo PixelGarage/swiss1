@@ -14,7 +14,7 @@
     <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
 
     <div class="video-container">
-      <img src="<?php print $image_url; ?>" class="video-thumb">
+      <img class="video-thumb" src="<?php print $image_url; ?>">
     </div>
     <div class="video-header">
       <div class="title-line-1"><?php print render($content['title']); ?></div>

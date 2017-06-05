@@ -10209,7 +10209,7 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 @media screen and (min-width: 45em) {
   body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-control {
@@ -10269,7 +10269,7 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-moz-placeholder {
   color: #777777;
@@ -10351,7 +10351,7 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #282828;
 }
 body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group {
   display: block;
@@ -10370,7 +10370,7 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   -moz-box-shadow: none;
   box-shadow: none;
   border: 1px solid white;
-  background-color: #fff;
+  background-color: #282828;
 }
 body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-body form#views-exposed-form-search-videos-search-page .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
   color: #777777;
@@ -14579,14 +14579,14 @@ form#user-login {
   line-height: 1.14em;
   text-align: left;
   color: white;
-  border: 1px solid 1px;
+  border: 1px solid white;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 @media screen and (min-width: 45em) {
   #user_login_form .form-item .form-control {
@@ -14639,14 +14639,14 @@ form#user-login {
   }
 }
 #user_login_form .form-item .form-textarea-wrapper textarea {
-  border: 1px solid 1px;
+  border: 1px solid white;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 #user_login_form .form-item .form-textarea-wrapper textarea::-moz-placeholder {
   color: #777777;
@@ -14728,7 +14728,7 @@ form#user-login {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #282828;
 }
 #user_login_form .form-item .form-managed-file .image-widget-data .input-group {
   display: block;
@@ -14746,8 +14746,8 @@ form#user-login {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  border: 1px solid 1px;
-  background-color: #fff;
+  border: 1px solid white;
+  background-color: #282828;
 }
 #user_login_form .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
   color: #777777;
@@ -14877,28 +14877,28 @@ form#user-login {
   -webkit-border-radius: 0px;
   border-radius: 0px;
   border: none;
-  background-image: -webkit-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: -o-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: linear-gradient(to bottom, #2698f2 0%, #0a62a8 100%);
+  background-image: -webkit-linear-gradient(top, #BC2929 0%, #681717 100%);
+  background-image: -o-linear-gradient(top, #BC2929 0%, #681717 100%);
+  background-image: linear-gradient(to bottom, #BC2929 0%, #681717 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2698f2', endColorstr='#ff0a62a8', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbc2929', endColorstr='#ff681717', GradientType=0);
 }
 #user_login_form .form-actions-wrapper .form-actions .btn:hover {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: -o-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: linear-gradient(to bottom, #0a62a8 0%, #2698f2 100%);
+  background-image: -webkit-linear-gradient(top, #681717 0%, #BC2929 100%);
+  background-image: -o-linear-gradient(top, #681717 0%, #BC2929 100%);
+  background-image: linear-gradient(to bottom, #681717 0%, #BC2929 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0a62a8', endColorstr='#ff2698f2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff681717', endColorstr='#ffbc2929', GradientType=0);
   text-decoration: none;
 }
 #user_login_form .form-actions-wrapper .login-password {
   display: inline-block;
   margin: 0.5em 0;
-  color: #2698f2;
+  color: #BC2929;
 }
 #user_login_form .form-actions-wrapper .login-password:hover {
-  color: #2698f2;
+  color: #BC2929;
   text-decoration: underline;
 }
 /*
@@ -14926,11 +14926,11 @@ form#user-login {
   -webkit-border-radius: 0px;
   border-radius: 0px;
   border: none;
-  background-image: -webkit-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: -o-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: linear-gradient(to bottom, #2698f2 0%, #0a62a8 100%);
+  background-image: -webkit-linear-gradient(top, #BC2929 0%, #681717 100%);
+  background-image: -o-linear-gradient(top, #BC2929 0%, #681717 100%);
+  background-image: linear-gradient(to bottom, #BC2929 0%, #681717 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2698f2', endColorstr='#ff0a62a8', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbc2929', endColorstr='#ff681717', GradientType=0);
   display: inline-block;
   position: absolute;
   right: 0;
@@ -14939,11 +14939,11 @@ form#user-login {
 }
 #user-create-account .login-register:hover {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: -o-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: linear-gradient(to bottom, #0a62a8 0%, #2698f2 100%);
+  background-image: -webkit-linear-gradient(top, #681717 0%, #BC2929 100%);
+  background-image: -o-linear-gradient(top, #681717 0%, #BC2929 100%);
+  background-image: linear-gradient(to bottom, #681717 0%, #BC2929 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0a62a8', endColorstr='#ff2698f2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff681717', endColorstr='#ffbc2929', GradientType=0);
   text-decoration: none;
 }
 /*
@@ -14996,14 +14996,14 @@ form#user-login {
   line-height: 1.14em;
   text-align: left;
   color: white;
-  border: 1px solid 1px;
+  border: 1px solid white;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 @media screen and (min-width: 45em) {
   #user-register-form .form-item .form-control,
@@ -15067,14 +15067,14 @@ form#user-login {
 }
 #user-register-form .form-item .form-textarea-wrapper textarea,
 #user-pass .form-item .form-textarea-wrapper textarea {
-  border: 1px solid 1px;
+  border: 1px solid white;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 #user-register-form .form-item .form-textarea-wrapper textarea::-moz-placeholder,
 #user-pass .form-item .form-textarea-wrapper textarea::-moz-placeholder {
@@ -15185,7 +15185,7 @@ form#user-login {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #282828;
 }
 #user-register-form .form-item .form-managed-file .image-widget-data .input-group,
 #user-pass .form-item .form-managed-file .image-widget-data .input-group {
@@ -15205,8 +15205,8 @@ form#user-login {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  border: 1px solid 1px;
-  background-color: #fff;
+  border: 1px solid white;
+  background-color: #282828;
 }
 #user-register-form .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder,
 #user-pass .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
@@ -15352,11 +15352,11 @@ form#user-login {
 #user-pass .form-actions .back-to-login .login-account {
   display: inline-block;
   margin: 0.5em 0;
-  color: #2698f2;
+  color: #BC2929;
 }
 #user-register-form .form-actions .back-to-login .login-account:hover,
 #user-pass .form-actions .back-to-login .login-account:hover {
-  color: #2698f2;
+  color: #BC2929;
   text-decoration: underline;
 }
 #user-register-form .form-actions .back-to-login:before,
@@ -15364,7 +15364,7 @@ form#user-login {
   display: inline;
   font-family: "fontawesome";
   content: '\f112';
-  color: #2698f2;
+  color: #BC2929;
   text-align: center;
   padding: 0.3em;
 }
@@ -15375,21 +15375,21 @@ form#user-login {
   -webkit-border-radius: 0px;
   border-radius: 0px;
   border: none;
-  background-image: -webkit-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: -o-linear-gradient(top, #2698f2 0%, #0a62a8 100%);
-  background-image: linear-gradient(to bottom, #2698f2 0%, #0a62a8 100%);
+  background-image: -webkit-linear-gradient(top, #BC2929 0%, #681717 100%);
+  background-image: -o-linear-gradient(top, #BC2929 0%, #681717 100%);
+  background-image: linear-gradient(to bottom, #BC2929 0%, #681717 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2698f2', endColorstr='#ff0a62a8', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbc2929', endColorstr='#ff681717', GradientType=0);
   float: right;
 }
 #user-register-form .form-actions .btn:hover,
 #user-pass .form-actions .btn:hover {
   color: #fff;
-  background-image: -webkit-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: -o-linear-gradient(top, #0a62a8 0%, #2698f2 100%);
-  background-image: linear-gradient(to bottom, #0a62a8 0%, #2698f2 100%);
+  background-image: -webkit-linear-gradient(top, #681717 0%, #BC2929 100%);
+  background-image: -o-linear-gradient(top, #681717 0%, #BC2929 100%);
+  background-image: linear-gradient(to bottom, #681717 0%, #BC2929 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0a62a8', endColorstr='#ff2698f2', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff681717', endColorstr='#ffbc2929', GradientType=0);
   text-decoration: none;
 }
 /*
@@ -16122,7 +16122,7 @@ form#user-profile-form div .form-wrapper .form-item .form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 @media screen and (min-width: 45em) {
   form#user-profile-form div .form-wrapper .form-item .form-control {
@@ -16182,7 +16182,7 @@ form#user-profile-form div .form-wrapper .form-item .form-textarea-wrapper texta
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 form#user-profile-form div .form-wrapper .form-item .form-textarea-wrapper textarea::-moz-placeholder {
   color: #777777;
@@ -16264,7 +16264,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #282828;
 }
 form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-widget-data .input-group {
   display: block;
@@ -16283,7 +16283,7 @@ form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-wi
   -moz-box-shadow: none;
   box-shadow: none;
   border: 1px solid white;
-  background-color: #fff;
+  background-color: #282828;
 }
 form#user-profile-form div .form-wrapper .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {
   color: #777777;
@@ -20311,7 +20311,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 @media screen and (min-width: 45em) {
   header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-control,
@@ -20382,7 +20382,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #fff;
+  background-color: #282828;
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-moz-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-textarea-wrapper textarea::-moz-placeholder {
@@ -20493,7 +20493,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #282828;
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group {
@@ -20514,7 +20514,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   -moz-box-shadow: none;
   box-shadow: none;
   border: 1px solid white;
-  background-color: #fff;
+  background-color: #282828;
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item .form-managed-file .image-widget-data .input-group input::-moz-placeholder {

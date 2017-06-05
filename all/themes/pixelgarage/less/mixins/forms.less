@@ -8,7 +8,7 @@
 
 
 // form fieldsets
-@form-fieldset-bg-color: #fff;
+@form-fieldset-bg-color: @pxl-color-body-bg;
 
 
 // Mixins
@@ -83,7 +83,7 @@
 
     .form-control {
       margin: 0;
-      height: @form-control-height;
+      height: @control-height;
       .form-text();
       border: @border-thickness solid @border-color;
       #pxl-mixins.border-radius(@border-radius);

@@ -12,8 +12,8 @@
 /**
  * Define run types of VODEntry
  */
-define('SWISS1_RUNTYPE_PRIMARY', 'PRIMARY');
-define('SWISS1_RUNTYPE_RERUN', 'RERUN');
+define('SWISS1_RUNTYPE_PRIMARY', 'primary');
+define('SWISS1_RUNTYPE_RERUN', 'rerun');
 
 
 /* -----------------------------------------------------------------
@@ -58,6 +58,7 @@ function swiss1_media_import () {
     '@files' => 0,
     '@created' => 0,
     '@updated' => 0,
+    '@deleted' => 0,
     '@failed' => 0,
   );
 
@@ -89,7 +90,8 @@ function swiss1_media_import () {
 
   // display feedback about import, if any
   if ($import_counter) {
-    $importMessage = t('Swiss1 TV media import - @files files imported: @created videos created, @updated videos updated, @failed videos failed.');
+    $importMessage = t('Swiss1 TV media import - @files files imported: ' .
+      '@created videos created, @updated videos updated, @deleted videos deleted, @failed videos failed.');
     if($import_counter['@failed']) {
       drupal_set_message(t($importMessage, $import_counter), 'warning');
       watchdog('Swiss1 Importer', $importMessage, $import_counter, WATCHDOG_WARNING);
@@ -109,6 +111,14 @@ function swiss1_media_import () {
 /**
  * Imports an XML file into the CMS database.
  *
+ * The following XML structures are available:
+ *  - Root node <OnlineCMSSchedule>, containing all scheduled EPG entries of one day.
+ *    This file is always updated as a whole, e.g. all related VODEntries are
+ *    sent after this file to.
+ *
+ * - Root node <VODEntries>, containing only one VODEntry. The VODEntry can be
+ *   part of an EPG day or can be a standalone entry (no scheduled broadcast).
+ *
  * @param string $filepath
  *    The filepath of the xml file to be imported.
  * @param array  $import_counter
@@ -123,12 +133,14 @@ function _import_xml_file($filepath, &$import_counter) {
 
   switch($xml->getName()) {
     case 'OnlineCMSSchedule':
-      // file contains EPG entries
-      $xpath = '//Entry';
+      // file contains EPG entries of one day
+      $xpath = '//Entry[/AiringInformation/RunType = "PRIMARY"] | //Entry[/AiringInformation/RunType = "RERUN"]';
+      $epg_day = true;
       break;
     case 'VODEntries':
       // file contains VOD entries
       $xpath = '//VODEntry';
+      $epg_day = false;
       break;
     default:
       // no valid xml file
@@ -137,14 +149,20 @@ function _import_xml_file($filepath, &$import_counter) {
   }
 
   //
-  // TODO: Delete all entries of a day schedule, if schedule already exists (day id?)
+  // If an EPG day file is imported, check if the day already exists.
+  // If yes, delete all VODEntries of this day first
+  if ($epg_day) {
+    $day_string = $xml->xpath('/Entry[1]/AiringInformation/ScheduledStartDateTime');
+    $epg_day = explode(' ', $day_string)[0];  // set date of importing day
+    _delete_existing_epg_day($epg_day, $import_counter);
+  }
 
   //
   // select the video entries in the file and import it
   $message = '';
   $xml_entries = $xml->xpath($xpath);
   foreach ($xml_entries as $xml_entry) {
-    $success = _parse_entry($xml_entry, $import_counter);
+    $success = _parse_entry($xml_entry, $epg_day, $import_counter);
     if (is_string($success)) {
       $message .= $success . "\n";
     }
@@ -162,58 +180,86 @@ function _import_xml_file($filepath, &$import_counter) {
 
 
 /**
- * Parses an XML entry and create or update a node of type VideoStream.
+ * Check for already imported videostream nodes that belong to the given EPG day
+ * and delete all found nodes of this day.
+ *
+ * @param string $epg_day
+ *    The day to be checked for deletion
+ * @param array  $import_counter
+ *    An array of import result counters.
+ */
+function _delete_existing_epg_day($epg_day, &$import_counter) {
+  //
+  // find all videostream nodes belonging to the given epg day
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->fieldCondition('field_belongs_to_day', 'value', $epg_day);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $node_ids = array_keys($result['node']);
+    node_delete_multiple($node_ids);
+    $import_counter['@deleted'] += count($node_ids);
+  }
+}
+
+
+/**
+ * Parses an XML VODEntry and creates or updates a node of type VideoStream.
+ *
+ * The XML VODEntry import has the following prerequisites:
+ * 1) Each PRIMARY VODEntry has a unique <AssetReconciliationId>
+ * 2) A RERUN VODEntry is linked to its PRIMARY Entry via <AssetReconciliationId>
+ * 3) A RERUN VODEntry gets its validation period and Properties from the PRIMARY Entry
+ * 4) A RERUN has always the same validity end time than its PRIMARY entry.
+ * 5) A RERUN can be scheduled on a later day than its PRIMARY entry but inside
+ *    the catchup period.
  *
  * @param object $xml_entry
  *    An object of class SimpleXMLElement containing the data of a VODEntry.
  *
+ * @param string $epg_day
+ *    The date of the importing day (EPG)
+ *
  * @param array  $import_counter
  *    An array holding the result of the xml import of VODEntries.
  *
- * @return bool|string   Returns true, if import of entry was successful, or an err_msg in case of missing data.
+ * @return bool|string Returns true, if import of entry was successful, or an err_msg in case of missing data.
  */
-function _parse_entry($xml_entry, &$import_counter) {
+function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   //
   // convert xml entry into associative array
-  $updated = false;
   $json = json_encode($xml_entry);
   $arr_entry = json_decode($json, true);
-
-  //
-  // import/update xml entry into existing or new node
-  // only scheduled VODEntries can be updated, single VODEntries are always created (new)
-  $node = false;
-  $schedule_id = !empty($arr_entry['ScheduleReference']['AssetReconciliationId']) ? $arr_entry['ScheduleReference']['AssetReconciliationId'] : false;
-  if ($schedule_id) {
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'videostream')
-      ->fieldCondition('field_schedule_id', 'value', $schedule_id)
-      ->range(0, 1);
-    $result = $query->execute();
-    if (isset($result['node'])) {
-      // Update existing
-      $node = node_load(key($result['node']));
-      $node->status = 1;
-      $updated = true;
-    }
-  }
-
-  // create new node, if it not already exists
-  if (!$node) {
-    $node = new stdClass();
-    $node->type = 'videostream';
-    $node->language = LANGUAGE_NONE;
-    $node->uid = 1;
-    $node->status = 1;
-    node_object_prepare($node);
-  }
 
   //
   // update all VideoStream fields
   //
   // schedule reference
+  $schedule_id = !empty($arr_entry['ScheduleReference']['AssetReconciliationId']) ?
+    $arr_entry['ScheduleReference']['AssetReconciliationId'] : false;
+
+  // get run type
+  $run_type = !empty($arr_entry['AiringInformation']['RunType']) ?
+    strtolower($arr_entry['AiringInformation']['RunType']) : false;
+
+  //
+  // Create or get existing videostream node
+  // Only scheduled VODEntries are updatable, standalone VODEntries are always created.
+  //
+  // REMARK: Leave the update possibility even so in general all scheduled VODEntries
+  // are replaced (see EPG day deletion)
+  $node = _get_videostream_instance($schedule_id, $run_type, $import_counter);
+
+  // set schedule id and run type
   $node->field_schedule_id[LANGUAGE_NONE][0]['value'] = $schedule_id ? $schedule_id : '';
+  $node->field_run_type[LANGUAGE_NONE][0]['value'] = $run_type ? $run_type : '';
+
+  //
+  // set EPG day if available
+  $node->field_belongs_to_day[LANGUAGE_NONE][0]['value'] = $epg_day ? $epg_day : '';
+
 
   // Airing information
   // Only for scheduled entries in the future
@@ -267,9 +313,8 @@ function _parse_entry($xml_entry, &$import_counter) {
 
     // Set validity period
     // REMARK: VODEntries with a validity end time in the past will be deleted during the next cleanup run
+    //
     // get catchup period
-    $catchup_period = !empty($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : 'now';
-    $run_type = !empty($airing_info['RunType']) ? strtoupper($airing_info['RunType']) : 'UNDEFINED';
     $playable_on_broadcast_start = variable_get('swiss1_video_playable_start') == 'broadcast_start';
 
     // validity start date
@@ -287,23 +332,24 @@ function _parse_entry($xml_entry, &$import_counter) {
     // validity end date
     switch ($run_type) {
       case SWISS1_RUNTYPE_PRIMARY:
-        // set expiration date from catchup period
+        // set expiration date by catchup period
+        $catchup_period = !empty($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : '+7 days';
         $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
         $exp_timestamp = ($eol_timestamp && $eol_timestamp < $exp_timestamp) ? $eol_timestamp : $exp_timestamp;
         $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
+        $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
         break;
       case SWISS1_RUNTYPE_RERUN:
-        // get catchup period from PRIMARY schedule
-        //$primary_schedule_id = $arr_entry['PrimaryScheduleId']); // TODO: get primary schedule id from VODEntry
-        //$exp_date = _get_validity_end_date($primary_schedule_id);
-        //break;
+        // get missing fields in RERUN from its PRIMARY entry
+        _update_rerun_with_primary_fields($schedule_id, $node);
+        break;
       default:
-        // set catchup period to 25 years, if no run type is given
+        // no run type is given: set catchup period to end of license date (or 25 years, if eol not exists)
         $exp_timestamp = $eol_timestamp ? $eol_timestamp : strtotime('+25 years', $validity_start_timestamp);
         $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
+        $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
         break;
     }
-    $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
 
     // get duration and feature flag
     $node->field_duration[LANGUAGE_NONE][0]['value'] = !empty($airing_info['Duration']) ? $airing_info['Duration'] : '';
@@ -393,13 +439,6 @@ function _parse_entry($xml_entry, &$import_counter) {
 
   //
   // save/update node
-  if ($updated) {
-    $import_counter['@updated']++;
-  }
-  else {
-    $import_counter['@created']++;
-  }
-
   $node = node_submit($node);
   node_save($node);
   return true;
@@ -409,25 +448,72 @@ function _parse_entry($xml_entry, &$import_counter) {
 /* -----------------------------------------------------------------
  *  Helper functions
  * ----------------------------------------------------------------- */
+/**
+ * Create a new videostream node or load an existing node.
+ *
+ * Returns the node (newly created or existing one)
+ */
+function _get_videostream_instance($schedule_id, $run_type, &$import_counter) {
+  $node = false;
+
+  if ($schedule_id && $run_type) {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'videostream')
+      ->fieldCondition('field_schedule_id', 'value', $schedule_id)
+      ->fieldCondition('field_run_type', 'value', $run_type)
+      ->range(0, 1);
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      // Update existing
+      $node = node_load(key($result['node']));
+      $node->status = 1;
+      $import_counter['@updated']++;
+    }
+  }
+
+  // create new node, if it not already exists
+  if (!$node) {
+    $node = new stdClass();
+    $node->type = 'videostream';
+    $node->language = LANGUAGE_NONE;
+    $node->uid = 1;
+    $node->status = 1;
+    node_object_prepare($node);
+    $import_counter['@created']++;
+  }
+
+  return $node;
+}
 
 /**
- * Get the validity period end date of the node with
- * the given schedule id.
+ * Updates the RERUN node with fields of its PRIMARY node, e.g. Properties,
+ * Catchup period etc.
  *
- * @return bool
+ * The PRIMARY node and its corresponding RERUN nodes have the same schedule id.
+ * Its guaranteed that a PRIMARY node is always imported before its RERUN nodes.
+ *
  */
-function _get_validity_end_date($primary_schedule_id) {
+function _update_rerun_with_primary_fields($schedule_id, &$rerun_node) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
-    ->fieldCondition('field_schedule_id', 'value', $primary_schedule_id)
+    ->fieldCondition('field_schedule_id', 'value', $schedule_id)
+    ->fieldCondition('field_run_type', 'value', 'primary')
     ->range(0, 1);
   $result = $query->execute();
   if (isset($result['node'])) {
-    // Update existing
-    $node = node_load(key($result['node']));
-    return $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
+    // Update rerun node with fields of primary node
+    $primary_node = node_load(key($result['node']));
+    $rerun_node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $primary_node->field_validity_period[LANGUAGE_NONE][0]['value2'];
+    $rerun_node->field_media_id[LANGUAGE_NONE][0]['value'] = $primary_node->field_media_id[LANGUAGE_NONE][0]['value'];
+    $rerun_node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $primary_node->field_video_path[LANGUAGE_NONE][0]['video_url'];
+    $rerun_node->field_thumb_path[LANGUAGE_NONE][0] = $primary_node->field_thumb_path[LANGUAGE_NONE][0];
+    $rerun_node->field_poster[LANGUAGE_NONE][0] = $primary_node->field_poster[LANGUAGE_NONE][0];
+    return true;
   }
+
   return false;
 }
 

@@ -64,7 +64,9 @@ function pixelgarage_proximity_render_item_alter($container_index, $param, &$ren
 /* =============================================================================
  *    Alteration of program views exposed filter
  * ========================================================================== */
-
+/**
+ * Alters the exposed filter form of view 'program'.
+ */
 function pixelgarage_form_alter(&$form, &$form_state, $form_id) {
   //
   // manage custom filter of program view
@@ -81,13 +83,18 @@ function pixelgarage_form_alter(&$form, &$form_state, $form_id) {
 
     //
     //execute manage_custom_filters submit function in first step on $form['#submit'] array
-    array_unshift($form['#submit'], 'manage_custom_filters');
+    array_unshift($form['#submit'], 'submit_manage_custom_filters');
   }
 }
 
-function manage_custom_filters(&$form, &$form_state) {
-  $now = strtotime('today');
-  $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $now);
+/**
+ * Specific submit function for the exposed filter form.
+ */
+function submit_manage_custom_filters(&$form, &$form_state) {
+  //
+  // define start time of a day as 02:00
+  $today = strtotime('today 02:00');
+  $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $today);
   $end_timestamp = strtotime('+1 day', $start_timestamp);
   $selected_start_date = date('Y-m-d H:i:s', $start_timestamp);
   $selected_end_date = date('Y-m-d H:i:s', $end_timestamp);
@@ -96,7 +103,7 @@ function manage_custom_filters(&$form, &$form_state) {
   $form_state['values']['field_broadcast_date_value']['min'] = $selected_start_date;
   $form_state['values']['field_broadcast_date_value']['max'] = $selected_end_date;
 
-  // calc prev / next day and store them in form (hidden)
+  // ONLY for display purpose: calc prev / next day and store them in form (hidden)
   $prev_day = strtotime('-1 day', $start_timestamp);
   $prev_date = date('D, d.m.Y', $prev_day);
   $prev_date = str_replace(array('Mon','Tue', 'Wed', 'Thu','Fri','Sat','Sun'), array('Mo','Di','Mi','Do','Fr','Sa','So'), $prev_date);
@@ -115,15 +122,17 @@ function manage_custom_filters(&$form, &$form_state) {
 
 }
 
-
+/**
+ * Returns an associative array containing all selectable days in program view.
+ */
 function _get_date_select_options() {
   $options = array();
-  $now = strtotime('today');
+  $today = strtotime('today');
 
   // create select options
   for ($i = -7; $i <= 10; $i++) {
     $rel_time = $i . ' days';
-    $timestamp = strtotime($rel_time, $now);
+    $timestamp = strtotime($rel_time, $today);
     switch ($i) {
       case -1:
         $options[$rel_time] = date('\G\e\s\t\e\r\n\,   d.m.Y', $timestamp);

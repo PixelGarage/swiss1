@@ -19,6 +19,7 @@
   #pxl-mixins.center-vertically(absolute);
   right: @grid-gutter-width-const/2;
   border: none;
+  #pxl-mixins.border-radius(0);
   background: none;
 
   .icon-bar {
@@ -93,6 +94,10 @@ header#navbar {
     position: relative;
     padding: @navbar-header-padding-tb @grid-gutter-width-const/2;
     max-width: @container-inner-max-width;
+
+    @media @wide {
+      max-width: @container-inner-max-width-lg;
+    }
 
     .navbar-header {
       // header (branding)
@@ -205,7 +210,11 @@ header#navbar {
 
           li {
             display: block;
-            padding: 0;
+            padding: 15px;
+
+            @media @tablet {
+              padding: 5px;
+            }
 
             a {
               padding: 0;

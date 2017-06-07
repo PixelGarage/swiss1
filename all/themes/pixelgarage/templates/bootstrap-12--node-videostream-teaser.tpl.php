@@ -14,7 +14,10 @@
     <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
 
     <div class="video-container">
-      <img class="video-thumb" src="<?php print $image_url; ?>">
+      <div class="video-thumb-container"><img class="video-thumb" src="<?php print $image_url; ?>"></div>
+      <?php if ($video_play_indicator): ?>
+        <img class="video-play-button" src="<?php print $video_play_indicator; ?>">
+      <?php endif; ?>
     </div>
     <div class="video-header">
       <div class="title-line-1"><?php print render($content['title']); ?></div>

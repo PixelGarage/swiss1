@@ -83,24 +83,30 @@
    */
   Drupal.behaviors.hoverImageSwap = {
     attach: function () {
-      $('.pe-container > .pe-item').hover(
+      var $item = $('.pe-container > .pe-item');
+
+      $item.hover(
         function () {
           // mouse enter
-          var $thumb = $(this).find('.node-videostream .video-thumb'),
-              thumb_uri = $thumb.attr('src');
+          var $thumb = $(this).find('.node-videostream .video-thumb');
 
-          $thumb.attr('src', thumb_uri.replace('files/styles/desaturate_25/public/images', 'files/images'));
+          if ($thumb.length > 0) {
+            var thumb_uri = $thumb.attr('src');
+            $thumb.attr('src', thumb_uri.replace('files/styles/desaturate_25/public/images', 'files/images'));
+          }
         },
         function () {
           // mouse leave
-          var $thumb = $(this).find('.node-videostream .video-thumb'),
-            thumb_uri = $thumb.attr('src');
+          var $thumb = $(this).find('.node-videostream .video-thumb');
 
-          $thumb.attr('src', thumb_uri.replace('files/images', 'files/styles/desaturate_25/public/images'));
+          if ($thumb.length > 0) {
+            var thumb_uri = $thumb.attr('src');
+            $thumb.attr('src', thumb_uri.replace('files/images', 'files/styles/desaturate_25/public/images'));
+          }
         }
       );
     }
-  }
+  };
 
   /**
    * Handles the next / previous buttons in exposed form of program view.

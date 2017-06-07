@@ -35,9 +35,13 @@
         padding: 0;
 
         @media @normal {
-          margin-top: -(@pxl-group-header-padding-tb + @resp-teaser-title-size-max);
+          //margin-top: -(@pxl-group-header-padding-tb + @resp-teaser-title-size-max);
           padding: 0 @grid-gutter-width-const/2;
           max-width: @container-inner-max-width;
+        }
+
+        @media @wide {
+          max-width: @container-inner-max-width-lg;
         }
 
         // see view-video-masonry

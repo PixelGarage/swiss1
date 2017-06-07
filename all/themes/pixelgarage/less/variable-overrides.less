@@ -89,25 +89,25 @@
 
 //
 // responsive font sizes
-@resp-title-size-max:     24px;
+@resp-title-size-max:     28px;
 @resp-title-size-med:     24px;
 @resp-title-size-min:     20px;
 
-@resp-subtitle-size-max:  16px;
+@resp-subtitle-size-max:  18px;
 @resp-subtitle-size-med:  16px;
 @resp-subtitle-size-min:  15px;
 
-@resp-font-size-max:      16px;
+@resp-font-size-max:      18px;
 @resp-font-size-med:      16px;
 @resp-font-size-min:      15px;
 
-@resp-subtext-size-max:      14px;
+@resp-subtext-size-max:      16px;
 @resp-subtext-size-med:      14px;
-@resp-subtext-size-min:      12px;
+@resp-subtext-size-min:      14px;
 
-@resp-teaser-title-size-max:     16px;
+@resp-teaser-title-size-max:     18px;
 @resp-teaser-title-size-med:     16px;
-@resp-teaser-title-size-min:     15px;
+@resp-teaser-title-size-min:     16px;
 
 
 @resp-button-size-max:    28px;
@@ -181,7 +181,7 @@
 @wide:    ~"screen and (min-width: @{screen-lg-min})";
 
 // special break for menu items
-@special-break: ~"screen and (min-width: 640px)";
+@special-break: ~"screen and (min-width: 540px)";
 
 // Media queries stacked
 @tablet-only:  ~"screen and (min-width: @{screen-sm-min}) and (max-width: @{screen-sm-max})";
@@ -220,11 +220,12 @@
 @container-md:                 @container-desktop;
 
 // Large screen / wide desktop
-@container-large-desktop:      (950px + @grid-gutter-width-const);
+@container-large-desktop:      (1180px + @grid-gutter-width-const);
 //** For `@screen-lg-min` and up.
 @container-lg:                 @container-large-desktop;
 
 @container-inner-max-width:     (736px + @grid-gutter-width-const);
+@container-inner-max-width-lg:  (940px + @grid-gutter-width-const);
 
 //== Components
 //

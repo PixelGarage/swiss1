@@ -264,7 +264,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     $vars['season_episode'] = $series;
   }
   if (!empty($node->field_season) && $season = $node->field_season[LANGUAGE_NONE][0]['value']) {
-    $vars['season_episode'] .= (!empty($vars['season_episode']) ? '[' . $season . ']' : t('Unbekannte Serie[@season]',array('@season' => $season)));
+    $vars['season_episode'] .= (!empty($vars['season_episode']) ? ' - Saison ' . $season : t('Unbekannte Serie - Saison @season',array('@season' => $season)));
   }
   if (!empty($node->field_episode) && $episode = $node->field_episode[LANGUAGE_NONE][0]['value']) {
     $vars['season_episode'] .= (!empty($vars['season_episode']) ? ' - Episode ' . $episode : 'Episode ' . $episode);

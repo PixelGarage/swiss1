@@ -162,15 +162,32 @@
     >div.col-sm-8,
     >div.col-sm-4 {
       >.video-container {
-        overflow: hidden;
-        height: 0;
-        padding-bottom: 56.25%; // 16:9
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        margin: 0;
+        width: 100%;
 
-        img.video-poster {
+        .video-poster-container {
+          overflow: hidden;
+          height: 0;
+          padding-bottom: 56.25%;
+
+          img.video-poster {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        img.video-play-button {
           display: block;
+          #pxl-mixins.center-xy(absolute);
           margin: 0;
           padding: 0;
-          width: 100%;
+          width: 30%;
           height: auto;
         }
       }
@@ -243,29 +260,52 @@
   >.row {
     >div.col-sm-12 {
       >.video-container {
-        overflow: hidden;
-        height: 0;
-        padding-bottom: 56.25%; // 16:9
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        margin: 0;
+        width: 100%;
 
-        img.video-thumb {
-          display: block;
+        .video-thumb-container {
+          overflow: hidden;
+          height: 0;
+          padding-bottom: 56.25%;
+
+          img.video-thumb {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        img.video-play-button {
+          display: none;
+          #pxl-mixins.center-xy(absolute);
           margin: 0;
           padding: 0;
-          width: 100%;
+          width: 30%;
           height: auto;
+        }
+
+        .mobile-device &, &:hover {
+          img.video-play-button {
+            display: block;
+          }
         }
       }
 
       >.video-header {
         position: relative;
         z-index: 10;
-        margin: -@video-header-height-teaser 0 0;
+        margin: -(@video-header-height-teaser - 3px) 0 0;
         padding: 0;
         width: 100%;
-        height: @video-header-height-teaser;
+        height: @video-header-height-teaser+1px;
 
-        @media @tablet {
-          margin: -(@video-header-height-teaser+1px) 0 0;
+        @media @wide {
+          margin: -@video-header-height-teaser 0 0;
         }
 
         .title-line-1 {
@@ -278,7 +318,7 @@
               white-space: nowrap;
               text-overflow: ellipsis;
               margin: 0;
-              padding: 6px 12px 0 0;
+              padding: 6px 12px 2px 0;
               max-width: 100%;
               #pxl-mixins.teaser-title();
               line-height: 1;
@@ -291,11 +331,16 @@
 
       >.video-body {
         position: relative;
-        padding: 5px 0;
+        padding: 0;
         width: 100%;
         #pxl-mixins.subtext();
 
         >.video-duration-category {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 50%;
+          text-overflow: ellipsis;
           color: @pxl-color-white;
 
           &:before {
@@ -304,8 +349,11 @@
             padding-right: 5px;
           }
         }
+
         >.video-time-info {
+          display: inline-block;
           position: absolute;
+          top: 2px;
           right: 0;
 
           .day-highlight,
@@ -320,6 +368,15 @@
             padding: 1px 4px 0;
           }
         }
+
+        @media @wide {
+          padding: 5px 0;
+
+          >.video-time-info {
+            top: 7px;
+          }
+        }
+
       }
     }
   }
@@ -355,6 +412,10 @@
       margin-top: -(@pxl-group-header-padding-tb + @resp-teaser-title-size-max);
       padding: 0 @grid-gutter-width-const/2;
       max-width: @container-inner-max-width;
+    }
+
+    @media @wide {
+      max-width: @container-inner-max-width-lg;
     }
 
     >div.col-sm-4 {
@@ -394,14 +455,15 @@
       >.video-header {
         position: relative;
         z-index: 10;
-        margin: -@video-header-height-teaser 0 0;
+        margin: -(@video-header-height-teaser - 3px) 0 0;
         padding: 0;
         width: 100%;
-        height: @video-header-height-teaser;
+        height: @video-header-height-teaser+1px;
 
-        @media @tablet {
-          margin: -(@video-header-height-teaser+1px) 0 0;
+        @media @wide {
+          margin: -@video-header-height-teaser 0 0;
         }
+
 
         .title-line-1 {
           width: 90%;
@@ -413,7 +475,7 @@
               white-space: nowrap;
               text-overflow: ellipsis;
               margin: 0;
-              padding: 6px 12px 0 0;
+              padding: 6px 12px 2px 0;
               max-width: 100%;
               #pxl-mixins.teaser-title();
               line-height: 1;
@@ -426,11 +488,16 @@
 
       >.video-info {
         position: relative;
-        padding: 5px 0;
+        padding: 0;
         width: 100%;
         #pxl-mixins.subtext();
 
         >.video-duration-category {
+          display: inline-block;
+          overflow: hidden;
+          white-space: nowrap;
+          max-width: 50%;
+          text-overflow: ellipsis;
           color: @pxl-color-white;
 
           &:before {
@@ -439,8 +506,10 @@
             padding-right: 5px;
           }
         }
+
         >.video-time-info {
           position: absolute;
+          top: 2px;
           right: 0;
 
           .day-highlight,
@@ -455,6 +524,15 @@
             padding: 1px 4px 0;
           }
         }
+
+        @media @wide {
+          padding: 5px 0;
+
+          >.video-time-info {
+            top: 7px;
+          }
+        }
+
       }
     }
 
@@ -515,6 +593,10 @@
       max-width: @container-inner-max-width;
     }
 
+    @media @wide {
+      max-width: @container-inner-max-width-lg;
+    }
+
     >div.col-sm-4 {
       &.col-first {
         padding-left: 0;
@@ -557,14 +639,15 @@
       >.video-header {
         position: relative;
         z-index: 10;
-        margin: -@video-header-height-teaser 0 0;
+        margin: -(@video-header-height-teaser - 3px) 0 0;
         padding: 0;
         width: 100%;
-        height: @video-header-height-teaser;
+        height: @video-header-height-teaser+1px;
 
-        @media @tablet {
-          margin: -(@video-header-height-teaser+1px) 0 0;
+        @media @wide {
+          margin: -@video-header-height-teaser 0 0;
         }
+
 
         .title-line-1 {
           width: 90%;
@@ -576,7 +659,7 @@
               white-space: nowrap;
               text-overflow: ellipsis;
               margin: 0;
-              padding: 6px 12px 0 0;
+              padding: 6px 12px 2px 0;
               max-width: 100%;
               #pxl-mixins.teaser-title();
               line-height: 1;

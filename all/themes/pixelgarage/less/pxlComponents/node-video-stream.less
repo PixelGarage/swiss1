@@ -94,37 +94,49 @@
         }
 
         .title-line-2 {
-          display: flex;
-          justify-content: space-between;
+          display: block;
           margin: 0;
           padding: 10px 0;
 
-          >.video-category {
+          >.video-duration-category {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 50%;
+            text-overflow: ellipsis;
 
-          }
-          >.video-time-info {
-
-          }
-          >.video-duration {
             &:before {
               content: '\f017';
               font-family: @pxl-icon-font;
               padding-right: 3px;
             }
           }
+
+          >.video-time-info {
+
+          }
+
+          @media @narrow {
+            display: flex;
+            justify-content: space-between;
+          }
         }
 
         .title-line-3 {
-          display: flex;
-          justify-content: space-between;
+          display: block;
           margin: 0;
           padding: 0 0 30px;
 
           >.video-season-episode {
-
+            max-width: 50%;
           }
           >.video-language-age {
 
+          }
+
+          @media @narrow {
+            display: flex;
+            justify-content: space-between;
           }
         }
 

@@ -107,7 +107,7 @@
             display: block;
             position: absolute;
             top: 0;
-            right: 10px;
+            right: (@grid-gutter-width-const / 2);
             opacity: 1.0;
             text-shadow: none;
             z-index: 1; // has to be above body
@@ -128,7 +128,7 @@
 
         .modal-body {
           // content styled separately
-          padding: 20px (@grid-gutter-width / 2) 30px;
+          padding: 20px (@grid-gutter-width-const / 2) 30px;
 
           @media @narrow {
             padding-bottom: 50px;

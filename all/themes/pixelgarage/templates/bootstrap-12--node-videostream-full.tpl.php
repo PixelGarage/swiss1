@@ -25,12 +25,12 @@
     </div>
     <div class="video-body">
       <div class="title-line-2">
-        <span class="video-duration-category"><?php print $duration_category; ?></span>
-        <span class="video-time-info"><?php print $time_info; ?></span>
+        <div class="video-duration-category"><?php print $duration_category; ?></div>
+        <div class="video-time-info"><?php print $time_info; ?></div>
       </div>
       <div class="title-line-3">
-        <span class="video-season-episode"><?php print $season_episode; ?></span>
-        <span class="video-language-age"><?php print $language_age; ?></span>
+        <div class="video-season-episode"><?php print $season_episode; ?></div>
+        <div class="video-language-age"><?php print $language_age; ?></div>
       </div>
       <?php print render($content['body']); ?>
       <div class="social-buttons">

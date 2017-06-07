@@ -11999,23 +11999,47 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-2,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-2 {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   margin: 0;
   padding: 10px 0;
 }
-.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-2 > .video-duration:before,
-.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-2 > .video-duration:before {
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-2 > .video-duration-category,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-2 > .video-duration-category {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 50%;
+  text-overflow: ellipsis;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-2 > .video-duration-category:before,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-2 > .video-duration-category:before {
   content: '\f017';
   font-family: 'fontawesome';
   padding-right: 3px;
 }
+@media screen and (min-width: 30em) {
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-2,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-2 {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-3,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-3 {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   margin: 0;
   padding: 0 0 30px;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-3 > .video-season-episode,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-3 > .video-season-episode {
+  max-width: 50%;
+}
+@media screen and (min-width: 30em) {
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .title-line-3,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .title-line-3 {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body {
@@ -17332,7 +17356,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: block;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
   opacity: 1.0;
   text-shadow: none;
   z-index: 1;
@@ -17348,7 +17372,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: none;
 }
 .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
-  padding: 20px 1% 30px;
+  padding: 20px 15px 30px;
 }
 @media screen and (min-width: 30em) {
   .view.view-proximity .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
@@ -17395,11 +17419,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: inline-block;
   margin: 20px 0;
   text-align: center;
+  font-family: 18px;
 }
 .view.view-proximity ul.pagination li a,
 .view.view-proximity ul.pagination li span {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 18px;
+  font-size: white;
   text-decoration: none;
   color: white;
   border: none;
@@ -17628,7 +17652,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: block;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
   opacity: 1.0;
   text-shadow: none;
   z-index: 1;
@@ -17644,7 +17668,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: none;
 }
 .view.view-featured .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
-  padding: 20px 1% 30px;
+  padding: 20px 15px 30px;
 }
 @media screen and (min-width: 30em) {
   .view.view-featured .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
@@ -17917,7 +17941,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: block;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
   opacity: 1.0;
   text-shadow: none;
   z-index: 1;
@@ -17933,7 +17957,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: none;
 }
 .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
-  padding: 20px 1% 30px;
+  padding: 20px 15px 30px;
 }
 @media screen and (min-width: 30em) {
   .view.view-video-masonry .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
@@ -18349,7 +18373,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: block;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
   opacity: 1.0;
   text-shadow: none;
   z-index: 1;
@@ -18365,7 +18389,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: none;
 }
 .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
-  padding: 20px 1% 30px;
+  padding: 20px 15px 30px;
 }
 @media screen and (min-width: 30em) {
   .view.view-program .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
@@ -18940,7 +18964,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: block;
   position: absolute;
   top: 0;
-  right: 10px;
+  right: 15px;
   opacity: 1.0;
   text-shadow: none;
   z-index: 1;
@@ -18956,7 +18980,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: none;
 }
 .view.view-search-videos .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
-  padding: 20px 1% 30px;
+  padding: 20px 15px 30px;
 }
 @media screen and (min-width: 30em) {
   .view.view-search-videos .view-content > .pe-container .modal .modal-dialog .modal-content .modal-body {
@@ -19362,11 +19386,11 @@ form#user-profile-form div .form-actions .form-submit .icon {
   display: inline-block;
   margin: 20px 0;
   text-align: center;
+  font-family: 'CiutadellaSemiBold';
 }
 .view.view-search-videos ul.pagination li a,
 .view.view-search-videos ul.pagination li span {
-  font-family: 'CiutadellaRegular', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   text-decoration: none;
   color: white;
   border: none;

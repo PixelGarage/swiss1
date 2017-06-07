@@ -79,15 +79,15 @@
   //
   // Views pager
   //
-  .view-pager(@fsize: @font-size-base; @color: @text-color; @hcolor: @text-color; @border: none) {
+  .view-pager(@font-family: @pxl-text-font; @fsize: @font-size-base; @color: @text-color; @hcolor: @text-color; @border: none) {
     ul.pagination {
       display: inline-block;
       margin: 20px 0;
       text-align: center;
+      font-family: @font-family;
 
       li {
         a, span {
-          font-family: @pxl-text-font;
           font-size: @fsize;
           text-decoration: none;
           color: @color;

@@ -56,7 +56,7 @@ function pixelgarage_proximity_render_item_alter($container_index, $param, &$ren
       // take an alternate view mode set by the ds switch
       $view_mode = $node->ds_switch;
     }
-    $render_item = node_view($node, $view_mode);
+    $render_item = node_view($node, 'full');
   }
 }
 

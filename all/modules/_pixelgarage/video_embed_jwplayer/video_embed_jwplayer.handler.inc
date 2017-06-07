@@ -329,12 +329,11 @@ function video_embed_jwplayer_get_media_id($url) {
     $media_id = substr($media_id, 0, $pos);
   }
 
-  return $media_id ? check_plain($media_id) : false;
+  return $media_id ? $media_id : false;
 }
 
 /**
- * Generates a JWPlayer media URL. If $secret is set with the value from the
- * JWPlatform API Credentials, then the URL is signed.
+ * Generates a JWPlayer media URL. If $do_sign is set to true, then the URL is signed.
  *
  * @param string $media_id
  *    The media id of the content for which the URL has to be created.

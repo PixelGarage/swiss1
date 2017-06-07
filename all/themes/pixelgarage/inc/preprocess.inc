@@ -258,13 +258,16 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     $vars['language_age'] = $lang;
   }
   if (!empty($node->field_age_restriction) && $restr = $node->field_age_restriction[LANGUAGE_NONE][0]['value']) {
-    $vars['language_age'] .= ($vars['language_age'] ? ' | ' . $restr : $restr);
+    $vars['language_age'] .= (!empty($vars['language_age']) ? ' | ' . $restr : $restr);
+  }
+  if (!empty($node->field_series) && $series = $node->field_series[LANGUAGE_NONE][0]['value']) {
+    $vars['season_episode'] = $series;
   }
   if (!empty($node->field_season) && $season = $node->field_season[LANGUAGE_NONE][0]['value']) {
-    $vars['season_episode'] = $season;
+    $vars['season_episode'] .= (!empty($vars['season_episode']) ? '[' . $season . ']' : t('Unbekannte Serie[@season]',array('@season' => $season)));
   }
   if (!empty($node->field_episode) && $episode = $node->field_episode[LANGUAGE_NONE][0]['value']) {
-    $vars['season_episode'] .= ($vars['season_episode'] ? ' - Episode ' . $episode : 'Episode ' . $episode);
+    $vars['season_episode'] .= (!empty($vars['season_episode']) ? ' - Episode ' . $episode : 'Episode ' . $episode);
   }
 
 }

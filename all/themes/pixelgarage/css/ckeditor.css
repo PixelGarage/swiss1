@@ -2403,7 +2403,6 @@
   line-height: 1;
   text-align: left;
   text-transform: uppercase;
-  color: #222;
 }
 @media screen and (min-width: 40em) {
   .pxl-title {
@@ -2431,7 +2430,6 @@
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 45em) {
   .pxl-subtitle {
@@ -2459,7 +2457,6 @@
   letter-spacing: 0;
   line-height: 1.14em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 45em) {
   .pxl-normal {
@@ -2487,7 +2484,6 @@
   letter-spacing: 0;
   line-height: 1.1667em;
   text-align: left;
-  color: #222;
 }
 @media screen and (min-width: 48em) {
   .pxl-subtext {

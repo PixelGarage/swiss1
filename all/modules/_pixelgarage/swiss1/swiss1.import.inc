@@ -630,9 +630,10 @@ function _create_new_category($term_name) {
  * path is available.
  *
  */
-function _get_managed_image_obj($img_path, $media_id = '') {
+function _get_managed_image_obj($img_path, $media_id = false) {
   //
   // get impoprt directory path
+  $use_jw_image = false;
   $img_dir = '/images';
   $import_dir = variable_get('swiss1_import_directory') ?
     variable_get('swiss1_import_directory') : SWISS1_IMPORT_DEFAULT_DIRECTORY;
@@ -666,31 +667,36 @@ function _get_managed_image_obj($img_path, $media_id = '') {
         return $file_obj;
       }
       else {
-        // file could not be copied
-        return FALSE;
+        // file could not be copied, use JWPlatform thumbs
+        $use_jw_image = true;
       }
     }
+    else if (strpos($img_path, 'http') !== FALSE) {
+      // check for remote file path
+      $img_uri = $img_path;
+    }
     else {
-      if (strpos($img_path, 'http') !== FALSE) {
-        // check for remote file path
-        $img_uri = $img_path;
-      }
-      else {
-        // no valid image path
-        return FALSE;
-      }
+      //
+      // no valid image path, use JWPlatform thumbs
+      $use_jw_image = true;
     }
   }
   else {
-    if ($media_id && module_exists('video_embed_jwplayer')) {
-      //
-      // no image path is given, create one if possible (JWPlayer thumbs path)
-      $img_uri = video_embed_jwplayer_get_media_url($media_id, 'jpg', TRUE, '1280');
-    }
-    else {
-      // no valid image path
-      return FALSE;
-    }
+    //
+    // no image path given, use JWPlatform thumbs
+    $use_jw_image = true;
+  }
+
+  //
+  // get JWPlatform image
+  if ($use_jw_image && $media_id && module_exists('video_embed_jwplayer')) {
+    //
+    // no image path is given, create one if possible (JWPlayer thumbs path)
+    $img_uri = video_embed_jwplayer_get_media_url($media_id, 'jpg', TRUE, '1280');
+  }
+  else {
+    // no valid image path
+    return FALSE;
   }
 
   // Create managed file from remote file. If a managed file with the destination name exists

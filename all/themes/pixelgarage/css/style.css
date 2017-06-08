@@ -18809,7 +18809,7 @@ form#user-profile-form div .form-actions .form-submit .icon {
 /*
  *  View live-tv component
  * --------------------------------------------------*/
-.view.view-live-tv .view-content .views-row .field-content a img {
+.view.view-live-tv .view-content .views-row .field-content img {
   display: block;
   margin: 0;
   padding: 0;

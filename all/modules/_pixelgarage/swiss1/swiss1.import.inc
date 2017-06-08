@@ -692,7 +692,7 @@ function _get_managed_image_obj($img_path, $media_id = false) {
   if ($use_jw_image && $media_id && module_exists('video_embed_jwplayer')) {
     //
     // no image path is given, create one if possible (JWPlayer thumbs path)
-    $img_uri = video_embed_jwplayer_get_media_url($media_id, 'jpg', TRUE, '1280');
+    $img_uri = video_embed_jwplayer_get_media_url($media_id, 'jpg', TRUE, '720');
   }
   else {
     // no valid image path

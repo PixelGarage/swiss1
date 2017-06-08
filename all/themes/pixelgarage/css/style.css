@@ -10912,9 +10912,23 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body {
-  margin: 0 0 44px;
+  margin: 0 auto 44px;
+  padding: 0;
   color: white;
   color: #fff;
+}
+@media screen and (min-width: 64em) {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body,
+  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body {
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+@media screen and (min-width: 80em) {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body,
+  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body {
+    max-width: 970px;
+  }
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h1,

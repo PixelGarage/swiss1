@@ -262,7 +262,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     'image: "' . video_embed_jwplayer_get_media_url($media_id, 'jpg', $do_sign_url) . '", ' .
     'mediaid: "' . $media_id . '", ' .
     'sources: [{' .
-    'file: "' . video_embed_jwplayer_get_media_url($media_id, 'mpd', $do_sign_url) . '"}, {' .
+    //'file: "' . video_embed_jwplayer_get_media_url($media_id, 'mpd', $do_sign_url) . '"}, {' .
     'file: "' . video_embed_jwplayer_get_media_url($media_id, 'm3u8', $do_sign_url);
   foreach ($video_conversions as $key => $conversion) {
     $playlist .= '"}, {file: "' . video_embed_jwplayer_get_media_url($media_id, $conversion['format'], $do_sign_url, $key) .

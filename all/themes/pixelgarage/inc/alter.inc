@@ -92,8 +92,9 @@ function pixelgarage_form_alter(&$form, &$form_state, $form_id) {
  */
 function submit_manage_custom_filters(&$form, &$form_state) {
   //
-  // define start time of a day as 02:00
-  $today = strtotime('today 02:00');
+  // define the start time of a day (default is 02:00)
+  $today_start_time = 'today ' . variable_get('swiss1_video_day_start_time', '02:00');
+  $today = strtotime($today_start_time);
   $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $today);
   $end_timestamp = strtotime('+1 day', $start_timestamp);
   $selected_start_date = date('Y-m-d H:i:s', $start_timestamp);

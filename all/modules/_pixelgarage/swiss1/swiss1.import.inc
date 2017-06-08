@@ -21,11 +21,12 @@ define('SWISS1_RUNTYPE_RERUN', 'rerun');
  * ----------------------------------------------------------------- */
 
 /**
- * Deletes all expired video streams according to the imported video entry settings.
+ * Deletes all expired video streams according to the imported video entry
+ * settings.
  *
  * A VideoStream can be created for multiple runs. The date "End of license"
- * indicates, if the VideoSttream and its linked media files can be deleted after
- * the validity period or not.
+ * indicates, if the VideoSttream and its linked media files can be deleted
+ * after the validity period or not.
  */
 function swiss1_delete_expired_media() {
   //
@@ -51,7 +52,7 @@ function swiss1_delete_expired_media() {
 /**
  * Imports all new XML media files. Processed files are deleted.
  */
-function swiss1_media_import () {
+function swiss1_media_import() {
   //
   // Swiss1 TV media import
   $import_counter = array(
@@ -84,7 +85,7 @@ function swiss1_media_import () {
     }
 
   } catch (Exception $ex) {
-    watchdog('Swiss1 Importer',$ex->getMessage(), array(), WATCHDOG_ERROR);
+    watchdog('Swiss1 Importer', $ex->getMessage(), array(), WATCHDOG_ERROR);
     drupal_set_message($ex->getMessage(), 'error');
   }
 
@@ -92,7 +93,7 @@ function swiss1_media_import () {
   if ($import_counter) {
     $importMessage = t('Swiss1 TV media import - @files files imported: ' .
       '@created videos created, @updated videos updated, @deleted videos deleted, @failed videos failed.');
-    if($import_counter['@failed']) {
+    if ($import_counter['@failed']) {
       drupal_set_message(t($importMessage, $import_counter), 'warning');
       watchdog('Swiss1 Importer', $importMessage, $import_counter, WATCHDOG_WARNING);
     }
@@ -112,12 +113,13 @@ function swiss1_media_import () {
  * Imports an XML file into the CMS database.
  *
  * The following XML structures are available:
- *  - Root node <OnlineCMSSchedule>, containing all scheduled EPG entries of one day.
- *    This file is always updated as a whole, e.g. all related VODEntries are
- *    sent after this file to.
+ *  - Root node <OnlineCMSSchedule>, containing all scheduled EPG entries of
+ *  one day. This file is always updated as a whole, e.g. all related
+ *  VODEntries are sent after this file to.
  *
  * - Root node <VODEntries>, containing only one VODEntry. The VODEntry can be
- *   part of an EPG day or can be a standalone entry (no scheduled broadcast).
+ *   part of an EPG day or can be a standalone entry (no scheduled broadcast)
+ *   and can update a single broadcast entry.
  *
  * @param string $filepath
  *    The filepath of the xml file to be imported.
@@ -131,16 +133,16 @@ function _import_xml_file($filepath, &$import_counter) {
   // read xml file
   $xml = simplexml_load_file($filepath);
 
-  switch($xml->getName()) {
+  switch ($xml->getName()) {
     case 'OnlineCMSSchedule':
       // file contains EPG entries of one day
-      $xpath = '//Entry[/AiringInformation/RunType = "PRIMARY"] | //Entry[/AiringInformation/RunType = "RERUN"]';
-      $epg_day = true;
+      $xpath = '//Entry';
+      $epg_day = TRUE;
       break;
     case 'VODEntries':
       // file contains VOD entries
       $xpath = '//VODEntry';
-      $epg_day = false;
+      $epg_day = FALSE;
       break;
     default:
       // no valid xml file
@@ -152,7 +154,7 @@ function _import_xml_file($filepath, &$import_counter) {
   // If an EPG day file is imported, check if the day already exists.
   // If yes, delete all VODEntries of this day first
   if ($epg_day) {
-    $day_string = $xml->xpath('/Entry[1]/AiringInformation/ScheduledStartDateTime');
+    $day_string = $xml->Entry->AiringInformation->ScheduledStartDateTime->__toString();
     $epg_day = explode(' ', $day_string)[0];  // set date of importing day
     _delete_existing_epg_day($epg_day, $import_counter);
   }
@@ -161,6 +163,10 @@ function _import_xml_file($filepath, &$import_counter) {
   // select the video entries in the file and import it
   $message = '';
   $xml_entries = $xml->xpath($xpath);
+  if ($epg_day) {
+    // sort day so that PRIMARY is before RERUN
+    usort($xml_entries, '_epgSort');
+  }
   foreach ($xml_entries as $xml_entry) {
     $success = _parse_entry($xml_entry, $epg_day, $import_counter);
     if (is_string($success)) {
@@ -176,6 +182,13 @@ function _import_xml_file($filepath, &$import_counter) {
     drupal_set_message($warning, 'warning');
   }
 
+}
+
+/**
+ * Compare function for array sort.
+ */
+function _epgSort($e1, $e2) {
+  return strcmp($e1->AiringInformation->RunType->__toString(), $e2->AiringInformation->RunType->__toString());
 }
 
 
@@ -209,12 +222,18 @@ function _delete_existing_epg_day($epg_day, &$import_counter) {
  * Parses an XML VODEntry and creates or updates a node of type VideoStream.
  *
  * The XML VODEntry import has the following prerequisites:
- * 1) Each PRIMARY VODEntry has a unique <AssetReconciliationId>
- * 2) A RERUN VODEntry is linked to its PRIMARY Entry via <AssetReconciliationId>
- * 3) A RERUN VODEntry gets its validation period and Properties from the PRIMARY Entry
+ * 1) Each PRIMARY VODEntry has a unique <AssetReconciliationId> and contains
+ * all information about a broadcast.
+ *
+ * 2) A RERUN VODEntry is linked to its PRIMARY Entry via <AssetReconciliationId>.
+ *
+ * 3) A RERUN VODEntry gets its validation period and Properties from the
+ * PRIMARY Entry.
+ *
  * 4) A RERUN has always the same validity end time than its PRIMARY entry.
+ *
  * 5) A RERUN can be scheduled on a later day than its PRIMARY entry but inside
- *    the catchup period.
+ *    the en d of license period.
  *
  * @param object $xml_entry
  *    An object of class SimpleXMLElement containing the data of a VODEntry.
@@ -225,31 +244,29 @@ function _delete_existing_epg_day($epg_day, &$import_counter) {
  * @param array  $import_counter
  *    An array holding the result of the xml import of VODEntries.
  *
- * @return bool|string Returns true, if import of entry was successful, or an err_msg in case of missing data.
+ * @return bool|string Returns true, if import of entry was successful, or an
+ *                     err_msg in case of missing data.
  */
 function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   //
   // convert xml entry into associative array
   $json = json_encode($xml_entry);
-  $arr_entry = json_decode($json, true);
+  $arr_entry = json_decode($json, TRUE);
 
   //
-  // update all VideoStream fields
+  // IMPORT XML ENTRY
   //
   // schedule reference
   $schedule_id = !empty($arr_entry['ScheduleReference']['AssetReconciliationId']) ?
-    $arr_entry['ScheduleReference']['AssetReconciliationId'] : false;
+    $arr_entry['ScheduleReference']['AssetReconciliationId'] : FALSE;
 
   // get run type
   $run_type = !empty($arr_entry['AiringInformation']['RunType']) ?
-    strtolower($arr_entry['AiringInformation']['RunType']) : false;
+    strtolower($arr_entry['AiringInformation']['RunType']) : FALSE;
 
   //
-  // Create or get existing videostream node
+  // Create a new or get an existing videostream node
   // Only scheduled VODEntries are updatable, standalone VODEntries are always created.
-  //
-  // REMARK: Leave the update possibility even so in general all scheduled VODEntries
-  // are replaced (see EPG day deletion)
   $node = _get_videostream_instance($schedule_id, $run_type, $import_counter);
 
   // set schedule id and run type
@@ -257,8 +274,10 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   $node->field_run_type[LANGUAGE_NONE][0]['value'] = $run_type ? $run_type : '';
 
   //
-  // set EPG day if available
-  $node->field_belongs_to_day[LANGUAGE_NONE][0]['value'] = $epg_day ? $epg_day : '';
+  // set EPG day for an EPG import (do not override in VODEntry import)
+  if ($epg_day) {
+    $node->field_belongs_to_day[LANGUAGE_NONE][0]['value'] = $epg_day;
+  }
 
 
   // Airing information
@@ -302,14 +321,13 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
     }
 
     // set end of license date
-    $eol_timestamp = false;
+    $eol_timestamp = FALSE;
     if (!empty($airing_info['EndOfLicense'])) {
       // replace . with - to guarantee the correct parsing in strtotime: dash means European date format d-m-Y
       $eol_time = str_replace('.', '-', $airing_info['EndOfLicense']);
       $eol_timestamp = strtotime($eol_time);
       $node->field_end_of_license[LANGUAGE_NONE][0]['value'] = date('Y-m-d H:i:s', $eol_timestamp);
     }
-
 
     // Set validity period
     // REMARK: VODEntries with a validity end time in the past will be deleted during the next cleanup run
@@ -333,15 +351,16 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
     switch ($run_type) {
       case SWISS1_RUNTYPE_PRIMARY:
         // set expiration date by catchup period
-        $catchup_period = !empty($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : '+7 days';
+        $catchup_period = !empty($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : variable_get('swiss1_import_catchup_period');
         $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
         $exp_timestamp = ($eol_timestamp && $eol_timestamp < $exp_timestamp) ? $eol_timestamp : $exp_timestamp;
         $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
         $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
+        $node->field_catchup_period[LANGUAGE_NONE][0]['value'] = $catchup_period;
         break;
       case SWISS1_RUNTYPE_RERUN:
         // get missing fields in RERUN from its PRIMARY entry
-        _update_rerun_with_primary_fields($schedule_id, $node);
+        _update_rerun_with_primary_fields($schedule_id, $validity_start_timestamp, $node);
         break;
       default:
         // no run type is given: set catchup period to end of license date (or 25 years, if eol not exists)
@@ -357,9 +376,10 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
     $node->field_featured[LANGUAGE_NONE][0]['value'] = $featured;
   }
 
+
   //
-  // Publishing Information (only for entries not scheduled in program)
-  // Default period is [now, now + 25 years]
+  // Publishing Information (only for entries not scheduled in EPG)
+  // Default period is [now, now + 25 years], if no end date is given
   if (isset($arr_entry['PublishingInformation'])) {
     $publish_info = $arr_entry['PublishingInformation'];
 
@@ -385,10 +405,11 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
 
   }
 
+
   //
   // EPG infos / Category (can be empty)
   if (isset($arr_entry['Description'])) {
-    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : false;
+    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : FALSE;
     if ($epg) {
       $node->title = !empty($epg['Title']) ? $epg['Title'] : (!empty($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
       $synopsis = !empty($epg['Synopsis']) ? $epg['Synopsis'] : t('<p>Keine Information zur Sendung verfügbar.</p>');
@@ -409,6 +430,7 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
     }
   }
 
+
   //
   // Properties
   // retrieve path information, if any otherwise try to create path with  media id.
@@ -426,14 +448,14 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
     $node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $video_url;
 
     // set thumbnails, if any
-    $thumb_path = !empty($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : false;
+    $thumb_path = !empty($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : FALSE;
     $file_obj = _get_managed_image_obj($thumb_path, $media_id);
-    $node->field_thumb_path[LANGUAGE_NONE][0] = $file_obj ? (array)$file_obj : '';
+    $node->field_thumb_path[LANGUAGE_NONE][0] = $file_obj ? (array) $file_obj : '';
 
     // set poster, if any
-    $poster_path = !empty($properties['PosterframeFTPPathFilename']) ? $properties['PosterframeFTPPathFilename'] : false;
+    $poster_path = !empty($properties['PosterframeFTPPathFilename']) ? $properties['PosterframeFTPPathFilename'] : FALSE;
     $file_obj = _get_managed_image_obj($poster_path, $media_id);
-    $node->field_poster[LANGUAGE_NONE][0] = $file_obj ? (array)$file_obj : '';
+    $node->field_poster[LANGUAGE_NONE][0] = $file_obj ? (array) $file_obj : '';
 
   }
 
@@ -441,7 +463,7 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   // save/update node
   $node = node_submit($node);
   node_save($node);
-  return true;
+  return TRUE;
 }
 
 
@@ -454,7 +476,7 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
  * Returns the node (newly created or existing one)
  */
 function _get_videostream_instance($schedule_id, $run_type, &$import_counter) {
-  $node = false;
+  $node = FALSE;
 
   if ($schedule_id && $run_type) {
     $query = new EntityFieldQuery();
@@ -495,7 +517,7 @@ function _get_videostream_instance($schedule_id, $run_type, &$import_counter) {
  * Its guaranteed that a PRIMARY node is always imported before its RERUN nodes.
  *
  */
-function _update_rerun_with_primary_fields($schedule_id, &$rerun_node) {
+function _update_rerun_with_primary_fields($schedule_id, $validity_start_timestamp, &$rerun_node) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
@@ -506,15 +528,23 @@ function _update_rerun_with_primary_fields($schedule_id, &$rerun_node) {
   if (isset($result['node'])) {
     // Update rerun node with fields of primary node
     $primary_node = node_load(key($result['node']));
-    $rerun_node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $primary_node->field_validity_period[LANGUAGE_NONE][0]['value2'];
-    $rerun_node->field_media_id[LANGUAGE_NONE][0]['value'] = $primary_node->field_media_id[LANGUAGE_NONE][0]['value'];
-    $rerun_node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $primary_node->field_video_path[LANGUAGE_NONE][0]['video_url'];
-    $rerun_node->field_thumb_path[LANGUAGE_NONE][0] = $primary_node->field_thumb_path[LANGUAGE_NONE][0];
-    $rerun_node->field_poster[LANGUAGE_NONE][0] = $primary_node->field_poster[LANGUAGE_NONE][0];
-    return true;
+
+    // create catchup period
+    $catchup_period = $primary_node->field_catchup_period[LANGUAGE_NONE][0]['value'];
+    $eol_date = !empty($rerun_node->field_end_of_license) ? $rerun_node->field_end_of_license[LANGUAGE_NONE][0]['value'] : false;
+    $eol_timestamp = $eol_date ? strtotime($eol_date) : false;
+    $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
+    $exp_timestamp = ($eol_timestamp && $eol_timestamp < $exp_timestamp) ? $eol_timestamp : $exp_timestamp;
+    $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
+    $rerun_node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
+    $rerun_node->field_media_id[LANGUAGE_NONE][0]['value'] = !empty($primary_node->field_media_id) ? $primary_node->field_media_id[LANGUAGE_NONE][0]['value'] : '';
+    $rerun_node->field_video_path[LANGUAGE_NONE][0]['video_url'] = !empty($primary_node->field_video_path) ? $primary_node->field_video_path[LANGUAGE_NONE][0]['video_url'] : '';
+    $rerun_node->field_thumb_path[LANGUAGE_NONE][0] = !empty($primary_node->field_thumb_path) ? $primary_node->field_thumb_path[LANGUAGE_NONE][0] : '';
+    $rerun_node->field_poster[LANGUAGE_NONE][0] = !empty($primary_node->field_poster) ? $primary_node->field_poster[LANGUAGE_NONE][0] : '';
+    return TRUE;
   }
 
-  return false;
+  return FALSE;
 }
 
 /**
@@ -524,21 +554,27 @@ function _update_rerun_with_primary_fields($schedule_id, &$rerun_node) {
  */
 function _get_catchup_period($catchup_period) {
   $catchup_period = strtolower($catchup_period);
-  if (strpos($catchup_period, 'tage') !== false) {
+  if (strpos($catchup_period, 'tage') !== FALSE) {
     $catchup_period = str_replace('tage', 'days', $catchup_period);
   }
-  else if (strpos($catchup_period, 'tag') !== false) {
-    $catchup_period = str_replace('tag', 'day', $catchup_period);
-  }
-  else if (strpos($catchup_period, 'stunden') !== false) {
-    $catchup_period = str_replace('stunden', 'hours', $catchup_period);
-  }
-  else if (strpos($catchup_period, 'stunde') !== false) {
-    $catchup_period = str_replace('stunde', 'hour', $catchup_period);
+  else {
+    if (strpos($catchup_period, 'tag') !== FALSE) {
+      $catchup_period = str_replace('tag', 'day', $catchup_period);
+    }
+    else {
+      if (strpos($catchup_period, 'stunden') !== FALSE) {
+        $catchup_period = str_replace('stunden', 'hours', $catchup_period);
+      }
+      else {
+        if (strpos($catchup_period, 'stunde') !== FALSE) {
+          $catchup_period = str_replace('stunde', 'hour', $catchup_period);
+        }
+      }
+    }
   }
 
   // check prefix
-  if (strpos($catchup_period, '+') === false) {
+  if (strpos($catchup_period, '+') === FALSE) {
     $catchup_period = '+' . $catchup_period;
   }
 
@@ -549,7 +585,7 @@ function _get_catchup_period($catchup_period) {
  * Gets the Category term key of the given term name.
  */
 function _get_category_key($term_name = '') {
-  $term = !empty($term_name) ? taxonomy_get_term_by_name($term_name, 'kategorie') : false;
+  $term = !empty($term_name) ? taxonomy_get_term_by_name($term_name, 'kategorie') : FALSE;
 
   if ($term) {
     return key($term);
@@ -567,8 +603,8 @@ function _get_category_key($term_name = '') {
  */
 function _create_new_category($term_name) {
   // get kategorie vocabulary id
-  $vid = null;
-  foreach(taxonomy_get_vocabularies() as $vocabulary) {
+  $vid = NULL;
+  foreach (taxonomy_get_vocabularies() as $vocabulary) {
     if (strtolower($vocabulary->name) == 'kategorie') {
       $vid = $vocabulary->vid;
       break;
@@ -590,7 +626,8 @@ function _create_new_category($term_name) {
 }
 
 /**
- * Returns the managed image object for the given file path, or false if no path is available.
+ * Returns the managed image object for the given file path, or false if no
+ * path is available.
  *
  */
 function _get_managed_image_obj($img_path, $media_id = '') {
@@ -622,46 +659,51 @@ function _get_managed_image_obj($img_path, $media_id = '') {
         $file_obj->uri = $img_uri;
         $file_obj->filename = drupal_basename($img_uri);
         $file_obj->filemime = file_get_mimetype($img_uri);
-        $file_obj->status   = FILE_STATUS_PERMANENT;
-        $file_obj->uid      = 1;
-        $file_obj->display  = 1;
+        $file_obj->status = FILE_STATUS_PERMANENT;
+        $file_obj->uid = 1;
+        $file_obj->display = 1;
         $file_obj = file_save($file_obj);
         return $file_obj;
       }
       else {
         // file could not be copied
-        return false;
+        return FALSE;
       }
     }
-    else if (strpos($img_path, 'http') !== false) {
-      // check for remote file path
-      $img_uri = $img_path;
+    else {
+      if (strpos($img_path, 'http') !== FALSE) {
+        // check for remote file path
+        $img_uri = $img_path;
+      }
+      else {
+        // no valid image path
+        return FALSE;
+      }
+    }
+  }
+  else {
+    if ($media_id && module_exists('video_embed_jwplayer')) {
+      //
+      // no image path is given, create one if possible (JWPlayer thumbs path)
+      $img_uri = video_embed_jwplayer_get_media_url($media_id, 'jpg', TRUE, '1280');
     }
     else {
       // no valid image path
-      return false;
+      return FALSE;
     }
-  }
-  else if ($media_id && module_exists('video_embed_jwplayer')) {
-      //
-      // no image path is given, create one if possible (JWPlayer thumbs path)
-      $img_uri = video_embed_jwplayer_get_media_url($media_id, 'jpg', true, '1280');
-  }
-  else {
-    // no valid image path
-    return false;
   }
 
   // Create managed file from remote file. If a managed file with the destination name exists
   // then its database entry will be updated
-  $file_obj = system_retrieve_file($img_uri, 'public://images', true,FILE_EXISTS_REPLACE);
+  $file_obj = system_retrieve_file($img_uri, 'public://images', TRUE, FILE_EXISTS_REPLACE);
 
   return $file_obj;
 
 }
 
 /**
- * Returns the file object, if file with uri is already imported, otherwise false.
+ * Returns the file object, if file with uri is already imported, otherwise
+ * false.
  */
 function managed_file_exists($uri) {
   $fid = db_select('file_managed', 'f')
@@ -674,5 +716,5 @@ function managed_file_exists($uri) {
     // File already imported, load file
     return file_load($fid);
   }
-  return false;
+  return FALSE;
 }

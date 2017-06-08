@@ -10914,6 +10914,7 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body {
   margin: 0 0 44px;
   color: white;
+  color: #fff;
 }
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body h1,
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body h1,

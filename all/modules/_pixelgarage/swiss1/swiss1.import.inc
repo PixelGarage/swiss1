@@ -78,8 +78,11 @@ function swiss1_media_import() {
           _import_xml_file($file_path, $import_counter);
           $import_counter['@files']++;
 
-          // delete file
-          unlink($file_path);
+          // rename file
+          $tmp_path = $import_dir . '/tmp/' . $file;
+          if (!rename($file_path, $tmp_path)) {
+            unlink($file_path);
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 <?php
-$export_time = 1496865951;
+$export_time = 1497388561;
 $data = array(
   'bundles' => array(
     'videostream' => (object) array(
@@ -299,6 +299,72 @@ $data = array(
           'not null' => FALSE,
           'sortable' => TRUE,
           'views' => FALSE,
+        ),
+      ),
+      'bundles' => array(
+        'node' => array(
+          0 => 'videostream',
+        ),
+      ),
+    ),
+    'field_catchup_period' => array(
+      'translatable' => '0',
+      'entity_types' => array(),
+      'settings' => array(
+        'max_length' => '100',
+      ),
+      'storage' => array(
+        'type' => 'field_sql_storage',
+        'settings' => array(),
+        'module' => 'field_sql_storage',
+        'active' => '1',
+        'details' => array(
+          'sql' => array(
+            'FIELD_LOAD_CURRENT' => array(
+              'field_data_field_catchup_period' => array(
+                'value' => 'field_catchup_period_value',
+                'format' => 'field_catchup_period_format',
+              ),
+            ),
+            'FIELD_LOAD_REVISION' => array(
+              'field_revision_field_catchup_period' => array(
+                'value' => 'field_catchup_period_value',
+                'format' => 'field_catchup_period_format',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'table' => 'filter_format',
+          'columns' => array(
+            'format' => 'format',
+          ),
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'field_name' => 'field_catchup_period',
+      'type' => 'text',
+      'module' => 'text',
+      'active' => '1',
+      'locked' => '0',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'columns' => array(
+        'value' => array(
+          'type' => 'varchar',
+          'length' => '100',
+          'not null' => FALSE,
+        ),
+        'format' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => FALSE,
         ),
       ),
       'bundles' => array(
@@ -766,6 +832,7 @@ $data = array(
         'allowed_values' => array(
           'primary' => 'PRIMARY',
           'rerun' => 'RERUN',
+          'not_specified' => 'NOT_SPECIFIED',
         ),
         'allowed_values_function' => '',
       ),
@@ -1643,6 +1710,75 @@ $data = array(
         'required' => 0,
         'description' => 'The broadcast date and start/end time of the video in the TV.',
         'field_name' => 'field_broadcast_date',
+        'entity_type' => 'node',
+        'bundle' => 'videostream',
+        'deleted' => '0',
+      ),
+    ),
+    'field_catchup_period' => array(
+      0 => array(
+        'label' => 'Catchup period',
+        'widget' => array(
+          'weight' => '9',
+          'type' => 'text_textfield',
+          'module' => 'text',
+          'active' => 1,
+          'settings' => array(
+            'size' => '60',
+          ),
+        ),
+        'settings' => array(
+          'text_processing' => '0',
+          'linkit' => array(
+            'enable' => 0,
+            'profile' => '',
+            'button_text' => 'Search',
+          ),
+          'user_register_form' => FALSE,
+        ),
+        'display' => array(
+          'default' => array(
+            'label' => 'above',
+            'type' => 'text_default',
+            'settings' => array(),
+            'module' => 'text',
+            'weight' => 28,
+          ),
+          'full' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+          'teaser' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+          'teaser_featured' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+          'teaser_program' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+          'teaser_search' => array(
+            'type' => 'hidden',
+            'label' => 'above',
+            'settings' => array(),
+            'weight' => 0,
+          ),
+        ),
+        'required' => 0,
+        'description' => '',
+        'default_value' => NULL,
+        'field_name' => 'field_catchup_period',
         'entity_type' => 'node',
         'bundle' => 'videostream',
         'deleted' => '0',

@@ -14,6 +14,7 @@
  */
 define('SWISS1_RUNTYPE_PRIMARY', 'primary');
 define('SWISS1_RUNTYPE_RERUN', 'rerun');
+define('SWISS1_RUNTYPE_NOT_SPECIFIED', 'not_specified');
 
 
 /* -----------------------------------------------------------------
@@ -283,6 +284,62 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   }
 
 
+  //
+  // EPG infos / Category (can be empty)
+  if (isset($arr_entry['Description'])) {
+    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : FALSE;
+    if ($epg) {
+      $node->title = !empty($epg['Title']) ? $epg['Title'] : (!empty($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
+      $synopsis = !empty($epg['Synopsis']) ? $epg['Synopsis'] : t('<p>Keine Information zur Sendung verfügbar.</p>');
+      $synopsis .= !empty($epg['PresentedBy']) ? t('<p>Moderator: @moderator</p>', array('@moderator' => $epg['PresentedBy'])) : '';
+      $synopsis .= !empty($epg['Interviewee']) ? t('<p>Gast: @guest</p>', array('@guest' => $epg['Interviewee'])) : '';
+      $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
+      $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+      $node->field_video_language[LANGUAGE_NONE][0]['value'] = !empty($epg['Language']) ? $epg['Language'] : t('Deutsch');
+      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = !empty($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
+      $node->field_series[LANGUAGE_NONE][0]['value'] = !empty($epg['Series']) ? $epg['Series'] : '';
+      $node->field_season[LANGUAGE_NONE][0]['value'] = !empty($epg['Season']) ? $epg['Season'] : '';
+      $node->field_episode[LANGUAGE_NONE][0]['value'] = !empty($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
+      $node->field_category[LANGUAGE_NONE][0]['tid'] =
+        !empty($epg['Genre']) ? _get_category_key($epg['Genre']) : _get_category_key();
+
+      //$buzzword = !empty($epg['Buzzword']) ? $epg['Buzzword'] : '';
+      //$keyword = !empty($epg['Keyword']) ? $epg['Keyword'] : '';
+    }
+  }
+
+
+  //
+  // Properties
+  // retrieve path information, if any otherwise try to create path with  media id.
+  $has_properties = false;
+  if (isset($arr_entry['Properties'])) {
+    $properties = $arr_entry['Properties'];
+    $has_properties = true;
+
+    // set video stream and media ID, if available
+    $media_id = '';
+    $video_url = !empty($properties['StreamingLink']) ? $properties['StreamingLink'] : '';
+    if (!empty($video_url) && module_exists('video_embed_jwplayer')) {
+      $media_id = video_embed_jwplayer_get_media_id($video_url);
+      $node->field_media_id[LANGUAGE_NONE][0]['value'] = $media_id ? $media_id : '';
+      $video_url = $media_id ? JWPLAYER_CONTENT_BASE_PATH . $media_id : $video_url;
+    }
+    $node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $video_url;
+
+    // set thumbnails, if any
+    $thumb_path = !empty($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : FALSE;
+    $file_obj = _get_managed_image_obj($thumb_path, $media_id);
+    $node->field_thumb_path[LANGUAGE_NONE][0] = $file_obj ? (array) $file_obj : '';
+
+    // set poster, if any
+    $poster_path = !empty($properties['PosterframeFTPPathFilename']) ? $properties['PosterframeFTPPathFilename'] : FALSE;
+    $file_obj = _get_managed_image_obj($poster_path, $media_id);
+    $node->field_poster[LANGUAGE_NONE][0] = $file_obj ? (array) $file_obj : '';
+
+  }
+
+
   // Airing information
   // Only for scheduled entries in the future
   if (isset($arr_entry['AiringInformation'])) {
@@ -360,10 +417,23 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
         $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
         $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
         $node->field_catchup_period[LANGUAGE_NONE][0]['value'] = $catchup_period;
+
+        // update already existing RERUNS of this PRIMARY node, if properties exists
+        if ($has_properties) {
+          _update_existing_reruns_with_primary($schedule_id, $node);
+        }
         break;
       case SWISS1_RUNTYPE_RERUN:
         // get missing fields in RERUN from its PRIMARY entry
-        _update_rerun_with_primary_fields($schedule_id, $validity_start_timestamp, $node);
+        _update_rerun_with_existing_primary($schedule_id, $validity_start_timestamp, $node);
+        break;
+      case SWISS1_RUNTYPE_NOT_SPECIFIED:
+        $catchup_period = !empty($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : '+20 years';
+        $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
+        $exp_timestamp = ($eol_timestamp && $eol_timestamp < $exp_timestamp) ? $eol_timestamp : $exp_timestamp;
+        $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
+        $node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
+        $node->field_catchup_period[LANGUAGE_NONE][0]['value'] = $catchup_period;
         break;
       default:
         // no run type is given: set catchup period to end of license date (or 25 years, if eol not exists)
@@ -408,59 +478,6 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
 
   }
 
-
-  //
-  // EPG infos / Category (can be empty)
-  if (isset($arr_entry['Description'])) {
-    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : FALSE;
-    if ($epg) {
-      $node->title = !empty($epg['Title']) ? $epg['Title'] : (!empty($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
-      $synopsis = !empty($epg['Synopsis']) ? $epg['Synopsis'] : t('<p>Keine Information zur Sendung verfügbar.</p>');
-      $synopsis .= !empty($epg['PresentedBy']) ? t('<p>Moderator: @moderator</p>', array('@moderator' => $epg['PresentedBy'])) : '';
-      $synopsis .= !empty($epg['Interviewee']) ? t('<p>Gast: @guest</p>', array('@guest' => $epg['Interviewee'])) : '';
-      $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
-      $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
-      $node->field_video_language[LANGUAGE_NONE][0]['value'] = !empty($epg['Language']) ? $epg['Language'] : t('Deutsch');
-      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = !empty($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
-      $node->field_series[LANGUAGE_NONE][0]['value'] = !empty($epg['Series']) ? $epg['Series'] : '';
-      $node->field_season[LANGUAGE_NONE][0]['value'] = !empty($epg['Season']) ? $epg['Season'] : '';
-      $node->field_episode[LANGUAGE_NONE][0]['value'] = !empty($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
-      $node->field_category[LANGUAGE_NONE][0]['tid'] =
-        !empty($epg['Genre']) ? _get_category_key($epg['Genre']) : _get_category_key();
-
-      //$buzzword = !empty($epg['Buzzword']) ? $epg['Buzzword'] : '';
-      //$keyword = !empty($epg['Keyword']) ? $epg['Keyword'] : '';
-    }
-  }
-
-
-  //
-  // Properties
-  // retrieve path information, if any otherwise try to create path with  media id.
-  if (isset($arr_entry['Properties'])) {
-    $properties = $arr_entry['Properties'];
-
-    // set video stream and media ID, if available
-    $media_id = '';
-    $video_url = !empty($properties['StreamingLink']) ? $properties['StreamingLink'] : '';
-    if (!empty($video_url) && module_exists('video_embed_jwplayer')) {
-      $media_id = video_embed_jwplayer_get_media_id($video_url);
-      $node->field_media_id[LANGUAGE_NONE][0]['value'] = $media_id ? $media_id : '';
-      $video_url = $media_id ? JWPLAYER_CONTENT_BASE_PATH . $media_id : $video_url;
-    }
-    $node->field_video_path[LANGUAGE_NONE][0]['video_url'] = $video_url;
-
-    // set thumbnails, if any
-    $thumb_path = !empty($properties['ThumbnailFTPPathFilename']) ? $properties['ThumbnailFTPPathFilename'] : FALSE;
-    $file_obj = _get_managed_image_obj($thumb_path, $media_id);
-    $node->field_thumb_path[LANGUAGE_NONE][0] = $file_obj ? (array) $file_obj : '';
-
-    // set poster, if any
-    $poster_path = !empty($properties['PosterframeFTPPathFilename']) ? $properties['PosterframeFTPPathFilename'] : FALSE;
-    $file_obj = _get_managed_image_obj($poster_path, $media_id);
-    $node->field_poster[LANGUAGE_NONE][0] = $file_obj ? (array) $file_obj : '';
-
-  }
 
   //
   // save/update node
@@ -517,10 +534,8 @@ function _get_videostream_instance($schedule_id, $run_type, &$import_counter) {
  * Catchup period etc.
  *
  * The PRIMARY node and its corresponding RERUN nodes have the same schedule id.
- * Its guaranteed that a PRIMARY node is always imported before its RERUN nodes.
- *
  */
-function _update_rerun_with_primary_fields($schedule_id, $validity_start_timestamp, &$rerun_node) {
+function _update_rerun_with_existing_primary($schedule_id, $validity_start_timestamp, &$rerun_node) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
@@ -532,23 +547,57 @@ function _update_rerun_with_primary_fields($schedule_id, $validity_start_timesta
     // Update rerun node with fields of primary node
     $primary_node = node_load(key($result['node']));
 
-    // create catchup period
-    $catchup_period = $primary_node->field_catchup_period[LANGUAGE_NONE][0]['value'];
-    $eol_date = !empty($rerun_node->field_end_of_license) ? $rerun_node->field_end_of_license[LANGUAGE_NONE][0]['value'] : false;
-    $eol_timestamp = $eol_date ? strtotime($eol_date) : false;
-    $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
-    $exp_timestamp = ($eol_timestamp && $eol_timestamp < $exp_timestamp) ? $eol_timestamp : $exp_timestamp;
-    $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
-    $rerun_node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
-    $rerun_node->field_media_id[LANGUAGE_NONE][0]['value'] = !empty($primary_node->field_media_id) ? $primary_node->field_media_id[LANGUAGE_NONE][0]['value'] : '';
-    $rerun_node->field_video_path[LANGUAGE_NONE][0]['video_url'] = !empty($primary_node->field_video_path) ? $primary_node->field_video_path[LANGUAGE_NONE][0]['video_url'] : '';
-    $rerun_node->field_thumb_path[LANGUAGE_NONE][0] = !empty($primary_node->field_thumb_path) ? $primary_node->field_thumb_path[LANGUAGE_NONE][0] : '';
-    $rerun_node->field_poster[LANGUAGE_NONE][0] = !empty($primary_node->field_poster) ? $primary_node->field_poster[LANGUAGE_NONE][0] : '';
-    return TRUE;
+    _complete_rerun_with_primary($primary_node, $validity_start_timestamp, $rerun_node);
   }
 
   return FALSE;
 }
+
+/**
+ * If RERUN entries are sent before its PRIMARY entry, update these RERUN entries
+ * with the corresponding fields.
+ */
+function _update_existing_reruns_with_primary($schedule_id, $primary_node) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->fieldCondition('field_schedule_id', 'value', $schedule_id)
+    ->fieldCondition('field_run_type', 'value', 'rerun');
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    $rerun_nodes = node_load_multiple(array_keys($result['node']));
+
+    foreach ($rerun_nodes as $rerun_node) {
+      $validity_start_date = isset($rerun_node->field_validity_period) ?
+        $rerun_node->field_validity_period[LANGUAGE_NONE][0]['value'] : $primary_node->field_validity_period[LANGUAGE_NONE][0]['value'];
+      $validity_start_timestamp = strtotime($validity_start_date);
+      _complete_rerun_with_primary($primary_node, $validity_start_timestamp, $rerun_node);
+      node_save($rerun_node);
+    }
+
+  }
+}
+
+/**
+ * Complete a rerun node with the missing fields from its primary node.
+ */
+function _complete_rerun_with_primary($primary_node, $validity_start_timestamp, &$rerun_node) {
+  // create catchup period
+  $catchup_period = !empty($primary_node->field_catchup_period) ? $primary_node->field_catchup_period[LANGUAGE_NONE][0]['value'] : variable_get('swiss1_import_catchup_period');
+  $eol_date = !empty($rerun_node->field_end_of_license) ? $rerun_node->field_end_of_license[LANGUAGE_NONE][0]['value'] : false;
+  $eol_timestamp = $eol_date ? strtotime($eol_date) : false;
+  $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
+  $exp_timestamp = ($eol_timestamp && $eol_timestamp < $exp_timestamp) ? $eol_timestamp : $exp_timestamp;
+  $exp_date = date('Y-m-d H:i:s', $exp_timestamp);
+  $rerun_node->field_validity_period[LANGUAGE_NONE][0]['value2'] = $exp_date;
+
+  // update media fields (media-id, video, thumbs, poster)
+  $rerun_node->field_media_id[LANGUAGE_NONE][0]['value'] = !empty($primary_node->field_media_id) ? $primary_node->field_media_id[LANGUAGE_NONE][0]['value'] : '';
+  $rerun_node->field_video_path[LANGUAGE_NONE][0]['video_url'] = !empty($primary_node->field_video_path) ? $primary_node->field_video_path[LANGUAGE_NONE][0]['video_url'] : '';
+  $rerun_node->field_thumb_path[LANGUAGE_NONE][0] = !empty($primary_node->field_thumb_path) ? $primary_node->field_thumb_path[LANGUAGE_NONE][0] : '';
+  $rerun_node->field_poster[LANGUAGE_NONE][0] = !empty($primary_node->field_poster) ? $primary_node->field_poster[LANGUAGE_NONE][0] : '';
+}
+
 
 /**
  * Transforms the given catchup period into a relative time format.

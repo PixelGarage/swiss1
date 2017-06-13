@@ -13498,12 +13498,12 @@ body.desktop .node.node-videostream.view-mode-teaser_featured > .row > div.col-s
   margin: 0;
   width: 100%;
 }
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-thumb-container {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-poster-container {
   overflow: hidden;
   height: 0;
   padding-bottom: 56.25%;
 }
-.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-thumb-container img.video-thumb {
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-container .video-poster-container img.video-poster {
   display: block;
   margin: 0;
   padding: 0;
@@ -18075,13 +18075,13 @@ form#user-profile-form div .form-actions .form-submit .icon {
     max-width: 970px;
   }
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget {
   display: block;
   float: none;
   vertical-align: bottom;
   padding: 0;
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
   vertical-align: middle;
   padding: 0 0 14px;
   font-family: 'CiutadellaMedium';
@@ -18092,32 +18092,32 @@ form#user-profile-form div .form-actions .form-submit .icon {
   text-transform: uppercase;
 }
 @media screen and (min-width: 40em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
     font-size: 3.125vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
     font-size: 24px;
   }
 }
 @media screen and (min-width: 80em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
     font-size: 28px;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
     text-align: left;
   }
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button,
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button,
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button {
   cursor: pointer;
   width: 150px;
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
   display: inline-block;
   vertical-align: middle;
   padding: 0 5px;
@@ -18129,45 +18129,45 @@ form#user-profile-form div .form-actions .form-submit .icon {
   opacity: 0.7;
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 80em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .date,
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .date {
     text-align: left;
   }
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .fa,
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .fa {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-previous-day-button .fa,
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-next-day-button .fa {
   display: inline-block;
   vertical-align: top;
   padding: 0;
   color: white;
   font-size: 20px;
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_broadcast_date_value label {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_broadcast_date_value label {
   display: none;
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
   width: 150px;
   text-align: left;
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
   margin: 0;
   font-family: 'CiutadellaSemiBold';
   font-size: 16px;
@@ -18187,45 +18187,45 @@ form#user-profile-form div .form-actions .form-submit .icon {
   background: none;
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
     font-size: 2.08333333vw;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
     font-size: 16px;
   }
 }
 @media screen and (min-width: 80em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
     font-size: 18px;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-control {
     text-align: left;
   }
 }
-.view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-select {
+.view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button .form-item .form-select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   padding: 0;
 }
 @media screen and (min-width: 540px) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget {
     display: inline-block;
     padding: 0;
   }
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
     display: block;
   }
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {
     text-align: center;
   }
 }
 @media screen and (min-width: 48em) {
-  .view.view-program .view-filters #views-exposed-form-program-block-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
+  .view.view-program .view-filters #views-exposed-form-program-page-program .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-title {
     display: inline-block;
     padding: 0 15px 0 0;
   }

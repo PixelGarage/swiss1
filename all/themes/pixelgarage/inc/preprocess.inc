@@ -77,7 +77,7 @@ function pixelgarage_preprocess_views_exposed_form(&$vars) {
     }
 
   }
-  else if ($form['#id'] == 'views-exposed-form-program-block-program') {
+  else if ($form['#id'] == 'views-exposed-form-program-page-program') {
     //
     // exposed form of program view
     // set prev / next date
@@ -162,7 +162,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   //
   // VIDEO / IMAGE DISPLAY
   // get poster image. if none is set, set default image
-  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_program' || $view_mode == 'teaser_search';
+  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_search';
   $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
   if ($use_thumb && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
     $thumb_uri = create_desaturated_image($thumb->uri);

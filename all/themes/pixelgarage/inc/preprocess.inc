@@ -148,6 +148,8 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 
 //
 // SHARIFF BUTTON DEFINITION
+  global $base_url;
+
   libraries_load('shariff', 'naked');
   $vars['shariff_attrs'] = array(
     'data-services' => '["facebook","twitter","whatsapp","mail"]',
@@ -156,6 +158,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     'data-mail-subject' => variable_get('shariff_mail_subject', t('')),
     'data-mail-body' => variable_get('shariff_mail_body', t('')),
     'data-lang' => "de",
+    'data-url' => $base_url . '/node/' . $node->nid,
   );
 
 

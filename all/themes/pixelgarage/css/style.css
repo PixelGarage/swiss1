@@ -11924,6 +11924,20 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
     max-width: 970px;
   }
 }
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-top,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-top {
+  position: relative;
+  height: 50px;
+}
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-top img.video-close,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-top img.video-close {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 23px;
+  height: auto;
+}
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container {
   position: relative;

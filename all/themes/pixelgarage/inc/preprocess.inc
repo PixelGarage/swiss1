@@ -167,10 +167,20 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 
 
   //
+  // FULL PAGE
+  // add close button to return to previous page
+  $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
+  if ($view_mode == 'full') {
+    $vars['close_icon_path'] = file_create_url($img_path . 'icon-close.svg');
+    $session_data = &proximity_session_data();
+    $vars['previous_page_path'] = file_create_url($session_data['current_destination']);
+  }
+
+
+  //
   // VIDEO / IMAGE DISPLAY
   // get poster image. if none is set, set default image
   $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_search';
-  $img_path = drupal_get_path('theme', 'pixelgarage') . '/images/';
   if ($use_thumb && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
     $thumb_uri = create_desaturated_image($thumb->uri);
     $vars['image_url'] = file_create_url($thumb_uri);
@@ -251,7 +261,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   }
   $duration = !empty($node->field_duration) && $node->field_duration[LANGUAGE_NONE][0]['value'] ?
     $node->field_duration[LANGUAGE_NONE][0]['value'] : 0;
-  $minutes = abs($duration / 60);
+  $minutes = round($duration / 60);
   $vars['duration_category'] = t('@mins min / @category', array('@mins' => $minutes, '@category' => $term->name));
 
 

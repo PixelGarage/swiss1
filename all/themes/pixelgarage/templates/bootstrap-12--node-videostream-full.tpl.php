@@ -13,6 +13,9 @@
   <div class="row">
     <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
 
+    <div class="video-top">
+      <a href="<?php print $previous_page_path; ?>"><img class="video-close" src="<?php print $close_icon_path; ?>" /></a>
+    </div>
     <div class="video-container">
       <?php if ($show_live_stream): ?>
         <?php print render($content['field_live_embed']); ?>

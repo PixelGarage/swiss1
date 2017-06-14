@@ -149,16 +149,20 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 //
 // SHARIFF BUTTON DEFINITION
   global $base_url;
+  $node_url = $base_url . '/node/' . $node->nid;
+  $mail_subject = $node->title;
+  $html_body =  $node->body[LANGUAGE_NONE][0]['value'] . l("<p>Hier geht's zur Sendung</p>", $node_url, array('html' => true));
+  $mail_descr = drupal_html_to_text($html_body);
 
   libraries_load('shariff', 'naked');
   $vars['shariff_attrs'] = array(
     'data-services' => '["facebook","twitter","whatsapp","mail"]',
     'data-orientation' => "horizontal",
     'data-mail-url' => "mailto:",
-    'data-mail-subject' => variable_get('shariff_mail_subject', t('')),
-    'data-mail-body' => variable_get('shariff_mail_body', t('')),
+    'data-mail-subject' => $mail_subject,
+    'data-mail-body' => $mail_descr,
     'data-lang' => "de",
-    'data-url' => $base_url . '/node/' . $node->nid,
+    'data-url' => $node_url,
   );
 
 
@@ -200,7 +204,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value']) : 0;
   $broadcast_endtime = !empty($node->field_broadcast_date) && isset($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) ?
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) : 0;
-  // show full time info only for full view mode
+  // show full time info only for full/search view mode
   $broadcast_endtime = ($view_mode == 'full' || $view_mode == 'teaser_search') ? $broadcast_endtime : false;
   if ($date_str = _get_broadcast_date_string($broadcast_starttime, $broadcast_endtime)) {
     $vars['time_info'] = $date_str;
@@ -234,7 +238,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   }
 
   //
-  // format broadcast start time
+  // format broadcast start time for program page
   $vars['broadcast_time'] = ($broadcast_starttime > 0) ? date('H:i', $broadcast_starttime): '';
 
   //
@@ -249,6 +253,20 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     $node->field_duration[LANGUAGE_NONE][0]['value'] : 0;
   $minutes = abs($duration / 60);
   $vars['duration_category'] = t('@mins min / @category', array('@mins' => $minutes, '@category' => $term->name));
+
+
+  //
+  // LIVE streaming
+  $vars['show_live_stream'] = false;
+  $run_type = (!empty($node->field_run_type) && $node->field_run_type[LANGUAGE_NONE][0]['value']) ?
+    $node->field_run_type[LANGUAGE_NONE][0]['value'] : false;
+  if ($run_type === 'live' && $broadcast_starttime && $broadcast_endtime) {
+    $before_start = variable_get('swiss1_live_streaming_starttime', '-1 hour');
+    $after_end = variable_get('swiss1_live_streaming_endtime', '+1 hour');
+    $live_starttime = strtotime($before_start, $broadcast_starttime);
+    $live_endtime = strtotime($after_end, $broadcast_endtime);
+    $vars['show_live_stream'] = ($now >= $live_starttime) && ($now < $live_endtime) && isset($vars['content']['field_live_embed']);
+  }
 
 
   //

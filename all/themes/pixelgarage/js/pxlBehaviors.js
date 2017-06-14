@@ -39,10 +39,12 @@
 
   /**
    * Defines behavior of a video stream in full view mode.
+   *
+   * - All text is hidden, if video is played and displayed again on pause.
    */
   Drupal.behaviors.VideoStreamBehavior = {
     attach: function (context) {
-      var $node = $('.modal .node-videostream'),
+      var $node = $('.node-videostream.view-mode-full'),
           $videoContainer = $node.find('.video-container');
 
       // if video exists, catch click events

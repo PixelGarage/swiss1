@@ -83,12 +83,20 @@ body.navbar-is-fixed-top {
     padding-top: @navbar-header-height !important;
   }
 
+  &.node-type-videostream {
+    padding-top: 30px !important;
+  }
 }
 
 
 header#navbar {
   border-bottom: none;
   background: white none;
+
+  .node-type-videostream & {
+    // hide header on videostream pages
+    display: none;
+  }
 
   >.container, .container-fluid {
     position: relative;

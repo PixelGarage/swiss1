@@ -11906,6 +11906,24 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
 /*
  *  Node videostream component
  * --------------------------------------------------*/
+.node-type-videostream .node.node-videostream.view-mode-full,
+.node-type-videostream .node.node-videostream.view-mode-default {
+  margin: 0 auto;
+  padding: 0;
+}
+@media screen and (min-width: 64em) {
+  .node-type-videostream .node.node-videostream.view-mode-full,
+  .node-type-videostream .node.node-videostream.view-mode-default {
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+@media screen and (min-width: 80em) {
+  .node-type-videostream .node.node-videostream.view-mode-full,
+  .node-type-videostream .node.node-videostream.view-mode-default {
+    max-width: 970px;
+  }
+}
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-container,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-container {
   position: relative;
@@ -20458,9 +20476,15 @@ body.navbar-is-fixed-top {
 body.navbar-is-fixed-top.admin-menu {
   padding-top: 67px !important;
 }
+body.navbar-is-fixed-top.node-type-videostream {
+  padding-top: 30px !important;
+}
 header#navbar {
   border-bottom: none;
   background: white none;
+}
+.node-type-videostream header#navbar {
+  display: none;
 }
 header#navbar > .container,
 header#navbar .container-fluid {

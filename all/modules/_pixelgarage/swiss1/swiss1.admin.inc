@@ -96,6 +96,29 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#description' => t("Defines the start/end time of a broadcast day. Default: Two o'clock in the morning."),
     '#weight' => 15,
   );
+  $form['swiss1_live_streaming'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Configure Swiss1 TV live streaming'),
+    '#collapsible' => true,
+    '#collapsed' => false,
+    '#weight' => 20,
+  );
+  $form['swiss1_live_streaming']['swiss1_live_streaming_starttime'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Live streaming player start time'),
+    '#size' => 20,
+    '#default_value' => variable_get('swiss1_live_streaming_starttime') ? variable_get('swiss1_live_streaming_starttime') : '-1 hour',
+    '#description' => t('Defines the time relative to the live streaming start, when the streaming player is shown. Default is -1 hour. Remark: Define period as relative PHP date, e.g. -1 hour, -30 minutes etc.'),
+    '#weight' => 10,
+  );
+  $form['swiss1_live_streaming']['swiss1_live_streaming_endtime'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Live streaming player end time'),
+    '#size' => 20,
+    '#default_value' => variable_get('swiss1_live_streaming_endtime') ? variable_get('swiss1_live_streaming_endtime') : '+1 hour',
+    '#description' => t('Defines the time relative to the live streaming end, when the streaming player is hidden. Default is +1 hour. Remark: Define period as relative PHP date, e.g. +1 hour, +30 minutes etc.'),
+    '#weight' => 20,
+  );
 
 
   return system_settings_form($form);

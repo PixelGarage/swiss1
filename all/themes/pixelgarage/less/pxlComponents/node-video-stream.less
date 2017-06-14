@@ -18,6 +18,21 @@
 // -------------------------
 .node.node-videostream.view-mode-full,
 .node.node-videostream.view-mode-default {
+  .node-type-videostream & {
+    // for full node pages, limit the width to container
+    margin: 0 auto;
+    padding: 0;
+
+    @media @normal {
+      padding: 0 @grid-gutter-width-const/2;
+      max-width: @container-inner-max-width;
+    }
+
+    @media @wide {
+      max-width: @container-inner-max-width-lg;
+    }
+  }
+
   >.row {
     >div.col-sm-12 {
       >.video-container {

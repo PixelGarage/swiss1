@@ -84,8 +84,19 @@ function swiss1_cron() {
 
 
 /* -----------------------------------------------------------------
- *  JWPLayer hook implementation
+ *  JWPlayer API implementation
  * ----------------------------------------------------------------- */
+
+/**
+ * Implements hook hook_video_embed_jwplayer_account_properties_alter().
+ */
+function swiss1_video_embed_jwplayer_account_properties_alter(&$account_properties) {
+  //
+  // Set account properties of Swiss1 account
+  unset($account_properties['default']);
+  $account_properties['geo_blocking'] = t('Account property with geo-blocking');
+  $account_properties['non_geo_blocking'] = t('Account property without geo-blocking');
+}
 
 /**
  * Returns the expiration timestamp value set on the node of the given video (media id).
@@ -103,6 +114,7 @@ function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp,
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
     ->fieldCondition('field_media_id', 'value', $media_id)
+    ->fieldCondition('field_run_type', 'value', 'primary')
     ->range(0,1);
   $result = $query->execute();
 

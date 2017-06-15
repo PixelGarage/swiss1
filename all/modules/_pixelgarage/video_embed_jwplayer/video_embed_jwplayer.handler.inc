@@ -30,12 +30,12 @@ function video_embed_jwplayer_video_embed_handler_info() {
       'content.jwplatform.com',
     ),
     'defaults' => array(
-      'jwplayer_player' => '',
       'jwplayer_skin' => 'seven',
       'jwplayer_skin_active_color' => '',
       'jwplayer_skin_inactive_color' => '',
       'jwplayer_skin_background_color' => '',
-      'jwplayer_url_signing' => false,
+      'jwplayer_secure_video_url' => false,
+      'jwplayer_secure_player_embed' => false,
       'jwplayer_autostart' => false,
       'jwplayer_repeat' => false,
       'jwplayer_mute' => false,
@@ -64,7 +64,6 @@ function video_embed_jwplayer_video_embed_handler_info() {
  */
 function video_embed_jwplayer_form_callback($defaults) {
   $form = array();
-  $players = video_embed_jwplayer_get_players();
   $skins = video_embed_jwplayer_get_skins();
   $skin_defaults = $defaults['jwplayer_skinning'];
   $stretching = array(
@@ -75,14 +74,19 @@ function video_embed_jwplayer_form_callback($defaults) {
   );
 
   //
-  // player
-  $form['jwplayer_player'] = array(
-    '#type' => 'select',
-    '#title' => t('Cloud Players'),
-    '#options' => $players,
-    '#description' => t('Select one of the defined cloud players as video player.'),
-    '#default_value' => $defaults['jwplayer_player'],
-  );
+  // set a player for all available account properties
+  $account_properties = _get_account_properties();
+  foreach ($account_properties as $key => $property_name) {
+    $players = video_embed_jwplayer_get_players($key);
+    $form['jwplayer_player_' . $key] = array(
+      '#type' => 'select',
+      '#title' => t('Select Cloud Player for ' . $property_name),
+      '#options' => $players,
+      '#description' => t('Select one of the defined cloud players of "@prop" as video player.', array('@prop' => $property_name)),
+      '#default_value' => variable_get('jwplayer_player_' . $key, '')
+    );
+
+  }
 
   //
   // skinning
@@ -133,11 +137,17 @@ function video_embed_jwplayer_form_callback($defaults) {
 
   //
   // basic settings
-  $form['jwplayer_url_signing'] = array(
+  $form['jwplayer_secure_video_url'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Use URL signing'),
-    '#description' => t('Signing URL is a security feature that enables you to lock down public access to videos and/or players.'),
-    '#default_value' => $defaults['jwplayer_url_signing'],
+    '#title' => t('Use secure video URLs'),
+    '#description' => t('Signing URL is a security feature that enables you to lock down public access to videos.'),
+    '#default_value' => $defaults['jwplayer_secure_video_url'],
+  );
+  $form['jwplayer_secure_player_embed'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Use secure player embed'),
+    '#description' => t('Use this setting if you want to lock down embedding of your players.'),
+    '#default_value' => $defaults['jwplayer_secure_player_embed'],
   );
   $form['jwplayer_autostart'] = array(
     '#type' => 'checkbox',
@@ -226,8 +236,8 @@ function video_embed_jwplayer_video_callback($url, $settings) {
 
   //
   // add player script in HEAD
-  $player_url = JWPLAYER_CONTENT_BASE_PATH . JWPLAYER_CLOUD_PLAYER_PATH . $settings['jwplayer_player'] . '.js';
-  drupal_add_js($player_url,
+  $player_uri = video_embed_jwplayer_get_player_uri($media_id, $settings);
+  drupal_add_js($player_uri,
     array('type' => 'external', 'scope' => 'header', 'weight' => 1000)
   );
 
@@ -250,7 +260,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
 
   //
   // define video embed
-  $do_sign_url = $settings['jwplayer_url_signing'];
+  $do_sign_url = $settings['jwplayer_secure_video_url'];
   $video_conversions = video_embed_jwplayer_get_available_video_conversions($media_id);
   $autoplay = $settings['jwplayer_autostart'] ? 'true' : 'false';
   $mute = $settings['jwplayer_mute'] ? 'true' : 'false';
@@ -332,6 +342,7 @@ function video_embed_jwplayer_get_media_id($url) {
   return $media_id ? $media_id : false;
 }
 
+
 /**
  * Generates a JWPlayer media URL. If $do_sign is set to true, then the URL is signed.
  *
@@ -393,7 +404,9 @@ function video_embed_jwplayer_get_media_url($media_id, $type, $do_sign = false, 
 
   //
   // sign the URL, if a secret is available
-  $secret = ($do_sign && !empty(variable_get('video_embed_jwplayer_api_secret'))) ? variable_get('video_embed_jwplayer_api_secret') : false;
+  $property_key = video_embed_jwplayer_get_property_key($media_id);
+  $secret = ($do_sign && !empty(variable_get('video_embed_jwplayer_api_secret_' . $property_key))) ?
+    variable_get('video_embed_jwplayer_api_secret_' . $property_key) : false;
 
   if ($secret) {
     //
@@ -414,6 +427,45 @@ function video_embed_jwplayer_get_media_url($media_id, $type, $do_sign = false, 
 };
 
 
+/**
+ * Get the player url. If the flag do_sign is set, the returned url is signed
+ * with the API secret.
+ *
+ * @param string $playerkey
+ *    The JW platform key of the player.
+ * @param bool   $do_sign
+ *    True, if the returned url has to be signed
+ * @param string $domain
+ *    The masked domain name you want to use for signing the content, e.g.
+ *    "https://video.mysite.com". Use this if you have setup DNS masking.
+ *    Defaults to
+ *    "//content.jwplatform.com/".
+ *
+ * @return string
+ *    The player url (signed or unsigned).
+ */
+function video_embed_jwplayer_get_player_uri($media_id, $settings, $domain = JWPLAYER_CONTENT_BASE_PATH) {
+  $property_key = video_embed_jwplayer_get_property_key($media_id);
+  $player_key = $settings['jwplayer_player_' . $property_key];
+  $player_uri = JWPLAYER_CLOUD_PLAYER_PATH . $player_key . '.js';
+
+  $secret = ($settings['jwplayer_secure_player_embed'] && !empty(variable_get('video_embed_jwplayer_api_secret_' . $property_key))) ?
+    variable_get('video_embed_jwplayer_api_secret_' . $property_key) : false;
+  if ($secret) {
+    $exp_timestamp = round((time() + 2*3600)/300)*300;
+    $signature = md5($player_uri . ':' . $exp_timestamp . ':' . $secret);
+    $player_uri = $player_uri . '?exp=' . $exp_timestamp . '&sig=' . $signature;
+  }
+  return $domain . $player_uri;
+}
+
+
+/**
+ * Get all available system skins plus the custom skins found in the css-directory
+ * of this project as an associated array.
+ *
+ * @return array An associative array of skins.
+ */
 function video_embed_jwplayer_get_skins () {
   $skins = array(
     'beelden' => 'Beelden',

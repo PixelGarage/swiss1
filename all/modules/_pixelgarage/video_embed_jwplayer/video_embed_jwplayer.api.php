@@ -7,6 +7,17 @@
  */
 
 /**
+ * Hook to alter your specific account properties. Each property is an entry in
+ * the associative array. Use a unique key and a name for each property.
+ *
+ * @param array $account_properties
+ *    An associative array of account properties
+ */
+function hook_video_embed_jwplayer_account_properties_alter(&$account_properties) {
+  // add defined account properties in your account here
+}
+
+/**
  * Hook allowing to override the default expiration time set to 2 hours after
  * the video playback has started. The timestamp format is a UNIX timestamp,
  * e.g. number of seconds since 1.1.1970.

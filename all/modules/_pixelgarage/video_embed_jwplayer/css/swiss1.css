@@ -17,8 +17,9 @@
   transition: opacity 0.15s ease;
 }
 .jw-skin-swiss1 .jw-controls-right .jw-logo {
-  margin: 15px !important;
-  max-width: 15px;
+  margin: 20px !important;
+  max-width: 60px !important;
+  width: auto;
 }
 .jw-skin-swiss1 .jw-display-icon-container {
   background-color: rgba(33, 33, 33, 0);

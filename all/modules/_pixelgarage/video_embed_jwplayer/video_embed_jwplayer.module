@@ -102,51 +102,112 @@ function video_embed_jwplayer_menu() {
   return $items;
 }
 
+/* -----------------------------------------------------------------
+ *  Admin settings form
+ * ----------------------------------------------------------------- */
+
+function _get_account_properties() {
+  $account_properties = array(
+    'default' => t('Default account property'),
+  );
+
+  // allow others to alter the account properties
+  drupal_alter('video_embed_jwplayer_account_properties', $account_properties);
+
+  return $account_properties;
+}
+
 /**
  * VEF settings page form callback.
  */
 function video_embed_jwplayer_settings_form($form, &$form_state) {
-  $form['video_embed_jwplayer_api_key'] = array(
-    '#type' => 'textfield',
-    '#title' => t('JWPLayer API key'),
-    '#default_value' => variable_get('video_embed_jwplayer_api_key', ''),
-    '#description' => t('Set the API key of your JW platform account. See JW Account->Properties->API Credentials.')
+  // find selected property (in Ajax call)
+  $property_key = isset($form_state['values']['video_embed_jwplayer_properties']) ?
+    $form_state['values']['video_embed_jwplayer_properties'] : variable_get('video_embed_jwplayer_properties', '');
+
+//
+// JWPlayer account properties$
+  $jwplayer_account_properties = _get_account_properties();
+  $form['video_embed_jwplayer_properties'] = array(
+    '#type' => 'select',
+    '#title' => t('Choose the JWPlayer Account Property.'),
+    '#options' => $jwplayer_account_properties,
+    '#default_value' => $property_key,
+    '#description' => t('Select the JWPlayer account properties for which you want to set the credentials. Set the credentials for ALL used properties of the account.'),
+    '#weight' => -1,
+    '#ajax' => array(
+      'event' => 'change',
+      'callback' => 'ajax_select_callback',
+      'wrapper' => 'property-settings',
+      'method' => 'replace',
+    ),
   );
-  $form['video_embed_jwplayer_api_secret'] = array(
-    '#type' => 'textfield',
-    '#title' => t('JWPLayer API secret'),
-    '#default_value' => variable_get('video_embed_jwplayer_api_secret', ''),
-    '#description' => t('Set the API secret of your JW platform account. See JW Account->Properties->API Credentials.')
+
+  $form['property_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Configure JWPlayer @prop', array('@prop' => $jwplayer_account_properties[$property_key])),
+    '#collapsible' => true,
+    '#collapsed' => false,
+    '#description' => t('Set the credentials for the specific JWPlayer acoount property.'),
+    '#prefix' => '<div id="property-settings">',
+    '#suffix' => '</div>',
+    '#weight' => 10,
   );
-  if (variable_get('video_embed_jwplayer_api_secret', '')) {
-    $form['video_embed_jwplayer_test'] = array(
+  $form['property_settings']['video_embed_jwplayer_api_key_' . $property_key] = array(
+    '#type' => 'textfield',
+    '#title' => t('API key'),
+    '#default_value' => variable_get('video_embed_jwplayer_api_key_' . $property_key, ''),
+    '#description' => t('Set the API key of the JWPlayer account property. See JWPlayer Account->Properties->API Credentials.'),
+    '#weight' => 10,
+  );
+  $form['property_settings']['video_embed_jwplayer_api_secret_' . $property_key] = array(
+    '#type' => 'textfield',
+    '#title' => t('API secret'),
+    '#default_value' => variable_get('video_embed_jwplayer_api_secret_' . $property_key, ''),
+    '#description' => t('Set the API secret of the JWPlayer account property. See JWPlayer Account->Properties->API Credentials.'),
+    '#weight' => 20,
+  );
+  if (variable_get('video_embed_jwplayer_api_secret_' . $property_key, '')) {
+    $form['property_settings']['video_embed_jwplayer_test'] = array(
       '#type' => 'button',
-      '#value' => t('Test JW Platform Connection'),
+      '#value' => t('Test JWPlatform Connection'),
       '#ajax' => array(
         'callback' => '_video_embed_jwplayer_management_api_test_connection',
         'wrapper' => 'jwplayer-connect-results',
         'method' => 'append',
       ),
       '#suffix' => '<div id="jwplayer-connect-results"></div>',
+      '#weight' => 30,
     );
   }
 
   return system_settings_form($form);
 }
 
+
+/**
+ * AJAX callback for the select field.
+ */
+function ajax_select_callback($form, &$form_state) {
+  return $form['property_settings'];
+}
+
 /**
  * AJAX callback to test connection with the JWPlayer Management API.
  */
-function _video_embed_jwplayer_management_api_test_connection() {
+function _video_embed_jwplayer_management_api_test_connection($form, &$form_state) {
   //
   // get the system status as test
-  if ($jwplayer_api = video_embed_jwplayer_get_instance()) {
+  $property_key = isset($form_state['values']['video_embed_jwplayer_properties']) ?
+    $form_state['values']['video_embed_jwplayer_properties'] : 'geo_blocking';
+
+  if ($jwplayer_api = video_embed_jwplayer_get_instance($property_key)) {
     $response = $jwplayer_api->call('/accounts/show');
 
     if ($response['status'] == 'ok') {
-      $message = t('SUCCESS! Your JWPlayer Edition is "@edition". You streamed @amount bytes this month.', array(
+      $message = t('SUCCESS! Your JWPlayer Edition is "@edition". You have @amount videos uploaded.', array(
         '@edition' => $response['account']['jwplayer_edition'],
-        '@amount' => $response['account']['traffic']['used'],
+        '@amount' => $response['account']['videos']['total'],
       ));
     }
     else {

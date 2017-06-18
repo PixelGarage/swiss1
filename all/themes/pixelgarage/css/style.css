@@ -12730,7 +12730,7 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body {
   overflow: hidden;
-  padding: 14px 0;
+  margin: 14px 0;
   height: 190px;
   max-height: 190px;
   color: white;

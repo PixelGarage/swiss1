@@ -49,15 +49,15 @@
 
       // if video exists, catch click events
       $videoContainer.once('click', function() {
-        $(this).on('click', function() {
+        var $header = $node.find('.video-header'),
+            $body = $node.find('.video-body'),
+            $similar = $node.find('.video-similar');
+
+        $videoContainer.on('click', function() {
           //
           // hide all elements of node, if the video is playing
           // otherwise show all node elements
-          var $video = $videoContainer.find('video'),
-              video = $video[0],
-              $header = $node.find('.video-header'),
-              $body = $node.find('.video-body'),
-              $similar = $node.find('.video-similar');
+          var $video = $videoContainer.find('video');
 
           // show video controls when video ends
           $video.once('events', function() {
@@ -68,7 +68,7 @@
               $similar.addClass('video-playing');
             });
             $(this).on('pause ended', function () {
-              // video is paused or ended, hide all node elements
+              // video is paused or ended, show all node elements
               $header.removeClass('video-playing');
               $body.removeClass('video-playing');
               $similar.removeClass('video-playing');
@@ -76,6 +76,15 @@
           });
 
         });
+
+        //
+        // hide node elements after 5 sec
+        setTimeout(function () {
+          // video is playing, hide all node elements
+          $header.addClass('video-playing');
+          $body.addClass('video-playing');
+          $similar.addClass('video-playing');
+        }, 5000);
       });
     }
   };

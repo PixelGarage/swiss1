@@ -51,7 +51,8 @@
       $videoContainer.once('click', function() {
         var $header = $node.find('.video-header'),
             $body = $node.find('.video-body'),
-            $similar = $node.find('.video-similar');
+            $similar = $node.find('.video-similar'),
+            $videoPoster = $videoContainer.find('video-poster');
 
         $videoContainer.on('click', function() {
           //
@@ -78,13 +79,15 @@
         });
 
         //
-        // hide node elements after 5 sec
-        setTimeout(function () {
-          // video is playing, hide all node elements
-          $header.addClass('video-playing');
-          $body.addClass('video-playing');
-          $similar.addClass('video-playing');
-        }, 5000);
+        // hide node elements after 5 sec, video is shown (no poster available)
+        if ($videoPoster.length <= 0) {
+          setTimeout(function () {
+            // video is playing, hide all node elements
+            $header.addClass('video-playing');
+            $body.addClass('video-playing');
+            $similar.addClass('video-playing');
+          }, 5000);
+        }
       });
     }
   };

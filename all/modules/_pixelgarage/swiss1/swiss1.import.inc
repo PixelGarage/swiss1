@@ -313,6 +313,20 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
       return $msg;
     }
 
+    // update the run type for PRIMARIES outside the primary broadcast period of a day.
+    // new run type = PRIMARY_REPEAT
+    if ($run_type == 'primary') {
+      $day = date('Y-m-d', $start_timestamp) . ' ';
+      $primary_period_start_time =  $day . variable_get('swiss1_primary_period_starttime', '18:45');
+      $primary_period_end_time = $day . variable_get('swiss1_primary_period_endtime', '21:45');
+      $primary_period_start_timestamp = strtotime($primary_period_start_time);
+      $primary_period_end_timestamp = strtotime($primary_period_end_time);
+
+      if (($start_timestamp < $primary_period_start_timestamp) || ($start_timestamp > $primary_period_end_timestamp)) {
+        $run_type = 'primary_repeat';
+      }
+    }
+
   }
 
   //

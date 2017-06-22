@@ -96,12 +96,38 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#description' => t("Defines the start/end time of a broadcast day. Default: Two o'clock in the morning."),
     '#weight' => 15,
   );
+  $form['swiss1_settings']['swiss1_primary_period'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Primary broadcast period per day'),
+    '#collapsible' => true,
+    '#collapsed' => false,
+    '#weight' => 20,
+  );
+  $form['swiss1_settings']['swiss1_primary_period']['swiss1_primary_period_starttime'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Primary period start time'),
+    '#size' => 20,
+    '#default_value' => variable_get('swiss1_primary_period_starttime') ? variable_get('swiss1_primary_period_starttime') : '18:45',
+    '#description' => t('Defines the start time of the primary broadcast period each day. Default is 18:45. Remark: Define the start time without a date, e.g. 18:45.'),
+    '#weight' => 0,
+  );
+  $form['swiss1_settings']['swiss1_primary_period']['swiss1_primary_period_endtime'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Primary period end time'),
+    '#size' => 20,
+    '#default_value' => variable_get('swiss1_primary_period_endtime') ? variable_get('swiss1_primary_period_endtime') : '21:45',
+    '#description' => t('Defines the end time of the primary broadcast period each day. Default is 21:45.'),
+    '#weight' => 1,
+  );
+
+
+  // LIVE Streaming
   $form['swiss1_live_streaming'] = array(
     '#type' => 'fieldset',
     '#title' => t('Configure Swiss1 TV live streaming'),
     '#collapsible' => true,
     '#collapsed' => false,
-    '#weight' => 20,
+    '#weight' => 25,
   );
   $form['swiss1_live_streaming']['swiss1_live_streaming_starttime'] = array(
     '#type' => 'textfield',

@@ -157,7 +157,7 @@ function _import_xml_file($filepath, &$import_counter) {
   //
   // If an EPG day file is imported, check if the day already exists.
   // If yes, delete all VODEntries of this day first
-  if ($epg_day) {
+  if ($epg_day && isset($xml->Entry->AiringInformation->ScheduledStartDateTime)) {
     $day_string = $xml->Entry->AiringInformation->ScheduledStartDateTime->__toString();
     $epg_day = explode(' ', $day_string)[0];  // set date of importing day
     _delete_existing_epg_day($epg_day, $import_counter);
@@ -167,7 +167,7 @@ function _import_xml_file($filepath, &$import_counter) {
   // select the video entries in the file and import it
   $message = '';
   $xml_entries = $xml->xpath($xpath);
-  if ($epg_day) {
+  if (count($xml_entries) && $epg_day) {
     // sort day so that PRIMARY is before RERUN
     usort($xml_entries, '_epgSort');
   }

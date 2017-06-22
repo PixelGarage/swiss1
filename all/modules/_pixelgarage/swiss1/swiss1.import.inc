@@ -264,14 +264,61 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   $schedule_id = !empty($arr_entry['ScheduleReference']['AssetReconciliationId']) ?
     $arr_entry['ScheduleReference']['AssetReconciliationId'] : FALSE;
 
-  // get run type
-  $run_type = !empty($arr_entry['AiringInformation']['RunType']) ?
-    strtolower($arr_entry['AiringInformation']['RunType']) : FALSE;
+  //
+  // Get specific Airing information
+  // Only for scheduled entries in the future
+  $airing_info = false;
+  $run_type = false;
+  $start_timestamp = false;
+  $start_date = false;
+  $end_timestamp = false;
+  $end_date = false;
+
+  if (isset($arr_entry['AiringInformation'])) {
+    $airing_info = $arr_entry['AiringInformation'];
+
+    // get run type
+    $run_type = !empty($airing_info['RunType']) ? strtolower($airing_info['RunType']) : FALSE;
+
+    // get broadcast start time
+    if (!empty($airing_info['ScheduledStartDateTime'])) {
+      // replace . with - to guarantee the correct parsing in strtotime: dash means European date format d-m-Y
+      $start_time = str_replace('.', '-', $airing_info['ScheduledStartDateTime']);
+      $start_timestamp = strtotime($start_time);
+      $start_date = date('Y-m-d H:i:s', $start_timestamp);
+    }
+    else {
+      $msg = t('No start date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+      $import_counter['@failed']++;
+      return $msg;
+    }
+
+    // get broadcast end time (must be > start time)
+    if (!empty($airing_info['ScheduledEndDateTime'])) {
+      // replace . with - to guarantee the correct parsing in strtotime: dash means European date format d-m-Y
+      $end_time = str_replace('.', '-', $airing_info['ScheduledEndDateTime']);
+      $end_timestamp = strtotime($end_time);
+      if ($end_timestamp > $start_timestamp) {
+        $end_date = date('Y-m-d H:i:s', $end_timestamp);
+      }
+      else {
+        $msg = t('End date time set before start date time for VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+        $import_counter['@failed']++;
+        return $msg;
+      }
+    }
+    else {
+      $msg = t('No end date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
+      $import_counter['@failed']++;
+      return $msg;
+    }
+
+  }
 
   //
   // Create a new or get an existing videostream node
   // Only scheduled VODEntries are updatable, standalone VODEntries are always created.
-  $node = _get_videostream_instance($schedule_id, $run_type, $import_counter);
+  $node = _get_videostream_instance($schedule_id, $run_type, $start_date, $import_counter);
 
   // set schedule id and run type
   $node->field_schedule_id[LANGUAGE_NONE][0]['value'] = $schedule_id ? $schedule_id : '';
@@ -281,31 +328,6 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   // set EPG day for an EPG import (do not override in VODEntry import)
   if ($epg_day) {
     $node->field_belongs_to_day[LANGUAGE_NONE][0]['value'] = $epg_day;
-  }
-
-
-  //
-  // EPG infos / Category (can be empty)
-  if (isset($arr_entry['Description'])) {
-    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : FALSE;
-    if ($epg) {
-      $node->title = !empty($epg['Title']) ? $epg['Title'] : (!empty($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
-      $synopsis = !empty($epg['Synopsis']) ? $epg['Synopsis'] : t('<p>Keine Information zur Sendung verfügbar.</p>');
-      $synopsis .= !empty($epg['PresentedBy']) ? t('<p>Moderator: @moderator</p>', array('@moderator' => $epg['PresentedBy'])) : '';
-      $synopsis .= !empty($epg['Interviewee']) ? t('<p>Gast: @guest</p>', array('@guest' => $epg['Interviewee'])) : '';
-      $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
-      $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
-      $node->field_video_language[LANGUAGE_NONE][0]['value'] = !empty($epg['Language']) ? $epg['Language'] : t('Deutsch');
-      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = !empty($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
-      $node->field_series[LANGUAGE_NONE][0]['value'] = !empty($epg['Series']) ? $epg['Series'] : '';
-      $node->field_season[LANGUAGE_NONE][0]['value'] = !empty($epg['Season']) ? $epg['Season'] : '';
-      $node->field_episode[LANGUAGE_NONE][0]['value'] = !empty($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
-      $node->field_category[LANGUAGE_NONE][0]['tid'] =
-        !empty($epg['Genre']) ? _get_category_key($epg['Genre']) : _get_category_key();
-
-      //$buzzword = !empty($epg['Buzzword']) ? $epg['Buzzword'] : '';
-      //$keyword = !empty($epg['Keyword']) ? $epg['Keyword'] : '';
-    }
   }
 
 
@@ -340,45 +362,14 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
   }
 
 
+  //
   // Airing information
-  // Only for scheduled entries in the future
-  if (isset($arr_entry['AiringInformation'])) {
-    $airing_info = $arr_entry['AiringInformation'];
+  // get all airing informations
+  if ($airing_info) {
 
-    // get broadcast start time
-    if (!empty($airing_info['ScheduledStartDateTime'])) {
-      // replace . with - to guarantee the correct parsing in strtotime: dash means European date format d-m-Y
-      $start_time = str_replace('.', '-', $airing_info['ScheduledStartDateTime']);
-      $start_timestamp = strtotime($start_time);
-      $start_date = date('Y-m-d H:i:s', $start_timestamp);
-      $node->field_broadcast_date[LANGUAGE_NONE][0]['value'] = $start_date;
-    }
-    else {
-      $msg = t('No start date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
-      $import_counter['@failed']++;
-      return $msg;
-    }
-
-    // get broadcast end time (must be > start time)
-    if (!empty($airing_info['ScheduledEndDateTime'])) {
-      // replace . with - to guarantee the correct parsing in strtotime: dash means European date format d-m-Y
-      $end_time = str_replace('.', '-', $airing_info['ScheduledEndDateTime']);
-      $end_timestamp = strtotime($end_time);
-      if ($end_timestamp > $start_timestamp) {
-        $end_date = date('Y-m-d H:i:s', $end_timestamp);
-        $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = $end_date;
-      }
-      else {
-        $msg = t('End date time set before start date time for VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
-        $import_counter['@failed']++;
-        return $msg;
-      }
-    }
-    else {
-      $msg = t('No end date time has been defined in VDOEntry with schedule id = @id.', array('@id' => $schedule_id));
-      $import_counter['@failed']++;
-      return $msg;
-    }
+    // set broadcast start/end time
+    $node->field_broadcast_date[LANGUAGE_NONE][0]['value'] = $start_date;
+    $node->field_broadcast_date[LANGUAGE_NONE][0]['value2'] = $end_date;
 
     // set end of license date
     $eol_timestamp = FALSE;
@@ -451,6 +442,31 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
 
 
   //
+  // EPG infos / Category (can be empty)
+  if (isset($arr_entry['Description'])) {
+    $epg = isset($arr_entry['Description']['Epg']) ? $arr_entry['Description']['Epg'] : FALSE;
+    if ($epg) {
+      $node->title = !empty($epg['Title']) ? $epg['Title'] : (!empty($epg['Headline']) ? $epg['Headline'] : t('Kein Titel'));
+      $synopsis = !empty($epg['Synopsis']) ? $epg['Synopsis'] : t('<p>Keine Information zur Sendung verfügbar.</p>');
+      $synopsis .= !empty($epg['PresentedBy']) ? t('<p>Moderator: @moderator</p>', array('@moderator' => $epg['PresentedBy'])) : '';
+      $synopsis .= !empty($epg['Interviewee']) ? t('<p>Gast: @guest</p>', array('@guest' => $epg['Interviewee'])) : '';
+      $node->body[LANGUAGE_NONE][0]['value'] = $synopsis;
+      $node->body[LANGUAGE_NONE][0]['format'] = 'full_html';
+      $node->field_video_language[LANGUAGE_NONE][0]['value'] = !empty($epg['Language']) ? $epg['Language'] : t('Deutsch');
+      $node->field_age_restriction[LANGUAGE_NONE][0]['value'] = !empty($epg['AgeRestriction']) ? $epg['AgeRestriction'] : t('6+');
+      $node->field_series[LANGUAGE_NONE][0]['value'] = !empty($epg['Series']) ? $epg['Series'] : '';
+      $node->field_season[LANGUAGE_NONE][0]['value'] = !empty($epg['Season']) ? $epg['Season'] : '';
+      $node->field_episode[LANGUAGE_NONE][0]['value'] = !empty($epg['EpisodeNumber']) ? $epg['EpisodeNumber'] : '';
+      $node->field_category[LANGUAGE_NONE][0]['tid'] =
+        !empty($epg['Genre']) ? _get_category_key($epg['Genre']) : _get_category_key();
+
+      //$buzzword = !empty($epg['Buzzword']) ? $epg['Buzzword'] : '';
+      //$keyword = !empty($epg['Keyword']) ? $epg['Keyword'] : '';
+    }
+  }
+
+
+  //
   // Publishing Information (only for entries not scheduled in EPG)
   // Default period is [now, now + 25 years], if no end date is given
   if (isset($arr_entry['PublishingInformation'])) {
@@ -495,15 +511,16 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
  *
  * Returns the node (newly created or existing one)
  */
-function _get_videostream_instance($schedule_id, $run_type, &$import_counter) {
+function _get_videostream_instance($schedule_id, $run_type, $start_date, &$import_counter) {
   $node = FALSE;
 
-  if ($schedule_id && $run_type) {
+  if ($schedule_id && $run_type && $start_date) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'videostream')
       ->fieldCondition('field_schedule_id', 'value', $schedule_id)
       ->fieldCondition('field_run_type', 'value', $run_type)
+      ->fieldCondition('field_broadcast_date', 'value', $start_date)
       ->range(0, 1);
     $result = $query->execute();
 

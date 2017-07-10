@@ -52,7 +52,7 @@
         var $header = $node.find('.video-header'),
             $body = $node.find('.video-body'),
             $similar = $node.find('.video-similar'),
-            $videoPoster = $videoContainer.find('video-poster');
+            $videoPoster = $videoContainer.find('.video-poster');
 
         $videoContainer.on('click', function() {
           //

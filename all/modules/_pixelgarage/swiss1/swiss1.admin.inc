@@ -87,6 +87,15 @@ function swiss1_import_settings_form($form, &$form_state) {
     '02:00' => t('Zwei Uhr morgens'),
     '03:00' => t('Drei Uhr morgens'),
     '04:00' => t('Vier Uhr morgens'),
+    '12:00' => t('Zwölf Uhr mittags'),
+    '13:00' => t('Ein Uhr nachmittags'),
+    '14:00' => t('Zwei Uhr nachmittags'),
+    '15:00' => t('Drei Uhr nachmittags'),
+    '16:00' => t('Vier Uhr nachmittags'),
+    '17:00' => t('Fünf Uhr nachmittags'),
+    '18:00' => t('Sechs Uhr abends'),
+    '19:00' => t('Sieben Uhr abends'),
+    '20:00' => t('Acht Uhr abends'),
   );
   $form['swiss1_settings']['swiss1_video_day_start_time'] = array(
     '#type' => 'select',

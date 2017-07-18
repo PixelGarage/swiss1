@@ -40,7 +40,7 @@
           width: 16px;
           height: 16px;
           border: none;
-          background: url(../images/icon-close.svg) no-repeat center / contain;
+          background: url(../images/icon-close-dark.svg) no-repeat center / contain;
         }
       }
 
@@ -70,12 +70,16 @@
     width: @navbar-search-form-width;
 
     .views-exposed-widget {
-      &.views-widget-filter-field_category_tid {
-        width: 40%;
+      &.views-widget-filter-combine {
+        width: 30%;
       }
 
-      &.views-widget-filter-combine {
-        width: 50%;
+      &.views-widget-filter-field_category_tid {
+        width: 60%;
+
+        select {
+          padding: 0;
+        }
       }
 
       &.views-submit-button {

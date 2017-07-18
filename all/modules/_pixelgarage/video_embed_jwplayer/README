@@ -1,15 +1,17 @@
 -----------------------------------------------------------------------------
   JWPlayer Video Embed Field Extension
 -----------------------------------------------------------------------------
-THE IMPLEMENTATION IS BASED ON DELIVERY API V1 AND MANAGEMENT API V1.
+THE IMPLEMENTATION IS BASED ON DELIVERY API V1 AND MANAGEMENT API V1 OF THE JWPLAYER PLATFORM.
 
 
 This module provides a JWPlayer handler for the video_embed_field module. It implements a bitrate optimized
-video streaming solution for videos hosted on the JW plattform.
+video streaming solution for videos hosted on the JW platform.
 
 The following features are available:
-1)  All defined Players can be selected in the video embed style.
-    Select one of your predefined players on the JW platform for video display.
+0)  All defined properties of the account can be connected. This means, the credentials for each Account Property can be
+    configured in the settings form.
+1)  All defined Players per Property can be selected in the video embed style.
+    Select one of your predefined players on the JW platform for video display. All players are signed automatically.
 
 2)  Best possible video delivery.
     The implemented fallback/quality toggle scenario is: [DASH] -> [HLS] -> mp4 quality toggling
@@ -23,8 +25,10 @@ The following features are available:
     settings of a video embed style (admin/config/media/vef/vef_video_styles/list/jwplayer_adaptive/edit). For more
     information about JWPlayer skinning see the CSS skinning reference (link below).
 
-4)  URL signing
-    The video streaming can be protected by URL signing. For this you have to set your API credentials in the settings form.
+4)  URL signing (API credentials mandatory)
+    All media links are protected by URL signing. The Account Property for each media id is automatically detected, so
+    that the correct credentials for the signing are used.
+    The expiration date of the signature can be altered via an API call.
 
 5)  Playlists (RSS/JSON) are not supported yet!
 

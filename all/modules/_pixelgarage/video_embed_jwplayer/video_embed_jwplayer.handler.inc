@@ -271,14 +271,17 @@ function video_embed_jwplayer_video_callback($url, $settings) {
   $playlist = 'playlist: [{' .
     'image: "' . video_embed_jwplayer_get_media_url($media_id, 'jpg', $do_sign_url) . '", ' .
     'mediaid: "' . $media_id . '", ' .
-    'sources: [{' .
-    //'file: "' . video_embed_jwplayer_get_media_url($media_id, 'mpd', $do_sign_url) . '"}, {' .
-    'file: "' . video_embed_jwplayer_get_media_url($media_id, 'm3u8', $do_sign_url);
+    'sources: [' .
+    //'{file: "' . video_embed_jwplayer_get_media_url($media_id, 'mpd', $do_sign_url) . '"}, ' .
+    '{file: "' . video_embed_jwplayer_get_media_url($media_id, 'm3u8', $do_sign_url) . '"}';
+  $first = false;
   foreach ($video_conversions as $key => $conversion) {
-    $playlist .= '"}, {file: "' . video_embed_jwplayer_get_media_url($media_id, $conversion['format'], $do_sign_url, $key) .
-      '", label: "' . $conversion['name'];
+    if (!$first) $playlist .= ', ';
+    $first = false;
+    $playlist .= '{file: "' . video_embed_jwplayer_get_media_url($media_id, $conversion['format'], $do_sign_url, $key) .
+      '", label: "' . $conversion['name'] . '"}';
   }
-  $playlist .= '"}]}],';
+  $playlist .= ']}],';
 
   $video_embed = '<div id="jwplayer-video-embed"></div><script type="text/javaScript">' .
     'jwplayer("jwplayer-video-embed").setup({' .

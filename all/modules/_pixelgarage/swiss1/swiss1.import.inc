@@ -13,6 +13,7 @@
  * Define run types of VODEntry
  */
 define('SWISS1_RUNTYPE_PRIMARY', 'primary');
+define('SWISS1_RUNTYPE_PRIMARY_REPEAT', 'primary_repeat');
 define('SWISS1_RUNTYPE_RERUN', 'rerun');
 define('SWISS1_RUNTYPE_NOT_SPECIFIED', 'not_specified');
 
@@ -315,7 +316,7 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
 
     // update the run type for PRIMARIES outside the primary broadcast period of a day.
     // new run type = PRIMARY_REPEAT
-    if ($run_type == 'primary') {
+    if ($run_type == SWISS1_RUNTYPE_PRIMARY) {
       $day = date('Y-m-d', $start_timestamp) . ' ';
       $primary_period_start_time =  $day . variable_get('swiss1_primary_period_starttime', '18:45');
       $primary_period_end_time = $day . variable_get('swiss1_primary_period_endtime', '21:45');
@@ -323,7 +324,7 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
       $primary_period_end_timestamp = strtotime($primary_period_end_time);
 
       if (($start_timestamp < $primary_period_start_timestamp) || ($start_timestamp > $primary_period_end_timestamp)) {
-        $run_type = 'primary_repeat';
+        $run_type = SWISS1_RUNTYPE_PRIMARY_REPEAT;
       }
     }
 
@@ -415,6 +416,7 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
     // validity end date
     switch ($run_type) {
       case SWISS1_RUNTYPE_PRIMARY:
+      case SWISS1_RUNTYPE_PRIMARY_REPEAT:
         // set expiration date by catchup period
         $catchup_period = !empty($airing_info['CatchupPeriod']) ? _get_catchup_period($airing_info['CatchupPeriod']) : variable_get('swiss1_import_catchup_period');
         $exp_timestamp = strtotime($catchup_period, $validity_start_timestamp);
@@ -571,7 +573,7 @@ function _update_rerun_with_existing_primary($schedule_id, $validity_start_times
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->fieldCondition('field_schedule_id', 'value', $schedule_id)
-    ->fieldCondition('field_run_type', 'value', 'primary')
+    ->fieldCondition('field_run_type', 'value', array(SWISS1_RUNTYPE_PRIMARY, SWISS1_RUNTYPE_PRIMARY_REPEAT), 'IN')
     ->range(0, 1);
   $result = $query->execute();
   if (isset($result['node'])) {
@@ -593,7 +595,7 @@ function _update_existing_reruns_with_primary($schedule_id, $primary_node) {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->fieldCondition('field_schedule_id', 'value', $schedule_id)
-    ->fieldCondition('field_run_type', 'value', 'rerun');
+    ->fieldCondition('field_run_type', 'value', SWISS1_RUNTYPE_RERUN);
   $result = $query->execute();
   if (isset($result['node'])) {
     $rerun_nodes = node_load_multiple(array_keys($result['node']));

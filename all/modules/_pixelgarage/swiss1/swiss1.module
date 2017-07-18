@@ -99,7 +99,8 @@ function swiss1_video_embed_jwplayer_account_properties_alter(&$account_properti
 }
 
 /**
- * Returns the expiration timestamp value set on the node of the given video (media id).
+ * Returns the latest validity end timestamp value of all currently valid nodes
+ * with the given video (media id).
  *
  * @param int $exp_timestamp
  *    The UNIX timestamp to be overridden by this function.
@@ -109,12 +110,15 @@ function swiss1_video_embed_jwplayer_account_properties_alter(&$account_properti
 function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp, $media_id) {
   //
   // get expiration date from the node with the given media id
+  $now = date('Y-m-d H:i:s'); // format matters for comparison to work
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
     ->fieldCondition('field_media_id', 'value', $media_id)
-    ->fieldCondition('field_run_type', 'value', 'primary')
+    ->fieldCondition('field_run_type', 'value', array('primary', 'primary_repeat'), 'IN')
+    ->fieldCondition('field_validity_period', 'value', $now, '<')
+    ->fieldOrderBy('field_validity_period', 'value2', 'DESC')
     ->range(0,1);
   $result = $query->execute();
 

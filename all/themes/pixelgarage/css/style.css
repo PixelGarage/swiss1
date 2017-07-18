@@ -20640,7 +20640,7 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
   width: 16px;
   height: 16px;
   border: none;
-  background: url(../images/icon-close.svg) no-repeat center / contain;
+  background: url(../images/icon-close-dark.svg) no-repeat center / contain;
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
@@ -21042,15 +21042,19 @@ header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-s
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets {
-  width: 280px;
-}
-header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid,
-header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid {
-  width: 40%;
+  width: 360px;
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-combine,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-combine {
-  width: 50%;
+  width: 30%;
+}
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid,
+header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid {
+  width: 60%;
+}
+header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid select,
+header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-widget-filter-field_category_tid select {
+  padding: 0;
 }
 header#navbar > .container .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button,
 header#navbar .container-fluid .navbar-header #navbar-search-container .navbar-search-form.form-expanded .views-exposed-form .views-exposed-widgets .views-exposed-widget.views-submit-button {

@@ -171,6 +171,7 @@
     attach: function(context) {
       var $searchContainer = $('#navbar-search-container'),
           $searchForm = $searchContainer.find('.navbar-search-form'),
+          $selectCategory = $searchForm.find('.form-select'),
           $searchButton = $searchContainer.find('.navbar-search-button'),
           $submitButton = $searchForm.find('#edit-submit-search-videos');
 
@@ -195,6 +196,10 @@
               $searchForm.addClass('form-expanded');
             }
           }
+        });
+
+        $selectCategory.on('change', function() {
+          $submitButton.click();
         });
 
         // reset form-expanded on resize

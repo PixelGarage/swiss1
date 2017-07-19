@@ -96,9 +96,19 @@ body {
         section { // column(s)
 
           h1.page-header {
-            margin: 44px 0 0;
+            margin: 44px auto 0;
+            padding: 0;
             #pxl-mixins.title();
             border: none;
+
+            @media @normal {
+              padding: 0 @grid-gutter-width-const/2;
+              max-width: @container-inner-max-width;
+            }
+
+            @media @wide {
+              max-width: @container-inner-max-width-lg;
+            }
           }
 
           .messages {

@@ -20817,7 +20817,8 @@ body .main-container .container-fluid #page-header .region-header h2.block-title
 }
 body .main-container > .container .row section h1.page-header,
 body .main-container .container-fluid .row section h1.page-header {
-  margin: 44px 0 0;
+  margin: 44px auto 0;
+  padding: 0;
   font-family: 'CiutadellaMedium';
   font-size: 20px;
   letter-spacing: 0;
@@ -20848,6 +20849,19 @@ body .main-container .container-fluid .row section h1.page-header {
   body .main-container > .container .row section h1.page-header,
   body .main-container .container-fluid .row section h1.page-header {
     text-align: left;
+  }
+}
+@media screen and (min-width: 64em) {
+  body .main-container > .container .row section h1.page-header,
+  body .main-container .container-fluid .row section h1.page-header {
+    padding: 0 15px;
+    max-width: 766px;
+  }
+}
+@media screen and (min-width: 80em) {
+  body .main-container > .container .row section h1.page-header,
+  body .main-container .container-fluid .row section h1.page-header {
+    max-width: 970px;
   }
 }
 body .main-container > .container .row section .messages,

@@ -12,6 +12,7 @@
   <?php endif; ?>
   <div class="group-header">
     <div class="group-header-line"></div>
+    <div class="broadcast-time"><?php print $broadcast_time; ?></div>
   </div>
   <div class="row group-body">
     <div class="col-12 col-xs-6 col-sm-4 col-first">

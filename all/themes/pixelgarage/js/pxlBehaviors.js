@@ -97,28 +97,41 @@
    */
   Drupal.behaviors.hoverImageSwap = {
     attach: function () {
-      var $item = $('.pe-container > .pe-item');
+      var $items = $('.pe-container > .pe-item');
 
-      $item.hover(
-        function () {
-          // mouse enter
-          var $thumb = $(this).find('.node-videostream .video-thumb');
+      if (isMobile.any) {
+        // mobile device, use original images (no desaturation)
+        var $thumbs = $items.find('.node-videostream .video-thumb');
 
-          if ($thumb.length > 0) {
-            var thumb_uri = $thumb.attr('src');
-            $thumb.attr('src', thumb_uri.replace('files/styles/desaturate_25/public/images', 'files/images'));
+        $thumbs.each(function(index) {
+          var $thumb = $(this),
+              thumb_uri = $thumb.attr('src');
+
+          $thumb.attr('src', thumb_uri.replace('files/styles/desaturate_25/public/images', 'files/images'));
+        });
+      }
+      else {
+        $items.hover(
+          function () {
+            // mouse enter
+            var $thumb = $(this).find('.node-videostream .video-thumb');
+
+            if ($thumb.length > 0) {
+              var thumb_uri = $thumb.attr('src');
+              $thumb.attr('src', thumb_uri.replace('files/styles/desaturate_25/public/images', 'files/images'));
+            }
+          },
+          function () {
+            // mouse leave
+            var $thumb = $(this).find('.node-videostream .video-thumb');
+
+            if ($thumb.length > 0) {
+              var thumb_uri = $thumb.attr('src');
+              $thumb.attr('src', thumb_uri.replace('files/images', 'files/styles/desaturate_25/public/images'));
+            }
           }
-        },
-        function () {
-          // mouse leave
-          var $thumb = $(this).find('.node-videostream .video-thumb');
-
-          if ($thumb.length > 0) {
-            var thumb_uri = $thumb.attr('src');
-            $thumb.attr('src', thumb_uri.replace('files/images', 'files/styles/desaturate_25/public/images'));
-          }
-        }
-      );
+        );
+      }
     }
   };
 

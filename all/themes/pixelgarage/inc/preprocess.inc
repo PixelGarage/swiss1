@@ -32,6 +32,7 @@ function pixelgarage_preprocess_page(&$vars) {
 
   // add background logo
   $vars['background_logo'] = file_create_url($path . 'swiss1_background_logo.png');
+
   //
   // get exposed search form, if available (to render it in modal dialog)
   $exposed_search_form_section = 'views_-exp-search_videos-search_page';
@@ -180,7 +181,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   //
   // VIDEO / IMAGE DISPLAY
   // get poster image. if none is set, set default image
-  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_search';
+  $use_thumb = $view_mode == 'teaser' || $view_mode == 'teaser_program';
   if ($use_thumb && !empty($node->field_thumb_path) && $thumb = file_load($node->field_thumb_path[LANGUAGE_NONE][0]['fid'])) {
     $thumb_uri = create_desaturated_image($thumb->uri);
     $vars['image_url'] = file_create_url($thumb_uri);

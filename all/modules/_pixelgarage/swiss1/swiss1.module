@@ -82,6 +82,66 @@ function swiss1_cron() {
   variable_set('swiss1_cron_last_run', REQUEST_TIME);
 }
 
+/**
+ * Allows altering a view at the very beginning of views processing, before
+ * anything is done.
+ **/
+function swiss1_views_pre_view(&$view, &$display_id, &$args) {
+  //
+  // dynamically set the daily prime-time broadcasts (videostream nodes) as featured,
+  // reset flag for others
+  if ($view->name == 'featured' && $display_id == 'block') {
+    // delete all featured content first
+    _reset_featured_content();
+
+    // feature prime-time broadcasts of today
+    _set_daily_featured_content();
+  }
+}
+
+function _reset_featured_content() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_featured', 'value', 1);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nodes = node_load_multiple(array_keys($result['node']));
+    foreach ($nodes as $node) {
+      $node->field_featured[LANGUAGE_NONE][0]['value'] = 0;
+      node_save($node);
+    }
+  }
+}
+
+
+function _set_daily_featured_content() {
+  $today = strtotime('today');
+  $tomorrow = strtotime('tomorrow');
+  $start_date = date('Y-m-d H:i:s', $today);  // format matters for comparison to work
+  $end_date = date('Y-m-d H:i:s', $tomorrow);  // format matters for comparison to work
+
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_run_type', 'value', 'primary')
+    ->fieldCondition('field_featured', 'value', 0)
+    ->fieldCondition('field_broadcast_date', 'value', $start_date, '>')
+    ->fieldCondition('field_broadcast_date', 'value', $end_date, '<');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nodes = node_load_multiple(array_keys($result['node']));
+    foreach ($nodes as $node) {
+      $node->field_featured[LANGUAGE_NONE][0]['value'] = 1;
+      node_save($node);
+    }
+  }
+}
+
 
 /* -----------------------------------------------------------------
  *  JWPlayer API implementation

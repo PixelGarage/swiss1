@@ -116,19 +116,31 @@ function _reset_featured_content() {
   }
 }
 
-
+/**
+ * Set daily broadcasts from 19:45 to 21:45 as featured content, automatically.
+ *
+ * Is current time less than 22:00, feature the broadcasts from yesterday (can be played),
+ * if current time is greater than 22:00, feature the broadcasts from today (playable after 10 pm).
+ */
 function _set_daily_featured_content() {
-  $today = strtotime('today');
-  $tomorrow = strtotime('tomorrow');
-  $start_date = date('Y-m-d H:i:s', $today);  // format matters for comparison to work
-  $end_date = date('Y-m-d H:i:s', $tomorrow);  // format matters for comparison to work
+  $now = time();
+  $ten_pm = strtotime('today 22:00');
+  if ($now >= $ten_pm) {
+    $start = strtotime('today 19:45');
+    $end = strtotime('today 21:45');
+  }
+  else {
+    $start = strtotime('yesterday 19:45');
+    $end = strtotime('yesterday 21:45');
+  }
+  $start_date = date('Y-m-d H:i:s', $start);  // format matters for comparison to work
+  $end_date = date('Y-m-d H:i:s', $end);  // format matters for comparison to work
 
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
-    ->fieldCondition('field_run_type', 'value', 'primary')
-    ->fieldCondition('field_featured', 'value', 0)
+      ->fieldCondition('field_featured', 'value', 0)
     ->fieldCondition('field_broadcast_date', 'value', $start_date, '>')
     ->fieldCondition('field_broadcast_date', 'value', $end_date, '<');
   $result = $query->execute();

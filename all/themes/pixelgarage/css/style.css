@@ -13228,84 +13228,40 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   font-family: 'fontawesome';
   padding-right: 5px;
 }
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff {
+.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-broadcast-time > .time-info,
+.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-broadcast-time > .time-info {
+  font-family: 'CiutadellaRegular', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 1.1667em;
+  text-align: left;
+  color: #fff;
   border-top: 1px solid #fff;
   border-top: 0.5px solid #fff;
 }
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding: 10px 0;
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-broadcast-time > .time-info,
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-broadcast-time > .time-info {
+    font-size: 1.82291667vw;
+  }
 }
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  padding: 0 10px 0 0;
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-broadcast-time > .time-info,
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-broadcast-time > .time-info {
+    font-size: 14px;
+  }
 }
-body.desktop .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li.whatsapp,
-body.desktop .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li.whatsapp {
-  display: none;
+@media screen and (min-width: 80em) {
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-broadcast-time > .time-info,
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-broadcast-time > .time-info {
+    font-size: 16px;
+  }
 }
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a {
-  display: block;
-  width: auto;
-  text-decoration: none;
-  color: white;
-  border: none;
-  background: none;
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a:hover,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a:hover,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a:focus,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a:focus {
-  color: #BC2929;
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.fa,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.fa {
-  display: inline-block;
-  font-size: 20px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.fa.fa-facebook:before,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.fa.fa-facebook:before {
-  content: '\f082';
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.fa.fa-twitter:before,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.fa.fa-twitter:before {
-  content: '\f081';
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.fa.fa-whatsapp,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.fa.fa-whatsapp {
-  padding: 1px 2px;
-  font-size: 16px;
-  color: #282828;
-  line-height: 1;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #fff;
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.fa.fa-whatsapp:hover,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.fa.fa-whatsapp:hover {
-  background-color: #BC2929;
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.fa.fa-envelope:before,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.fa.fa-envelope:before {
-  content: '\f199';
-}
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .social-buttons > .shariff ul li a span.share_text,
-.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .social-buttons > .shariff ul li a span.share_text {
-  display: none;
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-broadcast-time > .time-info,
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-broadcast-time > .time-info {
+    text-align: left;
+  }
 }
 .node.node-videostream.view-mode-teaser > .row > div.col-sm-12 > .video-container {
   display: inline-block;

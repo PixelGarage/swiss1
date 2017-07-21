@@ -78,7 +78,7 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#title' => t('Default catchup period'),
     '#size' => 20,
     '#default_value' => variable_get('swiss1_import_catchup_period') ? variable_get('swiss1_import_catchup_period') : '+7 days',
-    '#description' => t('Defines the default catchup period of a broadcast. Default is 7 days. Remark: Define period as relative PHP date, e.g. 1 day, 4 days, 30 minutes etc.'),
+    '#description' => t('Defines the default catchup period of a broadcast. Default is 7 days. Remark: Define period as relative date, e.g. 1 day, 4 days, 30 minutes etc.'),
     '#weight' => 10,
   );
   $day_start_options = array(
@@ -102,30 +102,30 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#title' => t('Start time of a broadcast day'),
     '#options' => $day_start_options,
     '#default_value' => variable_get('swiss1_video_day_start_time') ? variable_get('swiss1_video_day_start_time') : '02:00',
-    '#description' => t("Defines the start/end time of a broadcast day. Default: Two o'clock in the morning."),
+    '#description' => t("Defines the start time of a day on the Program page. This setting has no influence on the imported data, only on the Program page display. Default: Two o'clock in the morning."),
     '#weight' => 15,
   );
   $form['swiss1_settings']['swiss1_primary_period'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Primary broadcast period per day'),
+    '#title' => t('Prime-time broadcast period per day'),
     '#collapsible' => true,
     '#collapsed' => false,
     '#weight' => 20,
   );
   $form['swiss1_settings']['swiss1_primary_period']['swiss1_primary_period_starttime'] = array(
     '#type' => 'textfield',
-    '#title' => t('Primary period start time'),
+    '#title' => t('Prime-time start time'),
     '#size' => 20,
     '#default_value' => variable_get('swiss1_primary_period_starttime') ? variable_get('swiss1_primary_period_starttime') : '18:45',
-    '#description' => t('Defines the start time of the primary broadcast period each day. Default is 18:45. Remark: Define the start time without a date, e.g. 18:45.'),
+    '#description' => t('Defines the start time of the daily prime-time broadcast period. Default is 18:45. Remark: Define the start time without a date, e.g. 18:45.'),
     '#weight' => 0,
   );
   $form['swiss1_settings']['swiss1_primary_period']['swiss1_primary_period_endtime'] = array(
     '#type' => 'textfield',
-    '#title' => t('Primary period end time'),
+    '#title' => t('Prime-time end time'),
     '#size' => 20,
     '#default_value' => variable_get('swiss1_primary_period_endtime') ? variable_get('swiss1_primary_period_endtime') : '21:45',
-    '#description' => t('Defines the end time of the primary broadcast period each day. Default is 21:45.'),
+    '#description' => t('Defines the end time of the daily prime-time broadcast period. Default is 21:45.'),
     '#weight' => 1,
   );
 
@@ -143,7 +143,7 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#title' => t('Live streaming player start time'),
     '#size' => 20,
     '#default_value' => variable_get('swiss1_live_streaming_starttime') ? variable_get('swiss1_live_streaming_starttime') : '-1 hour',
-    '#description' => t('Defines the time relative to the live streaming start, when the streaming player is shown. Default is -1 hour. Remark: Define period as relative PHP date, e.g. -1 hour, -30 minutes etc.'),
+    '#description' => t('Defines the time relative to the live streaming start, when the streaming player is shown. Default is -1 hour. Remark: Define period as relative date, e.g. -1 hour, -30 minutes etc.'),
     '#weight' => 10,
   );
   $form['swiss1_live_streaming']['swiss1_live_streaming_endtime'] = array(
@@ -151,7 +151,7 @@ function swiss1_import_settings_form($form, &$form_state) {
     '#title' => t('Live streaming player end time'),
     '#size' => 20,
     '#default_value' => variable_get('swiss1_live_streaming_endtime') ? variable_get('swiss1_live_streaming_endtime') : '+1 hour',
-    '#description' => t('Defines the time relative to the live streaming end, when the streaming player is hidden. Default is +1 hour. Remark: Define period as relative PHP date, e.g. +1 hour, +30 minutes etc.'),
+    '#description' => t('Defines the time relative to the live streaming end, when the streaming player is hidden. Default is +1 hour. Remark: Define period as relative date, e.g. +1 hour, +30 minutes etc.'),
     '#weight' => 20,
   );
 

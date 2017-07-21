@@ -25,8 +25,8 @@
         <?php print render($content['body']); ?>
         <span class="video-duration-category"><?php print $duration_category; ?></span>
       </div>
-      <div class="social-buttons">
-        <div class="shariff" <?php print drupal_attributes($shariff_attrs); ?>></div>
+      <div class="video-broadcast-time">
+        <div class="time-info"><?php print $time_info; ?></div>
       </div>
     </<?php print $right_wrapper; ?>>
   </div>

@@ -216,7 +216,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   $broadcast_endtime = !empty($node->field_broadcast_date) && isset($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) ?
     strtotime($node->field_broadcast_date[LANGUAGE_NONE][0]['value2']) : 0;
   // show full time info only for full/search view mode
-  $broadcast_endtime = ($view_mode == 'full' || $view_mode == 'teaser_search') ? $broadcast_endtime : false;
+  $broadcast_endtime = ($view_mode == 'full' || $view_mode == 'teaser_program') ? $broadcast_endtime : false;
   if ($date_str = _get_broadcast_date_string($broadcast_starttime, $broadcast_endtime)) {
     $vars['time_info'] = $date_str;
   }
@@ -309,9 +309,10 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
  */
 function _get_broadcast_date_string($starttime, $endtime = 0) {
   $now = time();
-  $date = date('Y-m-d');
-  $today_starttime = strtotime($date . '00:00:00');
-  $today_endtime = strtotime($date . '23:59:59');
+  $today_starttime = strtotime('today');
+  $today_endtime = strtotime('tomorrow');
+  $yesterday_starttime = strtotime('-1 day', $today_starttime);
+  $yesterday_endtime = strtotime('-1 day', $today_endtime);
   $tomorrow_starttime = strtotime('+1 day', $today_starttime);
   $tomorrow_endtime = strtotime('+1 day', $today_endtime);
 
@@ -320,21 +321,26 @@ function _get_broadcast_date_string($starttime, $endtime = 0) {
     // AFTER TOMORROW: display Mo, 12.10 12:45 - 13:30
     $str_date = date('D, d.m H:i', $starttime);
   }
-  else if ($starttime >= $tomorrow_starttime && $starttime <= $tomorrow_endtime) {
+  else if ($starttime >= $tomorrow_starttime && $starttime < $tomorrow_endtime) {
     //
     // TOMORROW: display Morgen, 12:45 - 13:30
     $str_date = 'Morgen, ' . date('H:i', $starttime);
-  }
-  else if ($starttime > $now && $starttime <= $today_endtime) {
-    //
-    // TODOAY FUTURE: display Heute, 12:45 - 13:30
-    $str_date = 'Heute, ' . date('H:i', $starttime);
   }
   else if ($starttime <= $now && $endtime > $now) {
     //
     // TODAY LIVE: display Endet um 13:30
     $end_time = date('H:i', $endtime);
     return t('Endet um @end', array('@end' => $end_time));
+  }
+  else if ($starttime >= $today_starttime && $starttime < $today_endtime) {
+    //
+    // TODOAY: display Heute, 12:45 - 13:30
+    $str_date = 'Heute, ' . date('H:i', $starttime);
+  }
+  else if ($starttime >= $yesterday_starttime && $starttime < $yesterday_endtime) {
+    //
+    // YESTERDAY: display Gestern, 12:45 - 13:30
+    $str_date = 'Gestern, ' . date('H:i', $starttime);
   }
   else {
     //

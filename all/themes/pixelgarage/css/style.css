@@ -10837,6 +10837,14 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   height: auto;
   min-height: 350px;
 }
+.node.node-block .row .col-sm-12 .field-name-body .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-block .row .col-sm-12 .field-name-body .table-responsive {
+    padding: 0;
+  }
+}
 .node.node-block .row .col-sm-12 .field-name-body p,
 .node.node-block .row .col-sm-12 .field-name-body a {
   font-family: 'CiutadellaSemiBold';
@@ -11383,6 +11391,16 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   height: auto;
   min-height: 350px;
 }
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .table-responsive,
+.node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body .table-responsive,
+  .node.node-page.view-mode-default > .row > div.col-sm-12 > .field-name-body .table-responsive {
+    padding: 0;
+  }
+}
 .node.node-page.view-mode-full > .row > div.col-sm-12 > .paragraphs-items > .field-name-field-paragraphs > .field-items > .field-item:not(:last-child),
 .node.node-page.view-mode-default > .row > div.col-sm-12 > .paragraphs-items > .field-name-field-paragraphs > .field-items > .field-item:not(:last-child) {
   margin-bottom: 38px;
@@ -11902,6 +11920,16 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   max-width: 100%;
   height: auto;
   min-height: 350px;
+}
+.node.node-webform .row .col-sm-12 .field-name-body .table-responsive,
+.node.node-webform .row .col-sm-6 .field-name-body .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-webform .row .col-sm-12 .field-name-body .table-responsive,
+  .node.node-webform .row .col-sm-6 .field-name-body .table-responsive {
+    padding: 0;
+  }
 }
 /*
  *  Node videostream component
@@ -12547,6 +12575,16 @@ body.modal-open #modal-exposed-search-form .modal-dialog .modal-content .modal-b
   height: auto;
   min-height: 350px;
 }
+.node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .table-responsive,
+.node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .field-name-body .table-responsive,
+  .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .field-name-body .table-responsive {
+    padding: 0;
+  }
+}
 .node.node-videostream.view-mode-full > .row > div.col-sm-12 > .video-body .social-buttons > .shariff ul,
 .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .video-body .social-buttons > .shariff ul {
   display: inline-block;
@@ -13187,6 +13225,16 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   max-width: 100%;
   height: auto;
   min-height: 350px;
+}
+.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body .table-responsive,
+.node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body .table-responsive,
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body .table-responsive {
+    padding: 0;
+  }
 }
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .video-duration-category,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .video-duration-category {
@@ -13927,6 +13975,14 @@ body.page-programm .node.node-videostream.view-mode-teaser_program > .row.group-
   max-width: 100%;
   height: auto;
   min-height: 350px;
+}
+.node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-body .field-name-body .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-body .field-name-body .table-responsive {
+    padding: 0;
+  }
 }
 @media screen and (min-width: 30em) {
   .node.node-videostream.view-mode-teaser_program > .row.group-body > div.col-sm-4 > .video-body {
@@ -15575,6 +15631,18 @@ form#user-login {
   height: auto;
   min-height: 350px;
 }
+.user-profile .row .col-sm-4 .field-name-field-short-description .field-item .table-responsive,
+.user-profile .row .col-sm-8 .field-name-field-short-description .field-item .table-responsive,
+.user-profile .row .col-sm-12 .field-name-field-short-description .field-item .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .user-profile .row .col-sm-4 .field-name-field-short-description .field-item .table-responsive,
+  .user-profile .row .col-sm-8 .field-name-field-short-description .field-item .table-responsive,
+  .user-profile .row .col-sm-12 .field-name-field-short-description .field-item .table-responsive {
+    padding: 0;
+  }
+}
 /*
  *  User profile form component
  * --------------------------------------------------*/
@@ -16392,6 +16460,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
   max-width: 100%;
   height: auto;
   min-height: 350px;
+}
+.entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item .table-responsive {
+    padding: 0;
+  }
 }
 @media screen and (min-width: 48em) {
   .entity-paragraphs-item.paragraphs-item-text-paragraph .row .col-sm-12 .field-name-field-text .field-item {
@@ -18248,6 +18324,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
   height: auto;
   min-height: 350px;
 }
+.view.view-program .view-empty .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .view.view-program .view-empty .table-responsive {
+    padding: 0;
+  }
+}
 /*
  *  View live-tv component
  * --------------------------------------------------*/
@@ -18838,6 +18922,14 @@ form#user-profile-form div .form-actions .form-submit .icon {
   max-width: 100%;
   height: auto;
   min-height: 350px;
+}
+.view.view-search-videos .view-empty .table-responsive {
+  padding: 20px;
+}
+@media screen and (min-width: 48em) {
+  .view.view-search-videos .view-empty .table-responsive {
+    padding: 0;
+  }
 }
 .view.view-search-videos ul.pagination {
   display: inline-block;

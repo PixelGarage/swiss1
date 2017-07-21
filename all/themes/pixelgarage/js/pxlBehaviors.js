@@ -21,6 +21,17 @@
   };
 
   /**
+   * Make all table in Wysiwyg editor responsive.
+   */
+  Drupal.behaviors.makeTablesResponsive = {
+    attach: function (context) {
+      var $tables = $('.node').find('.field-name-body table');
+
+      $tables.wrap('<div class="table-responsive"></div>')
+    }
+  };
+
+  /**
    * This behavior adds shadow to header on scroll.
    *
    */

@@ -173,7 +173,7 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 //
 // SHARIFF BUTTON DEFINITION
   global $base_url;
-  $node_url = $base_url . '/node/' . $node->nid;
+  $node_url = $base_url . '/' . SWISS1_SOCIAL_MEDIA_PATH . $node->field_media_id[LANGUAGE_NONE][0]['value'];
   $mail_subject = $node->title;
   $html_body =  $node->body[LANGUAGE_NONE][0]['value'] . l("<p>Hier geht's zur Sendung</p>", $node_url, array('html' => true));
   $mail_descr = drupal_html_to_text($html_body);

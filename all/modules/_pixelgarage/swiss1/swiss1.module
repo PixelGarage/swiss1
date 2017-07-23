@@ -12,6 +12,11 @@
 define('SWISS1_ADMIN_MENU_PATH', 'admin/swiss1');
 
 /**
+ * Define the social media generic link of Swiss1 TV
+ */
+define('SWISS1_SOCIAL_MEDIA_PATH', 'sendung/');
+
+/**
  * Load the Swiss1 media importer.
  */
 module_load_include('inc', 'swiss1', 'swiss1.import');
@@ -59,7 +64,32 @@ function swiss1_menu() {
     'file' => 'swiss1.admin.inc',
     'weight' => 0,
   );
+
+  //
+  // handles social media adaptive links
+  $items[SWISS1_SOCIAL_MEDIA_PATH . '%'] = array(
+    'page callback' => 'social_media_page_callback',
+    'page arguments' => array(1),
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
   return $items;
+}
+
+/**
+ * Page callback function for social media page request.
+ */
+function social_media_page_callback($media_id) {
+  // find valid node for media id
+  $node = _get_actual_videostream_from_media_id($media_id);
+
+  // redirect to node with requested media content
+  if ($node) {
+    drupal_goto('node/' . $node->nid, array(), 307);
+  }
+  else {
+    drupal_not_found();
+  }
 }
 
 
@@ -182,6 +212,31 @@ function swiss1_video_embed_jwplayer_account_properties_alter(&$account_properti
 function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp, $media_id) {
   //
   // get expiration date from the node with the given media id
+  if ($node = _get_actual_videostream_from_media_id($media_id)) {
+    if (!empty($node->field_validity_period)) {
+      $date = $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
+      $timestamp = strtotime($date);
+
+      // if no (valid) timestamp is set on the node, don't show video
+      $exp_timestamp = $timestamp ? $timestamp : time();
+    }
+  }
+}
+
+/**
+ * Gets the videostream node with containing the given media content, the
+ * validity start time in the past and the largest validity period end time
+ * (could also be in past).
+ *
+ * @param $media_id
+ *
+ * @return bool|mixed
+ * Returns the node with the given media content and the largest validity end date or
+ * false, if no node exists.
+ */
+function _get_actual_videostream_from_media_id($media_id) {
+  //
+  // get the node with the given media id
   $now = date('Y-m-d H:i:s'); // format matters for comparison to work
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
@@ -196,12 +251,7 @@ function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp,
 
   if (isset($result['node'])) {
     $node = node_load(key($result['node']));
-    if (!empty($node->field_validity_period)) {
-      $date = $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
-      $timestamp = strtotime($date);
-
-      // if no (valid) timestamp is set on the node, don't show video
-      $exp_timestamp = $timestamp ? $timestamp : time();
-    }
+    return $node;
   }
+  return false;
 }

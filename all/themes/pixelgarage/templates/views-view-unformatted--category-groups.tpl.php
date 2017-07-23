@@ -19,6 +19,11 @@
     </div>
     <div class="group-body">
       <?php print $subviews[$id]['subview']; ?>
+      <?php if ($more_buttons[$id]): ?>
+        <div class="more-container">
+          <a class="more-button" href="<?php print $more_buttons[$id]; ?>"><?php print $more_text; ?></a>
+        </div>
+      <?php endif; ?>
     </div>
   <?php endif; ?>
   </div>

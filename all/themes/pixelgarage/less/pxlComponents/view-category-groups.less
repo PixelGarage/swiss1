@@ -45,6 +45,24 @@
         }
 
         // see view-video-masonry
+        .more-container {
+          margin: 20px 0;
+          text-align: center;
+
+          a.more-button {
+            display: inline-block;
+            padding: 2px 15px;
+            color: @pxl-color-white;
+            #pxl-mixins.border-radius(3px);
+            background-color: @pxl-color-gray;
+            opacity: 1.0;
+
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+
       }
     }
   }

@@ -102,6 +102,7 @@ function pixelgarage_preprocess_views_view_unformatted(&$vars) {
     //
     // render subview masonry, only show subview if videostreams with given category are available
     $subviews = array();
+    $more_buttons = array();
     $display_id = $vars['is_front'] ? 'block_valid_broadcasts' : 'block_future_broadcasts';
     foreach ($view->result as $id => $term_obj) {
       $subview = views_embed_view('video_masonry', $display_id, $term_obj->tid);
@@ -110,12 +111,34 @@ function pixelgarage_preprocess_views_view_unformatted(&$vars) {
         'show' => $row_count > 0,
         'subview' => $subview,
       );
+      $more_buttons[$id] = $row_count < 3 ? false : url('/kategorie/' . $term_obj->tid, array('absolute' => true));
     }
     $vars['subviews'] = $subviews;
+    $vars['more_buttons'] = $more_buttons;
+    $vars['more_text'] = t('mehr sehen');
   }
 
 }
 
+/* =============================================================================
+ *      Preprocess video masonry page view
+ * ========================================================================== */
+/**
+ * Adapts the proximity page view.
+ *
+ */
+function pixelgarage_preprocess_views_view_proximity(&$vars) {
+  $view = $vars['view'];
+  if ($view->name == 'video_masonry' && $view->current_display == 'page_video_masonry') {
+    // get kategorie term from view argument
+    $vars['page_title'] = false;
+
+    if ($tid = $view->args[0]) {
+      $term = taxonomy_term_load($tid);
+      $vars['page_title'] = $term->name;
+    }
+  }
+}
 
 /* =============================================================================
  *    Preprocessing of video streams
@@ -235,12 +258,11 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
     }
     else if ($valid_period > 1.0) {
       $days = round($valid_period);
-      $vars['time_info'] = ($days > 3) ? t('Noch @valid Tage', array('@valid' => $days)) :
-        ($days > 1 ? t('Noch <span class="day-highlight">@valid</span> Tage', array('@valid' => $days)) : t('Noch <span class="day-one-highlight">1</span> Tag'));
+      $vars['time_info'] = $days > 1 ? t('Noch @valid Tage', array('@valid' => $days)) : t('Noch ein Tag');
     }
     else {
-      $hours = round(($validity_period_end - $validity_period_start) / 3600);
-      $vars['time_info'] = ($hours > 1) ? t('Noch @valid Stunden', array('@valid' => $hours)) : t('Noch @valid Stunde', array('@valid' => $hours));
+      $hours = round(($validity_period_end - $now) / 3600);
+      $vars['time_info'] = ($hours > 1) ? t('Noch <span class="day-highlight">@valid</span> Stunden', array('@valid' => $hours)) : t('Noch <span class="day-highlight">@valid</span> Stunde', array('@valid' => $hours));
     }
   }
   else {

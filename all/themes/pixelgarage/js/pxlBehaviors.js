@@ -164,8 +164,6 @@
           if ($prev_option.length > 0) {
             var prev_val = $prev_option.val();
 
-            $select_option.removeAttr('selected');
-            $prev_option.attr('selected', 'selected');
             $select.val(prev_val);
             $select.change();
           }
@@ -180,8 +178,6 @@
           if ($next_option.length > 0) {
             var next_val = $next_option.val();
 
-            $select_option.removeAttr('selected');
-            $next_option.attr('selected', 'selected');
             $select.val(next_val);
             $select.change();
           }

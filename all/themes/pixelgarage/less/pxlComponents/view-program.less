@@ -28,41 +28,46 @@
     }
 
     #views-exposed-form-program-page-program {
+      .views-title {
+        display: block;
+        vertical-align: middle;
+        padding: 0 0 14px;
+        #pxl-mixins.title();
+      }
+
+      .views-previous-day-button,
+      .views-next-day-button {
+        display: block;
+        margin-bottom: 20px;
+        cursor: pointer;
+        width: 150px;
+
+        .date {
+          display: inline-block;
+          vertical-align: middle;
+          padding: 0 5px;
+          #pxl-mixins.teaser-title();
+          opacity: 0.7;
+        }
+
+        .fa {
+          display: inline-block;
+          vertical-align: top;
+          padding: 0;
+          color: white;
+          font-size: 20px;
+        }
+      }
+
       .views-exposed-form {
         .views-exposed-widgets {
+          margin-bottom: 20px;
+
           .views-exposed-widget {
             display: block;
             float: none;
             vertical-align: bottom;
             padding: 0;
-
-            &.views-title {
-              vertical-align: middle;
-              padding: 0 0 14px;
-              #pxl-mixins.title();
-            }
-
-            &.views-previous-day-button,
-            &.views-next-day-button {
-              cursor: pointer;
-              width: 150px;
-
-              .date {
-                display: inline-block;
-                vertical-align: middle;
-                padding: 0 5px;
-                #pxl-mixins.teaser-title();
-                opacity: 0.7;
-              }
-
-              .fa {
-                display: inline-block;
-                vertical-align: top;
-                padding: 0;
-                color: white;
-                font-size: 20px;
-              }
-            }
 
             &.views-widget-filter-field_broadcast_date_value {
               label {
@@ -93,26 +98,23 @@
                 }
               }
             }
-
-            @media @special-break {
-              display: inline-block;
-              padding: 0;
-
-              &.views-title {
-                display: block;
-              }
-              &.views-submit-button {
-                text-align: center;
-              }
-            }
-
-            @media @tablet {
-              &.views-title {
-                display: inline-block;
-                padding: 0 15px 0 0;
-              }
-            }
           }
+        }
+      }
+
+      @media @special-break {
+        .views-previous-day-button,
+        .views-next-day-button,
+        .views-exposed-form {
+          display: inline-block;
+          padding: 0;
+        }
+      }
+
+      @media @tablet {
+        .views-title {
+          display: inline-block;
+          padding: 0 15px 0 0;
         }
       }
     }

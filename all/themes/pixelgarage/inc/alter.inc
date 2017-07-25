@@ -74,6 +74,8 @@ function pixelgarage_form_alter(&$form, &$form_state, $form_id) {
     //
     // alter form
     $options = _get_date_select_options();
+    $form['field_broadcast_date_value']['min']['#date_format'] = 'Y-m-d H:i';
+    $form['field_broadcast_date_value']['max']['#date_format'] = 'Y-m-d H:i';
     hide($form['field_broadcast_date_value']);
     $form['field_broadcast_date_select'] = array(
       '#type' => 'select',
@@ -97,8 +99,8 @@ function submit_manage_custom_filters(&$form, &$form_state) {
   $today = strtotime($today_start_time);
   $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $today);
   $end_timestamp = strtotime('+1 day', $start_timestamp);
-  $selected_start_date = date('Y-m-d H:i:s', $start_timestamp);
-  $selected_end_date = date('Y-m-d H:i:s', $end_timestamp);
+  $selected_start_date = date('Y-m-d H:i', $start_timestamp);
+  $selected_end_date = date('Y-m-d H:i', $end_timestamp);
 
   // set filter values in exposed hidden field
   $form_state['values']['field_broadcast_date_value']['min'] = $selected_start_date;

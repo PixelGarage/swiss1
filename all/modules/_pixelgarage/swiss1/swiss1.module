@@ -224,34 +224,50 @@ function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp,
 }
 
 /**
- * Gets the videostream node with containing the given media content, the
- * validity start time in the past and the largest validity period end time
- * (could also be in past).
+ * Gets the videostream node pointing to the given media content, having the
+ * longest possible validity period (could also be in past) and is playable.
  *
- * @param $media_id
+ * @param $media_id string
+ *    The media-id the searched node contains.
  *
  * @return bool|mixed
  * Returns the node with the given media content and the largest validity end date or
  * false, if no node exists.
  */
 function _get_actual_videostream_from_media_id($media_id) {
-  //
-  // get the node with the given media id
-  $now = date('Y-m-d H:i:s'); // format matters for comparison to work
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'videostream')
-    ->propertyCondition('status', 1)
-    ->fieldCondition('field_media_id', 'value', $media_id)
-    ->fieldCondition('field_run_type', 'value', array('primary', 'primary_repeat'), 'IN')
-    ->fieldCondition('field_validity_period', 'value', $now, '<')
-    ->fieldOrderBy('field_validity_period', 'value2', 'DESC')
-    ->range(0,1);
-  $result = $query->execute();
+  $node = &drupal_static('swiss1_node_with_' . $media_id);
+  if (!isset($node)) {
+    //
+    // get the node with the given media id
+    $now = date('Y-m-d H:i:s'); // format matters for comparison to work
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'videostream')
+      ->propertyCondition('status', 1)
+      ->fieldCondition('field_media_id', 'value', $media_id)
+      ->fieldCondition('field_run_type', 'value', array('primary', 'primary_repeat'), 'IN')
+      ->fieldOrderBy('field_validity_period', 'value2', 'DESC')
+      ->range(0,1);
+    $result = $query->execute();
 
-  if (isset($result['node'])) {
-    $node = node_load(key($result['node']));
-    return $node;
+    if (isset($result['node'])) {
+      // get node with longest validity period and given content (media_id) attached
+      $nid = key($result['node']);
+      $node = node_load($nid);
+
+      // restrict found nodes to nodes with playable content, if any
+      $query = $query->fieldCondition('field_validity_period', 'value', $now, '<');
+      $result = $query->execute();
+      if (isset($result['node'])) {
+        $nid2 = key($result['node']);
+        if ($nid2 != $nid) {
+          $node = node_load($nid2);
+        }
+      }
+    }
+    else {
+      $node = false;
+    }
   }
-  return false;
+  return $node;
 }

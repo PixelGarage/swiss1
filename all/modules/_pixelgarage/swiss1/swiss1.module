@@ -122,19 +122,23 @@ function swiss1_views_pre_view(&$view, &$display_id, &$args) {
   // reset flag for others
   if ($view->name == 'featured' && $display_id == 'block') {
     // delete all featured content first
-    _reset_featured_content();
+    _reset_auto_featured_content();
 
     // feature prime-time broadcasts of today
-    _set_daily_featured_content();
+    _set_daily_auto_featured_content();
   }
 }
 
-function _reset_featured_content() {
+/**
+ * Reset all past featured content.
+ * All manually set featured content in the future has to stay.
+ */
+function _reset_auto_featured_content() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
-    ->fieldCondition('field_featured', 'value', 1);
+    ->fieldCondition('field_featured_auto', 'value', 1);
   $result = $query->execute();
 
   if (isset($result['node'])) {
@@ -147,12 +151,16 @@ function _reset_featured_content() {
 }
 
 /**
- * Set daily broadcasts from 19:45 to 21:45 as featured content, automatically.
+ * Set daily broadcasts from 19:45 to 21:45 as featured content, automatically,
+ * if no manually featured content exists.
  *
  * Is current time less than 22:00, feature the broadcasts from yesterday (can be played),
  * if current time is greater than 22:00, feature the broadcasts from today (playable after 10 pm).
  */
-function _set_daily_featured_content() {
+function _set_daily_auto_featured_content() {
+  // only set featured content automatically, if no manually set featured content exists.
+  if (_has_manually_featured_content()) return;
+
   $now = time();
   $ten_pm = strtotime('today 22:00');
   if ($now >= $ten_pm) {
@@ -170,7 +178,7 @@ function _set_daily_featured_content() {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
-      ->fieldCondition('field_featured', 'value', 0)
+      ->fieldCondition('field_featured_auto', 'value', 0)
     ->fieldCondition('field_broadcast_date', 'value', $start_date, '>')
     ->fieldCondition('field_broadcast_date', 'value', $end_date, '<');
   $result = $query->execute();
@@ -182,6 +190,24 @@ function _set_daily_featured_content() {
       node_save($node);
     }
   }
+}
+
+/**
+ * Returns true if manually featured content exists, false otherwise.
+ */
+function _has_manually_featured_content() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_featured', 'value', 1);
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $count = count($result['node']);
+    return $count > 0;
+  }
+  return false;
 }
 
 

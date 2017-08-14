@@ -204,8 +204,12 @@ function _has_manually_featured_content() {
   $result = $query->execute();
 
   if (isset($result['node'])) {
-    $count = count($result['node']);
-    return $count > 0;
+    $nodes = node_load_multiple(array_keys($result['node']));
+    foreach ($nodes as $node) {
+      $node->field_featured_auto[LANGUAGE_NONE][0]['value'] = 1;
+      node_save($node);
+    }
+    return count($nodes) > 0;
   }
   return false;
 }

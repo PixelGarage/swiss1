@@ -144,7 +144,7 @@ function _reset_auto_featured_content() {
   if (isset($result['node'])) {
     $nodes = node_load_multiple(array_keys($result['node']));
     foreach ($nodes as $node) {
-      $node->field_featured[LANGUAGE_NONE][0]['value'] = 0;
+      $node->field_featured_auto[LANGUAGE_NONE][0]['value'] = 0;
       node_save($node);
     }
   }
@@ -186,7 +186,7 @@ function _set_daily_auto_featured_content() {
   if (isset($result['node'])) {
     $nodes = node_load_multiple(array_keys($result['node']));
     foreach ($nodes as $node) {
-      $node->field_featured[LANGUAGE_NONE][0]['value'] = 1;
+      $node->field_featured_auto[LANGUAGE_NONE][0]['value'] = 1;
       node_save($node);
     }
   }

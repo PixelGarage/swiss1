@@ -178,7 +178,6 @@ function _set_daily_auto_featured_content() {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
-      ->fieldCondition('field_featured_auto', 'value', 0)
     ->fieldCondition('field_broadcast_date', 'value', $start_date, '>')
     ->fieldCondition('field_broadcast_date', 'value', $end_date, '<');
   $result = $query->execute();
@@ -203,6 +202,7 @@ function _has_manually_featured_content() {
     ->fieldCondition('field_featured', 'value', 1);
   $result = $query->execute();
 
+  // set auto featured flag, if manual flag is set (for view)
   if (isset($result['node'])) {
     $nodes = node_load_multiple(array_keys($result['node']));
     foreach ($nodes as $node) {

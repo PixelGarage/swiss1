@@ -267,7 +267,7 @@
         >.field-name-body {
           overflow: hidden;
           margin: 14px 0;
-          height: 190px;
+          height: auto;
           max-height: 190px;
           #pxl-mixins.wysiwyg-body();
         }
@@ -283,6 +283,13 @@
             padding-right: 5px;
           }
         }
+
+        @media @wide {
+          >.field-name-body {
+            height: 190px;
+          }
+        }
+
       }
 
       >.video-broadcast-time > .time-info {

@@ -12769,7 +12769,7 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body {
   overflow: hidden;
   margin: 14px 0;
-  height: 190px;
+  height: auto;
   max-height: 190px;
   color: white;
 }
@@ -13275,6 +13275,12 @@ body.desktop .node.node-videostream.view-mode-default > .row > div.col-sm-12 > .
   content: '\f017';
   font-family: 'fontawesome';
   padding-right: 5px;
+}
+@media screen and (min-width: 80em) {
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-body > .field-name-body,
+  .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-body > .field-name-body {
+    height: 190px;
+  }
 }
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-8 > .video-broadcast-time > .time-info,
 .node.node-videostream.view-mode-teaser_featured > .row > div.col-sm-4 > .video-broadcast-time > .time-info {

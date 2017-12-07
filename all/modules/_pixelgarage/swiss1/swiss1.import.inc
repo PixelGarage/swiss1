@@ -64,6 +64,7 @@ function swiss1_media_import() {
     '@deleted' => 0,
     '@failed' => 0,
   );
+  $archive_xml_files = false;
 
   try {
     //
@@ -82,7 +83,7 @@ function swiss1_media_import() {
 
           // rename file
           $tmp_path = $import_dir . '/tmp/' . $file;
-          if (!rename($file_path, $tmp_path)) {
+          if (!$archive_xml_files || !rename($file_path, $tmp_path)) {
             unlink($file_path);
           }
         }
@@ -735,6 +736,8 @@ function _get_managed_image_obj($img_path, $media_id = false) {
         //
         // check if image already exists in db
         if ($file_obj = managed_file_exists($img_uri)) {
+          // delete image styles to be recreated
+          image_path_flush($img_uri);
           return $file_obj;
         }
 
@@ -787,6 +790,10 @@ function _get_managed_image_obj($img_path, $media_id = false) {
   // Create managed file from remote file. If a managed file with the destination name exists
   // then its database entry will be updated
   $file_obj = system_retrieve_file($img_uri, 'public://images', TRUE, FILE_EXISTS_REPLACE);
+  if ($file_obj) {
+    // delete image styles to be recreated
+    image_path_flush($file_obj->uri);
+  }
 
   return $file_obj;
 

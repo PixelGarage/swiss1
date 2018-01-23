@@ -111,7 +111,7 @@ function pixelgarage_preprocess_views_view_unformatted(&$vars) {
         'show' => $row_count > 0,
         'subview' => $subview,
       );
-      $more_buttons[$id] = $row_count < 3 ? false : url('/kategorie/' . $term_obj->tid, array('absolute' => true));
+      $more_buttons[$id] = $row_count < 2 ? false : url('/kategorie/' . $term_obj->tid, array('absolute' => true));
     }
     $vars['subviews'] = $subviews;
     $vars['more_buttons'] = $more_buttons;

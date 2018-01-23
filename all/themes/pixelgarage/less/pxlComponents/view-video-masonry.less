@@ -20,6 +20,14 @@
     padding: 0;
 
     .masonry();
+
+    @media @normal {
+      > .pe-container {
+        .grid-sizer, .pe-item {
+          width: (50% - @masonry-gutter-dist/2);
+        }
+      }
+    }
   }
 }
 

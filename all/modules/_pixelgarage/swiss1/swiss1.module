@@ -151,26 +151,15 @@ function _reset_auto_featured_content() {
 }
 
 /**
- * Set daily broadcasts from 19:45 to 21:45 as featured content, automatically,
+ * Set daily main broadcast (starts between 19:45 to 20:45) as featured content, automatically,
  * if no manually featured content exists.
- *
- * Is current time less than 22:00, feature the broadcasts from yesterday (can be played),
- * if current time is greater than 22:00, feature the broadcasts from today (playable after 10 pm).
  */
 function _set_daily_auto_featured_content() {
   // only set featured content automatically, if no manually set featured content exists.
   if (_has_manually_featured_content()) return;
 
-  $now = time();
-  $ten_pm = strtotime('today 22:00');
-  if ($now >= $ten_pm) {
-    $start = strtotime('today 19:45');
-    $end = strtotime('today 21:45');
-  }
-  else {
-    $start = strtotime('yesterday 19:45');
-    $end = strtotime('yesterday 21:45');
-  }
+  $start = strtotime('today 19:45');
+  $end = strtotime('today 20:45');
   $start_date = date('Y-m-d H:i:s', $start);  // format matters for comparison to work
   $end_date = date('Y-m-d H:i:s', $end);  // format matters for comparison to work
 

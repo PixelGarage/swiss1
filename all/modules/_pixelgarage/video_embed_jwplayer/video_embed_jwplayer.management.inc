@@ -147,7 +147,7 @@ function video_embed_jwplayer_get_players($property_key) {
       $response = $jwplayer_api->call('/players/list');
 
       foreach ($response['players'] as $player) {
-        if ($player['responsive'] && $player['version'] == '7') {
+        if ($player['responsive']) {
           $players[$player['key']] = $player['name'];
         }
       }

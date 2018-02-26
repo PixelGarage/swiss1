@@ -97,8 +97,9 @@ function submit_manage_custom_filters(&$form, &$form_state) {
   // define the start time of a day (default is 02:00)
   $today_start_time = 'today ' . variable_get('swiss1_video_day_start_time', '02:00');
   $today = strtotime($today_start_time);
-  $start_timestamp = strtotime($form_state['values']['field_broadcast_date_select'], $today);
-  $end_timestamp = strtotime('+1 day', $start_timestamp);
+  $is_today = $form_state['values']['field_broadcast_date_select'] == '0 days';
+  $start_timestamp = $is_today ? time() : strtotime($form_state['values']['field_broadcast_date_select'], $today);
+  $end_timestamp = $is_today ? strtotime('tomorrow 02:00') : strtotime('+1 day', $start_timestamp);
   $selected_start_date = date('Y-m-d H:i', $start_timestamp);
   $selected_end_date = date('Y-m-d H:i', $end_timestamp);
 

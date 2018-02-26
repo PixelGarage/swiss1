@@ -101,20 +101,29 @@ function pixelgarage_preprocess_views_view_unformatted(&$vars) {
   if ($view->name == 'category_groups') {
     //
     // render subview masonry, only show subview if videostreams with given category are available
-    $subviews = array();
-    $more_buttons = array();
+    $categories = array();
     $display_id = $vars['is_front'] ? 'block_valid_broadcasts' : 'block_future_broadcasts';
     foreach ($view->result as $id => $term_obj) {
+      $subview_result = views_get_view_result('video_masonry', 'block_counter', $term_obj->tid);
+      $row_count = count($subview_result);
+      if (!$row_count) continue;
+
+      // create category key from subview item date (sort by item date)
+      $date = $subview_result[0]->field_data_field_broadcast_date_field_broadcast_date_value;
+      $key = strtotime($date);
+
+      // add subview to category list
       $subview = views_embed_view('video_masonry', $display_id, $term_obj->tid);
-      $row_count = substr_count($subview, 'node-videostream');
-      $subviews[$id] = array(
-        'show' => $row_count > 0,
+      $more = $row_count <= 2 ? false : url('/kategorie/' . $term_obj->tid, array('absolute' => true));
+      $categories[$key] = array(
+        'category_name' => $vars['rows'][$id],
         'subview' => $subview,
+        'more' => $more,
       );
-      $more_buttons[$id] = $row_count < 2 ? false : url('/kategorie/' . $term_obj->tid, array('absolute' => true));
     }
-    $vars['subviews'] = $subviews;
-    $vars['more_buttons'] = $more_buttons;
+    // sort categories by newest first
+    krsort($categories);
+    $vars['categories'] = $categories;
     $vars['more_text'] = t('mehr sehen');
   }
 
@@ -219,11 +228,12 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   }
 
   //
-  // render video if it is playable, otherwise render poster image
+  // render video if it exists and is playable, otherwise render poster image
+  $has_video = !empty($node->field_video_path[LANGUAGE_NONE][0]['video_url']);
   $validity_period_start = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value']);
   $validity_period_end = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value2']);
   $now = time();
-  $vars['show_video'] = ($now >= $validity_period_start) && ($now < $validity_period_end) && isset($vars['content']['field_video_path']);
+  $vars['show_video'] = $has_video && ($now >= $validity_period_start) && ($now < $validity_period_end) && isset($vars['content']['field_video_path']);
 
   //
   // add video indicator image, if video is playable

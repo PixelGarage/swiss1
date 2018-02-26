@@ -10,21 +10,19 @@
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
-<?php foreach ($rows as $id => $row): ?>
-  <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
-  <?php if ($subviews[$id]['show']): ?>
+<?php foreach ($categories as $key => $category): ?>
+  <div class="views-row">
     <div class="group-header">
       <div class="group-header-line"></div>
-      <?php print $row; ?>
+      <?php print $category['category_name']; ?>
     </div>
     <div class="group-body">
-      <?php print $subviews[$id]['subview']; ?>
-      <?php if ($more_buttons[$id]): ?>
+      <?php print $category['subview']; ?>
+      <?php if ($category['more']): ?>
         <div class="more-container">
-          <a class="more-button" href="<?php print $more_buttons[$id]; ?>"><?php print $more_text; ?></a>
+          <a class="more-button" href="<?php print $category['more']; ?>"><?php print $more_text; ?></a>
         </div>
       <?php endif; ?>
     </div>
-  <?php endif; ?>
   </div>
 <?php endforeach; ?>

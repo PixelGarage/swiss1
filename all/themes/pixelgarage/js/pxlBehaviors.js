@@ -52,7 +52,6 @@
    * Defines behavior of a video stream in full view mode.
    *
    * - All text is hidden, if video is played and displayed again on pause.
-   */
   Drupal.behaviors.VideoStreamBehavior = {
     attach: function (context) {
       var $node = $('.node-videostream.view-mode-full'),
@@ -102,6 +101,7 @@
       });
     }
   };
+   */
 
   /**
    * Swaps images from desaturated to colored on mouse hover.

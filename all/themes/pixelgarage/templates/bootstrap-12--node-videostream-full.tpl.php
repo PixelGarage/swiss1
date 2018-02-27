@@ -21,6 +21,8 @@
         <?php print render($content['field_live_embed']); ?>
       <?php elseif($show_video): ?>
         <?php print render($content['field_video_path']); ?>
+      <?php elseif($show_trailer): ?>
+        <?php print render($content['field_trailer_path']); ?>
       <?php else: ?>
         <div class="video-poster"><img src="<?php print $image_url; ?>"></div>
       <?php endif; ?>

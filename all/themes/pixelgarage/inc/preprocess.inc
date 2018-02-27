@@ -228,17 +228,19 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
   }
 
   //
-  // render video if it exists and is playable, otherwise render poster image
+  // render video or trailer if it exists and is playable, otherwise render poster image
   $has_video = !empty($node->field_video_path[LANGUAGE_NONE][0]['video_url']);
+  $has_trailer = !empty($node->field_trailer_path[LANGUAGE_NONE][0]['video_url']);
   $validity_period_start = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value']);
   $validity_period_end = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value2']);
   $now = time();
   $vars['show_video'] = $has_video && ($now >= $validity_period_start) && ($now < $validity_period_end) && isset($vars['content']['field_video_path']);
+  $vars['show_trailer'] = $has_trailer && ($now < $validity_period_start) && ($now >= $validity_period_end) && isset($vars['content']['field_trailer_path']);
 
   //
   // add video indicator image, if video is playable
-  $vars['video_play_indicator'] = $vars['show_video'] ? file_create_url($img_path . 'icon-play.svg') : false;
-
+  $vars['video_play_indicator'] = $vars['show_video'] || $vars['show_trailer'] ?
+    file_create_url($img_path . 'icon-play.svg') : false;
 
 
   //

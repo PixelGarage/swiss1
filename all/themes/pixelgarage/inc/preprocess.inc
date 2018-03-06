@@ -182,7 +182,8 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 //
 // SHARIFF BUTTON DEFINITION
   global $base_url;
-  $node_url = $base_url . '/' . SWISS1_SOCIAL_MEDIA_PATH . $node->field_media_id[LANGUAGE_NONE][0]['value'];
+  $node_url = isset($node->field_media_id[LANGUAGE_NONE][0]['value']) ?
+    $base_url . '/' . SWISS1_SOCIAL_MEDIA_PATH . $node->field_media_id[LANGUAGE_NONE][0]['value'] : 'https://www.swiss1.tv';
   $mail_subject = $node->title;
   $html_body =  $node->body[LANGUAGE_NONE][0]['value'] . l("<p>Hier geht's zur Sendung</p>", $node_url, array('html' => true));
   $mail_descr = drupal_html_to_text($html_body);
@@ -229,13 +230,13 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 
   //
   // render video or trailer if it exists and is playable, otherwise render poster image
-  $has_video = !empty($node->field_video_path[LANGUAGE_NONE][0]['video_url']);
-  $has_trailer = !empty($node->field_trailer_path[LANGUAGE_NONE][0]['video_url']);
+  $has_video = isset($node->field_video_path[LANGUAGE_NONE][0]['video_url']);
+  $has_trailer = isset($node->field_trailer_path[LANGUAGE_NONE][0]['video_url']);
   $validity_period_start = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value']);
   $validity_period_end = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value2']);
   $now = time();
   $vars['show_video'] = $has_video && ($now >= $validity_period_start) && ($now < $validity_period_end) && isset($vars['content']['field_video_path']);
-  $vars['show_trailer'] = $has_trailer && ($now < $validity_period_start) && ($now >= $validity_period_end) && isset($vars['content']['field_trailer_path']);
+  $vars['show_trailer'] = $has_trailer && ($now < $validity_period_start || $now >= $validity_period_end) && isset($vars['content']['field_trailer_path']);
 
   //
   // add video indicator image, if video is playable

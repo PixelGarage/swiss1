@@ -83,7 +83,7 @@ function video_embed_jwplayer_form_callback($defaults) {
       '#title' => t('Select Cloud Player for ' . $property_name),
       '#options' => $players,
       '#description' => t('Select one of the defined cloud players of "@prop" as video player.', array('@prop' => $property_name)),
-      '#default_value' => variable_get('jwplayer_player_' . $key, '')
+      '#default_value' => $defaults['jwplayer_player_' . $key],
     );
 
   }

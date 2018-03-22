@@ -13,9 +13,13 @@
   <div class="row">
     <<?php print $left_wrapper; ?> class="col-sm-8 <?php print $left_classes; ?>">
       <div class="video-container">
-        <div class="video-poster-container"><img class="video-poster" src="<?php print $image_url; ?>"/></div>
-        <?php if ($video_play_indicator): ?>
-          <img class="video-play-button" src="<?php print $video_play_indicator; ?>">
+        <?php if($show_trailer): ?>
+          <?php print render($content['field_trailer_path']); ?>
+        <?php else: ?>
+          <div class="video-poster-container"><img class="video-poster" src="<?php print $image_url; ?>"/></div>
+          <?php if ($video_play_indicator): ?>
+            <img class="video-play-button" src="<?php print $video_play_indicator; ?>">
+          <?php endif; ?>
         <?php endif; ?>
       </div>
     </<?php print $left_wrapper; ?>>

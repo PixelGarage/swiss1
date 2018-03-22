@@ -278,8 +278,12 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
       $vars['time_info'] = ($hours > 1) ? t('Noch <span class="day-highlight">@valid</span> Stunden', array('@valid' => $hours)) : t('Noch <span class="day-highlight">@valid</span> Stunde', array('@valid' => $hours));
     }
   }
+  else if ($vars['show_trailer']) {
+    // only trailer available
+    $vars['time_info'] = t('Vorschau verfügbar');
+  }
   else {
-    // validity period in the past or future
+    // validity period in the past or future or no video available
     $vars['time_info'] = t('Nicht verfügbar');
   }
 
@@ -372,11 +376,11 @@ function _get_broadcast_date_string($starttime, $endtime = 0) {
     // TODOAY: display Heute, 12:45 - 13:30
     $str_date = 'Heute, ' . date('H:i', $starttime);
   }
-  else if ($starttime >= $yesterday_starttime && $starttime < $yesterday_endtime) {
-    //
-    // YESTERDAY: display Gestern, 12:45 - 13:30
-    $str_date = 'Gestern, ' . date('H:i', $starttime);
-  }
+//  else if ($starttime >= $yesterday_starttime && $starttime < $yesterday_endtime) {
+//    //
+//    // YESTERDAY: display Gestern, 12:45 - 13:30
+//    $str_date = 'Gestern, ' . date('H:i', $starttime);
+//  }
   else {
     //
     // BROADCAST IN PAST: show validity duration

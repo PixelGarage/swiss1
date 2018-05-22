@@ -24,13 +24,6 @@
 .jw-skin-swiss1 .jw-display-icon-container {
   background-color: rgba(33, 33, 33, 0);
 }
-.jw-skin-swiss1 .jw-display-icon-container > .jw-icon {
-  background: url(images/icon-play.svg) no-repeat center / 80%;
-  opacity: 0.5;
-}
-.jw-skin-swiss1 .jw-display-icon-container > .jw-icon:before {
-  display: none;
-}
 .jw-skin-swiss1:hover .jw-display-icon-container {
   background-color: rgba(33, 33, 33, 0) !important;
 }
@@ -55,19 +48,19 @@
   display: none;
 }
 .jw-skin-swiss1.jw-state-paused .jw-icon-playback {
-  /*background: url(images/icon-play.svg) no-repeat center / 80%;*/
+  background: url(images/icon-play.svg) no-repeat center / 80%;
 }
 .jw-skin-swiss1.jw-state-playing .jw-icon-playback {
-  /*background: url(images/icon-pause.svg) no-repeat center / 80%;*/
+  background: url(images/icon-pause.svg) no-repeat center / 80%;
 }
 .jw-skin-swiss1 .jw-icon-volume {
-  /*background: url(images/icon-volume.svg) no-repeat center / 60%;*/
+  background: url(images/icon-volume.svg) no-repeat center / 60%;
 }
 .jw-skin-swiss1 .jw-icon-volume:before {
   display: none;
 }
 .jw-skin-swiss1 .jw-icon-fullscreen {
-  /*background: url(images/icon-widescreen.svg) no-repeat center / 60%;*/
+  background: url(images/icon-widescreen.svg) no-repeat center / 60%;
 }
 .jw-skin-swiss1 .jw-icon-fullscreen:before {
   display: none;

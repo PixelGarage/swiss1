@@ -24,13 +24,6 @@
 .jw-skin-swiss1 .jw-display-icon-container {
   background-color: rgba(33, 33, 33, 0);
 }
-.jw-skin-swiss1 .jw-display-icon-container > .jw-icon {
-  background: url(images/icon-play.svg) no-repeat center / 80%;
-  opacity: 0.5;
-}
-.jw-skin-swiss1 .jw-display-icon-container > .jw-icon:before {
-  display: none;
-}
 .jw-skin-swiss1:hover .jw-display-icon-container {
   background-color: rgba(33, 33, 33, 0) !important;
 }

@@ -230,8 +230,8 @@ function _preprocess_node_videostream(&$vars, $view_mode) {
 
   //
   // render video or trailer if it exists and is playable, otherwise render poster image
-  $has_video = isset($node->field_video_path[LANGUAGE_NONE][0]['video_url']);
-  $has_trailer = isset($node->field_trailer_path[LANGUAGE_NONE][0]['video_url']);
+  $has_video = isset($node->field_video_path[LANGUAGE_NONE][0]['video_url']) && !empty(($node->field_video_path[LANGUAGE_NONE][0]['video_url']));
+  $has_trailer = isset($node->field_trailer_path[LANGUAGE_NONE][0]['video_url']) && !empty($node->field_trailer_path[LANGUAGE_NONE][0]['video_url']);
   $validity_period_start = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value']);
   $validity_period_end = strtotime($node->field_validity_period[LANGUAGE_NONE][0]['value2']);
   $now = time();

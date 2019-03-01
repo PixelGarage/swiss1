@@ -76,7 +76,7 @@ function swiss1_media_import() {
       sort($files);
       foreach ($files as $file) {
         $file_path = $import_dir . '/' . $file;
-        if (is_file($file_path) && mime_content_type($file_path) == 'application/xml') {
+        if (is_file($file_path) && strpos(mime_content_type($file_path), '/xml') > 0) {
           // import file
           _import_xml_file($file_path, $import_counter);
           $import_counter['@files']++;
@@ -138,8 +138,9 @@ function _import_xml_file($filepath, &$import_counter) {
   //
   // read xml file
   $xml = simplexml_load_file($filepath);
+  $xml_name = $xml ? $xml->getName() : 'ParseError';
 
-  switch ($xml->getName()) {
+  switch ($xml_name) {
     case 'OnlineCMSSchedule':
       // file contains EPG entries of one day
       $xpath = '//Entry';
@@ -152,7 +153,7 @@ function _import_xml_file($filepath, &$import_counter) {
       break;
     default:
       // no valid xml file
-      $msg = t('The xml file does not conform to the Swiss1 XML document type (see XSD files for XML definition).');
+      $msg = t('The xml file does not conform to the Swiss1 XML document type or a parse error occurred (see XSD files for XML definition).');
       throw new Exception($msg);
   }
 

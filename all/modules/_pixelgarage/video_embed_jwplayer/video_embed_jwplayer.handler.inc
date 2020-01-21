@@ -299,7 +299,13 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     'stretching: "' . $settings['jwplayer_stretching'] . '", ' .
     'abouttext: "' . $settings['jwplayer_about_text'] . '", ' .
     'aboutlink: "' . $settings['jwplayer_about_link'] . '", ' .
-    '});</script>';
+    '});' .
+    'jwplayer.on("ready", function () {' .
+    ' ns_.StreamingAnalytics.JWPlayer(jwplayer, {' .
+    '   publisherId: "31749351"' .
+    ' }); ' .
+    '});' .
+  '</script>';
 
   //
   // return render array

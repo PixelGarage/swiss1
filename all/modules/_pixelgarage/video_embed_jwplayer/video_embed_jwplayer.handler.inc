@@ -300,8 +300,8 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     'abouttext: "' . $settings['jwplayer_about_text'] . '", ' .
     'aboutlink: "' . $settings['jwplayer_about_link'] . '", ' .
     '});' .
-    'document.addEventListener("DOMContentLoaded", function () {' .
-    ' ns_.StreamingAnalytics.JWPlayer(jwplayer, {' .
+    'jwplayer().on("ready", function () {' .
+    ' ns_.StreamingAnalytics.JWPlayer(jwplayer(), {' .
     '   publisherId: "31749351"' .
     ' }); ' .
     '});' .

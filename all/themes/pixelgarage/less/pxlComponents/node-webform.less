@@ -17,7 +17,17 @@
 //
 // webform
 .node.node-webform {
-  margin-bottom: 50px;
+  margin: 0 auto 50px;
+
+  @media @normal {
+    padding: 0 @grid-gutter-width-const/2;
+    max-width: @container-inner-max-width;
+  }
+
+  @media @wide {
+    max-width: @container-inner-max-width-lg;
+  }
+
 
   .field-name-newsletter & {
     margin: 0;

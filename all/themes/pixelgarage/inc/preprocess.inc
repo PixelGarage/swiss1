@@ -48,6 +48,17 @@ function pixelgarage_preprocess_page(&$vars) {
 
 
 /* =============================================================================
+ *      Preprocess web form confirmation
+ * ========================================================================== */
+function pixelgarage_preprocess_webform_confirmation(&$vars) {
+  $node = $vars['node'];
+  $view = node_view($node, 'full');
+  $video_trailer = drupal_render($view['field_trailer_path']);
+  $vars['video_trailer'] = $video_trailer;
+}
+
+
+/* =============================================================================
  *      Preprocess Exposed search form
  * ========================================================================== */
 /**

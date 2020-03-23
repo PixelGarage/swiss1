@@ -515,7 +515,7 @@ function video_embed_jwplayer_get_media_url($media_id, $type, $do_sign = false, 
 function video_embed_jwplayer_comscore_label_mapping($media_id) {
   //
   // get the freshest video with the given media id, if any
-  $mapping = 'ns_st_stc=8536';
+  $mapping = 'ns_st_stc=\"8536\"';
   $videostream = freshest_videostream_from_media_id($media_id);
   if (!$videostream) return $mapping;
 

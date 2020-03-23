@@ -571,17 +571,7 @@ function _get_videostream_instance($schedule_id, $run_type, $start_date, &$impor
  * The PRIMARY node and its corresponding RERUN nodes have the same schedule id.
  */
 function _update_rerun_with_existing_primary($schedule_id, $validity_start_timestamp, &$rerun_node) {
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'videostream')
-    ->fieldCondition('field_schedule_id', 'value', $schedule_id)
-    ->fieldCondition('field_run_type', 'value', array(SWISS1_RUNTYPE_PRIMARY, SWISS1_RUNTYPE_PRIMARY_REPEAT), 'IN')
-    ->range(0, 1);
-  $result = $query->execute();
-  if (isset($result['node'])) {
-    // Update rerun node with fields of primary node
-    $primary_node = node_load(key($result['node']));
-
+  if ($primary_node = primary_videostream_with_schedule_id($schedule_id)) {
     _complete_rerun_with_primary($primary_node, $validity_start_timestamp, $rerun_node);
   }
 

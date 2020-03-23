@@ -81,7 +81,7 @@ function swiss1_menu() {
  */
 function social_media_page_callback($media_id) {
   // find valid node for media id
-  $node = _get_actual_videostream_from_media_id($media_id);
+  $node = freshest_videostream_from_media_id($media_id);
 
   // redirect to node with requested media content
   if ($node) {
@@ -231,7 +231,7 @@ function swiss1_video_embed_jwplayer_account_properties_alter(&$account_properti
 function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp, $media_id) {
   //
   // get expiration date from the node with the given media id
-  if ($node = _get_actual_videostream_from_media_id($media_id)) {
+  if ($node = freshest_videostream_from_media_id($media_id)) {
     if (!empty($node->field_validity_period)) {
       $date = $node->field_validity_period[LANGUAGE_NONE][0]['value2'];
       $timestamp = strtotime($date);
@@ -253,7 +253,7 @@ function swiss1_video_embed_jwplayer_expiration_timestamp_alter(&$exp_timestamp,
  * Returns the node with the given media content and the largest validity end date or
  * false, if no node exists.
  */
-function _get_actual_videostream_from_media_id($media_id) {
+function freshest_videostream_from_media_id($media_id) {
   $node = &drupal_static('swiss1_node_with_' . $media_id);
   if (!isset($node)) {
     //
@@ -289,4 +289,26 @@ function _get_actual_videostream_from_media_id($media_id) {
     }
   }
   return $node;
+}
+
+/**
+ * Returns the primary video stream with the given schedule id.
+ *
+ * @param $schedule_id
+ *
+ * @return bool|mixed|null
+ */
+function primary_videostream_with_schedule_id($schedule_id) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'videostream')
+    ->fieldCondition('field_schedule_id', 'value', $schedule_id)
+    ->fieldCondition('field_run_type', 'value', array(SWISS1_RUNTYPE_PRIMARY, SWISS1_RUNTYPE_PRIMARY_REPEAT), 'IN')
+    ->range(0, 1);
+  $result = $query->execute();
+  if (isset($result['node'])) {
+    // get primary node
+    return node_load(key($result['node']));
+  }
+  return null;
 }

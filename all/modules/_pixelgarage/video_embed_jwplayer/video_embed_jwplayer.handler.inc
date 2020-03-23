@@ -240,6 +240,9 @@ function video_embed_jwplayer_video_callback($url, $settings) {
   drupal_add_js($player_uri,
     array('type' => 'external', 'scope' => 'header', 'weight' => 1000)
   );
+  //
+  // Comscore: add streaming tag plugin for unified digital measurement
+  drupal_add_js('https://sb.scorecardresearch.com/c2/plugins/streamingtag_plugin_jwplayer.js', 'external');
 
   //
   // get skin settings and add skn css to HEAD
@@ -250,9 +253,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     // add the custom css file to HEAD
     $selected_skin = str_replace(JWPLAYER_CUSTOM_SKINS_PREFIX, '', $selected_skin);
     $skin_file = drupal_get_path('module', 'video_embed_jwplayer') . '/css/' . $selected_skin . '.css';
-    drupal_add_css($skin_file,
-      array('type' => 'file', 'scope' => 'header')
-    );
+    drupal_add_css($skin_file,  array('type' => 'file', 'scope' => 'header') );
   }
   $active_color = !empty($skin_settings['jwplayer_skin_active_color']) ? ('", active: "' . $skin_settings['jwplayer_skin_active_color']) : '';
   $inactive_color = !empty($skin_settings['jwplayer_skin_active_color']) ? ('", inactive: "' . $skin_settings['jwplayer_skin_inactive_color']) : '';
@@ -302,7 +303,8 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     '});' .
     'jwplayer().on("ready", function () {' .
     ' ns_.StreamingAnalytics.JWPlayer(jwplayer(), {' .
-    '   publisherId: "31749351"' .
+    '   publisherId: "31749351",' .  // Swiss1 Comscore Publisher ID
+    '   labelmapping: "' . video_embed_jwplayer_comscore_label_mapping($media_id) . '"' .
     ' }); ' .
     '});' .
   '</script>';
@@ -317,6 +319,44 @@ function video_embed_jwplayer_video_callback($url, $settings) {
 /* -----------------------------------------------------------------
  *  Helper functions
  * ----------------------------------------------------------------- */
+
+/**
+ * Get all available system skins plus the custom skins found in the css-directory
+ * of this project as an associated array.
+ *
+ * @return array An associative array of skins.
+ */
+function video_embed_jwplayer_get_skins () {
+  $skins = array(
+    'beelden' => 'Beelden',
+    'bekle' => 'Bekle',
+    'five' => 'Five',
+    'glow' => 'Glow',
+    'roundster' => 'Roundster',
+    'seven' => 'Seven',
+    'six' => 'Six',
+    'stormtrooper' => 'Stormtrooper',
+    'vapor' => 'Vapor',
+  );
+
+  //
+  // scan css directory for custom skins
+  $path = drupal_get_path('module', 'video_embed_jwplayer') . '/css';
+  $files = scandir($path);
+  if ($files) {
+    $files = array_diff($files, array('.', '..'));
+    foreach ($files as $file) {
+      if (strpos($file, '.css') == (strlen($file) - 4)) {
+        $skin = str_replace('.css', '', $file);
+        $skins[JWPLAYER_CUSTOM_SKINS_PREFIX . $skin] = ucfirst($skin);
+      }
+    }
+    asort($skins);
+  }
+
+  // return array sorted by value
+  return $skins;
+}
 
 /**
  * Helper function to get the video media id from the input URL.
@@ -349,6 +389,39 @@ function video_embed_jwplayer_get_media_id($url) {
   }
 
   return $media_id ? $media_id : false;
+}
+
+
+/**
+ * Get the player url. If the flag do_sign is set, the returned url is signed
+ * with the API secret.
+ *
+ * @param string $playerkey
+ *    The JW platform key of the player.
+ * @param bool   $do_sign
+ *    True, if the returned url has to be signed
+ * @param string $domain
+ *    The masked domain name you want to use for signing the content, e.g.
+ *    "https://video.mysite.com". Use this if you have setup DNS masking.
+ *    Defaults to
+ *    "//content.jwplatform.com/".
+ *
+ * @return string
+ *    The player url (signed or unsigned).
+ */
+function video_embed_jwplayer_get_player_uri($media_id, $settings, $domain = JWPLAYER_CONTENT_BASE_PATH) {
+  $property_key = video_embed_jwplayer_get_property_key($media_id);
+  $player_key = $settings['jwplayer_player_' . $property_key];
+  $player_uri = JWPLAYER_CLOUD_PLAYER_PATH . $player_key . '.js';
+
+  $secret = ($settings['jwplayer_secure_player_embed'] && !empty(variable_get('video_embed_jwplayer_api_secret_' . $property_key))) ?
+    variable_get('video_embed_jwplayer_api_secret_' . $property_key) : false;
+  if ($secret) {
+    $exp_timestamp = round((time() + 2*3600)/300)*300;
+    $signature = md5($player_uri . ':' . $exp_timestamp . ':' . $secret);
+    $player_uri = $player_uri . '?exp=' . $exp_timestamp . '&sig=' . $signature;
+  }
+  return $domain . $player_uri;
 }
 
 
@@ -437,72 +510,69 @@ function video_embed_jwplayer_get_media_url($media_id, $type, $do_sign = false, 
 
 
 /**
- * Get the player url. If the flag do_sign is set, the returned url is signed
- * with the API secret.
- *
- * @param string $playerkey
- *    The JW platform key of the player.
- * @param bool   $do_sign
- *    True, if the returned url has to be signed
- * @param string $domain
- *    The masked domain name you want to use for signing the content, e.g.
- *    "https://video.mysite.com". Use this if you have setup DNS masking.
- *    Defaults to
- *    "//content.jwplatform.com/".
- *
- * @return string
- *    The player url (signed or unsigned).
+ * Gets the label mapping string of the Comscore streaming tag plugin.
  */
-function video_embed_jwplayer_get_player_uri($media_id, $settings, $domain = JWPLAYER_CONTENT_BASE_PATH) {
-  $property_key = video_embed_jwplayer_get_property_key($media_id);
-  $player_key = $settings['jwplayer_player_' . $property_key];
-  $player_uri = JWPLAYER_CLOUD_PLAYER_PATH . $player_key . '.js';
-
-  $secret = ($settings['jwplayer_secure_player_embed'] && !empty(variable_get('video_embed_jwplayer_api_secret_' . $property_key))) ?
-    variable_get('video_embed_jwplayer_api_secret_' . $property_key) : false;
-  if ($secret) {
-    $exp_timestamp = round((time() + 2*3600)/300)*300;
-    $signature = md5($player_uri . ':' . $exp_timestamp . ':' . $secret);
-    $player_uri = $player_uri . '?exp=' . $exp_timestamp . '&sig=' . $signature;
-  }
-  return $domain . $player_uri;
-}
-
-
-/**
- * Get all available system skins plus the custom skins found in the css-directory
- * of this project as an associated array.
- *
- * @return array An associative array of skins.
- */
-function video_embed_jwplayer_get_skins () {
-  $skins = array(
-    'beelden' => 'Beelden',
-    'bekle' => 'Bekle',
-    'five' => 'Five',
-    'glow' => 'Glow',
-    'roundster' => 'Roundster',
-    'seven' => 'Seven',
-    'six' => 'Six',
-    'stormtrooper' => 'Stormtrooper',
-    'vapor' => 'Vapor',
-  );
+function video_embed_jwplayer_comscore_label_mapping($media_id) {
+  //
+  // get the freshest video with the given media id, if any
+  $mapping = 'ns_st_stc=8536';
+  $videostream = freshest_videostream_from_media_id($media_id);
+  if (!$videostream) return $mapping;
 
   //
-  // scan css directory for custom skins
-  $path = drupal_get_path('module', 'video_embed_jwplayer') . '/css';
-  $files = scandir($path);
-  if ($files) {
-    $files = array_diff($files, array('.', '..'));
-    foreach ($files as $file) {
-      if (strpos($file, '.css') == (strlen($file) - 4)) {
-        $skin = str_replace('.css', '', $file);
-        $skins[JWPLAYER_CUSTOM_SKINS_PREFIX . $skin] = ucfirst($skin);
-      }
-    }
-    asort($skins);
-  }
+  // get all videostream fields
+  // cl: clip length in milliseconds or 0, if not defined or live stream
+  $duration = $videostream->field_duration[LANGUAGE_NONE][0]['value'];
+  $duration = empty($duration) ? 0 : $duration*1000;
 
-  // return array sorted by value
-  return $skins;
+  // ct: classification type (4-char identifier)
+  // ** to be defined **
+
+  // tpr: programm id, a unique internal broadcaster ID of the TV show
+  // schedule_id?
+  $schedule_id = $videostream->field_schedule_id[LANGUAGE_NONE][0]['value'];
+  $program_id = !empty($schedule_id) ? $schedule_id : '*null';
+
+  // tep: Transmission identifier (ID) to link the online content to the corresponding transmission (broadcast) of a TV program
+  //  ** to be defined **
+  $episode_id = '*null';
+
+  // tdt: Air date, date of initial broadcasting (primary) of program aired on TV
+  $primary_node = !empty($schedule_id) ? primary_videostream_with_schedule_id($schedule_id) : $videostream;
+  $start_timestamp = strtotime($primary_node->field_broadcast_date[LANGUAGE_NONE][0]['value']);
+  $start_date = date('Y-m-d', $start_timestamp);
+
+  // ddt: Digital Air Date, date of digital broadcast of a program or content
+  $digital_start_date = $start_date;
+
+  // tm: Time of initial broadcast of program aired on TV
+  $start_time = date('H:i', $start_timestamp);
+
+  // pr: Program name or name of series
+  $program_name = $videostream->field_series[LANGUAGE_NONE][0]['value'];
+
+  // ep: Episode title
+  $episode_title = $videostream->field_episode[LANGUAGE_NONE][0]['value'];
+
+  // sn: Season number
+  $season_number = preg_replace('/[^0-9]/', '', $videostream->field_season[LANGUAGE_NONE][0]['value']);
+
+  //
+  // create label mapping string
+  // mandatory
+  $mapping .= ', ns_st_ci=' . $media_id;
+  $mapping .= ', ns_st_cl=' . $duration;
+  //$mapping .= ', ns_st_ct=';
+  $mapping .= ', ns_st_tpr=' . $program_id;
+  $mapping .= ', ns_st_tep=' . $episode_id;
+  $mapping .= ', ns_st_tdt='. $start_date ;
+  $mapping .= ', ns_st_ddt=' . $digital_start_date;
+  $mapping .= ', ns_st_tm=' . $start_time;
+  // optional
+  $mapping .= ', ns_st_st=\"SWISS 1\"';
+  $mapping .= ', ns_st_pr=' . $program_name;
+  $mapping .= ', ns_st_ep='. $episode_title;
+  $mapping .= ', ns_st_sn=' . $season_number;
+
+  return $mapping;
 }

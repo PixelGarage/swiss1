@@ -184,9 +184,6 @@ function pixelgarage_ds_pre_render_alter(&$layout_render_array, $context, &$vars
     $view_mode = $context['view_mode'];
     _preprocess_node_videostream($vars, $view_mode);
 
-    //
-    // add tag to collect data about video view counts and market coverage from external tools
-    drupal_add_js('https://sb.scorecardresearch.com/c2/plugins/streamingtag_plugin_jwplayer.js', 'external');
   }
 }
 

@@ -560,19 +560,19 @@ function video_embed_jwplayer_comscore_label_mapping($media_id) {
   //
   // create label mapping string
   // mandatory
-  $mapping .= ', ns_st_ci=' . $media_id;
-  $mapping .= ', ns_st_cl=' . $duration;
-  //$mapping .= ', ns_st_ct=';
-  $mapping .= ', ns_st_tpr=' . $program_id;
-  $mapping .= ', ns_st_tep=' . $episode_id;
-  $mapping .= ', ns_st_tdt='. $start_date ;
-  $mapping .= ', ns_st_ddt=' . $digital_start_date;
-  $mapping .= ', ns_st_tm=' . $start_time;
+  $mapping .= ', ns_st_ci=\"' . $media_id . '\"';
+  $mapping .= ', ns_st_cl=\"' . $duration . '\"';
+  //$mapping .= ', ns_st_ct=\"';
+  $mapping .= ', ns_st_tpr=\"' . $program_id . '\"';
+  $mapping .= ', ns_st_tep=\"' . $episode_id . '\"';
+  $mapping .= ', ns_st_tdt=\"'. $start_date . '\"';
+  $mapping .= ', ns_st_ddt=\"' . $digital_start_date . '\"';
+  $mapping .= ', ns_st_tm=\"' . $start_time . '\"';
   // optional
   $mapping .= ', ns_st_st=\"SWISS 1\"';
-  $mapping .= ', ns_st_pr=' . $program_name;
-  $mapping .= ', ns_st_ep='. $episode_title;
-  $mapping .= ', ns_st_sn=' . $season_number;
+  $mapping .= ', ns_st_pr=\"' . $program_name . '\"';
+  $mapping .= ', ns_st_ep=\"'. $episode_title . '\"';
+  $mapping .= ', ns_st_sn=\"' . $season_number . '\"';
 
   return $mapping;
 }

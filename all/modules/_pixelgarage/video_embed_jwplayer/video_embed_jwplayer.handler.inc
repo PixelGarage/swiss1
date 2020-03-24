@@ -306,6 +306,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     '   publisherId: "31749351",' .  // Swiss1 Comscore Publisher ID
     '   labelmapping: "' . video_embed_jwplayer_comscore_label_mapping($media_id) . '"' .
     ' }); ' .
+    '});' .
     'jwplayer().on("complete", function () {' .
     ' ns_.StreamingAnalytics.JWPlayer(jwplayer(), {' .
     '   publisherId: "31749351",' .  // Swiss1 Comscore Publisher ID
@@ -534,11 +535,11 @@ function video_embed_jwplayer_comscore_label_mapping($media_id) {
   $ctype = $duration > 600000 ? 'vc12' : 'vc11';
 
   // tpr: programm id, a unique internal broadcaster ID of the TV show
-  $program_id = $videostream->field_comscore_tpr[LANGUAGE_NONE][0]['value'];
+  $program_id = isset($videostream->field_comscore_tpr[LANGUAGE_NONE][0]['value']) ? $videostream->field_comscore_tpr[LANGUAGE_NONE][0]['value'] : '';
   $program_id = !empty($program_id) ? $program_id : '*null';
 
   // tep: Transmission identifier (ID) to link the online content to the corresponding transmission (broadcast) of a TV program
-  $episode_id = $videostream->field_comscore_tep[LANGUAGE_NONE][0]['value'];
+  $episode_id = isset($videostream->field_comscore_tep[LANGUAGE_NONE][0]['value']) ? $videostream->field_comscore_tep[LANGUAGE_NONE][0]['value'] : '';
   $episode_id = !empty($episode_id) ? $episode_id : '*null';
 
   // tdt: Air date, date of initial broadcasting (primary) of program aired on TV

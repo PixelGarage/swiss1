@@ -480,6 +480,12 @@ function _parse_entry($xml_entry, $epg_day, &$import_counter) {
 
       //$buzzword = !empty($epg['Buzzword']) ? $epg['Buzzword'] : '';
       //$keyword = !empty($epg['Keyword']) ? $epg['Keyword'] : '';
+
+      // Comscore labels to tag video supporting video audience measurement (VAM)
+      // unique Program ID
+      $node->field_comscore_tpr[LANGUAGE_NONE][0]['value'] = isset($epg['Comscore_ns_st_tpr']) ? $epg['Comscore_ns_st_tpr'] : '';
+      // TV transmission ID, episode ID
+      $node->field_comscore_tep[LANGUAGE_NONE][0]['value'] = isset($epg['Comscore_ns_st_tep']) ? $epg['Comscore_ns_st_tep'] : '';
     }
   }
 

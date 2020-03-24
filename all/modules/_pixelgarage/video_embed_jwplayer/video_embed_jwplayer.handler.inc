@@ -306,6 +306,11 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     '   publisherId: "31749351",' .  // Swiss1 Comscore Publisher ID
     '   labelmapping: "' . video_embed_jwplayer_comscore_label_mapping($media_id) . '"' .
     ' }); ' .
+    'jwplayer().on("complete", function () {' .
+    ' ns_.StreamingAnalytics.JWPlayer(jwplayer(), {' .
+    '   publisherId: "31749351",' .  // Swiss1 Comscore Publisher ID
+    '   labelmapping: "' . video_embed_jwplayer_comscore_label_mapping($media_id) . '"' .
+    ' }); ' .
     '});' .
   '</script>';
 
@@ -526,18 +531,18 @@ function video_embed_jwplayer_comscore_label_mapping($media_id) {
   $duration = empty($duration) ? 0 : $duration*1000;
 
   // ct: classification type (4-char identifier)
-  // ** to be defined **
+  $ctype = $duration > 600000 ? 'vc12' : 'vc11';
 
   // tpr: programm id, a unique internal broadcaster ID of the TV show
-  // schedule_id?
-  $schedule_id = $videostream->field_schedule_id[LANGUAGE_NONE][0]['value'];
-  $program_id = !empty($schedule_id) ? $schedule_id : '*null';
+  $program_id = $videostream->field_comscore_tpr[LANGUAGE_NONE][0]['value'];
+  $program_id = !empty($program_id) ? $program_id : '*null';
 
   // tep: Transmission identifier (ID) to link the online content to the corresponding transmission (broadcast) of a TV program
-  //  ** to be defined **
-  $episode_id = '*null';
+  $episode_id = $videostream->field_comscore_tep[LANGUAGE_NONE][0]['value'];
+  $episode_id = !empty($episode_id) ? $episode_id : '*null';
 
   // tdt: Air date, date of initial broadcasting (primary) of program aired on TV
+  $schedule_id = $videostream->field_schedule_id[LANGUAGE_NONE][0]['value'];
   $primary_node = !empty($schedule_id) ? primary_videostream_with_schedule_id($schedule_id) : $videostream;
   $start_timestamp = strtotime($primary_node->field_broadcast_date[LANGUAGE_NONE][0]['value']);
   $start_date = date('Y-m-d', $start_timestamp);
@@ -562,7 +567,7 @@ function video_embed_jwplayer_comscore_label_mapping($media_id) {
   // mandatory
   $mapping .= ', ns_st_ci=\"' . $media_id . '\"';
   $mapping .= ', ns_st_cl=\"' . $duration . '\"';
-  //$mapping .= ', ns_st_ct=\"';
+  $mapping .= ', ns_st_ct=\"' . $ctype . '\"';
   $mapping .= ', ns_st_tpr=\"' . $program_id . '\"';
   $mapping .= ', ns_st_tep=\"' . $episode_id . '\"';
   $mapping .= ', ns_st_tdt=\"'. $start_date . '\"';

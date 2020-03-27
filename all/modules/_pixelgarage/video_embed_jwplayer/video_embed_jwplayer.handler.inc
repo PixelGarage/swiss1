@@ -310,6 +310,7 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     'jwplayer().on("playlistComplete", function () {' . // reload playlist to re-initialise player
     ' var playlist = jwplayer().getPlaylist();' .
     ' jwplayer().load(playlist);' .
+    ' jwplayer().pause();' .
     '});' .
   '</script>';
 

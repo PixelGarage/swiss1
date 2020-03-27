@@ -307,11 +307,9 @@ function video_embed_jwplayer_video_callback($url, $settings) {
     '   labelmapping: "' . video_embed_jwplayer_comscore_label_mapping($media_id) . '"' .
     ' }); ' .
     '});' .
-    'jwplayer().on("complete", function () {' .
-    ' ns_.StreamingAnalytics.JWPlayer(jwplayer(), {' .
-    '   publisherId: "31749351",' .  // Swiss1 Comscore Publisher ID
-    '   labelmapping: "' . video_embed_jwplayer_comscore_label_mapping($media_id) . '"' .
-    ' }); ' .
+    'jwplayer().on("playlistComplete", function () {' . // reload playlist to re-initialise player
+    ' var playlist = jwplayer().getPlaylist();' .
+    ' jwplayer().load(playlist);' .
     '});' .
   '</script>';
 
@@ -568,7 +566,7 @@ function video_embed_jwplayer_comscore_label_mapping($media_id) {
   // mandatory
   $mapping .= ', ns_st_ci=\"' . $media_id . '\"';
   $mapping .= ', ns_st_cl=\"' . $duration . '\"';
-  $mapping .= ', ns_st_ct=\"' . $ctype . '\"';
+  //$mapping .= ', ns_st_ct=\"' . $ctype . '\"';
   $mapping .= ', ns_st_tpr=\"' . $program_id . '\"';
   $mapping .= ', ns_st_tep=\"' . $episode_id . '\"';
   $mapping .= ', ns_st_tdt=\"'. $start_date . '\"';

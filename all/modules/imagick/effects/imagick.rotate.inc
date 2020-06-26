@@ -19,18 +19,30 @@
  *
  * @see image_rotate()
  */
-function image_imagick_rotate(stdClass $image, $degrees, $background = NULL, $random) {
-  $color = empty($background) ? 'none' : $background;
+function image_imagick_rotate(stdClass $image, $degrees, $background = NULL) {
+  $success = _imagick_process_frames($image, 'image_imagick_rotate_process', func_get_args());
 
-  $res = $image->resource;
-  if (!$res->rotateImage(new ImagickPixel($color), $degrees)) {
-    return FALSE;
-  }
-  $image->info['width'] = $res->width;
-  $image->info['height'] = $res->height;
-  return TRUE;
+  // Set correct dimensions
+  $image->info['width'] = $image->resource->width;
+  $image->info['height'] = $image->resource->height;
+
+  return $success;
 }
 
+/**
+ * @param $res
+ * @param $degrees
+ * @param $background
+ * @return bool
+ */
+function image_imagick_rotate_process($res, $degrees, $background = NULL) {
+  $color = empty($background) ? 'none' : $background;
+
+  $success = $res->rotateImage(new ImagickPixel($color), $degrees);
+  $res->setImagePage($res->getImageWidth(), $res->getImageHeight(), 0, 0);
+
+  return $success;
+}
 
 /**
  * Image effect callback; Rotate an image resource.

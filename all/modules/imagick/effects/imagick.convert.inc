@@ -72,6 +72,6 @@ function imagick_convert_form($data) {
 function imagick_convert_defaults() {
   return array(
     'format' => 'image/jpeg',
-    'quality' => variable_get('image_jpeg_quality', 75),
+    'quality' => variable_get('image_jpeg_quality', 80),
   );
 }

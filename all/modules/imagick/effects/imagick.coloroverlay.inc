@@ -19,7 +19,7 @@ function image_imagick_overlay(stdClass $image, stdClass $layer, $x, $y, $alpha 
   $overlay = new Imagick($path);
   if ($alpha != 100) {
     $overlay->setImageFormat('png');
-    $overlay->setImageOpacity($alpha / 100);
+    imagick_coloroverlay_set_opacity($overlay, $alpha);
   }
   return $image->resource->compositeImage($overlay, Imagick::COMPOSITE_DEFAULT, $x, $y);
 }
@@ -53,7 +53,7 @@ function image_imagick_coloroverlay_alpha(stdClass $image, $color, $alpha) {
   $overlay = new Imagick();
   $overlay->newImage($image->info['width'], $image->info['height'], new ImagickPixel($color));
   $overlay->setImageFormat('png');
-  $overlay->setImageOpacity($alpha / 100);
+  imagick_coloroverlay_set_opacity($overlay, $alpha);
 
   return $image->resource->compositeImage($overlay, Imagick::COMPOSITE_DEFAULT, 0, 0);
 }
@@ -105,4 +105,19 @@ function imagick_coloroverlay_defaults() {
     'HEX' => '#FFFFFF',
     'alpha' => 50,
   );
+}
+
+/**
+ * @param $image
+ * @param $alpha
+ */
+function imagick_coloroverlay_set_opacity($image, $alpha) {
+  $alpha = $alpha / 100;
+
+  if (method_exists($image, 'setImageOpacity')) {
+    $image->setImageOpacity($alpha);
+  }
+  else {
+    $image->setImageAlpha($alpha);
+  }
 }

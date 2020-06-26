@@ -86,6 +86,8 @@ function imagick_disable() {
  */
 function imagick_uninstall() {
   variable_del('image_resize_filter');
+  variable_del('imagick_strip_metadata');
+  variable_del('imagick_image_optimize');
 }
 
 /**

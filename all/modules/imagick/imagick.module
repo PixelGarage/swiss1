@@ -11,9 +11,9 @@
  */
 
 /**
- * Implements hook_init().
+ * Implements hook_boot().
  */
-function imagick_init() {
+function imagick_boot() {
   if (module_exists('smartcrop')) {
     require_once drupal_get_path('module', 'imagick_smartcrop') . '/imagick_smartcrop.inc';
   }
@@ -25,6 +25,7 @@ function imagick_init() {
   require_once 'effects/imagick.coloroverlay.inc';
   require_once 'effects/imagick.colorshift.inc';
   require_once 'effects/imagick.convert.inc';
+  require_once 'effects/imagick.convolve.inc';
   require_once 'effects/imagick.crop.inc';
   require_once 'effects/imagick.definecanvas.inc';
   require_once 'effects/imagick.desaturate.inc';
@@ -45,6 +46,7 @@ function imagick_init() {
   require_once 'effects/imagick.roundedcorners.inc';
   require_once 'effects/imagick.scale.inc';
   require_once 'effects/imagick.shadow.inc';
+  require_once 'effects/imagick.sharpen.inc';
   require_once 'effects/imagick.sketch.inc';
   require_once 'effects/imagick.solarize.inc';
   require_once 'effects/imagick.spread.inc';
@@ -65,6 +67,9 @@ function imagick_theme() {
         'combined' => NULL,
       ),
       'file' => 'includes/imagick.theme.inc',
+    ),
+    'imagick_convolve_summary' => array(
+      'variables' => array('data' => NULL),
     ),
   );
 }
@@ -90,14 +95,33 @@ function image_imagick_settings() {
       '#markup' => t('The Imagick toolkit is installed and working properly.')
     );
 
-    $form['image_jpeg_quality'] = array(
+    $form['jpeg'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('JPEG specific settings'),
+      '#description' => t('<strong>Tip: </strong>Generated images can be converted to the JPEG format using the Convert effect.'),
+    );
+    $form['jpeg']['image_jpeg_quality'] = array(
       '#type' => 'textfield',
       '#title' => t('JPEG quality'),
-      '#description' => t('Define the image quality for JPEG manipulations. Ranges from 0 to 100. Higher values mean better image quality but bigger files.'),
+      '#description' => t('Higher values mean better image quality but bigger files. Quality level below 80% is not advisable when using ImageMagick.'),
       '#size' => 10,
       '#maxlength' => 3,
-      '#default_value' => variable_get('image_jpeg_quality', 75),
+      '#default_value' => variable_get('image_jpeg_quality', 80),
       '#field_suffix' => t('%'),
+    );
+
+    $form['jpeg']['imagick_image_optimize'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Use Google Pagespeed Insights image optimization.'),
+      '#description' => t('See the <a href="@url" target="_blank">guidelines</a> for further information.', array('@url' => 'https://developers.google.com/speed/docs/insights/OptimizeImages')),
+      '#default_value' => variable_get('imagick_image_optimize', TRUE),
+    );
+
+    $form['imagick_strip_metadata'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Strip images of all metadata.'),
+      '#description' => t('Eg. profiles, comments, ...'),
+      '#default_value' => variable_get('imagick_strip_metadata', FALSE),
     );
 
     $form['image_resize_filter'] = array(
@@ -147,7 +171,7 @@ function image_imagick_settings_validate($form, &$form_state) {
   }
 
   // Check if the quality value has changed
-  if (variable_get('image_jpeg_quality', 75) !== $value) {
+  if (variable_get('image_jpeg_quality', 80) !== $value) {
     // Flush image style images
     foreach (image_styles() as $style) {
       image_style_flush($style);
@@ -239,9 +263,21 @@ function image_imagick_save(stdClass $image, $destination) {
       $res->setImageCompressionQuality($effect_quality);
     }
     else {
-      $quality = variable_get('image_jpeg_quality', 75);
+      $quality = variable_get('image_jpeg_quality', 80);
       $res->setImageCompressionQuality($quality);
     }
+    if (variable_get('imagick_image_optimize', TRUE)) {
+      // Using recommendations from Google's Page Speed docs:
+      // https://developers.google.com/speed/docs/insights/OptimizeImages .
+      $res->setSamplingFactors(array('2x2', '1x1', '1x1'));
+      $res->setColorspace(imagick::COLORSPACE_RGB);
+      $res->setInterlaceScheme(imagick::INTERLACE_JPEG);
+    }
+  }
+
+  // Strip metadata
+  if (variable_get('imagick_strip_metadata', FALSE)) {
+    $res->stripImage();
   }
 
   // Write image to destination
@@ -370,6 +406,15 @@ function imagick_image_effect_info() {
     'dimensions passthrough' => TRUE,
     'form callback' => 'imagick_convert_form',
     'default settings' => 'imagick_convert_defaults',
+  );
+  $effects['imagick_convolve'] = array(
+    'label' => t('Convolve'),
+    'help' => t('Applies a custom convolution kernel to the image.'),
+    'effect callback' => 'imagick_convolve',
+    'dimensions passthrough' => TRUE,
+    'form callback' => 'imagick_convolve_form',
+    'default settings' => 'imagick_convert_defaults',
+    'summary theme' => 'imagick_convolve_summary',
   );
   $effects['imagick_crop'] = array(
     'label' => t('Crop'),
@@ -539,6 +584,14 @@ function imagick_image_effect_info() {
     'form callback' => 'imagick_sketch_form',
     'default settings' => 'imagick_sketch_defaults',
   );
+  $effects['imagick_sharpen'] = array(
+    'label' => t('Sharpen'),
+    'help' => t('Applies an unsharp mask to the image.'),
+    'effect callback' => 'imagick_sharpen',
+    'dimensions passthrough' => TRUE,
+    'form callback' => 'imagick_sharpen_form',
+    'default settings' => 'imagick_sharpen_defaults',
+  );
   $effects['imagick_solarize'] = array(
     'label' => t('Solarize'),
     'help' => t('Applies a special effect to the image, similar to the effect achieved in a photo darkroom by selectively exposing areas of photo sensitive paper to light. Threshold ranges from 0 to QuantumRange and is a measure of the extent of the solarization.'),
@@ -702,11 +755,13 @@ function _imagick_process_frames($image, $function, $args = []) {
     if ($image->info['mime_type'] == 'image/gif') {
       // Get each frame in the GIF
       $res = $res->coalesceImages();
-      do {
-        call_user_func_array($function, array_merge([$res], $args));
-      } while ($res->nextImage());
 
-      $res->deconstructImages();
+      do {
+        $result = call_user_func_array($function, array_merge([$res], $args));
+      } while ($result && $res->nextImage());
+      $res = $res->deconstructImages();
+
+      return $result;
     }
     else {
       return call_user_func_array($function, array_merge([$res], $args));
@@ -717,4 +772,3 @@ function _imagick_process_frames($image, $function, $args = []) {
 /**
  * @} End of "ingroup image".
  */
-

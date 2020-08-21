@@ -567,7 +567,7 @@ function video_embed_jwplayer_comscore_label_mapping($media_id) {
   // mandatory
   $mapping .= ', ns_st_ci=\"' . $media_id . '\"';
   $mapping .= ', ns_st_cl=\"' . $duration . '\"';
-  $mapping .= ', ns_st_ct=\"' . $ctype . '\"';
+  //$mapping .= ', ns_st_ct=\"' . $ctype . '\"';
   $mapping .= ', ns_st_tpr=\"' . $program_id . '\"';
   $mapping .= ', ns_st_tep=\"' . $episode_id . '\"';
   $mapping .= ', ns_st_tdt=\"'. $start_date . '\"';

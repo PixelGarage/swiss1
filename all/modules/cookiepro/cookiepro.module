@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * @file
+ * Enables Drupal to add CookiePro headers on site.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function cookiepro_menu() {
+
+  $items['admin/config/development/cookiepro'] = array(
+    'title'            => 'CookiePro by OneTrust',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('cookiepro_header_settings'),
+    'access arguments' => array('administer cookiepro module'),
+    'description'      => 'Simplify Compliance with GDPR & ePrivacy Cookie Laws.',
+    'file'             => 'cookiepro.admin.inc',
+    'weight'           => 10,
+  );
+
+  $items['admin/config/development/cookiepro/header'] = array(
+    'title'            => 'CookiePro',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('cookiepro_header_settings'),
+    'access arguments' => array('administer cookiepro module'),
+    'description'      => 'Simplify Compliance with GDPR & ePrivacy Cookie Laws.',
+    'file'             => 'cookiepro.admin.inc',
+    'type'             => MENU_LOCAL_TASK,
+    'weight'           => 20,
+  );
+
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function cookiepro_permission() {
+
+  $permissions['administer cookiepro module'] = array(
+    'title'           => t('CookiePro by OneTrust'),
+    'restrict access' => TRUE,
+    'description'     => t('Users who have this permission can add and remove the scripts from the site.'),
+  );
+
+  return $permissions;
+}
+
+/**
+ * Implements hook_help().
+ */
+function cookiepro_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#cookiepro':
+    $output = '<h2>' . t('About') . '</h2>';
+    $output .= '<p>' . t('CookiePro provides purpose-built tools to help website owners and agencies simplify compliance with global privacy laws including GDPR, CCPA, and ePrivacy and is powered by the OneTrust platform. <a href="https://www.onetrust.com/resources/onetrust-named-a-leader-forrester-new-wave-2018/" target="_blank">OneTrust</a> was named a leader in the Forrester New Wave™: GDPR and Privacy Management Software, Q4 2018.') . '</p>';
+    $output .= '<h2>' . t('Get Help') . '</h2>';
+    $output .= '<p>' . t('Email us at <a href="mailto:support@cookiepro.com" target="_top">support@cookiepro.com</a> </br> Browse <a href="https://community.cookiepro.com" target="_blank">CookiePro Community</a> for knowledgebase articles, product updates and privacy news.') . '</p>';
+
+    $output .= '<h2>' . t('FAQs') . '</h2>';
+    $output .= '<p>' . t('<strong>What is included in the Free Edition of CookiePro? </strong>') . '</p>';
+      $output .= '<p>' . t('The free edition of CookiePro includes key features businesses need to comply with cookie consent requirements across privacy regulations such as the GDPR and ePrivacy for a single domain with up to 100 subpages.') . '</p>';
+      $output .= '<p>' . t('</br><strong>How do I upgrade my Free Edition of CookiePro? </strong>') . '</p>';
+        $output .= '<p>' . t('If you would like to upgrade to a Starter, Standard or Enterprise subscription, simply select the edition you would like to purchase on the <a href="https://www.cookiepro.com/pricing/?referral=drupmod" target="_blank">CookiePro</a> pricing page and click “Buy Now”. Once you enter the email associated with your existing free account, simply follow the checkout process, enter your payment details and you will have access to your new edition.') . '</p>';
+        $output .= '<p>' . t('</br><strong>Can I add several small websites to 1 subscription? </strong>') . '</p>';
+          $output .= '<p>' . t('Prices are per domain. Each domain requires one subscription. Cross sub-domain consent is available.') . '</p>';
+
+
+
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_process_html().
+ *
+ * Add Header Scripts as defined.
+ */
+function cookiepro_process_html(&$variables) {
+
+  $header_scripts = variable_get('cookiepro_header_settings');
+
+
+
+  if (isset($header_scripts) && !empty($header_scripts)) {
+    if (!empty($header_scripts['styles'])) {
+      $variables['styles'] .= $header_scripts['styles'] . PHP_EOL;
+    }
+    if (!empty($header_scripts['scripts'])) {
+      $variables['scripts'] .= $header_scripts['scripts'] . PHP_EOL;
+    }
+  }
+
+
+}

@@ -1,0 +1,17 @@
+name = CookiePro by OneTrust
+description = "Simplify Compliance with GDPR & ePrivacy Cookie Laws. "
+core = 7.x
+package = CookiePro by OneTrust
+configure = admin/config/development/cookiepro
+
+; Information added by Drupal.org packaging script on 2018-10-09
+version = "7.x-1.x"
+core = "7.x"
+project = "cookiepro"
+datestamp = "1539077284"
+
+; Information added by Drupal.org packaging script on 2019-04-16
+version = "7.x-1.0"
+core = "7.x"
+project = "cookiepro"
+datestamp = "1555444085"

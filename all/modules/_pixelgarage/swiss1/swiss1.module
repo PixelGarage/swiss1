@@ -158,8 +158,8 @@ function _set_daily_auto_featured_content() {
   // only set featured content automatically, if no manually set featured content exists.
   if (_has_manually_featured_content()) return;
 
-  $start = strtotime('today 19:45');
-  $end = strtotime('today 20:45');
+  $start = strtotime('today 20:00');
+  $end = strtotime('today 20:30');
   $start_date = date('Y-m-d H:i:s', $start);  // format matters for comparison to work
   $end_date = date('Y-m-d H:i:s', $end);  // format matters for comparison to work
 
@@ -167,8 +167,8 @@ function _set_daily_auto_featured_content() {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
-    ->fieldCondition('field_broadcast_date', 'value', $start_date, '>')
-    ->fieldCondition('field_broadcast_date', 'value', $end_date, '<');
+    ->fieldCondition('field_broadcast_date', 'value', $start_date, '>=')
+    ->fieldCondition('field_broadcast_date', 'value', $end_date, '=<');
   $result = $query->execute();
 
   if (isset($result['node'])) {

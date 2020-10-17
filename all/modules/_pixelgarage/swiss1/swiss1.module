@@ -167,8 +167,8 @@ function _set_daily_auto_featured_content() {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'videostream')
     ->propertyCondition('status', 1)
-    ->fieldCondition('field_broadcast_date', 'value', $start_date, '>=')
-    ->fieldCondition('field_broadcast_date', 'value', $end_date, '=<');
+    ->fieldCondition('field_broadcast_date', 'value', $start_date, '>')
+    ->fieldCondition('field_broadcast_date', 'value', $end_date, '<');
   $result = $query->execute();
 
   if (isset($result['node'])) {

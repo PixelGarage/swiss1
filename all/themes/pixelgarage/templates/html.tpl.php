@@ -65,7 +65,7 @@
   <!--[if lt IE 9]>
     <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <?php if (!$is_admin): ?>
+  <?php if ($is_front): ?>
     <!-- CookiePro Cookie-Einwilligungshinweis – Anfang für www.swiss1.tv -->
     <script type="text/javascript" src="https://cookie-cdn.cookiepro.com/consent/e9181061-f797-4d5f-8c9d-d83fad30d672/OtAutoBlock.js" ></script>
     <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="e9181061-f797-4d5f-8c9d-d83fad30d672" ></script>

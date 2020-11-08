@@ -14,9 +14,9 @@
     <<?php print $central_wrapper; ?> class="col-sm-12 <?php print $central_classes; ?>">
       <div class="follow-buttons">
         <!--div class="block-title">Folge uns</div-->
-        <a href="https://facebook.com/swiss1.tv" traget="_blank"><span class="fa fa-facebook-square"></span></a>
-        <a href="https://instagram.com/swiss1.tv" traget="_blank"><span class="fa fa-instagram"></span></a>
-        <a href="https://www.linkedin.com/company/swiss1" traget="_blank"><span class="fa fa-linkedin"></span></a>
+        <a href="https://facebook.com/swiss1.tv" target="_blank"><span class="fa fa-facebook-square"></span></a>
+        <a href="https://instagram.com/swiss1.tv" target="_blank"><span class="fa fa-instagram"></span></a>
+        <a href="https://www.linkedin.com/company/swiss1" target="_blank"><span class="fa fa-linkedin"></span></a>
         <a href="mailto:hallo@swiss1.tv"><span class="fa fa-envelope-square"></span></a>
       </div>
       <?php print render($content['body']); ?>

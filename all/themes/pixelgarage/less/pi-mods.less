@@ -1,5 +1,32 @@
 // out:../css/pi-mods.css, compress:true, sourceMap:future
 
+// unpublished nodes
+.node-unpublished{
+  background-color: transparent;
+  position: relative;
+  &::after{
+    content: "unpublished";
+    position: absolute;
+    top: -0.5em;
+    right: 0em;
+    font-size: 15vw;
+    z-index: -1;
+    opacity: 0.2;
+    color: #BC2929;
+    font-weight: bold;
+    transform: rotate(-10deg);
+    transform-origin: top right;
+    @media screen and (min-width: 48em) {
+      right: -0em;
+      font-size: 12vw;
+    }
+    @media screen and (min-width: 84em) {
+      right: -1em;
+      font-size: 10vw;
+    }
+  }
+}
+
 // Mailchimp form
 #mc_embed_signup{
   margin-bottom: 5em;
@@ -53,6 +80,9 @@
         display: inline-block;
       }
     }
+    select{
+      -webkit-appearance: none;
+    }
     input,
     select{
       height: 30px;
@@ -88,6 +118,18 @@
         box-shadow: 0 0 3px #BC2929 inset;
         outline: none;
       }
+    }
+
+    // Hide arrows for number fields
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
     }
 
   }

@@ -1,5 +1,6 @@
 // out:../css/pi-mods.css, compress:true, sourceMap:future
 
+// -----------------------------------------------------------------------------
 // unpublished nodes
 .node-unpublished{
   background-color: transparent;
@@ -27,6 +28,22 @@
   }
 }
 
+// -----------------------------------------------------------------------------
+// Video embeds
+.node.node-page.view-mode-full > .row > div.col-sm-12 > .field-name-body iframe{
+  min-height: 240px;
+  @media screen and (min-width: 400px) {
+    min-height: 320px;
+  }
+  @media screen and (min-width: 600px) {
+    min-height: 480px;
+  }
+  @media screen and (min-width: 1280px) {
+    min-height: 600px;
+  }
+}
+
+// -----------------------------------------------------------------------------
 // Mailchimp form
 #mc_embed_signup{
   margin-bottom: 5em;
